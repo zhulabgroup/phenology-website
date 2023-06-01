@@ -1,2 +1,0 @@
-observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
-100702,-9999,1476,34.750793,-82.344971,252,SC,3,Acer,rubrum,red maple,Plantae,2517,483,Leaves,2006-05-15,135,1,-9999,-9999,-9999
