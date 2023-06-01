@@ -1,0 +1,21 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+25774482,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50044,501,Open flowers,2001-09-05,248,0,50,-9999,-9999
+25774492,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,50046,501,Open flowers,2001-09-05,248,1,50,-9999,-9999
+25774502,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50048,501,Open flowers,2001-09-05,248,0,50,-9999,-9999
+25774512,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,50049,501,Open flowers,2001-09-05,248,0,50,-9999,-9999
+25774542,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,250636,501,Open flowers,2001-09-05,248,0,50,-9999,-9999
+25774552,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,50057,501,Open flowers,2001-09-05,248,0,50,-9999,-9999
+25774562,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50061,501,Open flowers,2001-09-05,248,0,50,-9999,-9999
+25774572,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50058,501,Open flowers,2001-09-05,248,0,50,-9999,-9999
+25774592,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,50054,501,Open flowers,2001-09-05,248,0,50,-9999,-9999
+25774602,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50053,501,Open flowers,2001-09-05,248,0,50,-9999,-9999
+25774483,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50044,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999
+25774493,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,50046,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999
+25774503,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50048,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999
+25774513,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,50049,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999
+25774543,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,250636,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999
+25774553,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,50057,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999
+25774563,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50061,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999
+25774573,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50058,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999
+25774593,-9999,11899,35.632,-83.045654,1244,NC,3,Acer,rubrum,red maple,Plantae,50054,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999
+25774603,-9999,11899,35.632,-83.045654,1244,NC,60,Acer,pensylvanicum,striped maple,Plantae,50053,186,Full flowering (50%),2001-09-05,248,0,-9999,-9999,-9999

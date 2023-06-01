@@ -1,0 +1,3 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+2638081,-9999,5072,32.427212,-110.754463,2258,AZ,2,Acer,negundo,boxelder,Plantae,9493,501,Open flowers,2007-09-26,269,-1,-9999,-9999,-9999
+2638082,-9999,5072,32.427212,-110.754463,2258,AZ,2,Acer,negundo,boxelder,Plantae,9493,186,Full flowering (50%),2007-09-26,269,-1,-9999,-9999,-9999
