@@ -1,0 +1,5 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+7140848,-9999,16358,34.498074,-119.809242,593,CA,705,Quercus,agrifolia,California live oak,Plantae,61239,196,Full pollen release (angiosperms),1985-08-27,239,0,-9999,-9999,-9999
+7142001,2016-02-26 23:15:13,16358,34.498074,-119.809242,593,CA,705,Quercus,agrifolia,California live oak,Plantae,61237,196,Full pollen release (angiosperms),1985-08-27,239,0,-9999,-9999,-9999
+7142004,-9999,16358,34.498074,-119.809242,593,CA,705,Quercus,agrifolia,California live oak,Plantae,61238,196,Full pollen release (angiosperms),1985-08-27,239,0,-9999,-9999,-9999
+7142005,2016-02-26 23:15:13,16358,34.498074,-119.809242,593,CA,705,Quercus,agrifolia,California live oak,Plantae,61236,196,Full pollen release (angiosperms),1985-08-27,239,-1,-9999,-9999,-9999

@@ -1,0 +1,71 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+97184,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-05-08,129,0,-9999,-9999,-9999
+97364,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-05-08,129,-1,-9999,-9999,-9999
+97185,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-05-08,129,0,-9999,-9999,-9999
+97365,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-05-08,129,-1,-9999,-9999,-9999
+97174,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-05-14,135,1,-9999,-9999,-9999
+97354,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-05-14,135,0,-9999,-9999,-9999
+97175,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-05-14,135,1,-9999,-9999,-9999
+97355,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-05-14,135,0,-9999,-9999,-9999
+97164,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-05-22,143,1,-9999,-9999,-9999
+97344,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-05-22,143,1,-9999,-9999,-9999
+97165,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-05-22,143,1,-9999,-9999,-9999
+97345,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-05-22,143,1,-9999,-9999,-9999
+97154,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-05-30,151,1,-9999,-9999,-9999
+97334,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-05-30,151,1,-9999,-9999,-9999
+97155,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-05-30,151,1,-9999,-9999,-9999
+97335,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-05-30,151,1,-9999,-9999,-9999
+97224,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-06-06,158,1,-9999,-9999,-9999
+97404,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-06-06,158,1,-9999,-9999,-9999
+97225,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-06-06,158,1,-9999,-9999,-9999
+97405,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-06-06,158,1,-9999,-9999,-9999
+97214,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-06-13,165,1,-9999,-9999,-9999
+97394,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-06-13,165,1,-9999,-9999,-9999
+97215,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-06-13,165,1,-9999,-9999,-9999
+97395,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-06-13,165,1,-9999,-9999,-9999
+97204,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-06-20,172,1,-9999,-9999,-9999
+97384,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-06-20,172,1,-9999,-9999,-9999
+97205,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-06-20,172,1,-9999,-9999,-9999
+97385,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-06-20,172,1,-9999,-9999,-9999
+97194,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-07-09,191,1,-9999,-9999,-9999
+97195,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-07-09,191,1,-9999,-9999,-9999
+97264,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-08-25,238,1,-9999,-9999,-9999
+97374,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-08-25,238,1,-9999,-9999,-9999
+97265,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-08-25,238,1,-9999,-9999,-9999
+97375,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-08-25,238,1,-9999,-9999,-9999
+97254,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-09-05,249,1,-9999,-9999,-9999
+97444,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-09-05,249,1,-9999,-9999,-9999
+97255,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-09-05,249,1,-9999,-9999,-9999
+97445,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-09-05,249,1,-9999,-9999,-9999
+97244,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-09-16,260,1,-9999,-9999,-9999
+97434,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-09-16,260,1,-9999,-9999,-9999
+97245,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-09-16,260,1,-9999,-9999,-9999
+97435,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-09-16,260,1,-9999,-9999,-9999
+97234,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-09-30,274,1,-9999,-9999,-9999
+97424,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-09-30,274,1,-9999,-9999,-9999
+97235,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-09-30,274,1,-9999,-9999,-9999
+97425,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-09-30,274,1,-9999,-9999,-9999
+97304,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-10-07,281,1,-9999,-9999,-9999
+97414,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-10-07,281,1,-9999,-9999,-9999
+97305,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-10-07,281,1,-9999,-9999,-9999
+97415,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-10-07,281,1,-9999,-9999,-9999
+97294,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-10-13,287,1,-9999,-9999,-9999
+97484,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-10-13,287,1,-9999,-9999,-9999
+97295,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-10-13,287,1,-9999,-9999,-9999
+97485,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-10-13,287,1,-9999,-9999,-9999
+97284,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-10-21,295,1,-9999,-9999,-9999
+97474,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-10-21,295,1,-9999,-9999,-9999
+97285,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-10-21,295,1,-9999,-9999,-9999
+97475,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-10-21,295,1,-9999,-9999,-9999
+97274,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-10-27,301,1,-9999,-9999,-9999
+97464,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-10-27,301,1,-9999,-9999,-9999
+97275,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-10-27,301,1,-9999,-9999,-9999
+97465,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-10-27,301,1,-9999,-9999,-9999
+97324,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-11-06,311,1,-9999,-9999,-9999
+97454,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-11-06,311,1,-9999,-9999,-9999
+97325,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-11-06,311,1,-9999,-9999,-9999
+97455,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-11-06,311,1,-9999,-9999,-9999
+97314,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,502,Pollen release (flowers),2008-11-10,315,1,-9999,-9999,-9999
+97494,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,502,Pollen release (flowers),2008-11-10,315,1,-9999,-9999,-9999
+97315,-9999,1915,41.78344,-73.732552,128,NY,100,Quercus,alba,white oak,Plantae,3992,196,Full pollen release (angiosperms),2008-11-10,315,1,-9999,-9999,-9999
+97495,-9999,1915,41.78344,-73.732552,128,NY,102,Quercus,rubra,northern red oak,Plantae,3993,196,Full pollen release (angiosperms),2008-11-10,315,1,-9999,-9999,-9999

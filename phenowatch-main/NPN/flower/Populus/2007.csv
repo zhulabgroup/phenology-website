@@ -1,0 +1,32 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+752098,-9999,1524,45.339485,-92.913094,283,MN,27,Populus,tremuloides,quaking aspen,Plantae,4631,501,Open flowers,2007-04-16,106,0,-9999,-9999,-9999
+752131,-9999,1524,45.339485,-92.913094,283,MN,27,Populus,tremuloides,quaking aspen,Plantae,4631,501,Open flowers,2007-04-18,108,0,-9999,-9999,-9999
+752161,-9999,1524,45.339485,-92.913094,283,MN,27,Populus,tremuloides,quaking aspen,Plantae,4631,501,Open flowers,2007-04-20,110,0,-9999,-9999,-9999
+752191,-9999,1524,45.339485,-92.913094,283,MN,27,Populus,tremuloides,quaking aspen,Plantae,4631,501,Open flowers,2007-04-22,112,0,-9999,-9999,-9999
+752221,-9999,1524,45.339485,-92.913094,283,MN,27,Populus,tremuloides,quaking aspen,Plantae,4631,501,Open flowers,2007-04-24,114,1,-9999,-9999,-9999
+752340,-9999,1524,45.339485,-92.913094,283,MN,27,Populus,tremuloides,quaking aspen,Plantae,4631,501,Open flowers,2007-04-27,117,1,-9999,-9999,-9999
+752250,-9999,1524,45.339485,-92.913094,283,MN,27,Populus,tremuloides,quaking aspen,Plantae,4631,501,Open flowers,2007-04-30,120,1,-9999,-9999,-9999
+112982,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-05-24,144,0,-9999,-9999,-9999
+112983,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-05-24,144,0,-9999,-9999,-9999
+112972,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-05-31,151,0,-9999,-9999,-9999
+112973,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-05-31,151,0,-9999,-9999,-9999
+112962,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-06-07,158,0,-9999,-9999,-9999
+112963,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-06-07,158,0,-9999,-9999,-9999
+112952,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-06-14,165,0,-9999,-9999,-9999
+112953,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-06-14,165,0,-9999,-9999,-9999
+112942,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-06-21,172,0,-9999,-9999,-9999
+112943,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-06-21,172,0,-9999,-9999,-9999
+113022,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-06-28,179,0,-9999,-9999,-9999
+113023,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-06-28,179,0,-9999,-9999,-9999
+113012,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-07-04,185,0,-9999,-9999,-9999
+113013,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-07-04,185,0,-9999,-9999,-9999
+113002,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-07-10,191,0,-9999,-9999,-9999
+113003,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-07-10,191,0,-9999,-9999,-9999
+112992,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-07-19,200,0,-9999,-9999,-9999
+112993,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-07-19,200,0,-9999,-9999,-9999
+113062,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-07-26,207,0,-9999,-9999,-9999
+113063,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-07-26,207,0,-9999,-9999,-9999
+113052,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-08-02,214,0,-9999,-9999,-9999
+113053,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-08-02,214,0,-9999,-9999,-9999
+113042,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,501,Open flowers,2007-08-16,228,0,-9999,-9999,-9999
+113043,-9999,5533,45.568195,-116.973862,1382,OR,27,Populus,tremuloides,quaking aspen,Plantae,4093,186,Full flowering (50%),2007-08-16,228,0,-9999,-9999,-9999

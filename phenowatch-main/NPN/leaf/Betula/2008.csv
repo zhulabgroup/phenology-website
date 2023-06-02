@@ -1,0 +1,2 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+139118,-9999,2038,43.762321,-71.689957,169,NH,99,Betula,papyrifera,paper birch,Plantae,4245,483,Leaves,2008-09-17,261,1,-9999,-9999,-9999

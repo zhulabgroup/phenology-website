@@ -1,0 +1,767 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+154706,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-04-09,99,0,-9999,-9999,-9999
+154716,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-04-05,95,0,-9999,-9999,-9999
+154726,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-04-02,92,0,-9999,-9999,-9999
+154736,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-03-28,87,0,-9999,-9999,-9999
+154746,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-03-20,79,0,-9999,-9999,-9999
+154756,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-04-23,113,0,-9999,-9999,-9999
+154766,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-04-19,109,0,-9999,-9999,-9999
+154776,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-04-16,106,0,-9999,-9999,-9999
+154786,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-04-12,102,0,-9999,-9999,-9999
+154796,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+154806,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-05-05,125,0,-9999,-9999,-9999
+154816,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-04-30,120,0,-9999,-9999,-9999
+154826,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-04-26,116,0,-9999,-9999,-9999
+154836,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2009-05-24,144,0,-9999,-9999,-9999
+154705,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-04-09,99,0,-9999,-9999,-9999
+154715,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-04-05,95,0,-9999,-9999,-9999
+154725,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-04-02,92,0,-9999,-9999,-9999
+154735,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-03-28,87,0,-9999,-9999,-9999
+154745,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-03-20,79,0,-9999,-9999,-9999
+154755,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-04-23,113,0,-9999,-9999,-9999
+154765,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-04-19,109,0,-9999,-9999,-9999
+154775,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-04-16,106,0,-9999,-9999,-9999
+154785,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-04-12,102,0,-9999,-9999,-9999
+154795,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+154805,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-05-05,125,0,-9999,-9999,-9999
+154815,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-04-30,120,0,-9999,-9999,-9999
+154825,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-04-26,116,0,-9999,-9999,-9999
+154835,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2009-05-24,144,0,-9999,-9999,-9999
+155891,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,196,Full pollen release (angiosperms),2009-05-24,144,0,-9999,-9999,-9999
+155901,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+155911,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,196,Full pollen release (angiosperms),2009-05-05,125,0,-9999,-9999,-9999
+155921,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,196,Full pollen release (angiosperms),2009-04-30,120,0,-9999,-9999,-9999
+155931,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,196,Full pollen release (angiosperms),2009-04-26,116,0,-9999,-9999,-9999
+155890,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,502,Pollen release (flowers),2009-05-24,144,0,-9999,-9999,-9999
+155900,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+155910,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,502,Pollen release (flowers),2009-05-05,125,0,-9999,-9999,-9999
+155920,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,502,Pollen release (flowers),2009-04-30,120,0,-9999,-9999,-9999
+155930,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,502,Pollen release (flowers),2009-04-26,116,0,-9999,-9999,-9999
+156715,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,196,Full pollen release (angiosperms),2009-05-24,144,0,-9999,-9999,-9999
+156725,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,196,Full pollen release (angiosperms),2009-05-10,130,1,-9999,-9999,-9999
+156735,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,196,Full pollen release (angiosperms),2009-05-05,125,1,-9999,-9999,-9999
+156745,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,196,Full pollen release (angiosperms),2009-04-30,120,0,-9999,-9999,-9999
+156755,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,196,Full pollen release (angiosperms),2009-04-26,116,0,-9999,-9999,-9999
+156714,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,502,Pollen release (flowers),2009-05-24,144,0,-9999,-9999,-9999
+156724,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,502,Pollen release (flowers),2009-05-10,130,1,-9999,-9999,-9999
+156734,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,502,Pollen release (flowers),2009-05-05,125,1,-9999,-9999,-9999
+156744,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,502,Pollen release (flowers),2009-04-30,120,0,-9999,-9999,-9999
+156754,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,502,Pollen release (flowers),2009-04-26,116,0,-9999,-9999,-9999
+172924,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,196,Full pollen release (angiosperms),2009-05-26,146,0,-9999,-9999,-9999
+172934,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,196,Full pollen release (angiosperms),2009-05-06,126,1,-9999,-9999,-9999
+172944,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+172954,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,196,Full pollen release (angiosperms),2009-04-27,117,0,-9999,-9999,-9999
+172964,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,196,Full pollen release (angiosperms),2009-04-23,113,0,-9999,-9999,-9999
+172923,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,502,Pollen release (flowers),2009-05-26,146,0,-9999,-9999,-9999
+172933,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,502,Pollen release (flowers),2009-05-06,126,1,-9999,-9999,-9999
+172943,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,502,Pollen release (flowers),2009-05-01,121,1,-9999,-9999,-9999
+172953,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,502,Pollen release (flowers),2009-04-27,117,0,-9999,-9999,-9999
+172963,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2251,502,Pollen release (flowers),2009-04-23,113,0,-9999,-9999,-9999
+172974,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2252,196,Full pollen release (angiosperms),2009-05-26,146,0,-9999,-9999,-9999
+172984,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2252,196,Full pollen release (angiosperms),2009-05-06,126,1,-9999,-9999,-9999
+172994,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2252,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+173004,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2252,196,Full pollen release (angiosperms),2009-04-27,117,0,-9999,-9999,-9999
+172973,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2252,502,Pollen release (flowers),2009-05-26,146,0,-9999,-9999,-9999
+172983,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2252,502,Pollen release (flowers),2009-05-06,126,1,-9999,-9999,-9999
+172993,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2252,502,Pollen release (flowers),2009-05-01,121,0,-9999,-9999,-9999
+173003,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2252,502,Pollen release (flowers),2009-04-27,117,0,-9999,-9999,-9999
+173154,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2255,196,Full pollen release (angiosperms),2009-05-26,146,0,-9999,-9999,-9999
+173164,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2255,196,Full pollen release (angiosperms),2009-05-06,126,1,-9999,-9999,-9999
+173174,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2255,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+173184,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2255,196,Full pollen release (angiosperms),2009-04-27,117,0,-9999,-9999,-9999
+173153,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2255,502,Pollen release (flowers),2009-05-26,146,0,-9999,-9999,-9999
+173163,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2255,502,Pollen release (flowers),2009-05-06,126,1,-9999,-9999,-9999
+173173,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2255,502,Pollen release (flowers),2009-05-01,121,0,-9999,-9999,-9999
+173183,-9999,1404,44.137501,-72.65889,207,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2255,502,Pollen release (flowers),2009-04-27,117,0,-9999,-9999,-9999
+24617,-9999,1094,38.948006,-76.93499,2,MD,97,Betula,alleghaniensis,yellow birch,Plantae,2536,196,Full pollen release (angiosperms),2009-03-15,74,-1,-9999,-9999,-9999
+24616,-9999,1094,38.948006,-76.93499,2,MD,97,Betula,alleghaniensis,yellow birch,Plantae,2536,502,Pollen release (flowers),2009-03-15,74,-1,-9999,-9999,-9999
+174199,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,196,Full pollen release (angiosperms),2009-05-24,144,0,-9999,-9999,-9999
+174209,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+174219,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,196,Full pollen release (angiosperms),2009-05-05,125,0,-9999,-9999,-9999
+174198,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2009-05-24,144,0,-9999,-9999,-9999
+174208,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+174218,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2009-05-05,125,0,-9999,-9999,-9999
+174299,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,196,Full pollen release (angiosperms),2009-05-24,144,0,-9999,-9999,-9999
+174309,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+174319,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,196,Full pollen release (angiosperms),2009-05-05,125,0,-9999,-9999,-9999
+174298,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2009-05-24,144,0,-9999,-9999,-9999
+174308,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+174318,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2009-05-05,125,0,-9999,-9999,-9999
+174389,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,196,Full pollen release (angiosperms),2009-05-24,144,1,-9999,-9999,-9999
+174399,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+174409,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,196,Full pollen release (angiosperms),2009-05-05,125,0,-9999,-9999,-9999
+174388,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2009-05-24,144,1,-9999,-9999,-9999
+174398,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+174408,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2009-05-05,125,0,-9999,-9999,-9999
+39705,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,196,Full pollen release (angiosperms),2009-04-16,106,-1,-9999,-9999,-9999
+58181,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,196,Full pollen release (angiosperms),2009-05-01,121,-1,-9999,-9999,-9999
+61857,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,196,Full pollen release (angiosperms),2009-05-07,127,1,-9999,-9999,-9999
+39704,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,502,Pollen release (flowers),2009-04-16,106,-1,-9999,-9999,-9999
+58180,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,502,Pollen release (flowers),2009-05-01,121,1,-9999,-9999,-9999
+61856,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,502,Pollen release (flowers),2009-05-07,127,1,-9999,-9999,-9999
+18195,-9999,943,42.45303,-73.261932,301,MA,99,Betula,papyrifera,paper birch,Plantae,1038,196,Full pollen release (angiosperms),2009-03-07,66,0,-9999,-9999,-9999
+18194,-9999,943,42.45303,-73.261932,301,MA,99,Betula,papyrifera,paper birch,Plantae,1038,502,Pollen release (flowers),2009-03-07,66,1,-9999,-9999,-9999
+57838,-9999,1029,42.457664,-82.964958,187,MI,99,Betula,papyrifera,paper birch,Plantae,1120,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+57848,-9999,1029,42.457664,-82.964958,187,MI,99,Betula,papyrifera,paper birch,Plantae,1120,196,Full pollen release (angiosperms),2009-04-25,115,0,-9999,-9999,-9999
+57837,-9999,1029,42.457664,-82.964958,187,MI,99,Betula,papyrifera,paper birch,Plantae,1120,502,Pollen release (flowers),2009-05-01,121,1,-9999,-9999,-9999
+57847,-9999,1029,42.457664,-82.964958,187,MI,99,Betula,papyrifera,paper birch,Plantae,1120,502,Pollen release (flowers),2009-04-25,115,1,-9999,-9999,-9999
+19421,-9999,1157,45.443562,-122.582863,237,OR,99,Betula,papyrifera,paper birch,Plantae,1529,196,Full pollen release (angiosperms),2009-03-09,68,0,-9999,-9999,-9999
+19420,-9999,1157,45.443562,-122.582863,237,OR,99,Betula,papyrifera,paper birch,Plantae,1529,502,Pollen release (flowers),2009-03-09,68,0,-9999,-9999,-9999
+19995,-9999,1239,42.579735,-70.930641,12,MA,99,Betula,papyrifera,paper birch,Plantae,1754,196,Full pollen release (angiosperms),2009-03-11,70,-1,-9999,-9999,-9999
+19994,-9999,1239,42.579735,-70.930641,12,MA,99,Betula,papyrifera,paper birch,Plantae,1754,502,Pollen release (flowers),2009-03-11,70,-1,-9999,-9999,-9999
+20523,-9999,1264,41.314217,-72.550529,67,CT,99,Betula,papyrifera,paper birch,Plantae,1830,196,Full pollen release (angiosperms),2009-03-12,71,0,-9999,-9999,-9999
+20522,-9999,1264,41.314217,-72.550529,67,CT,99,Betula,papyrifera,paper birch,Plantae,1830,502,Pollen release (flowers),2009-03-12,71,0,-9999,-9999,-9999
+154846,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-04-09,99,0,-9999,-9999,-9999
+154856,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-04-05,95,0,-9999,-9999,-9999
+154866,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-04-02,92,0,-9999,-9999,-9999
+154876,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-03-28,87,0,-9999,-9999,-9999
+154886,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-03-20,79,0,-9999,-9999,-9999
+154896,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-04-23,113,0,-9999,-9999,-9999
+154906,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-04-19,109,0,-9999,-9999,-9999
+154916,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-04-16,106,0,-9999,-9999,-9999
+154926,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-04-12,102,0,-9999,-9999,-9999
+154936,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-05-10,130,1,-9999,-9999,-9999
+154946,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-05-05,125,0,-9999,-9999,-9999
+154956,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-04-30,120,0,-9999,-9999,-9999
+154966,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-04-26,116,0,-9999,-9999,-9999
+154976,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2009-05-24,144,0,-9999,-9999,-9999
+154845,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-04-09,99,0,-9999,-9999,-9999
+154855,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-04-05,95,0,-9999,-9999,-9999
+154865,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-04-02,92,0,-9999,-9999,-9999
+154875,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-03-28,87,0,-9999,-9999,-9999
+154885,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-03-20,79,0,-9999,-9999,-9999
+154895,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-04-23,113,0,-9999,-9999,-9999
+154905,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-04-19,109,0,-9999,-9999,-9999
+154915,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-04-16,106,0,-9999,-9999,-9999
+154925,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-04-12,102,0,-9999,-9999,-9999
+154935,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-05-10,130,1,-9999,-9999,-9999
+154945,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-05-05,125,1,-9999,-9999,-9999
+154955,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-04-30,120,1,-9999,-9999,-9999
+154965,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-04-26,116,0,-9999,-9999,-9999
+154975,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2009-05-24,144,0,-9999,-9999,-9999
+156765,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,196,Full pollen release (angiosperms),2009-05-24,144,0,-9999,-9999,-9999
+156775,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+156785,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,196,Full pollen release (angiosperms),2009-05-05,125,0,-9999,-9999,-9999
+156795,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,196,Full pollen release (angiosperms),2009-04-30,120,0,-9999,-9999,-9999
+156805,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,196,Full pollen release (angiosperms),2009-04-26,116,0,-9999,-9999,-9999
+156764,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,502,Pollen release (flowers),2009-05-24,144,0,-9999,-9999,-9999
+156774,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+156784,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,502,Pollen release (flowers),2009-05-05,125,0,-9999,-9999,-9999
+156794,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,502,Pollen release (flowers),2009-04-30,120,0,-9999,-9999,-9999
+156804,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,502,Pollen release (flowers),2009-04-26,116,0,-9999,-9999,-9999
+109327,-9999,414,44.277962,-70.315315,150,ME,99,Betula,papyrifera,paper birch,Plantae,2025,196,Full pollen release (angiosperms),2009-05-07,127,1,-9999,-9999,-9999
+109337,-9999,414,44.277962,-70.315315,150,ME,99,Betula,papyrifera,paper birch,Plantae,2025,196,Full pollen release (angiosperms),2009-04-28,118,1,-9999,-9999,-9999
+109347,-9999,414,44.277962,-70.315315,150,ME,99,Betula,papyrifera,paper birch,Plantae,2025,196,Full pollen release (angiosperms),2009-04-27,117,1,-9999,-9999,-9999
+109357,-9999,414,44.277962,-70.315315,150,ME,99,Betula,papyrifera,paper birch,Plantae,2025,196,Full pollen release (angiosperms),2009-04-22,112,0,-9999,-9999,-9999
+109326,-9999,414,44.277962,-70.315315,150,ME,99,Betula,papyrifera,paper birch,Plantae,2025,502,Pollen release (flowers),2009-05-07,127,0,-9999,-9999,-9999
+109336,-9999,414,44.277962,-70.315315,150,ME,99,Betula,papyrifera,paper birch,Plantae,2025,502,Pollen release (flowers),2009-04-28,118,1,-9999,-9999,-9999
+109346,-9999,414,44.277962,-70.315315,150,ME,99,Betula,papyrifera,paper birch,Plantae,2025,502,Pollen release (flowers),2009-04-27,117,1,-9999,-9999,-9999
+109356,-9999,414,44.277962,-70.315315,150,ME,99,Betula,papyrifera,paper birch,Plantae,2025,502,Pollen release (flowers),2009-04-22,112,0,-9999,-9999,-9999
+166421,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-04-09,99,0,-9999,-9999,-9999
+166431,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-04-04,94,0,-9999,-9999,-9999
+166441,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-03-31,90,0,-9999,-9999,-9999
+166451,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-03-25,84,0,-9999,-9999,-9999
+166461,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-03-18,77,0,-9999,-9999,-9999
+166471,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-04-19,109,0,-9999,-9999,-9999
+166481,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-04-17,107,0,-9999,-9999,-9999
+166491,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-04-16,106,0,-9999,-9999,-9999
+166501,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-04-15,105,0,-9999,-9999,-9999
+166511,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-05-15,135,0,-9999,-9999,-9999
+166521,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-05-11,131,0,-9999,-9999,-9999
+166531,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-05-08,128,0,-9999,-9999,-9999
+166541,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-05-02,122,1,-9999,-9999,-9999
+166551,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-07-23,204,0,-9999,-9999,-9999
+166561,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-06-07,158,0,-9999,-9999,-9999
+166571,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-05-25,145,0,-9999,-9999,-9999
+166581,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-05-19,139,0,-9999,-9999,-9999
+166591,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-10-11,284,0,-9999,-9999,-9999
+166601,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-10-05,278,0,-9999,-9999,-9999
+166611,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-09-17,260,0,-9999,-9999,-9999
+166621,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-08-07,219,0,-9999,-9999,-9999
+166631,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-10-25,298,0,-9999,-9999,-9999
+166641,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-10-21,294,0,-9999,-9999,-9999
+166651,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,196,Full pollen release (angiosperms),2009-10-17,290,0,-9999,-9999,-9999
+166420,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-04-09,99,0,-9999,-9999,-9999
+166430,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-04-04,94,0,-9999,-9999,-9999
+166440,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-03-31,90,0,-9999,-9999,-9999
+166450,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-03-25,84,0,-9999,-9999,-9999
+166460,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-03-18,77,0,-9999,-9999,-9999
+166470,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-04-19,109,0,-9999,-9999,-9999
+166480,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-04-17,107,0,-9999,-9999,-9999
+166490,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-04-16,106,0,-9999,-9999,-9999
+166500,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-04-15,105,0,-9999,-9999,-9999
+166510,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-05-15,135,0,-9999,-9999,-9999
+166520,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-05-11,131,0,-9999,-9999,-9999
+166530,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-05-08,128,1,-9999,-9999,-9999
+166540,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-05-02,122,1,-9999,-9999,-9999
+166550,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-07-23,204,0,-9999,-9999,-9999
+166560,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-06-07,158,0,-9999,-9999,-9999
+166570,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-05-25,145,0,-9999,-9999,-9999
+166580,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-05-19,139,0,-9999,-9999,-9999
+166590,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-10-11,284,0,-9999,-9999,-9999
+166600,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-10-05,278,0,-9999,-9999,-9999
+166610,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-09-17,260,0,-9999,-9999,-9999
+166620,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-08-07,219,0,-9999,-9999,-9999
+166630,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-10-25,298,0,-9999,-9999,-9999
+166640,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-10-21,294,0,-9999,-9999,-9999
+166650,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2009-10-17,290,0,-9999,-9999,-9999
+173394,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,196,Full pollen release (angiosperms),2009-05-26,146,0,-9999,-9999,-9999
+173404,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,196,Full pollen release (angiosperms),2009-05-06,126,0,-9999,-9999,-9999
+173414,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+173424,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,196,Full pollen release (angiosperms),2009-04-27,117,0,-9999,-9999,-9999
+173434,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,196,Full pollen release (angiosperms),2009-04-23,113,0,-9999,-9999,-9999
+173393,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,502,Pollen release (flowers),2009-05-26,146,0,-9999,-9999,-9999
+173403,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,502,Pollen release (flowers),2009-05-06,126,0,-9999,-9999,-9999
+173413,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,502,Pollen release (flowers),2009-05-01,121,0,-9999,-9999,-9999
+173423,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,502,Pollen release (flowers),2009-04-27,117,0,-9999,-9999,-9999
+173433,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2259,502,Pollen release (flowers),2009-04-23,113,0,-9999,-9999,-9999
+173444,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,196,Full pollen release (angiosperms),2009-05-26,146,0,-9999,-9999,-9999
+173454,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,196,Full pollen release (angiosperms),2009-05-06,126,1,-9999,-9999,-9999
+173464,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,196,Full pollen release (angiosperms),2009-05-01,121,1,-9999,-9999,-9999
+173474,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,196,Full pollen release (angiosperms),2009-04-27,117,0,-9999,-9999,-9999
+173484,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,196,Full pollen release (angiosperms),2009-04-23,113,0,-9999,-9999,-9999
+173443,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,502,Pollen release (flowers),2009-05-26,146,0,-9999,-9999,-9999
+173453,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,502,Pollen release (flowers),2009-05-06,126,1,-9999,-9999,-9999
+173463,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,502,Pollen release (flowers),2009-05-01,121,1,-9999,-9999,-9999
+173473,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,502,Pollen release (flowers),2009-04-27,117,0,-9999,-9999,-9999
+173483,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2260,502,Pollen release (flowers),2009-04-23,113,0,-9999,-9999,-9999
+173904,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2267,196,Full pollen release (angiosperms),2009-05-26,146,0,-9999,-9999,-9999
+173914,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2267,196,Full pollen release (angiosperms),2009-05-06,126,0,-9999,-9999,-9999
+173924,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2267,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+173903,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2267,502,Pollen release (flowers),2009-05-26,146,0,-9999,-9999,-9999
+173913,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2267,502,Pollen release (flowers),2009-05-06,126,0,-9999,-9999,-9999
+173923,-9999,1404,44.137501,-72.65889,207,VT,99,Betula,papyrifera,paper birch,Plantae,2267,502,Pollen release (flowers),2009-05-01,121,0,-9999,-9999,-9999
+44240,-9999,1355,42.809578,-83.020699,265,MI,99,Betula,papyrifera,paper birch,Plantae,2815,196,Full pollen release (angiosperms),2009-04-18,108,-1,-9999,-9999,-9999
+62004,-9999,1355,42.809578,-83.020699,265,MI,99,Betula,papyrifera,paper birch,Plantae,2815,196,Full pollen release (angiosperms),2009-04-27,117,-1,-9999,-9999,-9999
+62014,-9999,1355,42.809578,-83.020699,265,MI,99,Betula,papyrifera,paper birch,Plantae,2815,196,Full pollen release (angiosperms),2009-05-06,126,-1,-9999,-9999,-9999
+44239,-9999,1355,42.809578,-83.020699,265,MI,99,Betula,papyrifera,paper birch,Plantae,2815,502,Pollen release (flowers),2009-04-18,108,-1,-9999,-9999,-9999
+62003,-9999,1355,42.809578,-83.020699,265,MI,99,Betula,papyrifera,paper birch,Plantae,2815,502,Pollen release (flowers),2009-04-27,117,-1,-9999,-9999,-9999
+62013,-9999,1355,42.809578,-83.020699,265,MI,99,Betula,papyrifera,paper birch,Plantae,2815,502,Pollen release (flowers),2009-05-06,126,-1,-9999,-9999,-9999
+39449,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-04-16,106,0,-9999,-9999,-9999
+52063,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-04-27,117,0,-9999,-9999,-9999
+59926,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-05-04,124,0,-9999,-9999,-9999
+63777,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+68823,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-05-18,138,0,-9999,-9999,-9999
+71677,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-05-21,141,0,-9999,-9999,-9999
+75040,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-05-25,145,0,-9999,-9999,-9999
+91430,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-05-31,151,0,-9999,-9999,-9999
+95791,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-06-10,161,0,-9999,-9999,-9999
+102320,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-06-16,167,0,-9999,-9999,-9999
+111568,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-07-08,189,0,-9999,-9999,-9999
+136540,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-10-04,277,0,-9999,-9999,-9999
+138293,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-10-13,286,0,-9999,-9999,-9999
+141158,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,196,Full pollen release (angiosperms),2009-10-21,294,0,-9999,-9999,-9999
+39448,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-04-16,106,0,-9999,-9999,-9999
+52062,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-04-27,117,0,-9999,-9999,-9999
+59925,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-05-04,124,0,-9999,-9999,-9999
+63776,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-05-10,130,1,-9999,-9999,-9999
+68822,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-05-18,138,0,-9999,-9999,-9999
+71676,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-05-21,141,0,-9999,-9999,-9999
+75039,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-05-25,145,0,-9999,-9999,-9999
+91429,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-05-31,151,0,-9999,-9999,-9999
+95790,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-06-10,161,0,-9999,-9999,-9999
+102319,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-06-16,167,0,-9999,-9999,-9999
+111567,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-07-08,189,0,-9999,-9999,-9999
+136539,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-10-04,277,0,-9999,-9999,-9999
+138292,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-10-13,286,0,-9999,-9999,-9999
+141157,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2009-10-21,294,0,-9999,-9999,-9999
+39504,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-04-16,106,0,-9999,-9999,-9999
+52178,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-04-27,117,0,-9999,-9999,-9999
+59956,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-05-04,124,0,-9999,-9999,-9999
+63827,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-05-10,130,1,-9999,-9999,-9999
+68873,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-05-18,138,1,-9999,-9999,-9999
+71724,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-05-21,141,0,-9999,-9999,-9999
+91475,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-05-31,151,0,-9999,-9999,-9999
+95841,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-06-10,161,0,-9999,-9999,-9999
+102370,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-06-16,167,0,-9999,-9999,-9999
+111618,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-07-08,189,0,-9999,-9999,-9999
+136550,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-10-04,277,0,-9999,-9999,-9999
+138328,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-10-13,286,-1,-9999,-9999,-9999
+141248,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,196,Full pollen release (angiosperms),2009-10-21,294,0,-9999,-9999,-9999
+39503,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-04-16,106,0,-9999,-9999,-9999
+52177,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-04-27,117,0,-9999,-9999,-9999
+59955,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-05-04,124,0,-9999,-9999,-9999
+63826,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+68872,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-05-18,138,0,-9999,-9999,-9999
+71722,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-05-21,141,0,-9999,-9999,-9999
+91474,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-05-31,151,0,-9999,-9999,-9999
+95840,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-06-10,161,0,-9999,-9999,-9999
+102369,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-06-16,167,0,-9999,-9999,-9999
+111617,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-07-08,189,0,-9999,-9999,-9999
+136549,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-10-04,277,0,-9999,-9999,-9999
+138327,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-10-13,286,-1,-9999,-9999,-9999
+141247,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2009-10-21,294,0,-9999,-9999,-9999
+38296,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-04-15,105,0,-9999,-9999,-9999
+42596,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-04-19,109,0,-9999,-9999,-9999
+44295,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-04-21,111,0,-9999,-9999,-9999
+48041,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-04-23,113,0,-9999,-9999,-9999
+52569,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-04-27,117,0,-9999,-9999,-9999
+57358,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-04-30,120,0,-9999,-9999,-9999
+62207,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+62217,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-05-07,127,0,-9999,-9999,-9999
+65501,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-05-12,132,0,-9999,-9999,-9999
+71102,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-05-17,137,-1,-9999,-9999,-9999
+71112,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-05-20,140,-1,-9999,-9999,-9999
+75816,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-05-25,145,1,-9999,-9999,-9999
+93297,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-06-04,155,0,-9999,-9999,-9999
+96805,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-06-10,161,0,-9999,-9999,-9999
+111335,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-07-07,188,0,-9999,-9999,-9999
+116817,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-07-19,200,0,-9999,-9999,-9999
+120069,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-07-31,212,0,-9999,-9999,-9999
+120672,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-08-05,217,0,-9999,-9999,-9999
+122964,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-08-17,229,0,-9999,-9999,-9999
+126219,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-08-28,240,0,-9999,-9999,-9999
+127874,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-09-02,245,0,-9999,-9999,-9999
+129800,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-09-17,260,0,-9999,-9999,-9999
+130606,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-09-23,266,0,-9999,-9999,-9999
+136520,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-10-04,277,0,-9999,-9999,-9999
+140182,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-10-14,287,0,-9999,-9999,-9999
+141583,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-10-21,294,0,-9999,-9999,-9999
+142123,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-10-23,296,0,-9999,-9999,-9999
+145471,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-10-30,303,0,-9999,-9999,-9999
+149799,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-11-05,309,0,-9999,-9999,-9999
+158402,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-11-13,317,0,-9999,-9999,-9999
+163125,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-12-06,340,0,-9999,-9999,-9999
+163135,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,196,Full pollen release (angiosperms),2009-11-27,331,0,-9999,-9999,-9999
+38295,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-04-15,105,0,-9999,-9999,-9999
+42595,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-04-19,109,0,-9999,-9999,-9999
+44294,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-04-21,111,0,-9999,-9999,-9999
+48040,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-04-23,113,0,-9999,-9999,-9999
+52568,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-04-27,117,0,-9999,-9999,-9999
+57357,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-04-30,120,0,-9999,-9999,-9999
+62206,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-05-01,121,-1,-9999,-9999,-9999
+62216,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-05-07,127,0,-9999,-9999,-9999
+65500,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-05-12,132,1,-9999,-9999,-9999
+71101,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-05-17,137,1,-9999,-9999,-9999
+71111,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-05-20,140,1,-9999,-9999,-9999
+75815,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-05-25,145,1,-9999,-9999,-9999
+93296,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-06-04,155,0,-9999,-9999,-9999
+96804,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-06-10,161,0,-9999,-9999,-9999
+111334,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-07-07,188,0,-9999,-9999,-9999
+116816,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-07-19,200,0,-9999,-9999,-9999
+120068,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-07-31,212,0,-9999,-9999,-9999
+120671,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-08-05,217,0,-9999,-9999,-9999
+122963,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-08-17,229,0,-9999,-9999,-9999
+126218,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-08-28,240,-1,-9999,-9999,-9999
+127873,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-09-02,245,-1,-9999,-9999,-9999
+129799,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-09-17,260,-1,-9999,-9999,-9999
+130605,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-09-23,266,-1,-9999,-9999,-9999
+136519,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-10-04,277,-1,-9999,-9999,-9999
+140181,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-10-14,287,0,-9999,-9999,-9999
+141582,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-10-21,294,0,-9999,-9999,-9999
+142122,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-10-23,296,0,-9999,-9999,-9999
+145470,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-10-30,303,0,-9999,-9999,-9999
+149798,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-11-05,309,0,-9999,-9999,-9999
+158401,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-11-13,317,0,-9999,-9999,-9999
+163124,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-12-06,340,0,-9999,-9999,-9999
+163134,-9999,1781,44.046604,-92.460861,303,MN,99,Betula,papyrifera,paper birch,Plantae,3411,502,Pollen release (flowers),2009-11-27,331,0,-9999,-9999,-9999
+104658,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+104668,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-08,128,0,-9999,-9999,-9999
+104678,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-06,126,0,-9999,-9999,-9999
+104688,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+104698,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-04-30,120,0,-9999,-9999,-9999
+104708,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-12,132,0,-9999,-9999,-9999
+104718,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-13,133,0,-9999,-9999,-9999
+104728,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-21,141,0,-9999,-9999,-9999
+104738,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-17,137,0,-9999,-9999,-9999
+104748,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-16,136,0,-9999,-9999,-9999
+104758,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-14,134,0,-9999,-9999,-9999
+104768,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-27,147,0,-9999,-9999,-9999
+104778,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-26,146,0,-9999,-9999,-9999
+104788,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-23,143,0,-9999,-9999,-9999
+104798,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-05-30,150,0,-9999,-9999,-9999
+104818,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-06-09,160,0,-9999,-9999,-9999
+104828,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-06-06,157,0,-9999,-9999,-9999
+104838,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-06-04,155,0,-9999,-9999,-9999
+104848,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-06-01,152,0,-9999,-9999,-9999
+104858,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-06-16,167,0,-9999,-9999,-9999
+104868,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-06-12,163,0,-9999,-9999,-9999
+150682,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-07-02,183,0,-9999,-9999,-9999
+150692,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-06-25,176,0,-9999,-9999,-9999
+150712,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-06-21,172,0,-9999,-9999,-9999
+150722,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-09-01,244,0,-9999,-9999,-9999
+150732,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-07-30,211,0,-9999,-9999,-9999
+150742,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-07-22,203,0,-9999,-9999,-9999
+150752,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-07-15,196,0,-9999,-9999,-9999
+150762,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-09-13,256,0,-9999,-9999,-9999
+150772,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-09-09,252,0,-9999,-9999,-9999
+150782,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-09-06,249,0,-9999,-9999,-9999
+150792,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-09-03,246,0,-9999,-9999,-9999
+150802,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-09-28,271,0,-9999,-9999,-9999
+150812,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-09-25,268,0,-9999,-9999,-9999
+150822,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-09-20,263,-1,-9999,-9999,-9999
+150832,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-09-17,260,0,-9999,-9999,-9999
+150842,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-10-10,283,0,-9999,-9999,-9999
+150852,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,196,Full pollen release (angiosperms),2009-10-01,274,0,-9999,-9999,-9999
+104657,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+104667,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-08,128,0,-9999,-9999,-9999
+104677,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-06,126,0,-9999,-9999,-9999
+104687,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-01,121,0,-9999,-9999,-9999
+104697,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-04-30,120,0,-9999,-9999,-9999
+104707,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-12,132,0,-9999,-9999,-9999
+104717,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-13,133,0,-9999,-9999,-9999
+104727,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-21,141,0,-9999,-9999,-9999
+104737,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-17,137,0,-9999,-9999,-9999
+104747,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-16,136,0,-9999,-9999,-9999
+104757,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-14,134,0,-9999,-9999,-9999
+104767,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-27,147,0,-9999,-9999,-9999
+104777,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-26,146,0,-9999,-9999,-9999
+104787,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-23,143,0,-9999,-9999,-9999
+104797,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-05-30,150,0,-9999,-9999,-9999
+104817,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-06-09,160,0,-9999,-9999,-9999
+104827,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-06-06,157,0,-9999,-9999,-9999
+104837,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-06-04,155,0,-9999,-9999,-9999
+104847,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-06-01,152,0,-9999,-9999,-9999
+104857,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-06-16,167,0,-9999,-9999,-9999
+104867,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-06-12,163,0,-9999,-9999,-9999
+150681,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-07-02,183,0,-9999,-9999,-9999
+150691,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-06-25,176,0,-9999,-9999,-9999
+150701,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-06-21,172,0,-9999,-9999,-9999
+150721,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-09-01,244,0,-9999,-9999,-9999
+150731,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-07-30,211,0,-9999,-9999,-9999
+150741,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-07-22,203,0,-9999,-9999,-9999
+150751,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-07-15,196,0,-9999,-9999,-9999
+150761,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-09-13,256,0,-9999,-9999,-9999
+150771,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-09-09,252,0,-9999,-9999,-9999
+150781,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-09-06,249,0,-9999,-9999,-9999
+150791,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-09-03,246,0,-9999,-9999,-9999
+150801,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-09-28,271,0,-9999,-9999,-9999
+150811,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-09-25,268,0,-9999,-9999,-9999
+150821,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-09-20,263,-1,-9999,-9999,-9999
+150831,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-09-17,260,0,-9999,-9999,-9999
+150841,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-10-10,283,0,-9999,-9999,-9999
+150851,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3534,502,Pollen release (flowers),2009-10-01,274,0,-9999,-9999,-9999
+60647,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-05-04,124,1,-9999,-9999,-9999
+63969,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+69705,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-05-18,138,0,-9999,-9999,-9999
+75361,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-05-25,145,0,-9999,-9999,-9999
+91625,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-05-31,151,0,-9999,-9999,-9999
+96516,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-06-10,161,-1,-9999,-9999,-9999
+101285,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-06-14,165,0,-9999,-9999,-9999
+107276,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-06-21,172,0,-9999,-9999,-9999
+108409,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-06-27,178,0,-9999,-9999,-9999
+114533,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-07-13,194,0,-9999,-9999,-9999
+114543,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-07-05,186,0,-9999,-9999,-9999
+116797,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-07-19,200,0,-9999,-9999,-9999
+121394,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-08-08,220,0,-9999,-9999,-9999
+121404,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-08-01,213,0,-9999,-9999,-9999
+122103,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-08-15,227,0,-9999,-9999,-9999
+126037,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-08-26,238,0,-9999,-9999,-9999
+126281,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-08-30,242,0,-9999,-9999,-9999
+129953,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-09-18,261,0,-9999,-9999,-9999
+134323,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-09-27,270,0,-9999,-9999,-9999
+136976,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-10-08,281,0,-9999,-9999,-9999
+137836,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-10-11,284,0,-9999,-9999,-9999
+140352,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-10-17,290,0,-9999,-9999,-9999
+142950,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-10-25,298,0,-9999,-9999,-9999
+143243,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-10-27,300,0,-9999,-9999,-9999
+145426,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-10-30,303,0,-9999,-9999,-9999
+158452,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-11-13,317,0,-9999,-9999,-9999
+160727,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-11-21,325,0,-9999,-9999,-9999
+162125,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,196,Full pollen release (angiosperms),2009-11-26,330,0,-9999,-9999,-9999
+60646,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-05-04,124,1,-9999,-9999,-9999
+63968,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+69704,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-05-18,138,0,-9999,-9999,-9999
+75360,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-05-25,145,0,-9999,-9999,-9999
+91624,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-05-31,151,0,-9999,-9999,-9999
+96515,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-06-10,161,-1,-9999,-9999,-9999
+101284,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-06-14,165,0,-9999,-9999,-9999
+107275,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-06-21,172,0,-9999,-9999,-9999
+108408,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-06-27,178,0,-9999,-9999,-9999
+114532,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-07-13,194,0,-9999,-9999,-9999
+114542,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-07-05,186,0,-9999,-9999,-9999
+116796,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-07-19,200,0,-9999,-9999,-9999
+121393,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-08-08,220,0,-9999,-9999,-9999
+121403,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-08-01,213,0,-9999,-9999,-9999
+122102,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-08-15,227,0,-9999,-9999,-9999
+126036,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-08-26,238,0,-9999,-9999,-9999
+126280,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-08-30,242,0,-9999,-9999,-9999
+129952,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-09-18,261,0,-9999,-9999,-9999
+134322,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-09-27,270,0,-9999,-9999,-9999
+136975,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-10-08,281,0,-9999,-9999,-9999
+137835,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-10-11,284,0,-9999,-9999,-9999
+140351,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-10-17,290,0,-9999,-9999,-9999
+142949,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-10-25,298,0,-9999,-9999,-9999
+143242,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-10-27,300,0,-9999,-9999,-9999
+145425,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-10-30,303,0,-9999,-9999,-9999
+158451,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-11-13,317,0,-9999,-9999,-9999
+160726,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-11-21,325,0,-9999,-9999,-9999
+162124,-9999,1817,44.889259,-93.341339,265,MN,99,Betula,papyrifera,paper birch,Plantae,3551,502,Pollen release (flowers),2009-11-26,330,0,-9999,-9999,-9999
+104878,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+104888,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-08,128,0,-9999,-9999,-9999
+104898,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-06,126,0,-9999,-9999,-9999
+104908,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+104918,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-04-30,120,0,-9999,-9999,-9999
+104928,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-16,136,0,-9999,-9999,-9999
+104938,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-14,134,0,-9999,-9999,-9999
+104948,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-13,133,0,-9999,-9999,-9999
+104958,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-12,132,0,-9999,-9999,-9999
+104968,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-26,146,0,-9999,-9999,-9999
+104978,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-23,143,0,-9999,-9999,-9999
+104988,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-21,141,0,-9999,-9999,-9999
+104998,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-17,137,0,-9999,-9999,-9999
+105008,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-06-04,155,0,-9999,-9999,-9999
+105018,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-06-01,152,0,-9999,-9999,-9999
+105028,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-30,150,0,-9999,-9999,-9999
+105038,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-05-27,147,0,-9999,-9999,-9999
+105048,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-06-16,167,0,-9999,-9999,-9999
+105058,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-06-12,163,0,-9999,-9999,-9999
+105068,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-06-09,160,0,-9999,-9999,-9999
+105078,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-06-06,157,0,-9999,-9999,-9999
+150862,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-07-15,196,0,-9999,-9999,-9999
+150872,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-07-02,183,0,-9999,-9999,-9999
+150882,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-06-25,176,0,-9999,-9999,-9999
+150892,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-06-21,172,0,-9999,-9999,-9999
+150902,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-03,246,0,-9999,-9999,-9999
+150912,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-01,244,0,-9999,-9999,-9999
+150922,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-07-30,211,0,-9999,-9999,-9999
+150932,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-07-22,203,0,-9999,-9999,-9999
+150942,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-17,260,0,-9999,-9999,-9999
+150952,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-13,256,0,-9999,-9999,-9999
+150962,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-09,252,0,-9999,-9999,-9999
+150972,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-06,249,0,-9999,-9999,-9999
+150982,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-28,271,0,-9999,-9999,-9999
+150992,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-25,268,0,-9999,-9999,-9999
+151002,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-22,265,0,-9999,-9999,-9999
+151012,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-09-20,263,0,-9999,-9999,-9999
+151022,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-10-10,283,0,-9999,-9999,-9999
+151032,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,196,Full pollen release (angiosperms),2009-10-01,274,0,-9999,-9999,-9999
+104877,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+104887,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-08,128,0,-9999,-9999,-9999
+104897,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-06,126,0,-9999,-9999,-9999
+104907,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-01,121,0,-9999,-9999,-9999
+104917,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-04-30,120,0,-9999,-9999,-9999
+104927,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-16,136,0,-9999,-9999,-9999
+104937,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-14,134,0,-9999,-9999,-9999
+104947,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-13,133,0,-9999,-9999,-9999
+104957,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-12,132,0,-9999,-9999,-9999
+104967,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-26,146,0,-9999,-9999,-9999
+104977,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-23,143,0,-9999,-9999,-9999
+104987,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-21,141,0,-9999,-9999,-9999
+104997,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-17,137,0,-9999,-9999,-9999
+105007,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-06-04,155,0,-9999,-9999,-9999
+105017,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-06-01,152,0,-9999,-9999,-9999
+105027,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-30,150,0,-9999,-9999,-9999
+105037,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-05-27,147,0,-9999,-9999,-9999
+105047,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-06-16,167,0,-9999,-9999,-9999
+105057,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-06-12,163,0,-9999,-9999,-9999
+105067,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-06-09,160,0,-9999,-9999,-9999
+105077,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-06-06,157,0,-9999,-9999,-9999
+150861,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-07-15,196,0,-9999,-9999,-9999
+150871,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-07-02,183,0,-9999,-9999,-9999
+150881,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-06-25,176,0,-9999,-9999,-9999
+150891,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-06-21,172,0,-9999,-9999,-9999
+150901,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-03,246,0,-9999,-9999,-9999
+150911,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-01,244,0,-9999,-9999,-9999
+150921,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-07-30,211,0,-9999,-9999,-9999
+150931,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-07-22,203,0,-9999,-9999,-9999
+150941,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-17,260,0,-9999,-9999,-9999
+150951,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-13,256,0,-9999,-9999,-9999
+150961,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-09,252,0,-9999,-9999,-9999
+150971,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-06,249,0,-9999,-9999,-9999
+150981,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-28,271,0,-9999,-9999,-9999
+150991,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-25,268,0,-9999,-9999,-9999
+151001,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-22,265,0,-9999,-9999,-9999
+151011,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-09-20,263,0,-9999,-9999,-9999
+151021,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-10-10,283,0,-9999,-9999,-9999
+151031,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3608,502,Pollen release (flowers),2009-10-01,274,0,-9999,-9999,-9999
+105088,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-10,130,0,-9999,-9999,-9999
+105098,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-08,128,0,-9999,-9999,-9999
+105108,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-06,126,0,-9999,-9999,-9999
+105118,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-01,121,0,-9999,-9999,-9999
+105128,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-04-30,120,0,-9999,-9999,-9999
+105138,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-17,137,0,-9999,-9999,-9999
+105148,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-16,136,0,-9999,-9999,-9999
+105158,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-14,134,0,-9999,-9999,-9999
+105168,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-13,133,0,-9999,-9999,-9999
+105178,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-27,147,0,-9999,-9999,-9999
+105188,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-26,146,0,-9999,-9999,-9999
+105198,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-23,143,0,-9999,-9999,-9999
+105208,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-21,141,0,-9999,-9999,-9999
+105218,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-06-06,157,0,-9999,-9999,-9999
+105228,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-06-04,155,0,-9999,-9999,-9999
+105238,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-06-01,152,0,-9999,-9999,-9999
+105248,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-05-30,150,0,-9999,-9999,-9999
+105258,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-06-16,167,0,-9999,-9999,-9999
+105268,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-06-12,163,0,-9999,-9999,-9999
+105278,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-06-09,160,0,-9999,-9999,-9999
+151042,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-07-15,196,0,-9999,-9999,-9999
+151052,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-07-02,183,0,-9999,-9999,-9999
+151062,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-06-25,176,0,-9999,-9999,-9999
+151072,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-06-21,172,0,-9999,-9999,-9999
+151082,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-09-09,252,0,-9999,-9999,-9999
+151092,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-09-06,249,0,-9999,-9999,-9999
+151102,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-09-01,244,0,-9999,-9999,-9999
+151112,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-07-30,211,0,-9999,-9999,-9999
+151122,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-09-22,265,0,-9999,-9999,-9999
+151132,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-09-17,260,0,-9999,-9999,-9999
+151142,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,196,Full pollen release (angiosperms),2009-09-13,256,0,-9999,-9999,-9999
+105087,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-10,130,0,-9999,-9999,-9999
+105097,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-08,128,0,-9999,-9999,-9999
+105107,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-06,126,0,-9999,-9999,-9999
+105117,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-01,121,0,-9999,-9999,-9999
+105127,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-04-30,120,0,-9999,-9999,-9999
+105137,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-17,137,0,-9999,-9999,-9999
+105147,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-16,136,0,-9999,-9999,-9999
+105157,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-14,134,0,-9999,-9999,-9999
+105167,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-13,133,0,-9999,-9999,-9999
+105177,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-27,147,0,-9999,-9999,-9999
+105187,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-26,146,0,-9999,-9999,-9999
+105197,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-23,143,0,-9999,-9999,-9999
+105207,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-21,141,0,-9999,-9999,-9999
+105217,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-06-06,157,0,-9999,-9999,-9999
+105227,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-06-04,155,0,-9999,-9999,-9999
+105237,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-06-01,152,0,-9999,-9999,-9999
+105247,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-05-30,150,0,-9999,-9999,-9999
+105257,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-06-16,167,0,-9999,-9999,-9999
+105267,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-06-12,163,0,-9999,-9999,-9999
+105277,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-06-09,160,0,-9999,-9999,-9999
+151041,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-07-15,196,0,-9999,-9999,-9999
+151051,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-07-02,183,0,-9999,-9999,-9999
+151061,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-06-25,176,0,-9999,-9999,-9999
+151071,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-06-21,172,0,-9999,-9999,-9999
+151081,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-09-09,252,0,-9999,-9999,-9999
+151091,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-09-06,249,0,-9999,-9999,-9999
+151101,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-09-01,244,0,-9999,-9999,-9999
+151111,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-07-30,211,0,-9999,-9999,-9999
+151121,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-09-22,265,0,-9999,-9999,-9999
+151131,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-09-17,260,0,-9999,-9999,-9999
+151141,-9999,1813,64.825249,-147.937912,154,AK,99,Betula,papyrifera,paper birch,Plantae,3609,502,Pollen release (flowers),2009-09-13,256,0,-9999,-9999,-9999
+95748,-9999,678,45.177551,-89.848251,432,WI,99,Betula,papyrifera,paper birch,Plantae,3979,196,Full pollen release (angiosperms),2009-05-04,124,0,-9999,-9999,-9999
+95747,-9999,678,45.177551,-89.848251,432,WI,99,Betula,papyrifera,paper birch,Plantae,3979,502,Pollen release (flowers),2009-05-04,124,0,-9999,-9999,-9999
+118000,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,196,Full pollen release (angiosperms),2009-07-21,202,0,-9999,-9999,-9999
+117999,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,502,Pollen release (flowers),2009-07-21,202,0,-9999,-9999,-9999
+139095,-9999,2038,43.762321,-71.689957,169,NH,99,Betula,papyrifera,paper birch,Plantae,4245,196,Full pollen release (angiosperms),2009-10-14,287,0,-9999,-9999,-9999
+139105,-9999,2038,43.762321,-71.689957,169,NH,99,Betula,papyrifera,paper birch,Plantae,4245,196,Full pollen release (angiosperms),2009-10-07,280,0,-9999,-9999,-9999
+139115,-9999,2038,43.762321,-71.689957,169,NH,99,Betula,papyrifera,paper birch,Plantae,4245,196,Full pollen release (angiosperms),2009-09-30,273,0,-9999,-9999,-9999
+139094,-9999,2038,43.762321,-71.689957,169,NH,99,Betula,papyrifera,paper birch,Plantae,4245,502,Pollen release (flowers),2009-10-14,287,0,-9999,-9999,-9999
+139104,-9999,2038,43.762321,-71.689957,169,NH,99,Betula,papyrifera,paper birch,Plantae,4245,502,Pollen release (flowers),2009-10-07,280,0,-9999,-9999,-9999
+139114,-9999,2038,43.762321,-71.689957,169,NH,99,Betula,papyrifera,paper birch,Plantae,4245,502,Pollen release (flowers),2009-09-30,273,0,-9999,-9999,-9999
+133190,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,196,Full pollen release (angiosperms),2009-09-25,268,-1,-9999,-9999,-9999
+134333,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,196,Full pollen release (angiosperms),2009-09-27,270,-1,-9999,-9999,-9999
+135235,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,196,Full pollen release (angiosperms),2009-09-30,273,-1,-9999,-9999,-9999
+135245,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,196,Full pollen release (angiosperms),2009-09-29,272,-1,-9999,-9999,-9999
+135255,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,196,Full pollen release (angiosperms),2009-09-28,271,-1,-9999,-9999,-9999
+135890,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,196,Full pollen release (angiosperms),2009-10-02,275,-1,-9999,-9999,-9999
+135910,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,196,Full pollen release (angiosperms),2009-10-01,274,-1,-9999,-9999,-9999
+133189,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2009-09-25,268,-1,-9999,-9999,-9999
+134332,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2009-09-27,270,-1,-9999,-9999,-9999
+135234,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2009-09-30,273,-1,-9999,-9999,-9999
+135244,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2009-09-29,272,-1,-9999,-9999,-9999
+135254,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2009-09-28,271,-1,-9999,-9999,-9999
+135899,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2009-10-02,275,-1,-9999,-9999,-9999
+135909,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2009-10-01,274,-1,-9999,-9999,-9999
+232959,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2009-10-10,283,0,-9999,-9999,-9999
+133300,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-09-25,268,-1,-9999,-9999,-9999
+134343,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-09-27,270,-1,-9999,-9999,-9999
+135265,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-09-30,273,-1,-9999,-9999,-9999
+135275,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-09-29,272,-1,-9999,-9999,-9999
+135285,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-09-28,271,-1,-9999,-9999,-9999
+135920,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-10-03,276,-1,-9999,-9999,-9999
+135930,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-10-02,275,-1,-9999,-9999,-9999
+135970,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-10-01,274,-1,-9999,-9999,-9999
+136732,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-10-06,279,-1,-9999,-9999,-9999
+136742,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-10-05,278,-1,-9999,-9999,-9999
+136752,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,196,Full pollen release (angiosperms),2009-10-04,277,-1,-9999,-9999,-9999
+133299,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-09-25,268,-1,-9999,-9999,-9999
+134342,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-09-27,270,-1,-9999,-9999,-9999
+135264,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-09-30,273,-1,-9999,-9999,-9999
+135274,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-09-29,272,-1,-9999,-9999,-9999
+135284,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-09-28,271,-1,-9999,-9999,-9999
+135919,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-10-03,276,-1,-9999,-9999,-9999
+135929,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-10-02,275,-1,-9999,-9999,-9999
+135939,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-10-01,274,-1,-9999,-9999,-9999
+136731,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-10-06,279,-1,-9999,-9999,-9999
+136741,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-10-05,278,-1,-9999,-9999,-9999
+136751,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-10-04,277,-1,-9999,-9999,-9999
+232969,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2009-10-10,283,0,-9999,-9999,-9999
+133330,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-09-25,268,-1,-9999,-9999,-9999
+134353,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-09-27,270,-1,-9999,-9999,-9999
+135295,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-09-30,273,-1,-9999,-9999,-9999
+135305,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-09-29,272,-1,-9999,-9999,-9999
+135315,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-09-28,271,-1,-9999,-9999,-9999
+135980,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-03,276,-1,-9999,-9999,-9999
+135990,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-02,275,-1,-9999,-9999,-9999
+136000,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-01,274,-1,-9999,-9999,-9999
+136762,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-06,279,-1,-9999,-9999,-9999
+136772,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-05,278,-1,-9999,-9999,-9999
+136782,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-04,277,-1,-9999,-9999,-9999
+137527,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-10,283,-1,-9999,-9999,-9999
+137537,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-09,282,-1,-9999,-9999,-9999
+137547,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-08,281,-1,-9999,-9999,-9999
+137557,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,196,Full pollen release (angiosperms),2009-10-07,280,-1,-9999,-9999,-9999
+133329,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-09-25,268,-1,-9999,-9999,-9999
+134352,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-09-27,270,-1,-9999,-9999,-9999
+135294,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-09-30,273,-1,-9999,-9999,-9999
+135304,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-09-29,272,-1,-9999,-9999,-9999
+135314,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-09-28,271,-1,-9999,-9999,-9999
+135979,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-03,276,-1,-9999,-9999,-9999
+135989,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-02,275,-1,-9999,-9999,-9999
+135999,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-01,274,-1,-9999,-9999,-9999
+136761,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-06,279,-1,-9999,-9999,-9999
+136771,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-05,278,-1,-9999,-9999,-9999
+136781,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-04,277,-1,-9999,-9999,-9999
+137526,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-10,283,-1,-9999,-9999,-9999
+137536,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-09,282,-1,-9999,-9999,-9999
+137546,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-08,281,-1,-9999,-9999,-9999
+137556,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2009-10-07,280,-1,-9999,-9999,-9999
+133320,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-09-25,268,-1,-9999,-9999,-9999
+134363,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-09-27,270,-1,-9999,-9999,-9999
+135325,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-09-30,273,-1,-9999,-9999,-9999
+135335,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-09-29,272,-1,-9999,-9999,-9999
+135345,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-09-28,271,-1,-9999,-9999,-9999
+136010,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-03,276,-1,-9999,-9999,-9999
+136020,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-02,275,-1,-9999,-9999,-9999
+136030,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-01,274,-1,-9999,-9999,-9999
+136792,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-06,279,-1,-9999,-9999,-9999
+136802,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-05,278,-1,-9999,-9999,-9999
+136812,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-04,277,-1,-9999,-9999,-9999
+137567,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-10,283,-1,-9999,-9999,-9999
+137577,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-09,282,-1,-9999,-9999,-9999
+137587,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-08,281,-1,-9999,-9999,-9999
+137597,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,196,Full pollen release (angiosperms),2009-10-07,280,-1,-9999,-9999,-9999
+133319,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-09-25,268,-1,-9999,-9999,-9999
+134362,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-09-27,270,-1,-9999,-9999,-9999
+135324,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-09-30,273,-1,-9999,-9999,-9999
+135334,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-09-29,272,-1,-9999,-9999,-9999
+135344,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-09-28,271,-1,-9999,-9999,-9999
+136009,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-03,276,-1,-9999,-9999,-9999
+136019,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-02,275,-1,-9999,-9999,-9999
+136029,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-01,274,-1,-9999,-9999,-9999
+136791,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-06,279,-1,-9999,-9999,-9999
+136801,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-05,278,-1,-9999,-9999,-9999
+136811,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-04,277,-1,-9999,-9999,-9999
+137566,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-10,283,-1,-9999,-9999,-9999
+137576,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-09,282,-1,-9999,-9999,-9999
+137586,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-08,281,-1,-9999,-9999,-9999
+137596,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2009-10-07,280,-1,-9999,-9999,-9999
+133310,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-09-25,268,-1,-9999,-9999,-9999
+134373,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-09-27,270,-1,-9999,-9999,-9999
+135355,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-09-30,273,-1,-9999,-9999,-9999
+135365,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-09-29,272,-1,-9999,-9999,-9999
+135375,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-09-28,271,-1,-9999,-9999,-9999
+136040,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-03,276,-1,-9999,-9999,-9999
+136050,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-02,275,-1,-9999,-9999,-9999
+136060,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-01,274,-1,-9999,-9999,-9999
+136822,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-06,279,-1,-9999,-9999,-9999
+136832,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-05,278,-1,-9999,-9999,-9999
+136842,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-04,277,-1,-9999,-9999,-9999
+137607,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-10,283,-1,-9999,-9999,-9999
+137617,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-09,282,-1,-9999,-9999,-9999
+137627,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-08,281,-1,-9999,-9999,-9999
+137637,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,196,Full pollen release (angiosperms),2009-10-07,280,-1,-9999,-9999,-9999
+133309,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-09-25,268,-1,-9999,-9999,-9999
+134372,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-09-27,270,-1,-9999,-9999,-9999
+135354,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-09-30,273,-1,-9999,-9999,-9999
+135364,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-09-29,272,-1,-9999,-9999,-9999
+135374,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-09-28,271,-1,-9999,-9999,-9999
+136039,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-03,276,-1,-9999,-9999,-9999
+136049,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-02,275,-1,-9999,-9999,-9999
+136059,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-01,274,-1,-9999,-9999,-9999
+136821,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-06,279,-1,-9999,-9999,-9999
+136831,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-05,278,-1,-9999,-9999,-9999
+136841,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-04,277,-1,-9999,-9999,-9999
+137606,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-10,283,0,-9999,-9999,-9999
+137616,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-09,282,-1,-9999,-9999,-9999
+137626,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-08,281,-1,-9999,-9999,-9999
+137636,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2009-10-07,280,-1,-9999,-9999,-9999

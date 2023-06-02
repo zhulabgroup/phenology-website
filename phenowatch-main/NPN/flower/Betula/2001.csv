@@ -1,0 +1,71 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+25358202,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49996,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358212,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49997,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358222,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49998,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358232,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49991,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358252,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49989,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358262,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49988,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358292,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49985,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358302,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49984,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358322,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49982,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358332,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49981,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358342,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49980,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358352,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49979,502,Pollen release (flowers),2001-07-25,206,0,51,-9999,-9999
+25358203,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49996,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358213,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49997,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358223,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49998,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358233,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49991,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358253,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49989,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358263,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49988,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358293,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49985,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358303,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49984,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358323,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49982,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358333,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49981,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358343,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49980,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25358353,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49979,196,Full pollen release (angiosperms),2001-07-25,206,0,-9999,-9999,-9999
+25440496,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49998,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440506,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49997,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440516,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49996,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440566,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49991,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440586,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49989,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440596,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49988,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440626,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49985,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440636,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49984,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440656,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49982,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440666,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49981,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440676,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49980,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440686,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49979,502,Pollen release (flowers),2001-08-14,226,0,51,-9999,-9999
+25440497,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49998,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440507,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49997,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440517,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49996,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440567,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49991,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440587,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49989,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440597,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49988,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440627,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49985,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440637,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49984,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440657,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49982,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440667,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49981,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440677,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49980,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25440687,2021-04-02 07:04:06,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49979,196,Full pollen release (angiosperms),2001-08-14,226,0,-9999,-9999,-9999
+25612756,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49998,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612766,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49997,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612816,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49991,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612836,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49989,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612847,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49988,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612873,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49985,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612883,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49984,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612903,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49982,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612913,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49981,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612923,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49980,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612933,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49979,502,Pollen release (flowers),2001-08-29,241,0,51,-9999,-9999
+25612757,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49998,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612767,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49997,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612817,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49991,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612837,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49989,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612848,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49988,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612874,-9999,11895,35.629002,-83.093002,807,NC,97,Betula,alleghaniensis,yellow birch,Plantae,49985,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612884,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49984,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612904,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49982,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612914,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49981,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612924,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49980,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999
+25612934,-9999,11895,35.629002,-83.093002,807,NC,98,Betula,lenta,sweet birch,Plantae,49979,196,Full pollen release (angiosperms),2001-08-29,241,0,-9999,-9999,-9999

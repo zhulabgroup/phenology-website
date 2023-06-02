@@ -1,0 +1,3 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+14799258,-9999,18525,40.86039,-73.878471,26,NY,100,Quercus,alba,white oak,Plantae,73265,196,Full pollen release (angiosperms),2000-01-02,2,-1,-9999,-9999,-9999
+14799264,-9999,18525,40.86039,-73.878471,26,NY,989,Quercus,palustris,pin oak,Plantae,73266,196,Full pollen release (angiosperms),2000-01-02,2,-1,-9999,-9999,-9999
