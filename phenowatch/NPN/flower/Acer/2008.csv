@@ -1,0 +1,76 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+31631,-9999,1601,38.377831,-85.921623,254,IN,3,Acer,rubrum,red maple,Plantae,3001,501,Open flowers,2008-03-07,67,1,-9999,-9999,-9999
+31632,-9999,1601,38.377831,-85.921623,254,IN,3,Acer,rubrum,red maple,Plantae,3001,186,Full flowering (50%),2008-03-07,67,0,-9999,-9999,-9999
+34116,-9999,1476,34.750793,-82.344971,252,SC,3,Acer,rubrum,red maple,Plantae,2517,501,Open flowers,2008-04-05,96,0,-9999,-9999,-9999
+34117,-9999,1476,34.750793,-82.344971,252,SC,3,Acer,rubrum,red maple,Plantae,2517,186,Full flowering (50%),2008-04-05,96,0,-9999,-9999,-9999
+18149,-9999,430,42.323002,-71.647003,92,MA,3,Acer,rubrum,red maple,Plantae,1027,501,Open flowers,2008-04-12,103,1,-9999,-9999,-9999
+18150,-9999,430,42.323002,-71.647003,92,MA,3,Acer,rubrum,red maple,Plantae,1027,186,Full flowering (50%),2008-04-12,103,0,-9999,-9999,-9999
+57802,-9999,790,43.269737,-71.330513,215,NH,3,Acer,rubrum,red maple,Plantae,660,501,Open flowers,2008-04-29,120,1,-9999,-9999,-9999
+57803,-9999,790,43.269737,-71.330513,215,NH,3,Acer,rubrum,red maple,Plantae,660,186,Full flowering (50%),2008-04-29,120,1,-9999,-9999,-9999
+96864,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-05-08,129,-1,-9999,-9999,-9999
+97024,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-05-08,129,-1,-9999,-9999,-9999
+96865,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-05-08,129,-1,-9999,-9999,-9999
+97025,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-05-08,129,-1,-9999,-9999,-9999
+96854,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-05-14,135,-1,-9999,-9999,-9999
+97014,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-05-14,135,1,-9999,-9999,-9999
+96855,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-05-14,135,-1,-9999,-9999,-9999
+97015,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-05-14,135,1,-9999,-9999,-9999
+96844,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-05-22,143,-1,-9999,-9999,-9999
+97004,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-05-22,143,1,-9999,-9999,-9999
+96845,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-05-22,143,-1,-9999,-9999,-9999
+97005,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-05-22,143,1,-9999,-9999,-9999
+96834,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-05-30,151,-1,-9999,-9999,-9999
+96994,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-05-30,151,1,-9999,-9999,-9999
+96835,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-05-30,151,-1,-9999,-9999,-9999
+96995,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-05-30,151,1,-9999,-9999,-9999
+2588758,-9999,8607,44.982697,-93.158249,285,MN,779,Acer,platanoides,Norway maple,Plantae,41988,501,Open flowers,2008-06-05,157,0,50,-9999,-9999
+96904,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-06-06,158,-1,-9999,-9999,-9999
+97064,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-06-06,158,1,-9999,-9999,-9999
+96905,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-06-06,158,-1,-9999,-9999,-9999
+97065,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-06-06,158,1,-9999,-9999,-9999
+96894,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-06-13,165,-1,-9999,-9999,-9999
+97054,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-06-13,165,1,-9999,-9999,-9999
+96895,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-06-13,165,-1,-9999,-9999,-9999
+97055,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-06-13,165,1,-9999,-9999,-9999
+96884,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-06-20,172,-1,-9999,-9999,-9999
+97044,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-06-20,172,1,-9999,-9999,-9999
+96885,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-06-20,172,-1,-9999,-9999,-9999
+97045,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-06-20,172,1,-9999,-9999,-9999
+96874,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-08-25,238,-1,-9999,-9999,-9999
+97034,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-08-25,238,1,-9999,-9999,-9999
+96875,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-08-25,238,-1,-9999,-9999,-9999
+97035,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-08-25,238,1,-9999,-9999,-9999
+96944,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-09-05,249,-1,-9999,-9999,-9999
+97104,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-09-05,249,1,-9999,-9999,-9999
+96945,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-09-05,249,-1,-9999,-9999,-9999
+97105,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-09-05,249,1,-9999,-9999,-9999
+96934,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-09-16,260,-1,-9999,-9999,-9999
+97094,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-09-16,260,1,-9999,-9999,-9999
+96935,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-09-16,260,-1,-9999,-9999,-9999
+97095,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-09-16,260,1,-9999,-9999,-9999
+96924,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-09-30,274,-1,-9999,-9999,-9999
+97084,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-09-30,274,1,-9999,-9999,-9999
+96925,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-09-30,274,-1,-9999,-9999,-9999
+97085,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-09-30,274,1,-9999,-9999,-9999
+96914,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-10-07,281,-1,-9999,-9999,-9999
+97074,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-10-07,281,1,-9999,-9999,-9999
+96915,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-10-07,281,-1,-9999,-9999,-9999
+97075,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-10-07,281,1,-9999,-9999,-9999
+96984,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-10-13,287,-1,-9999,-9999,-9999
+97144,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-10-13,287,1,-9999,-9999,-9999
+96985,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-10-13,287,-1,-9999,-9999,-9999
+97145,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-10-13,287,1,-9999,-9999,-9999
+96974,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-10-21,295,-1,-9999,-9999,-9999
+97134,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-10-21,295,1,-9999,-9999,-9999
+96975,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-10-21,295,-1,-9999,-9999,-9999
+97135,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-10-21,295,1,-9999,-9999,-9999
+96964,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-10-27,301,-1,-9999,-9999,-9999
+97124,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-10-27,301,1,-9999,-9999,-9999
+96965,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-10-27,301,-1,-9999,-9999,-9999
+97125,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-10-27,301,1,-9999,-9999,-9999
+96954,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,501,Open flowers,2008-11-06,311,-1,-9999,-9999,-9999
+97114,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,501,Open flowers,2008-11-06,311,1,-9999,-9999,-9999
+96955,-9999,1915,41.78344,-73.732552,128,NY,61,Acer,saccharum,sugar maple,Plantae,3990,186,Full flowering (50%),2008-11-06,311,-1,-9999,-9999,-9999
+97115,-9999,1915,41.78344,-73.732552,128,NY,3,Acer,rubrum,red maple,Plantae,3991,186,Full flowering (50%),2008-11-06,311,1,-9999,-9999,-9999
+162601,-9999,2138,35.913815,-78.797714,125,NC,3,Acer,rubrum,red maple,Plantae,4392,501,Open flowers,2008-11-19,324,0,-9999,-9999,-9999
+162602,-9999,2138,35.913815,-78.797714,125,NC,3,Acer,rubrum,red maple,Plantae,4392,186,Full flowering (50%),2008-11-19,324,0,-9999,-9999,-9999

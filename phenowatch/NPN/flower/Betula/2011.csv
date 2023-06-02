@@ -1,0 +1,1309 @@
+observation_id,update_datetime,site_id,latitude,longitude,elevation_in_meters,state,species_id,genus,species,common_name,kingdom,individual_id,phenophase_id,phenophase_description,observation_date,day_of_year,phenophase_status,intensity_category_id,intensity_value,abundance_value
+834135,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,501,Open flowers,2011-03-26,85,0,31,-9999,-9999
+834401,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,501,Open flowers,2011-04-01,91,0,31,-9999,-9999
+834895,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,501,Open flowers,2011-04-14,104,0,31,-9999,-9999
+835151,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,501,Open flowers,2011-04-12,102,0,31,-9999,-9999
+835407,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,501,Open flowers,2011-04-26,116,0,31,-9999,-9999
+835663,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,501,Open flowers,2011-04-28,118,0,31,-9999,-9999
+838488,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+838754,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+834157,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,501,Open flowers,2011-03-26,85,0,31,-9999,-9999
+834423,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,501,Open flowers,2011-04-01,91,0,31,-9999,-9999
+834917,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,501,Open flowers,2011-04-14,104,0,31,-9999,-9999
+835173,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,501,Open flowers,2011-04-12,102,0,31,-9999,-9999
+835429,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,501,Open flowers,2011-04-26,116,0,31,-9999,-9999
+835685,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,501,Open flowers,2011-04-28,118,0,31,-9999,-9999
+838510,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+838776,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+834179,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,501,Open flowers,2011-03-26,85,0,31,-9999,-9999
+834445,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,501,Open flowers,2011-04-01,91,0,31,-9999,-9999
+834939,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,501,Open flowers,2011-04-14,104,0,31,-9999,-9999
+835195,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,501,Open flowers,2011-04-12,102,0,31,-9999,-9999
+835451,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,501,Open flowers,2011-04-26,116,0,31,-9999,-9999
+835707,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,501,Open flowers,2011-04-28,118,0,31,-9999,-9999
+838532,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+838798,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+753433,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-04-14,104,0,31,-9999,-9999
+753579,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-04-21,111,0,31,-9999,-9999
+753725,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-04-12,102,0,31,-9999,-9999
+755844,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-04-28,118,0,31,-9999,-9999
+755990,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-05-04,124,0,31,-9999,-9999
+784148,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-05-11,131,0,31,-9999,-9999
+784294,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-05-19,139,0,31,-9999,-9999
+784489,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-06-02,153,0,31,-9999,-9999
+784633,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-06-09,160,0,31,-9999,-9999
+784820,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-07-19,200,0,31,-9999,-9999
+784966,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,501,Open flowers,2011-08-21,233,0,31,-9999,-9999
+558614,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-03-25,84,0,31,-9999,-9999
+559336,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-03-31,90,0,31,-9999,-9999
+560721,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-04-04,94,0,31,-9999,-9999
+563206,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-04-08,98,0,31,-9999,-9999
+563217,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-04-11,101,0,31,-9999,-9999
+563560,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-04-15,105,0,31,-9999,-9999
+563571,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-04-19,109,0,31,-9999,-9999
+566623,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-04-22,112,0,31,-9999,-9999
+566634,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+566977,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-04-29,119,0,31,-9999,-9999
+566988,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+568419,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-05-06,126,0,31,-9999,-9999
+568430,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+568773,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-05-16,136,1,31,More than 10,-9999
+568784,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-05-20,140,1,31,Peak flower,-9999
+572354,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-05-24,144,0,31,-9999,-9999
+572365,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-05-26,146,0,31,-9999,-9999
+572708,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-05-31,151,0,31,-9999,-9999
+572719,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-06-06,157,0,31,-9999,-9999
+572918,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-06-13,164,0,31,-9999,-9999
+584869,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-06-20,171,0,31,-9999,-9999
+584880,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-06-27,178,0,31,-9999,-9999
+584946,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-07-05,186,0,31,-9999,-9999
+631868,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-07-11,192,0,31,-9999,-9999
+631879,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-07-22,203,0,31,-9999,-9999
+632000,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-07-27,208,0,31,-9999,-9999
+632011,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-08-04,216,0,31,-9999,-9999
+632077,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-08-11,223,0,31,-9999,-9999
+643050,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-08-18,230,0,31,-9999,-9999
+666140,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-08-29,241,0,31,-9999,-9999
+666151,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-09-06,249,0,31,-9999,-9999
+693077,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-09-13,256,0,31,-9999,-9999
+693088,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-09-16,259,0,31,-9999,-9999
+693209,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+693220,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-09-23,266,0,31,-9999,-9999
+693286,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+703490,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-09-30,273,0,31,-9999,-9999
+703501,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-10-03,276,0,31,-9999,-9999
+713172,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-10-07,280,0,31,-9999,-9999
+713183,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-10-10,283,0,31,-9999,-9999
+718784,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-10-14,287,0,31,-9999,-9999
+718795,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-10-17,290,0,31,-9999,-9999
+731424,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-10-21,294,0,31,-9999,-9999
+731435,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-10-24,297,0,31,-9999,-9999
+747955,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-11-01,305,0,31,-9999,-9999
+748014,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,501,Open flowers,2011-11-08,312,0,31,-9999,-9999
+745690,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-10,314,0,31,-9999,-9999
+745731,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-11,315,0,31,-9999,-9999
+745772,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-12,316,0,31,-9999,-9999
+746987,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-13,317,0,31,-9999,-9999
+747028,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-14,318,0,31,-9999,-9999
+749377,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-15,319,0,31,-9999,-9999
+749700,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-16,320,0,31,-9999,-9999
+756256,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-17,321,0,31,-9999,-9999
+756278,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-18,322,0,31,-9999,-9999
+757441,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-19,323,0,31,-9999,-9999
+757529,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-20,324,0,31,-9999,-9999
+761229,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-21,325,0,31,-9999,-9999
+766862,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-22,326,0,31,-9999,-9999
+771236,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-23,327,0,31,-9999,-9999
+777842,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-25,329,0,31,-9999,-9999
+778221,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-26,330,0,31,-9999,-9999
+779466,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-28,332,0,31,-9999,-9999
+779618,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-29,333,0,31,-9999,-9999
+780078,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-11-30,334,0,31,-9999,-9999
+781549,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-12-01,335,0,31,-9999,-9999
+782284,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-12-02,336,0,31,-9999,-9999
+782306,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,501,Open flowers,2011-12-03,337,0,31,-9999,-9999
+797760,-9999,5994,41.372311,-81.918243,236,OH,97,Betula,alleghaniensis,yellow birch,Plantae,17131,501,Open flowers,2011-11-25,329,0,31,-9999,-9999
+791878,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-17,351,0,31,-9999,-9999
+792372,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-18,352,0,31,-9999,-9999
+792765,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-19,353,0,31,-9999,-9999
+793163,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-20,354,0,31,-9999,-9999
+795012,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-21,355,0,31,-9999,-9999
+796146,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-22,356,0,31,-9999,-9999
+796619,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-23,357,0,31,-9999,-9999
+796752,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-24,358,0,31,-9999,-9999
+797490,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-26,360,0,31,-9999,-9999
+797812,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-27,361,0,31,-9999,-9999
+801610,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-28,362,0,31,-9999,-9999
+802844,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-29,363,0,31,-9999,-9999
+802882,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-30,364,0,31,-9999,-9999
+804148,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,501,Open flowers,2011-12-31,365,0,31,-9999,-9999
+753444,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-04-14,104,0,31,-9999,-9999
+753590,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-04-21,111,0,31,-9999,-9999
+753736,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-04-12,102,0,31,-9999,-9999
+755855,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-04-28,118,0,31,-9999,-9999
+756001,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-05-04,124,1,31,Less than 3,-9999
+784159,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-05-11,131,0,31,-9999,-9999
+784303,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-05-19,139,0,31,-9999,-9999
+784500,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-06-02,153,0,31,-9999,-9999
+784644,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-06-09,160,0,31,-9999,-9999
+784831,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-07-19,200,0,31,-9999,-9999
+784977,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,501,Open flowers,2011-08-21,233,0,31,-9999,-9999
+8869419,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,186,Full flowering (50%),2011-03-03,62,0,-9999,-9999,-9999
+8869436,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,186,Full flowering (50%),2011-03-20,79,0,-9999,-9999,-9999
+8869418,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-03-03,62,0,-9999,-9999,-9999
+8869435,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-03-20,79,0,-9999,-9999,-9999
+8869443,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-03-31,90,0,-9999,-9999,-9999
+8869447,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-04-10,100,0,-9999,-9999,-9999
+8869451,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-04-25,115,0,-9999,-9999,-9999
+8869455,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-05-15,135,0,-9999,-9999,-9999
+8869459,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-06-15,166,0,-9999,-9999,-9999
+8869463,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-10-05,278,0,-9999,-9999,-9999
+8869468,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-10-14,287,0,-9999,-9999,-9999
+8869474,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-10-22,295,0,-9999,-9999,-9999
+8869481,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-11-03,307,0,-9999,-9999,-9999
+8869488,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-11-10,314,0,-9999,-9999,-9999
+8869495,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33166,501,Open flowers,2011-11-17,321,0,-9999,-9999,-9999
+8872835,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,186,Full flowering (50%),2011-03-03,62,0,-9999,-9999,-9999
+8872852,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,186,Full flowering (50%),2011-03-20,79,0,-9999,-9999,-9999
+8872834,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-03-03,62,0,-9999,-9999,-9999
+8872851,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-03-20,79,1,-9999,-9999,-9999
+8872859,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-03-31,90,1,-9999,-9999,-9999
+8872866,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-04-10,100,0,-9999,-9999,-9999
+8872870,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-04-25,115,0,-9999,-9999,-9999
+8872874,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-05-15,135,0,-9999,-9999,-9999
+8872878,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-06-15,166,0,-9999,-9999,-9999
+8872882,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-10-05,278,0,-9999,-9999,-9999
+8872887,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-10-14,287,0,-9999,-9999,-9999
+8872892,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-10-22,295,0,-9999,-9999,-9999
+8872899,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-11-03,307,0,-9999,-9999,-9999
+8872906,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-11-10,314,0,-9999,-9999,-9999
+8872913,-9999,9343,35.642799,-83.695915,423,TN,98,Betula,lenta,sweet birch,Plantae,33182,501,Open flowers,2011-11-17,321,0,-9999,-9999,-9999
+8866207,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,186,Full flowering (50%),2011-01-08,8,0,-9999,-9999,-9999
+8866217,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,186,Full flowering (50%),2011-02-19,50,0,-9999,-9999,-9999
+8866227,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,186,Full flowering (50%),2011-03-03,62,0,-9999,-9999,-9999
+8866237,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,186,Full flowering (50%),2011-03-19,78,0,-9999,-9999,-9999
+8866206,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-01-08,8,0,-9999,-9999,-9999
+8866216,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-02-19,50,0,-9999,-9999,-9999
+8866226,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-03-03,62,0,-9999,-9999,-9999
+8866236,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-03-19,78,1,-9999,-9999,-9999
+8866244,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-03-24,83,1,-9999,-9999,-9999
+8866251,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-04-07,97,0,-9999,-9999,-9999
+8866258,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-04-11,101,1,-9999,-9999,-9999
+8866262,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-05-05,125,1,-9999,-9999,-9999
+8866266,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-05-21,141,0,-9999,-9999,-9999
+8866270,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-06-01,152,0,-9999,-9999,-9999
+8866274,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-06-15,166,0,-9999,-9999,-9999
+8866278,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-07-25,206,0,-9999,-9999,-9999
+8866282,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-09-29,272,0,-9999,-9999,-9999
+8866286,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-10-08,281,0,-9999,-9999,-9999
+8866291,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-10-14,287,0,-9999,-9999,-9999
+8866298,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-10-21,294,0,-9999,-9999,-9999
+8866305,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-10-24,297,0,-9999,-9999,-9999
+8866312,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-11-02,306,0,-9999,-9999,-9999
+8866325,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-11-13,317,0,-9999,-9999,-9999
+8866332,-9999,9344,35.640373,-83.692863,435,TN,98,Betula,lenta,sweet birch,Plantae,33209,501,Open flowers,2011-11-17,321,0,-9999,-9999,-9999
+8884312,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,186,Full flowering (50%),2011-03-07,66,1,-9999,-9999,-9999
+8884311,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-03-07,66,1,-9999,-9999,-9999
+8884319,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-03-25,84,1,-9999,-9999,-9999
+8884326,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-04-11,101,1,-9999,-9999,-9999
+8884330,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-04-22,112,0,-9999,-9999,-9999
+8884334,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-05-20,140,0,-9999,-9999,-9999
+8884340,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-06-21,172,0,-9999,-9999,-9999
+8884344,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-09-07,250,0,-9999,-9999,-9999
+8884348,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-09-19,262,0,-9999,-9999,-9999
+8884352,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-09-29,272,0,-9999,-9999,-9999
+8884356,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-10-03,276,0,-9999,-9999,-9999
+8884361,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-10-09,282,0,-9999,-9999,-9999
+8884366,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-10-17,290,0,-9999,-9999,-9999
+8884372,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-10-24,297,0,-9999,-9999,-9999
+8884379,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-10-31,304,0,-9999,-9999,-9999
+8884386,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-11-07,311,0,-9999,-9999,-9999
+8884393,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-11-14,318,0,-9999,-9999,-9999
+8884400,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33217,501,Open flowers,2011-11-20,324,0,-9999,-9999,-9999
+8884781,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,186,Full flowering (50%),2011-03-07,66,0,-9999,-9999,-9999
+8884780,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-03-07,66,1,-9999,-9999,-9999
+8884788,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-03-25,84,1,-9999,-9999,-9999
+8884795,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-04-11,101,1,-9999,-9999,-9999
+8884799,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-04-22,112,0,-9999,-9999,-9999
+8884803,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-05-20,140,0,-9999,-9999,-9999
+8884809,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-06-21,172,0,-9999,-9999,-9999
+8884813,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-09-07,250,0,-9999,-9999,-9999
+8884817,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-09-19,262,0,-9999,-9999,-9999
+8884821,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-09-29,272,0,-9999,-9999,-9999
+8884825,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-10-03,276,0,-9999,-9999,-9999
+8884829,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-10-09,282,0,-9999,-9999,-9999
+8884833,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-10-17,290,0,-9999,-9999,-9999
+8884838,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-10-24,297,0,-9999,-9999,-9999
+8884843,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-10-31,304,0,-9999,-9999,-9999
+8884850,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-11-07,311,0,-9999,-9999,-9999
+8884857,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-11-14,318,0,-9999,-9999,-9999
+8884864,-9999,9338,35.642117,-83.692589,398,TN,98,Betula,lenta,sweet birch,Plantae,33220,501,Open flowers,2011-11-20,324,0,-9999,-9999,-9999
+8906363,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,186,Full flowering (50%),2011-03-12,71,0,-9999,-9999,-9999
+8906362,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-03-12,71,0,-9999,-9999,-9999
+8906370,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-03-24,83,1,-9999,-9999,-9999
+8906377,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-04-01,91,0,-9999,-9999,-9999
+8906386,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-04-21,111,0,-9999,-9999,-9999
+8906390,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-05-15,135,0,-9999,-9999,-9999
+8906394,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-06-15,166,0,-9999,-9999,-9999
+8906398,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-09-19,262,0,-9999,-9999,-9999
+8906402,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-10-02,275,0,-9999,-9999,-9999
+8906407,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-10-14,287,0,-9999,-9999,-9999
+8906413,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-10-27,300,0,-9999,-9999,-9999
+8906420,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-11-10,314,0,-9999,-9999,-9999
+8906427,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-11-17,321,0,-9999,-9999,-9999
+8906434,-9999,9339,35.637402,-83.698807,594,TN,98,Betula,lenta,sweet birch,Plantae,33257,501,Open flowers,2011-11-25,329,0,-9999,-9999,-9999
+444627,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,501,Open flowers,2011-03-25,84,0,31,-9999,-9999
+518725,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,501,Open flowers,2011-05-30,150,1,31,-9999,-9999
+553241,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,501,Open flowers,2011-06-29,180,1,31,-9999,-9999
+441739,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-03-27,86,0,31,-9999,-9999
+798031,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-03-30,89,0,31,-9999,-9999
+798042,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-04-10,100,0,31,-9999,-9999
+798053,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-04-14,104,0,31,-9999,-9999
+798064,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-04-16,106,0,31,-9999,-9999
+798272,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-04-22,112,0,31,-9999,-9999
+798283,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-04-27,117,1,31,More than 10,-9999
+798294,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-05-12,132,1,31,More than 10,-9999
+798305,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-05-19,139,1,31,More than 10,-9999
+798316,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-05-21,141,1,31,More than 10,-9999
+798327,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-06-13,164,0,31,-9999,-9999
+798338,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-07-20,201,0,31,-9999,-9999
+798349,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-09-12,255,0,31,-9999,-9999
+798357,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,501,Open flowers,2011-10-26,299,0,31,-9999,-9999
+483732,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-05-01,121,0,31,-9999,-9999
+500066,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-05-10,130,1,31,More than 10,-9999
+500077,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-05-15,135,1,31,More than 10,-9999
+504608,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-05-18,138,1,31,More than 10,-9999
+509771,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-05-22,142,1,31,More than 10,-9999
+513625,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-05-25,145,1,31,More than 10,-9999
+521538,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-06-01,152,0,31,-9999,-9999
+528405,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-06-07,158,0,31,-9999,-9999
+543328,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-06-20,171,0,31,-9999,-9999
+550652,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-06-27,178,0,31,-9999,-9999
+582336,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-07-09,190,0,31,-9999,-9999
+608934,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-07-26,207,0,31,-9999,-9999
+657730,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-09-03,246,0,31,-9999,-9999
+668647,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-09-14,257,0,31,-9999,-9999
+672451,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+684153,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+686413,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-09-28,271,0,31,-9999,-9999
+695330,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-10-02,275,0,31,-9999,-9999
+699283,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-10-05,278,0,31,-9999,-9999
+707875,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,501,Open flowers,2011-10-09,282,0,31,-9999,-9999
+483795,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-05-01,121,0,31,-9999,-9999
+494357,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+500459,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-05-15,135,0,31,-9999,-9999
+504670,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-05-18,138,0,31,-9999,-9999
+509834,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-05-22,142,0,31,-9999,-9999
+513687,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-05-25,145,0,31,-9999,-9999
+521601,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-06-01,152,0,31,-9999,-9999
+528468,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-06-07,158,0,31,-9999,-9999
+543436,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-06-20,171,0,31,-9999,-9999
+550713,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-06-27,178,0,31,-9999,-9999
+582398,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-07-09,190,0,31,-9999,-9999
+609042,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-07-26,207,0,31,-9999,-9999
+628802,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-08-10,222,0,31,-9999,-9999
+657793,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-09-03,246,0,31,-9999,-9999
+668710,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-09-14,257,0,31,-9999,-9999
+672513,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+684218,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+686475,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-09-28,271,0,31,-9999,-9999
+695393,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-10-02,275,0,31,-9999,-9999
+699346,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-10-05,278,0,31,-9999,-9999
+707983,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-10-09,282,0,31,-9999,-9999
+715600,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,501,Open flowers,2011-10-16,289,0,31,-9999,-9999
+677686,-9999,678,45.177551,-89.848251,432,WI,99,Betula,papyrifera,paper birch,Plantae,3979,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+708707,-9999,678,45.177551,-89.848251,432,WI,99,Betula,papyrifera,paper birch,Plantae,3979,501,Open flowers,2011-10-10,283,0,31,-9999,-9999
+708718,-9999,678,45.177551,-89.848251,432,WI,99,Betula,papyrifera,paper birch,Plantae,3979,501,Open flowers,2011-10-03,276,0,31,-9999,-9999
+501626,-9999,1947,42.778805,-87.854042,208,WI,99,Betula,papyrifera,paper birch,Plantae,4123,501,Open flowers,2011-05-16,136,1,31,-9999,-9999
+531221,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,501,Open flowers,2011-06-09,160,0,31,-9999,-9999
+618997,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,501,Open flowers,2011-08-03,215,-1,31,-9999,-9999
+642197,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,501,Open flowers,2011-08-18,230,-1,31,-9999,-9999
+700076,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,501,Open flowers,2011-10-05,278,0,31,-9999,-9999
+799644,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,501,Open flowers,2011-12-27,361,0,31,-9999,-9999
+473001,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+481068,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+484698,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+494168,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+496945,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,501,Open flowers,2011-05-12,132,0,31,-9999,-9999
+499547,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+473012,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+481079,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+484709,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+494179,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+496956,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,501,Open flowers,2011-05-12,132,0,31,-9999,-9999
+499558,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,501,Open flowers,2011-05-14,134,1,31,Less than 3,-9999
+473023,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+481090,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+484720,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+494190,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+496967,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,501,Open flowers,2011-05-12,132,0,31,-9999,-9999
+499569,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+473034,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+481101,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+484731,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+494201,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+496978,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,501,Open flowers,2011-05-12,132,0,31,-9999,-9999
+499580,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+473045,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+481112,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+484742,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+494212,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+496989,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,501,Open flowers,2011-05-12,132,0,31,-9999,-9999
+499591,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+558461,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-03-25,84,0,31,-9999,-9999
+559195,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-03-31,90,0,31,-9999,-9999
+560644,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-04-04,94,0,31,-9999,-9999
+562328,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-04-08,98,0,31,-9999,-9999
+562339,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-04-11,101,0,31,-9999,-9999
+562786,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-04-15,105,0,31,-9999,-9999
+562797,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-04-19,109,0,31,-9999,-9999
+565745,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-04-22,112,0,31,-9999,-9999
+565756,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+566203,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-04-29,119,0,31,-9999,-9999
+566214,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+568000,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-05-06,126,0,31,-9999,-9999
+568011,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+569165,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-05-16,136,1,31,Peak flower,-9999
+569176,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-05-20,140,1,31,Peak flower,-9999
+571277,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-05-24,144,0,31,-9999,-9999
+571288,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-05-26,146,0,31,-9999,-9999
+571715,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-05-31,151,0,31,-9999,-9999
+571726,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-06-06,157,0,31,-9999,-9999
+572000,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-06-13,164,0,31,-9999,-9999
+585764,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-06-20,171,0,31,-9999,-9999
+585775,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-06-27,178,0,31,-9999,-9999
+585918,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-07-05,186,0,31,-9999,-9999
+631329,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-07-11,192,0,31,-9999,-9999
+631340,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-07-22,203,0,31,-9999,-9999
+631571,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-07-27,208,0,31,-9999,-9999
+631582,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-08-04,216,0,31,-9999,-9999
+631725,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-08-11,223,0,31,-9999,-9999
+642969,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-08-18,230,0,31,-9999,-9999
+664914,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-08-29,241,0,31,-9999,-9999
+664925,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-09-06,249,0,31,-9999,-9999
+692890,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-09-23,266,0,31,-9999,-9999
+692901,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+692934,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-09-16,259,0,31,-9999,-9999
+692945,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+692956,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-09-13,256,0,31,-9999,-9999
+703226,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-09-30,273,0,31,-9999,-9999
+703237,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-10-03,276,0,31,-9999,-9999
+712996,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-10-07,280,0,31,-9999,-9999
+713007,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-10-10,283,0,31,-9999,-9999
+718630,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-10-14,287,0,31,-9999,-9999
+718641,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-10-17,290,0,31,-9999,-9999
+731248,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-10-21,294,0,31,-9999,-9999
+731259,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-10-24,297,0,31,-9999,-9999
+747771,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-11-01,305,0,31,-9999,-9999
+747874,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,501,Open flowers,2011-11-08,312,0,31,-9999,-9999
+558581,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-03-25,84,0,31,-9999,-9999
+559297,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-03-31,90,0,31,-9999,-9999
+560699,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-04-04,94,0,31,-9999,-9999
+562438,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-04-08,98,0,31,-9999,-9999
+562449,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-04-11,101,0,31,-9999,-9999
+562896,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-04-15,105,0,31,-9999,-9999
+562907,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-04-19,109,0,31,-9999,-9999
+565855,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-04-22,112,0,31,-9999,-9999
+565866,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+566313,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-04-29,119,0,31,-9999,-9999
+566324,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+568109,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-05-06,126,0,31,-9999,-9999
+568120,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-05-10,130,-1,31,-9999,-9999
+569276,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-05-16,136,1,31,Peak flower,-9999
+569287,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-05-20,140,1,31,Peak flower,-9999
+571387,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-05-24,144,0,31,-9999,-9999
+571398,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-05-26,146,0,31,-9999,-9999
+571825,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-05-31,151,0,31,-9999,-9999
+571836,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-06-06,157,0,31,-9999,-9999
+572055,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-06-13,164,0,31,-9999,-9999
+585808,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-06-20,171,0,31,-9999,-9999
+585819,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-06-27,178,0,31,-9999,-9999
+585940,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-07-05,186,0,31,-9999,-9999
+631373,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-07-11,192,0,31,-9999,-9999
+631384,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-07-22,203,0,31,-9999,-9999
+631615,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-07-27,208,0,31,-9999,-9999
+631626,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-08-04,216,0,31,-9999,-9999
+631747,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-08-11,223,0,31,-9999,-9999
+642991,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-08-18,230,0,31,-9999,-9999
+664958,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-08-29,241,0,31,-9999,-9999
+664969,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-09-06,249,0,31,-9999,-9999
+692593,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-09-13,256,0,31,-9999,-9999
+692604,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-09-16,259,0,31,-9999,-9999
+692791,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+692802,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-09-23,266,0,31,-9999,-9999
+692923,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+703270,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-09-30,273,0,31,-9999,-9999
+703281,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-10-03,276,0,31,-9999,-9999
+713040,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-10-07,280,0,31,-9999,-9999
+713051,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-10-10,283,0,31,-9999,-9999
+718549,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-10-14,287,0,31,-9999,-9999
+718663,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-10-17,290,0,31,-9999,-9999
+731292,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-10-21,294,0,31,-9999,-9999
+731303,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-10-24,297,0,31,-9999,-9999
+747793,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-11-01,305,0,31,-9999,-9999
+747896,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,501,Open flowers,2011-11-08,312,0,31,-9999,-9999
+558603,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-03-25,84,0,31,-9999,-9999
+559315,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-03-31,90,0,31,-9999,-9999
+560710,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-04-04,94,0,31,-9999,-9999
+563184,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-04-08,98,0,31,-9999,-9999
+563195,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-04-11,101,0,31,-9999,-9999
+563538,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-04-15,105,0,31,-9999,-9999
+563549,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-04-19,109,0,31,-9999,-9999
+566601,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-04-22,112,0,31,-9999,-9999
+566612,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+566955,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-04-29,119,0,31,-9999,-9999
+566966,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+568397,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-05-06,126,0,31,-9999,-9999
+568408,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+568751,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-05-16,136,0,31,-9999,-9999
+568762,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-05-20,140,0,31,-9999,-9999
+572332,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-05-24,144,0,31,-9999,-9999
+572343,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-05-26,146,0,31,-9999,-9999
+572686,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-05-31,151,0,31,-9999,-9999
+572697,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-06-06,157,0,31,-9999,-9999
+572907,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-06-13,164,0,31,-9999,-9999
+585113,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-06-20,171,0,31,-9999,-9999
+585124,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-06-27,178,0,31,-9999,-9999
+585261,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-07-05,186,0,31,-9999,-9999
+632244,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-07-11,192,0,31,-9999,-9999
+632255,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-07-22,203,0,31,-9999,-9999
+632466,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-07-27,208,0,31,-9999,-9999
+632477,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-08-04,216,0,31,-9999,-9999
+632610,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-08-11,223,0,31,-9999,-9999
+643139,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-08-18,230,0,31,-9999,-9999
+666318,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-08-29,241,0,31,-9999,-9999
+666329,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-09-06,249,0,31,-9999,-9999
+693453,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-09-13,256,0,31,-9999,-9999
+693464,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-09-16,259,0,31,-9999,-9999
+693702,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+693713,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-09-23,266,0,31,-9999,-9999
+693856,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+703668,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-09-30,273,0,31,-9999,-9999
+703679,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-10-03,276,0,31,-9999,-9999
+713350,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-10-07,280,0,31,-9999,-9999
+713361,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-10-10,283,0,31,-9999,-9999
+718962,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-10-14,287,0,31,-9999,-9999
+718973,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-10-17,290,0,31,-9999,-9999
+731602,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-10-21,294,0,31,-9999,-9999
+731613,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-10-24,297,0,31,-9999,-9999
+748103,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-11-01,305,0,31,-9999,-9999
+748214,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,501,Open flowers,2011-11-08,312,0,31,-9999,-9999
+559621,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-03-25,84,0,31,-9999,-9999
+559632,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-03-31,90,0,31,-9999,-9999
+560127,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-04-04,94,0,31,-9999,-9999
+561086,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-04-08,98,0,31,-9999,-9999
+561097,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-04-11,101,0,31,-9999,-9999
+561388,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-04-15,105,0,31,-9999,-9999
+561862,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-04-19,109,0,31,-9999,-9999
+564215,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-04-22,112,0,31,-9999,-9999
+564226,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+564539,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-04-29,119,0,31,-9999,-9999
+564550,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+567195,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-05-06,126,0,31,-9999,-9999
+567206,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+569341,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-05-16,136,1,31,More than 10,-9999
+569352,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-05-20,140,1,31,Peak flower,-9999
+570355,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-05-24,144,0,31,-9999,-9999
+570366,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-05-26,146,0,31,-9999,-9999
+570664,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-05-31,151,0,31,-9999,-9999
+573103,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-06-06,157,0,31,-9999,-9999
+573114,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-06-13,164,0,31,-9999,-9999
+575122,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-06-20,171,0,31,-9999,-9999
+575133,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-06-27,178,0,31,-9999,-9999
+575467,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-07-05,186,0,31,-9999,-9999
+593571,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-07-11,192,0,31,-9999,-9999
+616424,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-07-22,203,0,31,-9999,-9999
+616435,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-07-27,208,0,31,-9999,-9999
+630418,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-08-04,216,0,31,-9999,-9999
+630429,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-08-11,223,0,31,-9999,-9999
+642610,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-08-18,230,0,31,-9999,-9999
+663047,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-08-29,241,0,31,-9999,-9999
+663058,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-09-06,249,0,31,-9999,-9999
+678811,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-09-13,256,0,31,-9999,-9999
+678822,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-09-16,259,0,31,-9999,-9999
+701549,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+701560,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-09-23,266,0,31,-9999,-9999
+702108,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+702119,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-09-30,273,0,31,-9999,-9999
+702410,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-10-03,276,0,31,-9999,-9999
+712095,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-10-06,279,0,31,-9999,-9999
+712106,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-10-10,283,0,31,-9999,-9999
+716670,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-10-14,287,0,31,-9999,-9999
+716681,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-10-17,290,0,31,-9999,-9999
+730632,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-10-21,294,0,31,-9999,-9999
+730643,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-10-24,297,0,31,-9999,-9999
+748269,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-11-01,305,0,31,-9999,-9999
+748431,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,501,Open flowers,2011-11-08,312,0,31,-9999,-9999
+559987,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-03-25,84,0,31,-9999,-9999
+559998,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-03-31,90,0,31,-9999,-9999
+560330,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-04-04,94,0,31,-9999,-9999
+561614,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-04-08,98,0,31,-9999,-9999
+561625,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-04-11,101,0,31,-9999,-9999
+561679,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-04-15,105,0,31,-9999,-9999
+561733,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-04-19,109,0,31,-9999,-9999
+565267,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-04-22,112,0,31,-9999,-9999
+565278,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-04-25,115,0,31,-9999,-9999
+565352,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-04-29,119,0,31,-9999,-9999
+565408,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+567129,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-05-06,126,0,31,-9999,-9999
+567140,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+569713,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-05-16,136,1,31,Peak flower,-9999
+569724,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-05-20,140,1,31,Peak flower,-9999
+570895,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-05-24,144,0,31,-9999,-9999
+570906,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-05-26,146,0,31,-9999,-9999
+570960,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-05-31,151,0,31,-9999,-9999
+573037,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-06-06,157,0,31,-9999,-9999
+573048,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-06-13,164,0,31,-9999,-9999
+575989,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-06-20,171,0,31,-9999,-9999
+576000,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-06-27,178,0,31,-9999,-9999
+576054,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-07-05,186,0,31,-9999,-9999
+593754,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-07-11,192,0,31,-9999,-9999
+629867,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-07-22,203,0,31,-9999,-9999
+629878,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-07-27,208,0,31,-9999,-9999
+629975,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-08-04,216,0,31,-9999,-9999
+629986,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-08-11,223,0,31,-9999,-9999
+642772,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-08-18,230,0,31,-9999,-9999
+662981,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-08-29,241,0,31,-9999,-9999
+662992,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-09-06,249,0,31,-9999,-9999
+678646,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-09-13,256,0,31,-9999,-9999
+678657,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-09-16,259,0,31,-9999,-9999
+678711,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+702669,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-09-23,266,0,31,-9999,-9999
+702680,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+702832,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-09-30,273,0,31,-9999,-9999
+702843,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-10-03,276,0,31,-9999,-9999
+712461,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-10-07,280,0,31,-9999,-9999
+712472,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-10-10,283,0,31,-9999,-9999
+719114,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-10-14,287,0,31,-9999,-9999
+719125,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-10-17,290,0,31,-9999,-9999
+730566,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-10-21,294,0,31,-9999,-9999
+730577,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-10-24,297,0,31,-9999,-9999
+747434,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-11-01,305,0,31,-9999,-9999
+747488,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,501,Open flowers,2011-11-08,312,0,31,-9999,-9999
+1074639,-9999,2694,61.666172,-149.139923,203,AK,99,Betula,papyrifera,paper birch,Plantae,8660,501,Open flowers,2011-05-01,121,0,31,-9999,-9999
+619893,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-05-17,137,0,31,-9999,-9999
+620040,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-05-18,138,0,31,-9999,-9999
+620189,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-05-21,141,0,31,-9999,-9999
+620349,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-05-24,144,0,31,-9999,-9999
+620475,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-05-27,147,0,31,-9999,-9999
+620603,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-05-29,149,0,31,-9999,-9999
+620909,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-07-22,203,0,31,-9999,-9999
+723530,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-08-08,220,0,31,-9999,-9999
+723689,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-08-10,222,0,31,-9999,-9999
+723955,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-08-18,230,0,31,-9999,-9999
+724126,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-08-21,233,0,31,-9999,-9999
+732763,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-08-25,237,0,31,-9999,-9999
+732860,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-08-29,241,0,31,-9999,-9999
+733077,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-08-31,243,0,31,-9999,-9999
+733174,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-09-04,247,0,31,-9999,-9999
+733271,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,501,Open flowers,2011-09-11,254,0,31,-9999,-9999
+674620,2015-10-08 15:08:43,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-05-24,144,1,31,-9999,-9999
+674630,2015-10-08 14:46:51,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-05-27,147,-1,31,-9999,-9999
+674641,2015-10-08 14:46:51,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-06-05,156,0,31,-9999,-9999
+674652,2015-10-08 15:10:16,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-06-11,162,0,31,-9999,-9999
+674663,2015-10-08 15:10:16,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-06-20,171,0,31,-9999,-9999
+674674,2015-10-08 15:10:16,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-07-20,201,0,31,-9999,-9999
+674685,2015-10-08 14:45:03,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-08-11,223,0,31,-9999,-9999
+674696,2015-10-08 14:39:01,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-08-28,240,0,31,-9999,-9999
+674707,2015-10-08 15:11:42,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-09-18,261,0,31,-9999,-9999
+674718,2015-10-08 15:11:42,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-09-11,254,0,31,-9999,-9999
+674814,2015-10-08 14:49:20,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-05-06,126,0,31,-9999,-9999
+674825,2015-10-08 14:49:20,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-05-01,121,0,31,-9999,-9999
+674836,2015-10-08 14:49:20,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-05-09,129,0,31,-9999,-9999
+674847,2015-10-08 15:08:42,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-05-16,136,-1,31,-9999,-9999
+674858,2015-10-08 15:08:42,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-05-18,138,1,31,-9999,-9999
+674869,-9999,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,501,Open flowers,2011-05-15,135,0,31,-9999,-9999
+834339,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,501,Open flowers,2011-03-26,85,0,31,-9999,-9999
+834605,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,501,Open flowers,2011-04-01,91,0,31,-9999,-9999
+835099,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,501,Open flowers,2011-04-14,104,0,31,-9999,-9999
+835355,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,501,Open flowers,2011-04-12,102,0,31,-9999,-9999
+835611,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,501,Open flowers,2011-04-26,116,0,31,-9999,-9999
+835866,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,501,Open flowers,2011-04-28,118,0,31,-9999,-9999
+838692,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+838958,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+834350,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,501,Open flowers,2011-03-26,85,0,31,-9999,-9999
+834616,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,501,Open flowers,2011-04-01,91,0,31,-9999,-9999
+835110,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,501,Open flowers,2011-04-14,104,0,31,-9999,-9999
+835366,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,501,Open flowers,2011-04-12,102,0,31,-9999,-9999
+835622,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,501,Open flowers,2011-04-26,116,0,31,-9999,-9999
+835877,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,501,Open flowers,2011-04-28,118,0,31,-9999,-9999
+838703,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,501,Open flowers,2011-04-30,120,0,31,-9999,-9999
+838969,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+456796,-9999,5327,44.989223,-93.193871,308,MN,99,Betula,papyrifera,paper birch,Plantae,11361,501,Open flowers,2011-04-10,100,0,31,-9999,-9999
+456807,-9999,5327,44.989223,-93.193871,308,MN,99,Betula,papyrifera,paper birch,Plantae,11361,501,Open flowers,2011-04-13,103,0,31,-9999,-9999
+696807,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-04-29,119,0,31,-9999,-9999
+696818,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-02,122,0,31,-9999,-9999
+696829,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-03,123,0,31,-9999,-9999
+696840,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-04,124,0,31,-9999,-9999
+696851,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-08,128,0,31,-9999,-9999
+696862,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-09,129,0,31,-9999,-9999
+696873,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-10,130,0,31,-9999,-9999
+696884,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-11,131,0,31,-9999,-9999
+696895,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-12,132,0,31,-9999,-9999
+696906,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-13,133,0,31,-9999,-9999
+696917,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-14,134,0,31,-9999,-9999
+696928,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-16,136,0,31,-9999,-9999
+696939,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-17,137,0,31,-9999,-9999
+696950,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-21,141,0,31,-9999,-9999
+696961,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-22,142,0,31,-9999,-9999
+696972,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-23,143,0,31,-9999,-9999
+696983,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-24,144,0,31,-9999,-9999
+696994,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-25,145,0,31,-9999,-9999
+697005,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-28,148,0,31,-9999,-9999
+697016,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-29,149,0,31,-9999,-9999
+697027,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-30,150,0,31,-9999,-9999
+697038,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-05-31,151,0,31,-9999,-9999
+697049,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-06-01,152,0,31,-9999,-9999
+697060,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-06-02,153,0,31,-9999,-9999
+697076,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-06-03,154,0,31,-9999,-9999
+697087,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-06-04,155,0,31,-9999,-9999
+697098,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-06-08,159,0,31,-9999,-9999
+697109,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-06-11,162,0,31,-9999,-9999
+697120,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-06-17,168,0,31,-9999,-9999
+697131,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,501,Open flowers,2011-04-27,117,0,31,-9999,-9999
+792412,-9999,6338,45.956833,-89.068481,535,WI,99,Betula,papyrifera,paper birch,Plantae,17703,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+792474,-9999,6338,45.956833,-89.068481,535,WI,99,Betula,papyrifera,paper birch,Plantae,17703,501,Open flowers,2011-10-04,277,0,31,-9999,-9999
+792536,-9999,6338,45.956833,-89.068481,535,WI,99,Betula,papyrifera,paper birch,Plantae,17703,501,Open flowers,2011-11-04,308,0,31,-9999,-9999
+792598,-9999,6338,45.956833,-89.068481,535,WI,99,Betula,papyrifera,paper birch,Plantae,17703,501,Open flowers,2011-11-20,324,0,31,-9999,-9999
+839828,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+839839,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-09-21,264,0,31,-9999,-9999
+842512,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-09-23,266,0,31,-9999,-9999
+842523,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-09-26,269,0,31,-9999,-9999
+842534,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-09-28,271,0,31,-9999,-9999
+842545,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-09-30,273,0,31,-9999,-9999
+842556,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-03,276,0,31,-9999,-9999
+842567,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-05,278,0,31,-9999,-9999
+842594,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-07,280,0,31,-9999,-9999
+842605,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-10,283,0,31,-9999,-9999
+842616,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-12,285,0,31,-9999,-9999
+842627,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-14,287,0,31,-9999,-9999
+842638,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-17,290,0,31,-9999,-9999
+842649,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-19,292,0,31,-9999,-9999
+842660,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-21,294,0,31,-9999,-9999
+842671,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-24,297,0,31,-9999,-9999
+842682,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-26,299,0,31,-9999,-9999
+842693,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,501,Open flowers,2011-10-28,301,0,31,-9999,-9999
+677270,2015-10-09 11:44:29,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-05-16,136,0,31,-9999,-9999
+677281,2015-10-09 11:44:29,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-05-23,143,0,31,-9999,-9999
+677292,2015-10-09 11:44:29,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-05-27,147,0,31,-9999,-9999
+677303,2015-10-09 11:44:30,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-06-05,156,-1,31,-9999,-9999
+677314,2015-10-09 11:44:30,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-06-11,162,-1,31,-9999,-9999
+677325,2015-10-09 11:44:30,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-06-23,174,0,31,-9999,-9999
+677336,2015-10-09 11:44:13,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-07-20,201,0,31,-9999,-9999
+677347,2015-10-09 11:44:13,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-08-08,220,0,31,-9999,-9999
+677358,2015-10-09 11:44:13,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-09-06,249,0,31,-9999,-9999
+677369,2015-10-09 11:43:42,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,501,Open flowers,2011-09-19,262,0,31,-9999,-9999
+619941,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-05-17,137,0,31,-9999,-9999
+620088,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-05-18,138,0,31,-9999,-9999
+620237,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-05-21,141,0,31,-9999,-9999
+620397,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-05-24,144,0,31,-9999,-9999
+620523,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-05-27,147,0,31,-9999,-9999
+620651,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-05-29,149,1,31,-9999,-9999
+723577,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-08-08,220,0,31,-9999,-9999
+723737,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-08-10,222,0,31,-9999,-9999
+723987,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-08-18,230,0,31,-9999,-9999
+724151,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-08-21,233,0,31,-9999,-9999
+732788,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-08-25,237,0,31,-9999,-9999
+732885,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-08-29,241,0,31,-9999,-9999
+733102,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-08-31,243,0,31,-9999,-9999
+733199,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-09-04,247,0,31,-9999,-9999
+733296,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,501,Open flowers,2011-09-11,254,0,31,-9999,-9999
+839348,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+839347,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,1939,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+839518,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+839517,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2003,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+839646,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+839645,-9999,637,44.34095,-72.46122,518,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2017,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+834667,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,196,Full pollen release (angiosperms),2011-03-18,77,0,-9999,-9999,-9999
+834136,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2011-03-26,85,0,32,-9999,-9999
+834402,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2011-04-01,91,0,32,-9999,-9999
+834666,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2011-03-18,77,0,-9999,-9999,-9999
+834896,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2011-04-14,104,0,32,-9999,-9999
+835152,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2011-04-12,102,0,32,-9999,-9999
+835408,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2011-04-26,116,0,32,-9999,-9999
+835664,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2011-04-28,118,0,32,-9999,-9999
+838489,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+838755,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2771,502,Pollen release (flowers),2011-05-14,134,1,32,Peak pollen,-9999
+834687,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,196,Full pollen release (angiosperms),2011-03-18,77,0,-9999,-9999,-9999
+834158,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2011-03-26,85,0,32,-9999,-9999
+834424,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2011-04-01,91,0,32,-9999,-9999
+834686,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2011-03-18,77,0,-9999,-9999,-9999
+834918,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2011-04-14,104,0,32,-9999,-9999
+835174,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2011-04-12,102,0,32,-9999,-9999
+835430,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2011-04-26,116,0,32,-9999,-9999
+835686,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2011-04-28,118,0,32,-9999,-9999
+838511,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+838777,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2772,502,Pollen release (flowers),2011-05-14,134,1,32,Peak pollen,-9999
+834707,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,196,Full pollen release (angiosperms),2011-03-18,77,0,-9999,-9999,-9999
+834180,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2011-03-26,85,0,32,-9999,-9999
+834446,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2011-04-01,91,0,32,-9999,-9999
+834706,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2011-03-18,77,0,-9999,-9999,-9999
+834940,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2011-04-14,104,0,32,-9999,-9999
+835196,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2011-04-12,102,0,32,-9999,-9999
+835452,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2011-04-26,116,0,32,-9999,-9999
+835708,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2011-04-28,118,0,32,-9999,-9999
+838533,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+838799,-9999,1550,44.341782,-72.461853,457,VT,97,Betula,alleghaniensis,yellow birch,Plantae,2773,502,Pollen release (flowers),2011-05-14,134,0,32,-9999,-9999
+753434,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-04-14,104,0,32,-9999,-9999
+753580,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-04-21,111,0,32,-9999,-9999
+753726,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-04-12,102,0,32,-9999,-9999
+755845,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-04-28,118,0,32,-9999,-9999
+755991,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-05-04,124,0,32,-9999,-9999
+784149,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-05-11,131,0,32,-9999,-9999
+784295,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-05-19,139,0,32,-9999,-9999
+784490,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-06-02,153,0,32,-9999,-9999
+784634,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-06-09,160,0,32,-9999,-9999
+784821,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-07-19,200,0,32,-9999,-9999
+784967,-9999,5281,40.710247,-77.956192,368,PA,97,Betula,alleghaniensis,yellow birch,Plantae,10797,502,Pollen release (flowers),2011-08-21,233,0,32,-9999,-9999
+558615,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-03-25,84,0,32,-9999,-9999
+559337,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-03-31,90,0,32,-9999,-9999
+560722,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-04-04,94,0,32,-9999,-9999
+563207,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-04-08,98,0,32,-9999,-9999
+563218,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-04-11,101,0,32,-9999,-9999
+563561,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-04-15,105,0,32,-9999,-9999
+563572,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-04-19,109,0,32,-9999,-9999
+566624,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-04-22,112,0,32,-9999,-9999
+566635,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+566978,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-04-29,119,0,32,-9999,-9999
+566989,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+568420,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-05-06,126,0,32,-9999,-9999
+568431,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+568774,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-05-16,136,-1,32,-9999,-9999
+568785,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-05-20,140,1,32,Peak pollen,-9999
+572355,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-05-24,144,0,32,-9999,-9999
+572366,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-05-26,146,0,32,-9999,-9999
+572709,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-05-31,151,0,32,-9999,-9999
+572720,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-06-06,157,0,32,-9999,-9999
+572919,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-06-13,164,0,32,-9999,-9999
+584870,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-06-20,171,0,32,-9999,-9999
+584881,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-06-27,178,0,32,-9999,-9999
+584947,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-07-05,186,0,32,-9999,-9999
+631869,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-07-11,192,0,32,-9999,-9999
+631880,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-07-22,203,0,32,-9999,-9999
+632001,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-07-27,208,0,32,-9999,-9999
+632012,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-08-04,216,0,32,-9999,-9999
+632078,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-08-11,223,0,32,-9999,-9999
+643051,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-08-18,230,0,32,-9999,-9999
+666141,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-08-29,241,0,32,-9999,-9999
+666152,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-09-06,249,0,32,-9999,-9999
+693078,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-09-13,256,0,32,-9999,-9999
+693089,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-09-16,259,0,32,-9999,-9999
+693210,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+693221,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-09-23,266,0,32,-9999,-9999
+693287,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-09-26,269,0,32,-9999,-9999
+703491,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-09-30,273,0,32,-9999,-9999
+703502,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-10-03,276,0,32,-9999,-9999
+713173,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-10-07,280,0,32,-9999,-9999
+713184,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-10-10,283,0,32,-9999,-9999
+718785,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-10-14,287,0,32,-9999,-9999
+718796,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-10-17,290,0,32,-9999,-9999
+731425,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-10-21,294,0,32,-9999,-9999
+731436,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-10-24,297,0,32,-9999,-9999
+747956,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-11-01,305,0,32,-9999,-9999
+748015,-9999,5952,45.407852,-93.200974,281,MN,97,Betula,alleghaniensis,yellow birch,Plantae,10807,502,Pollen release (flowers),2011-11-08,312,0,32,-9999,-9999
+745691,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-10,314,0,32,-9999,-9999
+745732,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-11,315,0,32,-9999,-9999
+745773,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-12,316,0,32,-9999,-9999
+746988,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-13,317,0,32,-9999,-9999
+747029,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-14,318,0,32,-9999,-9999
+749378,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-15,319,0,32,-9999,-9999
+749701,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-16,320,0,32,-9999,-9999
+756257,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-17,321,0,32,-9999,-9999
+756279,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-18,322,0,32,-9999,-9999
+757442,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-19,323,0,32,-9999,-9999
+757530,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-20,324,0,32,-9999,-9999
+761230,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-21,325,0,32,-9999,-9999
+766863,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-22,326,0,32,-9999,-9999
+771237,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-23,327,0,32,-9999,-9999
+777843,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-25,329,0,32,-9999,-9999
+778222,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-26,330,0,32,-9999,-9999
+779467,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-28,332,0,32,-9999,-9999
+779619,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-29,333,0,32,-9999,-9999
+780079,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-11-30,334,0,32,-9999,-9999
+781550,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-12-01,335,0,32,-9999,-9999
+782285,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-12-02,336,0,32,-9999,-9999
+782307,-9999,6276,35.557968,-82.645256,668,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17089,502,Pollen release (flowers),2011-12-03,337,0,32,-9999,-9999
+797761,-9999,5994,41.372311,-81.918243,236,OH,97,Betula,alleghaniensis,yellow birch,Plantae,17131,502,Pollen release (flowers),2011-11-25,329,0,32,-9999,-9999
+791879,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-17,351,0,32,-9999,-9999
+792373,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-18,352,0,32,-9999,-9999
+792766,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-19,353,0,32,-9999,-9999
+793164,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-20,354,0,32,-9999,-9999
+795013,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-21,355,0,32,-9999,-9999
+796147,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-22,356,0,32,-9999,-9999
+796620,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-23,357,0,32,-9999,-9999
+796753,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-24,358,0,32,-9999,-9999
+797491,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-26,360,0,32,-9999,-9999
+797813,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-27,361,0,32,-9999,-9999
+801611,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-28,362,0,32,-9999,-9999
+802845,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-29,363,0,32,-9999,-9999
+802883,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-30,364,0,32,-9999,-9999
+804149,-9999,2539,36.061321,-77.821602,42,NC,97,Betula,alleghaniensis,yellow birch,Plantae,17697,502,Pollen release (flowers),2011-12-31,365,0,32,-9999,-9999
+753445,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-04-14,104,0,32,-9999,-9999
+753591,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-04-21,111,0,32,-9999,-9999
+753737,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-04-12,102,0,32,-9999,-9999
+755856,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-04-28,118,0,32,-9999,-9999
+756002,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-05-04,124,0,32,-9999,-9999
+784160,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-05-11,131,0,32,-9999,-9999
+784304,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-05-19,139,0,32,-9999,-9999
+784501,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-06-02,153,0,32,-9999,-9999
+784645,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-06-09,160,0,32,-9999,-9999
+784832,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-07-19,200,0,32,-9999,-9999
+784978,-9999,5281,40.710247,-77.956192,368,PA,98,Betula,lenta,sweet birch,Plantae,10798,502,Pollen release (flowers),2011-08-21,233,0,32,-9999,-9999
+444628,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,502,Pollen release (flowers),2011-03-25,84,0,32,-9999,-9999
+518726,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,502,Pollen release (flowers),2011-05-30,150,-1,32,-9999,-9999
+553242,-9999,777,39.719887,-104.917572,1645,CO,99,Betula,papyrifera,paper birch,Plantae,641,502,Pollen release (flowers),2011-06-29,180,1,32,-9999,-9999
+839358,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+839357,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,1991,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+839656,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+839655,-9999,637,44.34095,-72.46122,518,VT,99,Betula,papyrifera,paper birch,Plantae,2018,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+441740,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-03-27,86,0,32,-9999,-9999
+798032,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-03-30,89,0,32,-9999,-9999
+798043,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-04-10,100,0,32,-9999,-9999
+798054,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-04-14,104,0,32,-9999,-9999
+798065,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-04-16,106,0,32,-9999,-9999
+798273,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-04-22,112,0,32,-9999,-9999
+798284,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-04-27,117,0,32,-9999,-9999
+798295,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-05-12,132,0,32,-9999,-9999
+798306,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-05-19,139,0,32,-9999,-9999
+798317,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-05-21,141,0,32,-9999,-9999
+798328,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-06-13,164,0,32,-9999,-9999
+798339,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-07-20,201,0,32,-9999,-9999
+798350,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-09-12,255,0,32,-9999,-9999
+798358,-9999,2,43.08535,-70.69133,12,ME,99,Betula,papyrifera,paper birch,Plantae,2111,502,Pollen release (flowers),2011-10-26,299,0,32,-9999,-9999
+483733,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-05-01,121,0,32,-9999,-9999
+500067,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+500078,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-05-15,135,0,32,-9999,-9999
+504609,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-05-18,138,0,32,-9999,-9999
+509772,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-05-22,142,0,32,-9999,-9999
+513626,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-05-25,145,0,32,-9999,-9999
+521539,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-06-01,152,0,32,-9999,-9999
+528406,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-06-07,158,0,32,-9999,-9999
+543329,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-06-20,171,0,32,-9999,-9999
+550653,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-06-27,178,0,32,-9999,-9999
+582337,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-07-09,190,0,32,-9999,-9999
+608935,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-07-26,207,0,32,-9999,-9999
+657731,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-09-03,246,0,32,-9999,-9999
+668648,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-09-14,257,0,32,-9999,-9999
+672452,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+684154,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-09-26,269,0,32,-9999,-9999
+695301,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-09-28,271,0,32,-9999,-9999
+695331,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-10-02,275,0,32,-9999,-9999
+699284,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-10-05,278,0,32,-9999,-9999
+707876,-9999,1597,48.054951,-92.765915,412,MN,99,Betula,papyrifera,paper birch,Plantae,2980,502,Pollen release (flowers),2011-10-09,282,0,32,-9999,-9999
+483796,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-05-01,121,0,32,-9999,-9999
+494358,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+500460,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-05-15,135,0,32,-9999,-9999
+504671,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-05-18,138,0,32,-9999,-9999
+509835,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-05-22,142,0,32,-9999,-9999
+513688,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-05-25,145,0,32,-9999,-9999
+521602,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-06-01,152,0,32,-9999,-9999
+528469,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-06-07,158,0,32,-9999,-9999
+543437,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-06-20,171,0,32,-9999,-9999
+550714,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-06-27,178,0,32,-9999,-9999
+582399,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-07-09,190,0,32,-9999,-9999
+609043,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-07-26,207,0,32,-9999,-9999
+628803,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-08-10,222,0,32,-9999,-9999
+657794,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-09-03,246,0,32,-9999,-9999
+668711,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-09-14,257,0,32,-9999,-9999
+672514,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+684219,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-09-26,269,0,32,-9999,-9999
+686476,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-09-28,271,0,32,-9999,-9999
+695394,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-10-02,275,0,32,-9999,-9999
+699347,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-10-05,278,0,32,-9999,-9999
+707984,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-10-09,282,0,32,-9999,-9999
+715601,-9999,1598,48.051636,-92.766304,395,MN,99,Betula,papyrifera,paper birch,Plantae,3013,502,Pollen release (flowers),2011-10-16,289,0,32,-9999,-9999
+677687,-9999,678,45.177551,-89.848251,432,WI,99,Betula,papyrifera,paper birch,Plantae,3979,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+708708,-9999,678,45.177551,-89.848251,432,WI,99,Betula,papyrifera,paper birch,Plantae,3979,502,Pollen release (flowers),2011-10-10,283,0,32,-9999,-9999
+708719,-9999,678,45.177551,-89.848251,432,WI,99,Betula,papyrifera,paper birch,Plantae,3979,502,Pollen release (flowers),2011-10-03,276,0,32,-9999,-9999
+501627,-9999,1947,42.778805,-87.854042,208,WI,99,Betula,papyrifera,paper birch,Plantae,4123,502,Pollen release (flowers),2011-05-16,136,1,32,-9999,-9999
+531222,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,502,Pollen release (flowers),2011-06-09,160,0,32,-9999,-9999
+618998,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,502,Pollen release (flowers),2011-08-03,215,-1,32,-9999,-9999
+642198,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,502,Pollen release (flowers),2011-08-18,230,0,32,-9999,-9999
+700077,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,502,Pollen release (flowers),2011-10-05,278,0,32,-9999,-9999
+799645,-9999,1956,61.301197,-149.517426,131,AK,99,Betula,papyrifera,paper birch,Plantae,4146,502,Pollen release (flowers),2011-12-27,361,0,32,-9999,-9999
+473002,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+481069,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+484699,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+494169,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+496946,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2011-05-12,132,0,32,-9999,-9999
+499548,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4246,502,Pollen release (flowers),2011-05-14,134,0,32,-9999,-9999
+473013,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+481080,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+484710,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+494180,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+496957,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2011-05-12,132,0,32,-9999,-9999
+499559,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4247,502,Pollen release (flowers),2011-05-14,134,0,32,-9999,-9999
+473024,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+481091,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+484721,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+494191,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+496968,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2011-05-12,132,0,32,-9999,-9999
+499570,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4248,502,Pollen release (flowers),2011-05-14,134,0,32,-9999,-9999
+473035,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+481102,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+484732,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+494202,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+496979,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2011-05-12,132,0,32,-9999,-9999
+499581,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4249,502,Pollen release (flowers),2011-05-14,134,0,32,-9999,-9999
+473046,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+481113,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+484743,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+494213,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+496990,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2011-05-12,132,0,32,-9999,-9999
+499592,-9999,2042,61.19146,-149.85379,34,AK,99,Betula,papyrifera,paper birch,Plantae,4250,502,Pollen release (flowers),2011-05-14,134,0,32,-9999,-9999
+557767,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+557766,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+558462,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-03-25,84,0,32,-9999,-9999
+559197,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-03-31,90,0,32,-9999,-9999
+560645,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-04-04,94,0,32,-9999,-9999
+562329,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-04-08,98,0,32,-9999,-9999
+562340,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-04-11,101,0,32,-9999,-9999
+562787,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-04-15,105,0,32,-9999,-9999
+562798,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-04-19,109,0,32,-9999,-9999
+565746,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-04-22,112,0,32,-9999,-9999
+565757,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+566204,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-04-29,119,0,32,-9999,-9999
+566215,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+568001,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-05-06,126,0,32,-9999,-9999
+568012,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+569166,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-05-16,136,1,32,Peak pollen,-9999
+569177,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-05-20,140,1,32,Peak pollen,-9999
+571278,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-05-24,144,0,32,-9999,-9999
+571289,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-05-26,146,0,32,-9999,-9999
+571716,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-05-31,151,0,32,-9999,-9999
+571727,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-06-06,157,0,32,-9999,-9999
+572001,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-06-13,164,0,32,-9999,-9999
+585765,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-06-20,171,0,32,-9999,-9999
+585776,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-06-27,178,0,32,-9999,-9999
+585919,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-07-05,186,0,32,-9999,-9999
+631330,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-07-11,192,0,32,-9999,-9999
+631341,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-07-22,203,0,32,-9999,-9999
+631572,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-07-27,208,0,32,-9999,-9999
+631583,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-08-04,216,0,32,-9999,-9999
+631726,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-08-11,223,0,32,-9999,-9999
+642970,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-08-18,230,0,32,-9999,-9999
+664915,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-08-29,241,0,32,-9999,-9999
+664926,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-09-06,249,0,32,-9999,-9999
+692891,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-09-23,266,0,32,-9999,-9999
+692902,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-09-26,269,0,32,-9999,-9999
+692935,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-09-16,259,0,32,-9999,-9999
+692946,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+692957,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-09-13,256,0,32,-9999,-9999
+703227,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-09-30,273,0,32,-9999,-9999
+703238,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-10-03,276,0,32,-9999,-9999
+712997,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-10-07,280,0,32,-9999,-9999
+713008,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-10-10,283,0,32,-9999,-9999
+718631,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-10-14,287,0,32,-9999,-9999
+718642,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-10-17,290,0,32,-9999,-9999
+731249,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-10-21,294,0,32,-9999,-9999
+731260,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-10-24,297,0,32,-9999,-9999
+747772,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-11-01,305,0,32,-9999,-9999
+747875,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5102,502,Pollen release (flowers),2011-11-08,312,0,32,-9999,-9999
+557817,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+557816,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+558582,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-03-25,84,0,32,-9999,-9999
+559296,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-03-31,90,0,32,-9999,-9999
+560700,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-04-04,94,0,32,-9999,-9999
+562439,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-04-08,98,0,32,-9999,-9999
+562450,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-04-11,101,0,32,-9999,-9999
+562897,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-04-15,105,0,32,-9999,-9999
+562908,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-04-19,109,0,32,-9999,-9999
+565856,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-04-22,112,0,32,-9999,-9999
+565867,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+566314,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-04-29,119,0,32,-9999,-9999
+566325,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+568110,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-05-06,126,0,32,-9999,-9999
+568121,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-05-10,130,-1,32,-9999,-9999
+569277,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-05-16,136,1,32,Peak pollen,-9999
+569288,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-05-20,140,1,32,Peak pollen,-9999
+571388,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-05-24,144,0,32,-9999,-9999
+571399,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-05-26,146,0,32,-9999,-9999
+571826,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-05-31,151,0,32,-9999,-9999
+571837,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-06-06,157,0,32,-9999,-9999
+572056,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-06-13,164,0,32,-9999,-9999
+585809,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-06-20,171,0,32,-9999,-9999
+585820,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-06-27,178,0,32,-9999,-9999
+585941,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-07-05,186,0,32,-9999,-9999
+631374,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-07-11,192,0,32,-9999,-9999
+631385,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-07-22,203,0,32,-9999,-9999
+631616,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-07-27,208,0,32,-9999,-9999
+631627,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-08-04,216,0,32,-9999,-9999
+631748,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-08-11,223,0,32,-9999,-9999
+642992,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-08-18,230,0,32,-9999,-9999
+664959,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-08-29,241,0,32,-9999,-9999
+664970,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-09-06,249,0,32,-9999,-9999
+692594,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-09-13,256,0,32,-9999,-9999
+692605,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-09-16,259,0,32,-9999,-9999
+692792,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+692803,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-09-23,266,0,32,-9999,-9999
+692924,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-09-26,269,0,32,-9999,-9999
+703271,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-09-30,273,0,32,-9999,-9999
+703282,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-10-03,276,0,32,-9999,-9999
+713041,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-10-07,280,0,32,-9999,-9999
+713052,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-10-10,283,0,32,-9999,-9999
+718550,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-10-14,287,0,32,-9999,-9999
+718664,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-10-17,290,0,32,-9999,-9999
+731293,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-10-21,294,0,32,-9999,-9999
+731304,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-10-24,297,0,32,-9999,-9999
+747794,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-11-01,305,0,32,-9999,-9999
+747897,-9999,5509,45.407852,-93.199257,275,MN,99,Betula,papyrifera,paper birch,Plantae,5107,502,Pollen release (flowers),2011-11-08,312,0,32,-9999,-9999
+557827,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+557826,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+558593,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-03-25,84,0,32,-9999,-9999
+559316,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-03-31,90,0,32,-9999,-9999
+560711,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-04-04,94,0,32,-9999,-9999
+563185,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-04-08,98,0,32,-9999,-9999
+563196,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-04-11,101,0,32,-9999,-9999
+563539,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-04-15,105,0,32,-9999,-9999
+563550,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-04-19,109,0,32,-9999,-9999
+566602,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-04-22,112,0,32,-9999,-9999
+566613,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+566956,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-04-29,119,0,32,-9999,-9999
+566967,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+568398,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-05-06,126,0,32,-9999,-9999
+568409,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+568752,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-05-16,136,0,32,-9999,-9999
+568763,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-05-20,140,0,32,-9999,-9999
+572333,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-05-24,144,0,32,-9999,-9999
+572344,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-05-26,146,0,32,-9999,-9999
+572687,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-05-31,151,0,32,-9999,-9999
+572698,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-06-06,157,0,32,-9999,-9999
+572908,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-06-13,164,0,32,-9999,-9999
+585114,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-06-20,171,0,32,-9999,-9999
+585125,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-06-27,178,0,32,-9999,-9999
+585262,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-07-05,186,0,32,-9999,-9999
+632245,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-07-11,192,0,32,-9999,-9999
+632256,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-07-22,203,0,32,-9999,-9999
+632467,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-07-27,208,0,32,-9999,-9999
+632478,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-08-04,216,0,32,-9999,-9999
+632611,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-08-11,223,0,32,-9999,-9999
+643140,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-08-18,230,0,32,-9999,-9999
+666319,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-08-29,241,0,32,-9999,-9999
+666330,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-09-06,249,0,32,-9999,-9999
+693454,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-09-13,256,0,32,-9999,-9999
+693465,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-09-16,259,0,32,-9999,-9999
+693703,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+693714,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-09-23,266,0,32,-9999,-9999
+693857,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-09-26,269,0,32,-9999,-9999
+703669,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-09-30,273,0,32,-9999,-9999
+703680,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-10-03,276,0,32,-9999,-9999
+713351,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-10-07,280,0,32,-9999,-9999
+713362,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-10-10,283,0,32,-9999,-9999
+718963,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-10-14,287,0,32,-9999,-9999
+718974,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-10-17,290,0,32,-9999,-9999
+731603,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-10-21,294,0,32,-9999,-9999
+731614,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-10-24,297,0,32,-9999,-9999
+748104,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-11-01,305,0,32,-9999,-9999
+748215,-9999,38,45.407852,-93.200974,281,MN,99,Betula,papyrifera,paper birch,Plantae,5108,502,Pollen release (flowers),2011-11-08,312,0,32,-9999,-9999
+557328,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+557327,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+559622,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-03-25,84,0,32,-9999,-9999
+559633,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-03-31,90,0,32,-9999,-9999
+560128,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-04-04,94,0,32,-9999,-9999
+561087,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-04-08,98,0,32,-9999,-9999
+561098,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-04-11,101,0,32,-9999,-9999
+561389,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-04-15,105,0,32,-9999,-9999
+561863,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-04-19,109,0,32,-9999,-9999
+564216,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-04-22,112,0,32,-9999,-9999
+564227,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+564540,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-04-29,119,0,32,-9999,-9999
+564551,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+567196,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-05-06,126,0,32,-9999,-9999
+567207,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+569342,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-05-16,136,1,32,More than 10,-9999
+569353,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-05-20,140,1,32,Peak pollen,-9999
+570356,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-05-24,144,0,32,-9999,-9999
+570367,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-05-26,146,0,32,-9999,-9999
+570665,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-05-31,151,0,32,-9999,-9999
+573104,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-06-06,157,0,32,-9999,-9999
+573115,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-06-13,164,0,32,-9999,-9999
+575123,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-06-20,171,0,32,-9999,-9999
+575134,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-06-27,178,0,32,-9999,-9999
+575468,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-07-05,186,0,32,-9999,-9999
+593572,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-07-11,192,0,32,-9999,-9999
+616425,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-07-22,203,0,32,-9999,-9999
+616436,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-07-27,208,0,32,-9999,-9999
+630419,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-08-04,216,0,32,-9999,-9999
+630430,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-08-11,223,0,32,-9999,-9999
+642611,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-08-18,230,0,32,-9999,-9999
+663048,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-08-29,241,0,32,-9999,-9999
+663059,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-09-06,249,0,32,-9999,-9999
+678812,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-09-13,256,0,32,-9999,-9999
+678823,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-09-16,259,0,32,-9999,-9999
+701550,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+701561,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-09-23,266,0,32,-9999,-9999
+702109,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-09-26,269,0,32,-9999,-9999
+702120,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-09-30,273,0,32,-9999,-9999
+702411,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-10-03,276,0,32,-9999,-9999
+712096,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-10-06,279,0,32,-9999,-9999
+712107,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-10-10,283,0,32,-9999,-9999
+716671,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-10-14,287,0,32,-9999,-9999
+716682,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-10-17,290,0,32,-9999,-9999
+730633,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-10-21,294,0,32,-9999,-9999
+730644,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-10-24,297,0,32,-9999,-9999
+748270,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-11-01,305,0,32,-9999,-9999
+748432,-9999,2394,45.425339,-93.186249,280,MN,99,Betula,papyrifera,paper birch,Plantae,5111,502,Pollen release (flowers),2011-11-08,312,0,32,-9999,-9999
+557298,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,196,Full pollen release (angiosperms),2011-03-17,76,0,-9999,-9999,-9999
+557297,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-03-17,76,0,-9999,-9999,-9999
+559988,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-03-25,84,0,32,-9999,-9999
+559999,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-03-31,90,0,32,-9999,-9999
+560331,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-04-04,94,0,32,-9999,-9999
+561615,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-04-08,98,0,32,-9999,-9999
+561626,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-04-11,101,0,32,-9999,-9999
+561680,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-04-15,105,0,32,-9999,-9999
+561734,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-04-19,109,0,32,-9999,-9999
+565268,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-04-22,112,0,32,-9999,-9999
+565279,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-04-25,115,0,32,-9999,-9999
+565353,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-04-29,119,0,32,-9999,-9999
+565409,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+567130,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-05-06,126,0,32,-9999,-9999
+567141,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+569714,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-05-16,136,1,32,Peak pollen,-9999
+569725,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-05-20,140,1,32,Peak pollen,-9999
+570896,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-05-24,144,0,32,-9999,-9999
+570907,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-05-26,146,0,32,-9999,-9999
+570961,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-05-31,151,0,32,-9999,-9999
+573038,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-06-06,157,0,32,-9999,-9999
+573049,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-06-13,164,0,32,-9999,-9999
+575990,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-06-20,171,0,32,-9999,-9999
+576001,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-06-27,178,0,32,-9999,-9999
+576055,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-07-05,186,0,32,-9999,-9999
+593755,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-07-11,192,0,32,-9999,-9999
+629868,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-07-22,203,0,32,-9999,-9999
+629879,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-07-27,208,0,32,-9999,-9999
+629976,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-08-04,216,0,32,-9999,-9999
+629987,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-08-11,223,0,32,-9999,-9999
+642773,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-08-18,230,0,32,-9999,-9999
+662982,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-08-29,241,0,32,-9999,-9999
+662993,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-09-06,249,0,32,-9999,-9999
+678647,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-09-13,256,0,32,-9999,-9999
+678658,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-09-16,259,0,32,-9999,-9999
+678712,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+702670,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-09-23,266,0,32,-9999,-9999
+702681,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-09-26,269,0,32,-9999,-9999
+702833,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-09-30,273,0,32,-9999,-9999
+702844,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-10-03,276,0,32,-9999,-9999
+712462,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-10-07,280,0,32,-9999,-9999
+712473,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-10-10,283,0,32,-9999,-9999
+719115,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-10-14,287,0,32,-9999,-9999
+719126,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-10-17,290,0,32,-9999,-9999
+730567,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-10-21,294,0,32,-9999,-9999
+730578,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-10-24,297,0,32,-9999,-9999
+747435,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-11-01,305,0,32,-9999,-9999
+747489,-9999,2395,45.402004,-93.204147,277,MN,99,Betula,papyrifera,paper birch,Plantae,5117,502,Pollen release (flowers),2011-11-08,312,0,32,-9999,-9999
+1074640,-9999,2694,61.666172,-149.139923,203,AK,99,Betula,papyrifera,paper birch,Plantae,8660,502,Pollen release (flowers),2011-05-01,121,0,32,-9999,-9999
+619894,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-05-17,137,0,32,-9999,-9999
+620041,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-05-18,138,0,32,-9999,-9999
+620190,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-05-21,141,0,32,-9999,-9999
+620350,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-05-24,144,0,32,-9999,-9999
+620476,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-05-27,147,1,32,-9999,-9999
+620604,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-05-29,149,1,32,Peak pollen,-9999
+620910,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-07-22,203,0,32,-9999,-9999
+723531,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-08-08,220,0,32,-9999,-9999
+723690,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-08-10,222,0,32,-9999,-9999
+723956,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-08-18,230,0,32,-9999,-9999
+724127,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-08-21,233,0,32,-9999,-9999
+732764,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-08-25,237,0,32,-9999,-9999
+732861,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-08-29,241,0,32,-9999,-9999
+733078,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-08-31,243,0,32,-9999,-9999
+733175,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-09-04,247,0,32,-9999,-9999
+733272,-9999,5037,67.252335,-150.183746,323,AK,99,Betula,papyrifera,paper birch,Plantae,9350,502,Pollen release (flowers),2011-09-11,254,0,32,-9999,-9999
+674621,2015-10-08 15:08:43,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-05-24,144,-1,32,-9999,-9999
+674631,2015-10-08 14:46:51,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-05-27,147,-1,32,-9999,-9999
+674642,2015-10-08 14:46:51,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-06-05,156,0,32,-9999,-9999
+674653,2015-10-08 15:10:16,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-06-11,162,0,32,-9999,-9999
+674664,2015-10-08 15:10:16,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-06-20,171,0,32,-9999,-9999
+674675,2015-10-08 15:10:16,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-07-20,201,0,32,-9999,-9999
+674686,2015-10-08 14:45:03,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-08-11,223,0,32,-9999,-9999
+674697,2015-10-08 14:39:01,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-08-28,240,0,32,-9999,-9999
+674708,2015-10-08 15:11:42,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-09-18,261,0,32,-9999,-9999
+674719,2015-10-08 15:11:42,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-09-11,254,0,32,-9999,-9999
+674815,2015-10-08 14:49:20,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-05-06,126,0,32,-9999,-9999
+674826,2015-10-08 14:49:20,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-05-01,121,0,32,-9999,-9999
+674837,2015-10-08 14:49:20,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-05-09,129,0,32,-9999,-9999
+674848,2015-10-08 15:08:42,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-05-16,136,-1,32,-9999,-9999
+674859,2015-10-08 15:08:42,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-05-18,138,-1,32,-9999,-9999
+674870,-9999,5076,64.925751,-147.880295,311,AK,99,Betula,papyrifera,paper birch,Plantae,9574,502,Pollen release (flowers),2011-05-15,135,0,32,-9999,-9999
+834847,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,196,Full pollen release (angiosperms),2011-03-18,77,0,-9999,-9999,-9999
+834340,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,502,Pollen release (flowers),2011-03-26,85,0,32,-9999,-9999
+834606,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,502,Pollen release (flowers),2011-04-01,91,0,32,-9999,-9999
+834846,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,502,Pollen release (flowers),2011-03-18,77,0,-9999,-9999,-9999
+835100,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,502,Pollen release (flowers),2011-04-14,104,0,32,-9999,-9999
+835356,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,502,Pollen release (flowers),2011-04-12,102,0,32,-9999,-9999
+835612,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,502,Pollen release (flowers),2011-04-26,116,0,32,-9999,-9999
+835867,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,502,Pollen release (flowers),2011-04-28,118,0,32,-9999,-9999
+838693,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+838959,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10565,502,Pollen release (flowers),2011-05-14,134,0,32,-9999,-9999
+834857,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,196,Full pollen release (angiosperms),2011-03-18,77,0,-9999,-9999,-9999
+834351,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,502,Pollen release (flowers),2011-03-26,85,0,32,-9999,-9999
+834617,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,502,Pollen release (flowers),2011-04-01,91,0,32,-9999,-9999
+834856,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,502,Pollen release (flowers),2011-03-18,77,0,-9999,-9999,-9999
+835111,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,502,Pollen release (flowers),2011-04-14,104,0,32,-9999,-9999
+835367,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,502,Pollen release (flowers),2011-04-12,102,0,32,-9999,-9999
+835623,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,502,Pollen release (flowers),2011-04-26,116,0,32,-9999,-9999
+835878,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,502,Pollen release (flowers),2011-04-28,118,0,32,-9999,-9999
+838704,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,502,Pollen release (flowers),2011-04-30,120,0,32,-9999,-9999
+838970,-9999,1550,44.341782,-72.461853,457,VT,99,Betula,papyrifera,paper birch,Plantae,10566,502,Pollen release (flowers),2011-05-14,134,1,32,Peak pollen,-9999
+456797,-9999,5327,44.989223,-93.193871,308,MN,99,Betula,papyrifera,paper birch,Plantae,11361,502,Pollen release (flowers),2011-04-10,100,0,32,-9999,-9999
+456808,-9999,5327,44.989223,-93.193871,308,MN,99,Betula,papyrifera,paper birch,Plantae,11361,502,Pollen release (flowers),2011-04-13,103,0,32,-9999,-9999
+502888,-9999,5277,47.468678,-121.74054,163,WA,99,Betula,papyrifera,paper birch,Plantae,12736,196,Full pollen release (angiosperms),2011-03-08,67,0,-9999,-9999,-9999
+502898,-9999,5277,47.468678,-121.74054,163,WA,99,Betula,papyrifera,paper birch,Plantae,12736,196,Full pollen release (angiosperms),2011-03-10,69,0,-9999,-9999,-9999
+502887,-9999,5277,47.468678,-121.74054,163,WA,99,Betula,papyrifera,paper birch,Plantae,12736,502,Pollen release (flowers),2011-03-08,67,0,-9999,-9999,-9999
+502897,-9999,5277,47.468678,-121.74054,163,WA,99,Betula,papyrifera,paper birch,Plantae,12736,502,Pollen release (flowers),2011-03-10,69,0,-9999,-9999,-9999
+696808,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-04-29,119,0,32,-9999,-9999
+696819,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-02,122,0,32,-9999,-9999
+696830,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-03,123,0,32,-9999,-9999
+696841,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-04,124,0,32,-9999,-9999
+696852,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-08,128,0,32,-9999,-9999
+696863,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-09,129,0,32,-9999,-9999
+696874,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-10,130,0,32,-9999,-9999
+696885,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-11,131,0,32,-9999,-9999
+696896,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-12,132,0,32,-9999,-9999
+696907,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-13,133,0,32,-9999,-9999
+696918,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-14,134,0,32,-9999,-9999
+696929,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-16,136,0,32,-9999,-9999
+696940,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-17,137,0,32,-9999,-9999
+696951,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-21,141,0,32,-9999,-9999
+696962,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-22,142,0,32,-9999,-9999
+696973,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-23,143,0,32,-9999,-9999
+696984,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-24,144,0,32,-9999,-9999
+696995,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-25,145,0,32,-9999,-9999
+697006,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-28,148,0,32,-9999,-9999
+697017,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-29,149,0,32,-9999,-9999
+697028,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-30,150,0,32,-9999,-9999
+697039,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-05-31,151,0,32,-9999,-9999
+697050,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-06-01,152,0,32,-9999,-9999
+697061,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-06-02,153,0,32,-9999,-9999
+697077,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-06-03,154,0,32,-9999,-9999
+697088,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-06-04,155,0,32,-9999,-9999
+697099,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-06-08,159,0,32,-9999,-9999
+697110,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-06-11,162,0,32,-9999,-9999
+697121,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-06-17,168,0,32,-9999,-9999
+697132,-9999,6222,64.867546,-147.747849,137,AK,99,Betula,papyrifera,paper birch,Plantae,16393,502,Pollen release (flowers),2011-04-27,117,0,32,-9999,-9999
+792413,-9999,6338,45.956833,-89.068481,535,WI,99,Betula,papyrifera,paper birch,Plantae,17703,502,Pollen release (flowers),2011-09-26,269,-1,32,-9999,-9999
+792475,-9999,6338,45.956833,-89.068481,535,WI,99,Betula,papyrifera,paper birch,Plantae,17703,502,Pollen release (flowers),2011-10-04,277,-1,32,-9999,-9999
+792537,-9999,6338,45.956833,-89.068481,535,WI,99,Betula,papyrifera,paper birch,Plantae,17703,502,Pollen release (flowers),2011-11-04,308,-1,32,-9999,-9999
+792599,-9999,6338,45.956833,-89.068481,535,WI,99,Betula,papyrifera,paper birch,Plantae,17703,502,Pollen release (flowers),2011-11-20,324,0,32,-9999,-9999
+839829,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+839840,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-09-21,264,0,32,-9999,-9999
+842513,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-09-23,266,0,32,-9999,-9999
+842524,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-09-26,269,0,32,-9999,-9999
+842535,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-09-28,271,0,32,-9999,-9999
+842546,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-09-30,273,0,32,-9999,-9999
+842557,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-03,276,0,32,-9999,-9999
+842568,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-05,278,0,32,-9999,-9999
+842595,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-07,280,0,32,-9999,-9999
+842606,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-10,283,0,32,-9999,-9999
+842617,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-12,285,0,32,-9999,-9999
+842628,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-14,287,0,32,-9999,-9999
+842639,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-17,290,0,32,-9999,-9999
+842650,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-19,292,0,32,-9999,-9999
+842661,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-21,294,0,32,-9999,-9999
+842672,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-24,297,0,32,-9999,-9999
+842683,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-26,299,0,32,-9999,-9999
+842694,-9999,6208,46.557777,-87.457619,260,MI,99,Betula,papyrifera,paper birch,Plantae,18433,502,Pollen release (flowers),2011-10-28,301,0,32,-9999,-9999
+677271,2015-10-09 11:44:29,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-05-16,136,0,32,-9999,-9999
+677282,2015-10-09 11:44:29,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-05-23,143,0,32,-9999,-9999
+677293,2015-10-09 11:44:29,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-05-27,147,0,32,-9999,-9999
+677304,2015-10-09 11:44:30,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-06-05,156,-1,32,-9999,-9999
+677315,2015-10-09 11:44:30,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-06-11,162,-1,32,-9999,-9999
+677326,2015-10-09 11:44:30,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-06-23,174,0,32,-9999,-9999
+677337,2015-10-09 11:44:13,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-07-20,201,0,32,-9999,-9999
+677348,2015-10-09 11:44:13,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-08-08,220,0,32,-9999,-9999
+677359,2015-10-09 11:44:13,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-09-06,249,0,32,-9999,-9999
+677370,2015-10-09 11:43:42,5078,64.913361,-147.83815,174,AK,430,Betula,nana,dwarf birch,Plantae,9721,502,Pollen release (flowers),2011-09-19,262,0,32,-9999,-9999
+619942,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-05-17,137,0,32,-9999,-9999
+620089,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-05-18,138,0,32,-9999,-9999
+620238,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-05-21,141,0,32,-9999,-9999
+620398,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-05-24,144,0,32,-9999,-9999
+620524,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-05-27,147,1,32,-9999,-9999
+620652,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-05-29,149,1,32,-9999,-9999
+723578,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-08-08,220,0,32,-9999,-9999
+723738,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-08-10,222,0,32,-9999,-9999
+723988,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-08-18,230,0,32,-9999,-9999
+724152,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-08-21,233,0,32,-9999,-9999
+732789,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-08-25,237,0,32,-9999,-9999
+732886,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-08-29,241,0,32,-9999,-9999
+733103,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-08-31,243,0,32,-9999,-9999
+733200,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-09-04,247,0,32,-9999,-9999
+733297,-9999,5037,67.252335,-150.183746,323,AK,430,Betula,nana,dwarf birch,Plantae,10102,502,Pollen release (flowers),2011-09-11,254,0,32,-9999,-9999
