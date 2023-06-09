@@ -9,26 +9,26 @@ library(ggpubr)
 library(gridExtra)
 library(maps)
 
-path_app<-"/srv/shiny-server/phenowatch/"
+path_app<-"~/Desktop/SEAS-phenowatch/phenowatch-main/"
 # archive_path<-"/data/mycontainer/phenoforecast/archive/"
-data_path<-"/data/mycontainer/phenoforecast/NPN/"
-responsesDir <- "/data/mycontainer/phenoforecast/submitted"
+data_path<-"~/Desktop/SEAS-phenowatch/phenowatch-main/NPN/"
+responsesDir <- "~/Desktop/SEAS-phenowatch/phenowatch-main/submitted/"
 today<-read_file(paste0(path_app,"today.txt")) %>% as.Date()
 
 species_list <- rnpn::npn_species()
 
-genus_list<-species_list %>% 
-  dplyr::select(genus) %>% 
-  unique() %>% 
-  arrange(genus) %>% 
+genus_list<-species_list %>%
+  dplyr::select(genus) %>%
+  unique() %>%
+  arrange(genus) %>%
   unlist()
 names(genus_list)<-NULL
 
 genusoi_list <- c(
-  "Quercus", 
+  "Acer",
+  "Quercus",
   "Betula",
-  "Populus",
-  "Acer"
+  "Populus"
 )
 
 fieldsMandatory <- c("observer", "genus",
@@ -45,7 +45,7 @@ labelMandatory <- function(label) {
 appCSS <-
   ".mandatory_star { color: red; }"
 
-fieldsAll <- c("observer", "genus", "species", 
+fieldsAll <- c("observer", "genus", "species",
                "date", "latitude", "longitude",
                "event", "status","email")
 
@@ -59,7 +59,7 @@ humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
 
 #####
 generate_output<-function(input, window=14, radius=100000) {
-  data_path_subset<-paste0(data_path, 
+  data_path_subset<-paste0(data_path,
                            case_when(input$event=="Leafing"~"leaf",
                                      input$event=="Flowering"~"flower"),
                            "/",
@@ -69,14 +69,14 @@ generate_output<-function(input, window=14, radius=100000) {
   if (length(npn_files)>0) {
     npn_data_all<-vector(mode="list")
     for (i in 1:length(npn_files)) {
-      npn_data_all[[i]]<-read_csv(npn_files[[i]]) %>% 
+      npn_data_all[[i]]<-read_csv(npn_files[[i]]) %>%
         mutate(`intensity_value`=as.character(`intensity_value`),
                update_datetime=as.character(update_datetime))
     }
-    npn_data_all<-bind_rows(npn_data_all) %>% 
-      dplyr::select(site_id, latitude, longitude, observation_date, day_of_year, phenophase_status) %>% 
-      filter(phenophase_status!= -1) %>% 
-      mutate(year=as.integer(format(observation_date, "%Y"))) %>% 
+    npn_data_all<-bind_rows(npn_data_all) %>%
+      dplyr::select(site_id, latitude, longitude, observation_date, day_of_year, phenophase_status) %>%
+      filter(phenophase_status!= -1) %>%
+      mutate(year=as.integer(format(observation_date, "%Y"))) %>%
       filter(longitude>=-125,
              longitude<=-67,
              latitude>=25,
@@ -96,21 +96,21 @@ generate_output<-function(input, window=14, radius=100000) {
   
   # radius<-500000
   if (nrow(npn_data_all)>0) {
-    npn_location<-npn_data_all %>% 
-      rowwise() %>% 
-      mutate(distance = Imap::gdist(lat.1=latitude, lon.1=longitude, lat.2=input$latitude, lon.2=input$longitude, units="m")) %>% 
-      arrange(distance) %>% 
+    npn_location<-npn_data_all %>%
+      rowwise() %>%
+      mutate(distance = Imap::gdist(lat.1=latitude, lon.1=longitude, lat.2=input$latitude, lon.2=input$longitude, units="m")) %>%
+      arrange(distance) %>%
       filter(distance <=radius)
   } else {
     npn_location<-npn_data_all
   }
 
     if (nrow(npn_location)>0) {
-    npn_location_ts<-npn_location%>% 
-      dplyr::select(day_of_year, phenophase_status) %>% 
-      group_by(day_of_year) %>% 
-      summarize(intensity=mean (phenophase_status)) %>% 
-      ungroup() %>% 
+    npn_location_ts<-npn_location%>%
+      dplyr::select(day_of_year, phenophase_status) %>%
+      group_by(day_of_year) %>%
+      summarize(intensity=mean (phenophase_status)) %>%
+      ungroup() %>%
       complete(day_of_year = 1:366, fill = list(intensity = NA))
     
     min_id<-min(which(!is.na(npn_location_ts$intensity)))
@@ -132,7 +132,7 @@ generate_output<-function(input, window=14, radius=100000) {
           max_id<-length(npn_location_ts$intensity)
           done<-T
         }
-        npn_location_ts$intensity[min_id:max_id]<-ptw::whit1(npn_location_ts$intensity[min_id:max_id],10) 
+        npn_location_ts$intensity[min_id:max_id]<-ptw::whit1(npn_location_ts$intensity[min_id:max_id],10)
       }
     }
     
@@ -168,14 +168,14 @@ generate_output<-function(input, window=14, radius=100000) {
   
   #####
   # window<-14
-  npn_time<-npn_data_all %>% 
-    filter(abs(observation_date-input$date)<=window) %>% 
+  npn_time<-npn_data_all %>%
+    filter(abs(observation_date-input$date)<=window) %>%
     arrange(day_of_year)
   
   if (nrow(npn_time)>0) {
-    npn_time_surface<-npn_time%>% 
-      group_by(longitude, latitude) %>% 
-      summarize (intensity=mean(phenophase_status)) %>% 
+    npn_time_surface<-npn_time%>%
+      group_by(longitude, latitude) %>%
+      summarize (intensity=mean(phenophase_status)) %>%
       ungroup()
     
     npn_time_sp<-SpatialPointsDataFrame(coords=npn_time_surface[,c("longitude", "latitude")],
@@ -196,7 +196,7 @@ generate_output<-function(input, window=14, radius=100000) {
       #              range=vgm_df[2,3]%>% unlist(),
       #              nugget=vgm_df[1,2]%>% unlist(),
       #              kappa=vgm_df[2,4]%>% unlist())
-      # 
+      #
       # r_0.5deg<-raster(res=0.5, xmn=-125,xmx=-67,ymn=25,ymx=53)
       # coord_new<-coordinates(r_0.5deg)
       # coord_new_sp<-SpatialPoints(coords=coord_new[,c("x", "y")],
@@ -204,7 +204,7 @@ generate_output<-function(input, window=14, radius=100000) {
       # kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp, model=fit_npn
       #                     # ,maxdist=500
       #                     , na.action=na.omit
-      # ) %>% 
+      # ) %>%
       #   as.data.frame()
       
       us <- map_data("state")
@@ -349,16 +349,16 @@ generate_output<-function(input, window=14, radius=100000) {
     #                    case_when(input$event=="Leafing"~"leaf",
     #                              input$event=="Flowering"~"flower"),
     #                    "/results/pars.csv")
-    # 
+    #
     # params<-param_name %>%
-    #   mutate(value=read_csv(param_file)[1:ndim,1] %>% unlist()) %>% 
+    #   mutate(value=read_csv(param_file)[1:ndim,1] %>% unlist()) %>%
     #   mutate(id=row_number())
-    # 
-    # param_vis<-params %>% 
-    #   filter(var!=var_list[1]) %>% 
-    #   arrange(desc(value)) %>% 
-    #   head(1) 
-    # 
+    #
+    # param_vis<-params %>%
+    #   filter(var!=var_list[1]) %>%
+    #   arrange(desc(value)) %>%
+    #   head(1)
+    #
     # coord_file<-paste0(archive_path,
     #                    today,
     #                    "/",
@@ -368,7 +368,7 @@ generate_output<-function(input, window=14, radius=100000) {
     #                              input$event=="Flowering"~"flower"),
     #                    "/data/coord_df",
     #                    ".csv")
-    # 
+    #
     # train_X_file<-paste0(archive_path,
     #                      today,
     #                      "/",
@@ -377,7 +377,7 @@ generate_output<-function(input, window=14, radius=100000) {
     #                      case_when(input$event=="Leafing"~"leaf",
     #                                input$event=="Flowering"~"flower"),
     #                      "/train/X.csv")
-    # 
+    #
     # train_Y_file<-paste0(archive_path,
     #                      today,
     #                      "/",
@@ -386,7 +386,7 @@ generate_output<-function(input, window=14, radius=100000) {
     #                      case_when(input$event=="Leafing"~"leaf",
     #                                input$event=="Flowering"~"flower"),
     #                      "/train/Y.csv")
-    # 
+    #
     # train_P_file<-paste0(archive_path,
     #                      today,
     #                      "/",
@@ -395,7 +395,7 @@ generate_output<-function(input, window=14, radius=100000) {
     #                      case_when(input$event=="Leafing"~"leaf",
     #                                input$event=="Flowering"~"flower"),
     #                      "/train/P.csv")
-    # 
+    #
     # train_D_file<-paste0(archive_path,
     #                      today,
     #                      "/",
@@ -404,7 +404,7 @@ generate_output<-function(input, window=14, radius=100000) {
     #                      case_when(input$event=="Leafing"~"leaf",
     #                                input$event=="Flowering"~"flower"),
     #                      "/train/D.csv")
-    # 
+    #
     # scaling_X_file<-paste0(archive_path,
     #                        today,
     #                        "/",
@@ -415,7 +415,7 @@ generate_output<-function(input, window=14, radius=100000) {
     #                        "/scaling/",
     #                        which(var_list==param_vis$var),
     #                        ".csv")
-    # 
+    #
     # scaling_Y_file<-paste0(archive_path,
     #                        today,
     #                        "/",
@@ -424,46 +424,46 @@ generate_output<-function(input, window=14, radius=100000) {
     #                        case_when(input$event=="Leafing"~"leaf",
     #                                  input$event=="Flowering"~"flower"),
     #                        "/scaling/1.csv")
-    # 
+    #
     # function_df<-bind_cols(
     #   data.frame(x=read_csv(train_X_file)[,param_vis$id] %>% unlist(),
-    #              site=read_csv(train_P_file)%>% unlist()) %>% 
-    #     remove_rownames() %>% 
+    #              site=read_csv(train_P_file)%>% unlist()) %>%
+    #     remove_rownames() %>%
     #     left_join(data.frame(read_csv(scaling_X_file)), by="site") %>%
     #     mutate(x=(x+0.5)*range+lower) %>%
     #     dplyr::select(x, site),
     #   data.frame(y=read_csv(train_Y_file) %>% unlist(),
-    #              site=read_csv(train_P_file)%>% unlist()) %>% 
-    #     remove_rownames() %>% 
+    #              site=read_csv(train_P_file)%>% unlist()) %>%
+    #     remove_rownames() %>%
     #     left_join(data.frame(read_csv(scaling_Y_file)), by="site") %>%
     #     mutate(y=(y+0.5)*range+lower) %>%
     #     dplyr::select(y)
-    # ) %>% 
-    #   bind_cols(read_csv(train_D_file) %>%dplyr::select(date=V1)) %>% 
-    #   mutate(day_of_year=as.integer(format(date, "%j"))) %>% 
-    #   filter(min(abs(day_of_year-as.integer(format(input$date, "%j"))), 365.25-abs(day_of_year-as.integer(format(input$date, "%j"))))<=window) %>% 
-    #   left_join(read_csv(coord_file), by="site") %>% 
-    #   rowwise() %>% 
-    #   mutate(distance = Imap::gdist(lat.1=lat, lon.1=lon, lat.2=input$latitude, lon.2=input$longitude, units="m")) %>% 
-    #   arrange(distance) %>% 
+    # ) %>%
+    #   bind_cols(read_csv(train_D_file) %>%dplyr::select(date=V1)) %>%
+    #   mutate(day_of_year=as.integer(format(date, "%j"))) %>%
+    #   filter(min(abs(day_of_year-as.integer(format(input$date, "%j"))), 365.25-abs(day_of_year-as.integer(format(input$date, "%j"))))<=window) %>%
+    #   left_join(read_csv(coord_file), by="site") %>%
+    #   rowwise() %>%
+    #   mutate(distance = Imap::gdist(lat.1=lat, lon.1=lon, lat.2=input$latitude, lon.2=input$longitude, units="m")) %>%
+    #   arrange(distance) %>%
     #   filter(distance <=radius)
     
     
     
     
     # if (nrow(function_df)>0) {
-    #   
+    #
     #   # retrieve predictor at input location
     #   input_sp<-SpatialPoints(coords = data.frame(lon=input$longitude, lat=input$latitude),
     #                           proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
     #   period<-lags[[which (var_list==param_vis$var)]][[param_vis$period]]
     #   retrieve_date_list<-input$date-period
-    #   
+    #
     #   if (param_vis$var == "evi") {
     #     path_fore<-paste0(archive_path,
     #                       "/",today,
     #                       "/",input$genus,"/evi/analyses/")
-    #     
+    #
     #     vgm_df<-read_csv(paste0(path_fore,"/variogram parameters.csv"))
     #     fit_evi<-vgm(psill=vgm_df[2,2] %>% unlist(),
     #                  model=vgm_df[2,1]%>% unlist(),
@@ -479,17 +479,17 @@ generate_output<-function(input, window=14, radius=100000) {
     #                               lower = col_double(),
     #                               upper = col_double(),
     #                               group = col_character()
-    #                             ))%>% 
-    #       dplyr::select(-variance, -lower, -upper) %>% 
-    #       spread(key="group", value="value") %>% 
-    #       group_by(site, date) %>% 
+    #                             ))%>%
+    #       dplyr::select(-variance, -lower, -upper) %>%
+    #       spread(key="group", value="value") %>%
+    #       group_by(site, date) %>%
     #       summarize(observed=mean(observed, na.rm=T),
-    #                 forecasted=mean(forecasted, na.rm=T)) %>% 
-    #       ungroup() %>% 
+    #                 forecasted=mean(forecasted, na.rm=T)) %>%
+    #       ungroup() %>%
     #       mutate(value=case_when(!is.na(observed)~observed,
-    #                              TRUE~forecasted)) %>% 
+    #                              TRUE~forecasted)) %>%
     #       dplyr::select(-observed, -forecasted)
-    #     
+    #
     #     coord_df_leaf<-read_csv(paste0(archive_path,
     #                                    today,
     #                                    "/",
@@ -499,31 +499,31 @@ generate_output<-function(input, window=14, radius=100000) {
     #                                              input$event=="Flowering"~"flower"),
     #                                    "/data/coord_df",
     #                                    ".csv"))
-    #     
+    #
     #     X_new_list<-rep(NA, length=length(retrieve_date_list))
     #     for (i in 1:length(retrieve_date_list)) {
     #       d<-retrieve_date_list[i]
-    #       
-    #       evi_forecast<-evi_df_filled %>% 
-    #         filter(date==d) %>% 
-    #         left_join(coord_df_leaf %>% mutate(site=row_number()),by="site") %>% 
-    #         dplyr::select(lon, lat, value) %>% 
+    #
+    #       evi_forecast<-evi_df_filled %>%
+    #         filter(date==d) %>%
+    #         left_join(coord_df_leaf %>% mutate(site=row_number()),by="site") %>%
+    #         dplyr::select(lon, lat, value) %>%
     #         drop_na() # sometimes NA because point is not over land - no weather data?
-    #       
+    #
     #       if (nrow(evi_forecast)!=0) {
     #         evi_forecast_sp<-SpatialPointsDataFrame(coords=evi_forecast[,c("lon", "lat")],
     #                                                 data=evi_forecast[,c("value"),drop=F],
     #                                                 proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
-    #         
-    #         
-    #         kriged_res <- krige(value ~ 1, evi_forecast_sp, input_sp, model=fit_evi) %>% 
-    #           as.data.frame() %>% 
-    #           dplyr::select(lon, lat, value=var1.pred) %>% 
+    #
+    #
+    #         kriged_res <- krige(value ~ 1, evi_forecast_sp, input_sp, model=fit_evi) %>%
+    #           as.data.frame() %>%
+    #           dplyr::select(lon, lat, value=var1.pred) %>%
     #           mutate(date=d)
     #       } else {
-    #         kriged_res <- input_sp %>% 
-    #           dplyr::select(lon, lat) %>% 
-    #           mutate(value=NA) %>% 
+    #         kriged_res <- input_sp %>%
+    #           dplyr::select(lon, lat) %>%
+    #           mutate(value=NA) %>%
     #           mutate(date=d)
     #       }
     #       X_new_list[i]<-kriged_res$value
@@ -534,13 +534,13 @@ generate_output<-function(input, window=14, radius=100000) {
     #       X_new<-mean(X_new_list)
     #     }
     #   }
-    #   
+    #
     #   if (param_vis$var %in% c ("tmean", "prcp")) {
     #     X_new_list<-rep(NA, length=length(retrieve_date_list))
-    #     
+    #
     #     for (i in 1:length(retrieve_date_list)) {
     #       date<-retrieve_date_list[i]
-    #       
+    #
     #       if (date<today-1) {
     #         weather_file<-paste0("/data/mycontainer/phenoforecast/NLDAS/",
     #                              param_vis$var,"/",date, ".nc")
@@ -552,24 +552,24 @@ generate_output<-function(input, window=14, radius=100000) {
     #       if (date>= today-1) {
     #         weather_file<-paste0("/data/mycontainer/phenoforecast/GFS/",
     #                              param_vis$var,"/", today-1,"/",date, ".nc")
-    #         
+    #
     #         if (file.exists(weather_file)) {
     #           weather_ras<-raster(weather_file)
     #           value<-extract(weather_ras,input_sp)#-273.15
     #         }
     #       }
-    #       
+    #
     #       X_new_list[i]<-value
-    #       
+    #
     #     }
-    #     
+    #
     #     if (sum(is.na(X_new_list))>=length(X_new_list)/5) {
     #       X_new<-NA
     #     } else {
     #       X_new<-mean(X_new_list)
     #     }
     #   }
-    #   
+    #
     #   p_function<-ggplot()+
     #     geom_point(data=function_df ,aes(x=x, y=y),alpha=0.1)+
     #     geom_quantile(data=function_df ,aes(x=x, y=y),method = "rqss",quantiles=0.5, col="blue", lwd=2,lambda=0.1,na.rm=T)+
@@ -589,7 +589,7 @@ generate_output<-function(input, window=14, radius=100000) {
     # } else {
       img <- jpeg::readJPEG("question.jpeg")
       p_function<-ggplot()+background_image(img)+coord_equal()
-    # } 
+    # }
   } else {
     img <- jpeg::readJPEG("question.jpeg")
     p_function<-ggplot()+background_image(img)+coord_equal()
@@ -608,16 +608,16 @@ generate_output<-function(input, window=14, radius=100000) {
     message_anomaly<-paste0("There is no sufficient data to estimate the ",
                             input$genus,
                             case_when(input$event=="Leafing"~" leafing",
-                                      input$event=="Flowering"~" flowering"), 
+                                      input$event=="Flowering"~" flowering"),
                             " status for this area and time of year. Your record provides a starting point.")
     message_anomaly_ann<-paste0("There is no sufficient data to estimate the timing of ",
                                 input$genus,
                                 case_when(input$event=="Leafing"~" leafing",
-                                          input$event=="Flowering"~" flowering"), 
+                                          input$event=="Flowering"~" flowering"),
                                 " season for this area. Your record provides a starting point.")
     } else {
     his_slope<-npn_location_ts %>%
-      filter(min(abs(day_of_year-as.integer(format(input$date, "%j"))), 365.25-abs(day_of_year-as.integer(format(input$date, "%j"))))<=15) %>% 
+      filter(min(abs(day_of_year-as.integer(format(input$date, "%j"))), 365.25-abs(day_of_year-as.integer(format(input$date, "%j"))))<=15) %>%
       mutate(left=day_of_year-as.integer(format(input$date, "%j")),
              right=day_of_year-as.integer(format(input$date, "%j"))-365.25) %>%
       mutate(distance=case_when(abs(left)<=abs(right)~left,
@@ -629,10 +629,10 @@ generate_output<-function(input, window=14, radius=100000) {
     message_anomaly<-paste0("Your record suggests a ",
                             case_when(as.integer(input$status=="Yes")>=(his_est+0.2)~"higher",
                                       as.integer(input$status=="Yes")<=(his_est-0.2)~"lower",
-                                      TRUE~"similar"), 
-                            " possibility of ", 
+                                      TRUE~"similar"),
+                            " possibility of ",
                             case_when(input$event=="Leafing"~"seeing leaves",
-                                      input$event=="Flowering"~"seeing flowers"), 
+                                      input$event=="Flowering"~"seeing flowers"),
                             " of ",
                             input$genus,
                             " compared to the estimate from historical record (",
@@ -643,9 +643,9 @@ generate_output<-function(input, window=14, radius=100000) {
                                   case_when(input$status=="Yes"~"might",
                                             input$status=="No"~"might not"),
                                   " be in the ",
-                                  input$genus, 
+                                  input$genus,
                                   case_when(input$event=="Leafing"~" leafing",
-                                            input$event=="Flowering"~" flowering"), 
+                                            input$event=="Flowering"~" flowering"),
                                   " season, ",
                                   case_when(input$status=="Yes" & his_est>=0.01 ~ "consistent with",
                                             input$status=="No" & his_est<0.01 ~ "consistent with",
@@ -658,9 +658,9 @@ generate_output<-function(input, window=14, radius=100000) {
                                   case_when(input$status=="Yes"~"might",
                                             input$status=="No"~"might not"),
                                   " be in the ",
-                                  input$genus, 
+                                  input$genus,
                                   case_when(input$event=="Leafing"~" leafing",
-                                            input$event=="Flowering"~" flowering"), 
+                                            input$event=="Flowering"~" flowering"),
                                   " season, ",
                                   case_when(input$status=="Yes" & his_est>=0.01 ~ "consistent with",
                                             input$status=="No" & his_est<0.01 ~ "consistent with",
@@ -675,14 +675,14 @@ generate_output<-function(input, window=14, radius=100000) {
                                             (input$status>=his_est+0.2) & (his_slope$estimate<0)~"a later end",
                                             (input$status<=his_est-0.2) & (his_slope$estimate<0)~"an earlier end",
                                             (input$status>his_est-0.2) & (input$status<his_est+0.2) & (his_slope$estimate<0)~"a similar end"
-                                  ), 
+                                  ),
                                   " of ",
                                   input$genus,
                                   case_when(input$event=="Leafing"~" leafing",
-                                            input$event=="Flowering"~" flowering"), 
+                                            input$event=="Flowering"~" flowering"),
                                   " season compared to the historical record in this area.")
     }
-    } 
+    }
     
     }
     
@@ -690,47 +690,50 @@ generate_output<-function(input, window=14, radius=100000) {
     message_anomaly<-paste0("There has been little data on the ",
                             input$genus,
                             case_when(input$event=="Leafing"~" leafing",
-                                      input$event=="Flowering"~" flowering"), 
+                                      input$event=="Flowering"~" flowering"),
                             " status for this area. Your record provides a starting point.")
     message_anomaly_ann<-paste0("There has been little data on the timing of ",
                                 input$genus,
                                 case_when(input$event=="Leafing"~" leafing",
-                                          input$event=="Flowering"~" flowering"), 
+                                          input$event=="Flowering"~" flowering"),
                                 " season for this area. Your record provides a starting point.")
   }
   
-  if (input$genus %in% genusoi_list) {
-    if (nrow(function_df)>0) {
-      message_attribute<-paste0("Your record will help understand the relationship between ",
-                                case_when(input$event=="Leafing"~"leafing",
-                                          input$event=="Flowering"~"flowering"),
-                                " and ",
-                                case_when(param_vis$var=="evi"~"leafing",
-                                          param_vis$var=="tmean"~"temperature",
-                                          param_vis$var=="prcp"~"precipitation"),
-                                " in the specified area and time of the year.")
-    } else {
-      message_attribute<-paste0("There has been insufficient data on the mechanisms of ",
-                                input$genus,
-                                case_when(input$event=="Leafing"~" leafing",
-                                          input$event=="Flowering"~" flowering"), 
-                                " for this area and time of year. Your record will be a great contribution.")
-      
-    }
-  } else {
-    message_attribute<-paste0("There has been insufficient data on the mechanisms of ",
-                              input$genus,
-                              case_when(input$event=="Leafing"~" leafing",
-                                        input$event=="Flowering"~" flowering"), 
-                              " for this area and time of year. Your record will be a great contribution.")
-    
-  }
+  # if (input$genus %in% genusoi_list) {
+  #   if (nrow(function_df)>0) {
+  #     message_attribute<-paste0("Your record will help understand the relationship between ",
+  #                               case_when(input$event=="Leafing"~"leafing",
+  #                                         input$event=="Flowering"~"flowering"),
+  #                               " and ",
+  #                               case_when(param_vis$var=="evi"~"leafing",
+  #                                         param_vis$var=="tmean"~"temperature",
+  #                                         param_vis$var=="prcp"~"precipitation"),
+  #                               " in the specified area and time of the year.")
+  #   } else {
+  #     message_attribute<-paste0("There has been insufficient data on the mechanisms of ",
+  #                               input$genus,
+  #                               case_when(input$event=="Leafing"~" leafing",
+  #                                         input$event=="Flowering"~" flowering"),
+  #                               " for this area and time of year. Your record will be a great contribution.")
+  #
+  #   }
+  # } else {
+  #   message_attribute<-paste0("There has been insufficient data on the mechanisms of ",
+  #                             input$genus,
+  #                             case_when(input$event=="Leafing"~" leafing",
+  #                                       input$event=="Flowering"~" flowering"),
+  #                             " for this area and time of year. Your record will be a great contribution.")
+  #
+  # }
   
-  plot_and_message<-list(plot=list(p_line, p_map, p_function),
-                         message=list(message_location, message_time, 
-                                      message_anomaly, message_anomaly_ann, 
-                                      message_attribute))
-  
+  # plot_and_message<-list(plot=list(p_line, p_map, p_function),
+  #                         message=list(message_location, message_time,
+  #                                      message_anomaly, message_anomaly_ann,
+  #                                      message_attribute))
+  plot_and_message<-list(plot=list(p_line, p_map),
+                         message=list(message_location, message_time,
+                                      message_anomaly, message_anomaly_ann))
+   
   return(plot_and_message)
 }
 
@@ -742,7 +745,7 @@ generate_plot<-function(plot_and_message, input){
   )]]
   
   message<-plot_and_message$message[[input$message]]
-  message <- strwrap(message, width = 80, simplify = FALSE) # modify 30 to your needs
+  message <- strwrap(message, width = 50, simplify = FALSE) # modify 30 to your needs
   message <- sapply(message, paste, collapse = "\n")
   p2 <- text_grob(message, face = "italic", color = "steelblue", size=20) %>%
     as_ggplot()
@@ -836,7 +839,7 @@ shinyApp(
         plotOutput("plot", height="550px"),
         fluidRow(
         column(2,
-                 actionButton("go", "Take a screenshot", class = "btn-primary")), 
+                 actionButton("go", "Take a screenshot", class = "btn-primary")),
         column(2,
                  tags$a( href="https://twitter.com/intent/tweet?button_hashtag=phenology&ref_src=twsrc%5Etfw",
                         class="twitter-hashtag-button",
@@ -848,7 +851,7 @@ shinyApp(
                             charset="utf-8")),
         column (8,
         tags$div(id="cite",align="right",
-                 '', tags$em('"PhenoWatch"'), ' by Yiluan Song'
+                 '', tags$em('"PhenoWatch"'), 'by Yiluan Song'
         ),
         
         tags$a (id="link",target="_blank",
@@ -879,15 +882,15 @@ id="linktext",align="right",
     #   )
     # ),
     
-    # absolutePanel(id = "plot_controls", 
-    #               class = "panel panel-default", 
-    #               fixed = TRUE,draggable = TRUE, 
+    # absolutePanel(id = "plot_controls",
+    #               class = "panel panel-default",
+    #               fixed = TRUE,draggable = TRUE,
     #               top = 50, right = 60, left = "auto", bottom = "auto",
     #               width = "auto", height = "auto",
     #               style = "background-color: rgba(255,255,255,0);
     #               border-color: rgba(255,255,255,0);
     #               box-shadow: 0pt 0pt 0pt 0px",
-    #               
+    #
     #               # numericInput(
     #               #   "window",
     #               #   "Window (day)",
@@ -927,7 +930,7 @@ id="linktext",align="right",
       shinyjs::toggleState(id = "submit", condition = mandatoryFilled)
       shinyjs::toggleState(id = "go", condition = mandatoryFilled)
       # shinyjs::toggleState(id = "card", condition = mandatoryFilled)
-    })  
+    })
     
     formData <- reactive({
       data <- sapply(fieldsAll, function(x) as.character(input[[x]]))
@@ -970,7 +973,7 @@ id="linktext",align="right",
     observeEvent(input$submit_another, {
       shinyjs::show("form")
       shinyjs::hide("thankyou_msg")
-    })    
+    })
   }
 )
 
