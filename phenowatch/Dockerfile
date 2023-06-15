@@ -5,7 +5,7 @@ FROM rocker/r-base:latest
 WORKDIR /app
 
 # Install necessary R packages --> Stuff for app
-RUN R -e "install.packages(c('shiny', 'shinythemes'), dependencies=TRUE)"
+RUN R -e "install.packages(c('shiny', 'shinythemes', 'shinyjs', 'shinyscreenshot', 'tidyverse', 'raster', 'gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn'), repos = 'http://cran.us.r-project.org', dependencies=TRUE)"
 
 # Copy your local repo into the Docker container
 COPY . .
