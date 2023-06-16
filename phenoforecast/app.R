@@ -1,3 +1,6 @@
+# setwd("/srv/shiny-server/phenoforecast/")
+# setwd("phenoforecast/")
+
 library(shiny)
 library(leaflet)
 library(terra)
@@ -10,8 +13,8 @@ library(shinyscreenshot)
 library(digest)
 library(shinyjs)
 
-path_app<-getwd() #"/srv/shiny-server/phenoforecast/"
-today<-read_file(paste0(path_app,"/today.txt")) %>% as.Date()
+path_app<-getwd()
+today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
 date_list<-seq(today-years(1), today+14, by=1)
 
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
