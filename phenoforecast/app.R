@@ -13,6 +13,40 @@ library(shinyscreenshot)
 library(digest)
 library(shinyjs)
 
+# Added for S3 access:
+# install.packages("aws.s3")
+library(aws.s3)
+local_directory <- paste0(path_app, "/data")
+
+download_data_s3 <- function(local_directory){
+  # Set the environment variables
+  # Sys.setenv(
+  #   "AWS_DEFAULT_REGION" = "us-east-2", #change this to your bucket's region
+  #   "AWS_S3_ENDPOINT" = "s3.us-east-2.amazonaws.com" #change this to your region's endpoint
+  # )
+  
+  # Create the directory if it doesn't exist
+  if (!dir.exists(local_directory)) {
+    dir.create(local_directory)
+  }
+  
+  # Get the objects from the bucket
+  objects <- get_bucket("phenoobservers", prefix = "PhenoForecast/", region="us-east-2") # (bucket name, subfolder name)
+  
+  # Copy each object to the local directory
+  for(i in 1:length(objects)) {
+    object_key <- objects[[i]]$Key
+    print(file.path(local_directory, basename(object_key)))
+    get_object(object = object_key, bucket = "phenoobservers", file = file.path(local_directory, basename(object_key)))
+  }
+}
+
+download_data_s3(local_directory)
+
+
+
+
+
 path_app<-getwd()
 today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
 date_list<-seq(today-years(1), today+14, by=1)
