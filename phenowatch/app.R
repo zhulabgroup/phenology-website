@@ -8,12 +8,12 @@ library(gstat)
 library(ggpubr)
 library(gridExtra)
 library(maps)
+# library(geosphere)
 
-path_app<-"~/Desktop/SEAS-phenowatch/phenowatch-main/"
-# archive_path<-"/data/mycontainer/phenoforecast/archive/"
-data_path<-"~/Desktop/SEAS-phenowatch/phenowatch-main/NPN/"
-responsesDir <- "~/Desktop/SEAS-phenowatch/phenowatch-main/submitted/"
-today<-read_file(paste0(path_app,"today.txt")) %>% as.Date()
+path_app<-getwd()
+data_path<-str_c(path_app, "/NPN/")
+responsesDir <- str_c(path_app, "/submitted/")
+today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
 
 species_list <- rnpn::npn_species()
 
@@ -98,7 +98,7 @@ generate_output<-function(input, window=14, radius=100000) {
   if (nrow(npn_data_all)>0) {
     npn_location<-npn_data_all %>%
       rowwise() %>%
-      mutate(distance = Imap::gdist(lat.1=latitude, lon.1=longitude, lat.2=input$latitude, lon.2=input$longitude, units="m")) %>%
+      mutate(distance = geosphere::distm(x = c(longitude, latitude), y = c(input$longitude, input$latitude), fun = geosphere::distGeo) %>% as.numeric()) %>%
       arrange(distance) %>%
       filter(distance <=radius)
   } else {
