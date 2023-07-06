@@ -15,6 +15,16 @@ data_path<-str_c(path_app, "/NPN/")
 responsesDir <- str_c(path_app, "/submitted/")
 today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
 
+bucket_name <- "phenoobservers"
+download_folder_path <- 'PhenoWatch/NPN/'
+submit_folder_path <- 'PhenoWatch/submitted/'
+
+upload_to_s3 <- function(file_path){
+  filename <- basename(file_path)
+  s3_key <- paste0(submit_folder_path, filename)
+  put_object(file=file_path,bucket=bucket_name,object=s3_key)
+}
+
 species_list <- rnpn::npn_species()
 
 genus_list<-species_list %>%
@@ -946,6 +956,7 @@ id="linktext",align="right",
                           digest::digest(formData()))
       write.csv(x = formData(), file = file.path(responsesDir, fileName),
                 row.names = FALSE, quote = TRUE)
+      upload_to_s3(file.path(tempdir(), fileName))
       # shinyjs::reset("form")
       # shinyjs::hide("form")
       shinyjs::show("thankyou_msg")
