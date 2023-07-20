@@ -8,12 +8,25 @@ library(gstat)
 library(ggpubr)
 library(gridExtra)
 library(maps)
+library(aws.s3)
 # library(geosphere)
 
 path_app<-getwd()
 data_path<-str_c(path_app, "/NPN/")
 responsesDir <- str_c(path_app, "/submitted/")
 today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
+# path_app<-"~/Desktop/SEAS-phenowatch/phenowatch-main/"
+# data_path<-"~/Desktop/SEAS-phenowatch/phenowatch-main/NPN/"
+# responsesDir <- "~/Desktop/SEAS-phenowatch/phenowatch-main/submitted/"
+# today<-read_file(paste0(path_app,"today.txt")) %>% as.Date()
+
+# bucket_exists(
+#    bucket = "s3://phenoobservers/PhenoWatch/NPN/",
+#    region = "us-east-2"
+#  )
+# 
+Sys.setenv("AWS_DEFAULT_REGION" = "us-east-2",
+            "AWS_S3_ENDPOINT" = "s3.amazonaws.com")
 
 bucket_name <- "phenoobservers"
 download_folder_path <- 'PhenoWatch/NPN/'
@@ -24,6 +37,9 @@ upload_to_s3 <- function(file_path){
   s3_key <- paste0(submit_folder_path, filename)
   put_object(file=file_path,bucket=bucket_name,object=s3_key)
 }
+
+# test
+# upload_to_s3("~/Desktop/SEAS-phenowatch/phenowatch-main/today.txt")
 
 species_list <- rnpn::npn_species()
 
