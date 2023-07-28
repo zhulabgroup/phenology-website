@@ -9,11 +9,16 @@ library(ggpubr)
 library(gridExtra)
 library(maps)
 library(aws.s3)
+library(purrr)
+library(readr)
+library(tidyr)
+library(tibble)
+
 # library(geosphere)
 
 path_app<-getwd()
-data_path<-str_c(path_app, "/NPN/")
-responsesDir <- str_c(path_app, "/submitted/")
+data_path<-str_c(path_app, "/NPN_example/")
+responsesDir <- str_c(path_app, "/submitted_example/")
 today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
 # path_app<-"~/Desktop/SEAS-phenowatch/phenowatch-main/"
 # data_path<-"~/Desktop/SEAS-phenowatch/phenowatch-main/NPN/"
@@ -37,6 +42,7 @@ upload_to_s3 <- function(file_path){
   s3_key <- paste0(submit_folder_path, filename)
   put_object(file=file_path,bucket=bucket_name,object=s3_key)
 }
+
 
 # test
 # upload_to_s3("~/Desktop/SEAS-phenowatch/phenowatch-main/today.txt")
@@ -83,22 +89,71 @@ epochTime <- function() {
 
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
 
+
+
 #####
 generate_output<-function(input, window=14, radius=100000) {
-  data_path_subset<-paste0(data_path,
-                           case_when(input$event=="Leafing"~"leaf",
-                                     input$event=="Flowering"~"flower"),
-                           "/",
-                           input$genus)
+  # data_path_subset <- paste0(download_folder_path, 
+  #                     ifelse(input$event == "Leafing", "leaf", "flower"),
+  #                     "/",
+  #                     input$genus)
+  data_path_subset <- paste0(download_folder_path, "leaf/Acer")
+  # s3_objects = npn_files
+  npn_files <- aws.s3::get_bucket(bucket = bucket_name, prefix = data_path_subset)
+  # data_path_subset<-paste0(data_path,
+  #                          case_when(input$event=="Leafing"~"leaf",
+  #                                    input$event=="Flowering"~"flower"),
+  #                          "/",
+  #                          input$genus)
   
-  npn_files<-list.files(data_path_subset, full.names = T)
+  # orig_data_path <- paste0(data_path,"leaf/Acer")
+  # npn_files<-list.files(orig_data_path,full.names=T)
+  # npn_files
+  # npn_files[[1]]
+  # npn_files[[1]]$Key
+  # npn_files<-list.files(data_path_subset, full.names = T)
   if (length(npn_files)>0) {
     npn_data_all<-vector(mode="list")
-    for (i in 1:length(npn_files)) {
-      npn_data_all[[i]]<-read_csv(npn_files[[i]]) %>%
-        mutate(`intensity_value`=as.character(`intensity_value`),
-               update_datetime=as.character(update_datetime))
+    # object_key<-npn_files[1]$Contents$Key
+    # s3_data<-aws.s3::get_object(bucket = bucket_name, object = object_key)
+    # a<-read.csv(textConnection(rawToChar(s3_data)))
+    # read_and_process_csv<-function(s3_object,index){
+    #   file_key<-s3_object$Key
+    #   #file_key<-npn_files[[1]]$Key
+    #   csv_data<-aws.s3::s3read_using(readr::read_csv, object = file_key,bucket=bucket_name)
+    #   #npn_data_all[[1]]<-csv_data
+    #   npn_data_all[[index]] <- csv_data
+    # }
+    for (i in seq_along(npn_files)) {
+      #read_and_process_csv(npn_files[[i]], i)
+      # file_key<-npn_files[[1]]$Key
+      # csv_data<-aws.s3::s3read_using(readr::read_csv, object = file_key,bucket=bucket_name)
+      # npn_data_all[[1]] <- csv_data %>%
+      #   mutate(`intensity_value`=as.character(`intensity_value`),
+      #          update_datetime=as.character(update_datetime))
+      file_key<-npn_files[[i]]$Key
+      csv_data<-aws.s3::s3read_using(readr::read_csv, object = file_key,bucket=bucket_name)
+      npn_data_all[[i]] <- csv_data %>%
+            mutate(`intensity_value`=as.character(`intensity_value`),
+                   update_datetime=as.character(update_datetime))
     }
+    npn_data_all
+    # for (i in 1:length(npn_files)) {
+    #   npn_data_all[[i]]<-read_csv(npn_files[[i]]) %>%
+    #     mutate(`intensity_value`=as.character(`intensity_value`),
+    #            update_datetime=as.character(update_datetime))
+    #   
+    #   npn_files[[1]]
+    #   object_key <- npn_files[[1]]$Key
+    #   
+    #   s3_data <- aws.s3::get_object(bucket = bucket_name, object = object_key)
+    #   npn_data_all[[i]] <- read.csv(textConnection(rawToChar(s3_data))) %>%
+    #     mutate(`intensity_value`=as.character(`intensity_value`),
+    #            update_datetime=as.character(update_datetime))
+    # }
+    # npn_data_all
+    
+    
     npn_data_all<-bind_rows(npn_data_all) %>%
       dplyr::select(site_id, latitude, longitude, observation_date, day_of_year, phenophase_status) %>%
       filter(phenophase_status!= -1) %>%
