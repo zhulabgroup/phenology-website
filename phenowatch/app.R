@@ -93,11 +93,11 @@ humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
 
 #####
 generate_output<-function(input, window=14, radius=100000) {
-  # data_path_subset <- paste0(download_folder_path, 
-  #                     ifelse(input$event == "Leafing", "leaf", "flower"),
-  #                     "/",
-  #                     input$genus)
-  data_path_subset <- paste0(download_folder_path, "leaf/Acer")
+  data_path_subset <- paste0(download_folder_path,
+                      ifelse(input$event == "Leafing", "leaf", "flower"),
+                      "/",
+                      input$genus)
+  # data_path_subset <- paste0(download_folder_path, "leaf/Acer")
   # s3_objects = npn_files
   npn_files <- aws.s3::get_bucket(bucket = bucket_name, prefix = data_path_subset)
   # data_path_subset<-paste0(data_path,
@@ -126,6 +126,7 @@ generate_output<-function(input, window=14, radius=100000) {
     # }
     for (i in seq_along(npn_files)) {
       #read_and_process_csv(npn_files[[i]], i)
+      
       # file_key<-npn_files[[1]]$Key
       # csv_data<-aws.s3::s3read_using(readr::read_csv, object = file_key,bucket=bucket_name)
       # npn_data_all[[1]] <- csv_data %>%
