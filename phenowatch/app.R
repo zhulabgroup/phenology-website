@@ -1026,9 +1026,9 @@ id="linktext",align="right",
       fileName <- sprintf("%s_%s.csv",
                           humanTime(),
                           digest::digest(formData()))
-      write.csv(x = formData(), file = file.path(responsesDir, fileName),
+      # write.csv(x = formData(), file = file.path(responsesDir, fileName),
                 row.names = FALSE, quote = TRUE)
-      upload_to_s3(file.path(tempdir(), fileName))
+      # upload_to_s3(file.path(tempdir(), fileName))
       # shinyjs::reset("form")
       # shinyjs::hide("form")
       shinyjs::show("thankyou_msg")
