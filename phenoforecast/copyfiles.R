@@ -10,12 +10,13 @@ files_to_remove <- files_exist[!files_exist %in% files_s3]
 file.remove(files_to_remove)
 
 files_to_save <- files_s3[!files_s3 %in% files_exist]
-
-for (f in files_to_save) {
-  aws.s3::save_object(
-    object = f,
-    bucket = bucket_name,
-    region = bucket_region,
-    file = str_replace(f, "PhenoForecast", "data")
-  )
+if (length(files_to_save) > 0 ) {
+  for (f in files_to_save) {
+    aws.s3::save_object(
+      object = f,
+      bucket = bucket_name,
+      region = bucket_region,
+      file = str_replace(f, "PhenoForecast", "data")
+    )
+  }
 }
