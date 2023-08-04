@@ -1,25 +1,21 @@
-install.packages(setdiff("pacman", rownames(installed.packages())))
-library(pacman)
-p_load(R.utils)
-p_load(tidyverse)
+bucket_name <- "phenoobservers"
+bucket_region <- "us-east-2"
+files_s3 <- aws.s3::get_bucket_df(bucket = bucket_name, region = bucket_region, prefix = "PhenoForecast", max = 10) %>%
+  filter(!str_detect(Key, "/$")) %>%
+  pull(Key)
 
-path_shiny<-("/srv/shiny-server/phenoforecast/")
-today<-read_file(paste0(path_shiny,"today.txt")) %>% as.Date()
-path_data<-paste0("/data/mycontainer/phenoforecast/archive/",today,"/")
+dir.create("data", showWarnings = F)
+files_exist <- list.files("data", recursive = T, full.names = T, include.dirs = F)
+files_to_remove <- files_exist[!files_exist %in% files_s3]
+file.remove(files_to_remove)
 
-genusoi_list <- c(
-  "Quercus", 
-  "Betula",
-  "Populus",
-  "Acer"
-)
+files_to_save <- files_s3[!files_s3 %in% files_exist]
 
-for (i in 1:length(genusoi_list)){
-  genusoi<-genusoi_list[i]
-  unlink(paste0(path_shiny,"/data/",genusoi,"/"),recursive=T)
-  copyDirectory(from=paste0(path_data,genusoi, "/evi/output/maps"), to=paste0(path_shiny,"/data/",genusoi, "/evi"))
-  copyDirectory(from=paste0(path_data,genusoi, "/leaf/output/maps"), to=paste0(path_shiny,"/data/",genusoi, "/leaf"))
-  copyDirectory(from=paste0(path_data,genusoi, "/flower/output/maps"), to=paste0(path_shiny,"/data/",genusoi, "/flower"))
-  copyDirectory(from=paste0(path_data,genusoi, "/pollen/output/maps"), to=paste0(path_shiny,"/data/",genusoi, "/pollen"))
+for (f in files_to_save) {
+  aws.s3::save_object(
+    object = f,
+    bucket = bucket_name,
+    region = bucket_region,
+    file = str_replace(f, "PhenoForecast", "data")
+  )
 }
-
