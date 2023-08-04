@@ -1027,7 +1027,7 @@ id="linktext",align="right",
                           humanTime(),
                           digest::digest(formData()))
       # write.csv(x = formData(), file = file.path(responsesDir, fileName),
-                row.names = FALSE, quote = TRUE)
+      #           row.names = FALSE, quote = TRUE)
       # upload_to_s3(file.path(tempdir(), fileName))
       # shinyjs::reset("form")
       # shinyjs::hide("form")
