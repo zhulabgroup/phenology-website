@@ -938,13 +938,15 @@ shinyApp(
         # textInput("genus", labelMandatory("Genus")),
         selectInput(
           "genus", labelMandatory("Genus"),
-          c("", genusoi_list)
+          c("", genusoi_list),
+          selected = "Acer"
         ),
         textInput("species", "Species"),
         # textInput("date", labelMandatory("Date")),
         dateInput(
           "date",
           labelMandatory("Date"),
+          value = "2021-04-11",
           min = "1900-01-01",
           max = Sys.Date(),
           format = "yyyy-mm-dd",
@@ -959,7 +961,7 @@ shinyApp(
         numericInput(
           "latitude",
           labelMandatory("Latitude"),
-          value = NULL,
+          value = 42,
           min = 25,
           max = 53,
           step = NA,
@@ -968,7 +970,7 @@ shinyApp(
         numericInput(
           "longitude",
           labelMandatory("Longitude"),
-          value = NULL,
+          value = -83,
           min = -125,
           max = -67,
           step = NA,
@@ -980,11 +982,13 @@ shinyApp(
             "",
             "Leafing",
             "Flowering"
-          )
+          ),
+          selected = "Flowering"
         ),
         selectInput(
           "status", labelMandatory("Phenological status"),
-          c("", "Yes", "No")
+          c("", "Yes", "No"),
+          selected = "Yes"
         ),
         fluidRow(
           column(
