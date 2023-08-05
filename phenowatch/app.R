@@ -191,6 +191,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
   # radius<-500000
   if (nrow(npn_data_all) > 0) {
     npn_location <- npn_data_all %>%
+      filter(abs(latitude- input$latitude) <=2,
+             abs(longitude- input$longitude) <=2) %>% 
       rowwise() %>%
       mutate(distance = geosphere::distm(x = c(longitude, latitude), y = c(input$longitude, input$latitude), fun = geosphere::distGeo) %>% as.numeric()) %>%
       arrange(distance) %>%
