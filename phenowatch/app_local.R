@@ -30,18 +30,18 @@ today <- read_file(str_c(path_app, "/today.txt")) %>% as.Date()
 #    region = "us-east-2"
 #  )
 #
-Sys.setenv("AWS_DEFAULT_REGION" = "us-east-2",
-           "AWS_S3_ENDPOINT" = "s3.amazonaws.com")
-
-bucket_name <- "phenoobservers"
-download_folder_path <- 'PhenoWatch/NPN/'
-submit_folder_path <- 'PhenoWatch/submitted/'
-
-upload_to_s3 <- function(file_path){
-  filename <- basename(file_path)
-  s3_key <- paste0(submit_folder_path, filename)
-  put_object(file=file_path,bucket=bucket_name,object=s3_key)
-}
+# Sys.setenv("AWS_DEFAULT_REGION" = "us-east-2",
+#             "AWS_S3_ENDPOINT" = "s3.amazonaws.com")
+#
+# bucket_name <- "phenoobservers"
+# download_folder_path <- 'PhenoWatch/NPN/'
+# submit_folder_path <- 'PhenoWatch/submitted/'
+#
+# upload_to_s3 <- function(file_path){
+#   filename <- basename(file_path)
+#   s3_key <- paste0(submit_folder_path, filename)
+#   put_object(file=file_path,bucket=bucket_name,object=s3_key)
+# }
 
 
 # test
@@ -97,29 +97,29 @@ humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
 
 #####
 generate_output <- function(input, window = 14, radius = 100000) {
-  data_path_subset <- paste0(download_folder_path,
-                             ifelse(input$event == "Leafing", "leaf", "flower"),
-                             "/",
-                             input$genus)
+  # data_path_subset <- paste0(download_folder_path,
+  #                     ifelse(input$event == "Leafing", "leaf", "flower"),
+  #                     "/",
+  #                     input$genus)
   # data_path_subset <- paste0(download_folder_path, "leaf/Acer")
   # s3_objects = npn_files
-  npn_files <- aws.s3::get_bucket(bucket = bucket_name, prefix = data_path_subset)
-  # data_path_subset <- paste0(
-  #   data_path,
-  #   case_when(
-  #     input$event == "Leafing" ~ "leaf",
-  #     input$event == "Flowering" ~ "flower"
-  #   ),
-  #   "/",
-  #   input$genus
-  # )
-  
+  # npn_files <- aws.s3::get_bucket(bucket = bucket_name, prefix = data_path_subset)
+  data_path_subset <- paste0(
+    data_path,
+    case_when(
+      input$event == "Leafing" ~ "leaf",
+      input$event == "Flowering" ~ "flower"
+    ),
+    "/",
+    input$genus
+  )
+
   # orig_data_path <- paste0(data_path,"leaf/Acer")
   # npn_files<-list.files(orig_data_path,full.names=T)
   # npn_files
   # npn_files[[1]]
   # npn_files[[1]]$Key
-  # npn_files <- list.files(data_path_subset, full.names = T)
+  npn_files <- list.files(data_path_subset, full.names = T)
   if (length(npn_files) > 0) {
     npn_data_all <- vector(mode = "list")
     # object_key<-npn_files[1]$Contents$Key
@@ -132,39 +132,39 @@ generate_output <- function(input, window = 14, radius = 100000) {
     #   #npn_data_all[[1]]<-csv_data
     #   npn_data_all[[index]] <- csv_data
     # }
-    for (i in seq_along(npn_files)) {
-      # read_and_process_csv(npn_files[[i]], i)
-      
-      # file_key<-npn_files[[1]]$Key
-      # csv_data<-aws.s3::s3read_using(readr::read_csv, object = file_key,bucket=bucket_name)
-      # npn_data_all[[1]] <- csv_data %>%
-      #   mutate(`intensity_value`=as.character(`intensity_value`),
-      #          update_datetime=as.character(update_datetime))
-      file_key<-npn_files[[i]]$Key
-      csv_data<-aws.s3::s3read_using(readr::read_csv, object = file_key,bucket=bucket_name)
-      npn_data_all[[i]] <- csv_data %>%
-        mutate(`intensity_value`=as.character(`intensity_value`),
-               update_datetime=as.character(update_datetime))
-    }
-    # npn_data_all
-    # for (i in 1:length(npn_files)) {
-    #   npn_data_all[[i]] <- read_csv(npn_files[[i]]) %>%
-    #     mutate(
-    #       `intensity_value` = as.character(`intensity_value`),
-    #       update_datetime = as.character(update_datetime)
-    #     )
-    #
-    #   npn_files[[1]]
-    #   object_key <- npn_files[[1]]$Key
-    #
-    #   s3_data <- aws.s3::get_object(bucket = bucket_name, object = object_key)
-    #   npn_data_all[[i]] <- read.csv(textConnection(rawToChar(s3_data))) %>%
-    #     mutate(`intensity_value`=as.character(`intensity_value`),
-    #            update_datetime=as.character(update_datetime))
+    # for (i in seq_along(npn_files)) {
+    # read_and_process_csv(npn_files[[i]], i)
+
+    # file_key<-npn_files[[1]]$Key
+    # csv_data<-aws.s3::s3read_using(readr::read_csv, object = file_key,bucket=bucket_name)
+    # npn_data_all[[1]] <- csv_data %>%
+    #   mutate(`intensity_value`=as.character(`intensity_value`),
+    #          update_datetime=as.character(update_datetime))
+    #   file_key<-npn_files[[i]]$Key
+    #   csv_data<-aws.s3::s3read_using(readr::read_csv, object = file_key,bucket=bucket_name)
+    #   npn_data_all[[i]] <- csv_data %>%
+    #         mutate(`intensity_value`=as.character(`intensity_value`),
+    #                update_datetime=as.character(update_datetime))
     # }
     # npn_data_all
-    
-    
+    for (i in 1:length(npn_files)) {
+      npn_data_all[[i]] <- read_csv(npn_files[[i]]) %>%
+        mutate(
+          `intensity_value` = as.character(`intensity_value`),
+          update_datetime = as.character(update_datetime)
+        )
+      #
+      #   npn_files[[1]]
+      #   object_key <- npn_files[[1]]$Key
+      #
+      #   s3_data <- aws.s3::get_object(bucket = bucket_name, object = object_key)
+      #   npn_data_all[[i]] <- read.csv(textConnection(rawToChar(s3_data))) %>%
+      #     mutate(`intensity_value`=as.character(`intensity_value`),
+      #            update_datetime=as.character(update_datetime))
+    }
+    # npn_data_all
+
+
     npn_data_all <- bind_rows(npn_data_all) %>%
       dplyr::select(site_id, latitude, longitude, observation_date, day_of_year, phenophase_status) %>%
       filter(phenophase_status != -1) %>%
@@ -186,8 +186,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
       year = integer(0)
     )
   }
-  
-  
+
+
   # radius<-500000
   if (nrow(npn_data_all) > 0) {
     npn_location <- npn_data_all %>%
@@ -200,7 +200,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
   } else {
     npn_location <- npn_data_all
   }
-  
+
   if (nrow(npn_location) > 0) {
     npn_location_ts <- npn_location %>%
       dplyr::select(day_of_year, phenophase_status) %>%
@@ -208,7 +208,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       summarize(intensity = mean(phenophase_status)) %>%
       ungroup() %>%
       complete(day_of_year = 1:366, fill = list(intensity = NA))
-    
+
     min_id <- min(which(!is.na(npn_location_ts$intensity)))
     max_id <- max(which(!is.na(npn_location_ts$intensity)))
     npn_location_ts$intensity[min_id:max_id] <-
@@ -216,8 +216,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
         object = npn_location_ts$intensity[min_id:max_id],
         x = min_id:max_id, maxgap = 28
       )
-    
-    
+
+
     max_id <- 0
     done <- F
     while (!done) {
@@ -233,7 +233,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
         npn_location_ts$intensity[min_id:max_id] <- ptw::whit1(npn_location_ts$intensity[min_id:max_id], 10)
       }
     }
-    
+
     if (nrow(npn_location) > 100) {
       p_line <- ggplot() +
         # geom_jitter(data=npn_location,aes(x=day_of_year, y=phenophase_status), width=0, height=0.05, alpha=0.1)+
@@ -267,33 +267,33 @@ generate_output <- function(input, window = 14, radius = 100000) {
       background_image(img) +
       coord_equal()
   }
-  
-  
+
+
   #####
   # window<-14
   npn_time <- npn_data_all %>%
     filter(abs(observation_date - input$date) <= window) %>%
     arrange(day_of_year)
-  
+
   if (nrow(npn_time) > 0) {
     npn_time_surface <- npn_time %>%
       group_by(longitude, latitude) %>%
       summarize(intensity = mean(phenophase_status)) %>%
       ungroup()
-    
+
     npn_time_sp <- SpatialPointsDataFrame(
       coords = npn_time_surface[, c("longitude", "latitude")],
       data = npn_time_surface[, c("intensity"), drop = F],
       proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
     )
-    
+
     # path_fore<-paste0(archive_path,
     #                   "/",today,
     #                   "/",input$genus,"/",
     #                   case_when(input$event=="Leafing"~"leaf",
     #                   input$event=="Flowering"~"flower"),
     #                   "/analyses/")
-    
+
     if (input$genus %in% genusoi_list) {
       # vgm_df<-read_csv(paste0(path_fore,"/variogram parameters.csv"))
       # fit_npn<-vgm(psill=vgm_df[2,2] %>% unlist(),
@@ -311,7 +311,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       #                     , na.action=na.omit
       # ) %>%
       #   as.data.frame()
-      
+
       us <- map_data("state")
       p_map <- ggplot() +
         # geom_jitter(data=npn_time_surface, aes(x=longitude, y=latitude, col=intensity),width=0.05, height=0.05, alpha=0.5)+
@@ -353,8 +353,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
       background_image(img) +
       coord_equal()
   }
-  
-  
+
+
   #####
   # if (input$genus %in% genusoi_list) {
   #   if (input$event=="Leafing") {
@@ -703,19 +703,19 @@ generate_output <- function(input, window = 14, radius = 100000) {
   #   img <- jpeg::readJPEG("question.jpeg")
   #   p_function<-ggplot()+background_image(img)+coord_equal()
   # }
-  
+
   #####
-  
+
   message_location <- paste0("You just provided the #", format(nrow(npn_location) + 1, scientific = F), " phenological record of this genus within ", format(radius / 1000, scientific = F), " km distance.")
-  
+
   message_time <- paste0("You just provided the #", format(nrow(npn_time) + 1, scientific = F), " phenological record of this genus within ", format(window, scientific = F), " days.")
-  
+
   if (nrow(npn_location) > 0) {
     his_est <- npn_location_ts %>%
       filter(day_of_year == as.integer(format(input$date, "%j"))) %>%
       dplyr::select(intensity) %>%
       unlist()
-    
+
     if (is.na(his_est)) {
       message_anomaly <- paste0(
         "There is no sufficient data to estimate the ",
@@ -855,7 +855,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       " season for this area. Your record provides a starting point."
     )
   }
-  
+
   # if (input$genus %in% genusoi_list) {
   #   if (nrow(function_df)>0) {
   #     message_attribute<-paste0("Your record will help understand the relationship between ",
@@ -882,7 +882,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
   #                             " for this area and time of year. Your record will be a great contribution.")
   #
   # }
-  
+
   # plot_and_message<-list(plot=list(p_line, p_map, p_function),
   #                         message=list(message_location, message_time,
   #                                      message_anomaly, message_anomaly_ann,
@@ -894,7 +894,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       message_anomaly, message_anomaly_ann
     )
   )
-  
+
   return(plot_and_message)
 }
 
@@ -904,15 +904,15 @@ generate_plot <- function(plot_and_message, input) {
     input$plot == "Map" ~ 2 # ,
     # input$plot=="Function"~3
   )]]
-  
+
   message <- plot_and_message$message[[input$message]]
   message <- strwrap(message, width = 50, simplify = FALSE) # modify 30 to your needs
   message <- sapply(message, paste, collapse = "\n")
   p2 <- text_grob(message, face = "italic", color = "steelblue", size = 20) %>%
     as_ggplot()
-  
+
   grid.arrange(p1, p2,
-               layout_matrix = matrix(c(rep(1, 4), 2))
+    layout_matrix = matrix(c(rep(1, 4), 2))
   )
 }
 
@@ -924,7 +924,7 @@ shinyApp(
     shinyjs::inlineCSS(appCSS),
     titlePanel("PhenoWatch"),
     # titlePanel(read.table("./submitted/test.txt")[1,1]),
-    
+
     sidebarLayout(
       sidebarPanel(
         fluidRow(
@@ -1073,7 +1073,7 @@ shinyApp(
         )
       )
     )
-    
+
     # shinyjs::hidden(
     #   div(
     #     id = "thankyou_msg",
@@ -1081,7 +1081,7 @@ shinyApp(
     #     actionLink("submit_another", "Submit another response")
     #   )
     # ),
-    
+
     # absolutePanel(id = "plot_controls",
     #               class = "panel panel-default",
     #               fixed = TRUE,draggable = TRUE,
@@ -1127,19 +1127,19 @@ shinyApp(
           logical(1)
         )
       mandatoryFilled <- all(mandatoryFilled)
-      
+
       shinyjs::toggleState(id = "submit", condition = mandatoryFilled)
       shinyjs::toggleState(id = "go", condition = mandatoryFilled)
       # shinyjs::toggleState(id = "card", condition = mandatoryFilled)
     })
-    
+
     formData <- reactive({
       data <- sapply(fieldsAll, function(x) as.character(input[[x]]))
       data <- c(data, timestamp = as.character(Sys.time()))
       data <- t(data)
       data
     })
-    
+
     # action to take when submit button is pressed
     observeEvent(input$submit, {
       fileName <- sprintf(
@@ -1154,19 +1154,19 @@ shinyApp(
       # shinyjs::hide("form")
       shinyjs::show("thankyou_msg")
     })
-    
+
     observeEvent(input$submit, {
       # observeEvent(input$card, {
       plot_and_message <- generate_output(input)
       # })
-      
+
       # observeEvent(input$card, {
       output$plot <- renderPlot({
         generate_plot(plot_and_message, input)
       })
       # })
     })
-    
+
     observeEvent(input$go, {
       fileName <- sprintf(
         "%s_%s",
@@ -1175,7 +1175,7 @@ shinyApp(
       )
       shinyscreenshot::screenshot(filename = fileName)
     })
-    
+
     observeEvent(input$submit_another, {
       shinyjs::show("form")
       shinyjs::hide("thankyou_msg")
