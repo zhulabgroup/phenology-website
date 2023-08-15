@@ -1,0 +1,28 @@
+# Use a base image with R and Shiny Server pre-installed
+FROM rocker/shiny-verse:latest
+
+# Install system libraries for geospatial analysis
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    libudunits2-dev \
+    libgdal-dev \
+    libgeos-dev \
+    libproj-dev \
+    libmysqlclient-dev
+
+# Prepare to mount S3 bucket
+COPY .passwd-s3fs .passwd-s3fs
+RUN apt-get install -y --no-install-recommends s3fs && \
+   mkdir -p /mnt/s3
+
+# Install R packages
+RUN R -e "install.packages(c( 'shinythemes','shinyjs', 'shinyscreenshot', 'geosphere', 'raster', 'gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','snow'), dependencies=TRUE)"
+
+# Copy your Shiny app directory into the image
+# COPY sample /srv/shiny-server/sample
+COPY phenology-website/phenoinfo /srv/shiny-server/phenoinfo
+COPY phenology-website/phenowatch /srv/shiny-server/phenowatch
+COPY phenology-website/phenoforecast /srv/shiny-server/phenoforecast
+
+# Expose the default Shiny Server port (optional if not changed)
+EXPOSE 3838
