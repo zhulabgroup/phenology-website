@@ -1,7 +1,5 @@
 # setwd("/srv/shiny-server/phenoforecast/")
 # setwd("phenoforecast/")
-
-library(shiny)
 library(leaflet)
 library(terra)
 library(raster)
@@ -9,43 +7,11 @@ library(colorRamps)
 library(tidyverse)
 library(rgdal)
 library(lubridate)
-library(shinyscreenshot)
-library(digest)
-library(shinyjs)
-
-# Added for S3 access:
-# install.packages("aws.s3")
-library(aws.s3)
-
-download_data_s3 <- function(){
-  # Set the environment variables
-  # Sys.setenv(
-  #   "AWS_DEFAULT_REGION" = "us-east-2", #change this to your bucket's region
-  #   "AWS_S3_ENDPOINT" = "s3.us-east-2.amazonaws.com" #change this to your region's endpoint
-  # )
-  
-  # Get the objects from the bucket
-  objects <- get_bucket("phenoobservers", prefix = "PhenoForecast/", region="us-east-2") # (bucket name, subfolder name)
-  
-  # Initialize the data list
-  data <- list()
-  
-  # Copy each object to the data list
-  for(i in 1:length(objects)) {
-    object_key <- objects[[i]]$Key
-    print(object_key)
-    data[[object_key]] <- get_object(object = object_key, bucket = "phenoobservers")
-  }
-  
-  return(data)
-}
-
-data <- download_data_s3()
+# library(aws.s3)
 
 
-
-
-path_app<-getwd()
+path_app <- getwd()
+path_data <- "/mnt/s3/PhenoForecast/"
 today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
 date_list<-seq(today-years(1), today+14, by=1)
 
@@ -58,13 +24,12 @@ genusoi_list <- c(
   "Acer"
 )
 
-
 evi_sta_list<-leaf_sta_list<-flower_sta_list<-pollen_sta_list<-vector(mode="list",length=length(genusoi_list))
 names(evi_sta_list)<-names(leaf_sta_list)<-names(flower_sta_list)<-names(pollen_sta_list)<-genusoi_list
 
 for (i in 1:length(genusoi_list)){
   genusoi<-genusoi_list[i]
-  path_evi<-paste0(path_app,"/data/",genusoi,"/evi/")
+  path_evi<-str_c(path_data,genusoi,"/evi/")
   evi_files<-list.files(path_evi, full.names = T, pattern="\\.tif$") %>% sort()
   
   evi_sta<-terra::rast(evi_files)
@@ -73,7 +38,7 @@ for (i in 1:length(genusoi_list)){
 
 for (i in 1:length(genusoi_list)){
   genusoi<-genusoi_list[i]
-  path_leaf<-paste0(path_app,"/data/",genusoi,"/leaf/")
+  path_leaf<-str_c(path_data,genusoi,"/leaf/")
   leaf_files<-list.files(path_leaf, full.names = T, pattern="\\.tif$") %>% sort()
   
   leaf_sta<-terra::rast(leaf_files)
@@ -82,7 +47,7 @@ for (i in 1:length(genusoi_list)){
 
 for (i in 1:length(genusoi_list)){
   genusoi<-genusoi_list[i]
-  path_flower<-paste0(path_app,"/data/",genusoi,"/flower/")
+  path_flower<-str_c(path_data,genusoi,"/flower/")
   flower_files<-list.files(path_flower, full.names = T, pattern="\\.tif$") %>% sort()
   
   flower_sta<-terra::rast(flower_files)
@@ -91,7 +56,7 @@ for (i in 1:length(genusoi_list)){
 
 for (i in 1:length(genusoi_list)){
   genusoi<-genusoi_list[i]
-  path_pollen<-paste0(path_app,"/data/",genusoi,"/pollen/")
+  path_pollen<-str_c(path_data,genusoi,"/pollen/")
   pollen_files<-list.files(path_pollen, full.names = T, pattern="\\.tif$") %>% sort()
   
   pollen_sta<-terra::rast(pollen_files)
