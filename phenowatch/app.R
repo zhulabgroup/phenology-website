@@ -261,7 +261,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
     npn_time_sp <- sp::SpatialPointsDataFrame(
       coords = npn_time_surface[, c("longitude", "latitude")],
       data = npn_time_surface[, c("intensity"), drop = F],
-      proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
+      proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
     )
     
     # path_fore<-paste0(archive_path,
@@ -282,7 +282,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       # r_0.5deg<-raster(res=0.5, xmn=-125,xmx=-67,ymn=25,ymx=53)
       # coord_new<-sp::coordinates(r_0.5deg)
       # coord_new_sp<-sp::SpatialPoints(coords=coord_new[,c("x", "y")],
-      #                             proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+      #                             proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
       # kriged_res <- gstat::krige(intensity ~ 1, npn_time_sp, coord_new_sp, model=fit_npn
       #                     # ,maxdist=500
       #                     , na.action=na.omit
@@ -541,7 +541,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
   #   #
   #   #   # retrieve predictor at input location
   #   #   input_sp<-sp::SpatialPoints(coords = data.frame(lon=input$longitude, lat=input$latitude),
-  #   #                           proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+  #   #                           proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
   #   #   period<-lags[[which (var_list==param_vis$var)]][[param_vis$period]]
   #   #   retrieve_date_list<-input$date-period
   #   #
@@ -599,7 +599,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
   #   #       if (nrow(evi_forecast)!=0) {
   #   #         evi_forecast_sp<-sp::SpatialPointsDataFrame(coords=evi_forecast[,c("lon", "lat")],
   #   #                                                 data=evi_forecast[,c("value"),drop=F],
-  #   #                                                 proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+  #   #                                                 proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
   #   #
   #   #
   #   #         kriged_res <- krige(value ~ 1, evi_forecast_sp, input_sp, model=fit_evi) %>%
