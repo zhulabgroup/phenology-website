@@ -11,14 +11,14 @@ RUN apt-get update \
     libmysqlclient-dev
 
 # Install R packages
-RUN R -e "install.packages(c( 'shinythemes','shinyjs', 'shinyscreenshot', 'geosphere', 'raster', 'gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','doSNOW'), dependencies=TRUE)"
+RUN R -e "install.packages(c( 'shinythemes','shinyjs', 'shinyscreenshot', 'geosphere', 'raster', 'gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','doSNOW','svglite'), dependencies=TRUE)"
 
 # Copy your Shiny app directory into the image
 # COPY sample /srv/shiny-server/sample
 COPY phenology-website/phenoinfo /srv/shiny-server/phenoinfo
 COPY phenology-website/phenowatch /srv/shiny-server/phenowatch
 COPY phenology-website/phenoforecast /srv/shiny-server/phenoforecast
-RUN mkdir /srv/shiny-server/phenoforecast/data && chmod 777 /srv/shiny-server/phenoforecast/data
+RUN chmod 777 /srv/shiny-server/phenoforecast
 
 # Expose the default Shiny Server port (optional if not changed)
 EXPOSE 3838

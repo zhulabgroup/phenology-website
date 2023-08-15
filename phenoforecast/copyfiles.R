@@ -9,7 +9,8 @@ copyfiles <- function (genusoi, varoi, bucket_name, bucket_region, date_list) {
     pull(Key) %>% 
     sort()
   
-  dir.create(path_local_data,recursive = T, showWarnings = F)
+  dir.create(path_local_data,recursive = T, showWarnings = T)
+  print("temp folder created")
   files_exist <- list.files(path_local_data, recursive = T, full.names = T, include.dirs = F)
   files_to_remove <- files_exist[!files_exist %in% files_s3]
   file.remove(files_to_remove)
