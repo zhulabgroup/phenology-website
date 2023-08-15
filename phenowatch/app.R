@@ -1,35 +1,12 @@
 # https://deanattali.com/2015/06/14/mimicking-google-form-shiny/
-# ln -s /home/azureuser/mycontainer/phenoforecast/submitted ./submitted
-library(shinyjs)
-library(shinyscreenshot)
 library(tidyverse)
-library(raster)
-library(gstat)
-library(ggpubr)
-library(gridExtra)
-library(maps)
 library(aws.s3)
-library(purrr)
-library(readr)
-library(tidyr)
-library(tibble)
-
-# library(geosphere)
 
 path_app <- getwd()
 data_path <- str_c(path_app, "/NPN_example/")
 responsesDir <- str_c(path_app, "/submitted_example/")
 today <- read_file(str_c(path_app, "/today.txt")) %>% as.Date()
-# path_app<-"~/Desktop/SEAS-phenowatch/phenowatch-main/"
-# data_path<-"~/Desktop/SEAS-phenowatch/phenowatch-main/NPN/"
-# responsesDir <- "~/Desktop/SEAS-phenowatch/phenowatch-main/submitted/"
-# today<-read_file(paste0(path_app,"today.txt")) %>% as.Date()
 
-# bucket_exists(
-#    bucket = "s3://phenoobservers/PhenoWatch/NPN/",
-#    region = "us-east-2"
-#  )
-#
 Sys.setenv("AWS_DEFAULT_REGION" = "us-east-2",
            "AWS_S3_ENDPOINT" = "s3.amazonaws.com")
 
@@ -306,7 +283,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       # coord_new<-coordinates(r_0.5deg)
       # coord_new_sp<-SpatialPoints(coords=coord_new[,c("x", "y")],
       #                             proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
-      # kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp, model=fit_npn
+      # kriged_res <- gstat::krige(intensity ~ 1, npn_time_sp, coord_new_sp, model=fit_npn
       #                     # ,maxdist=500
       #                     , na.action=na.omit
       # ) %>%
@@ -911,7 +888,7 @@ generate_plot <- function(plot_and_message, input) {
   p2 <- text_grob(message, face = "italic", color = "steelblue", size = 20) %>%
     as_ggplot()
   
-  grid.arrange(p1, p2,
+  gridExtra::grid.arrange(p1, p2,
                layout_matrix = matrix(c(rep(1, 4), 2))
   )
 }
