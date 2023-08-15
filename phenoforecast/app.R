@@ -11,11 +11,11 @@ library(lubridate)
 
 
 path_app <- getwd()
-path_data <- "/mnt/s3/PhenoForecast/"
+path_data <- "data/"
 today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
 date_list<-seq(today-14, today+14, by=1) # today-years(1)
 
-beginCluster(n = 4)
+# beginCluster(n = 4)
 
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
 
