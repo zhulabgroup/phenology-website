@@ -18,6 +18,7 @@ RUN R -e "install.packages(c( 'shinythemes','shinyjs', 'shinyscreenshot', 'geosp
 COPY phenology-website/phenoinfo /srv/shiny-server/phenoinfo
 COPY phenology-website/phenowatch /srv/shiny-server/phenowatch
 COPY phenology-website/phenoforecast /srv/shiny-server/phenoforecast
+RUN mkdir /srv/shiny-server/phenoforecast/data && chmod 777 /srv/shiny-server/phenoforecast/data
 
 # Expose the default Shiny Server port (optional if not changed)
 EXPOSE 3838
