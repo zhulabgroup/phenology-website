@@ -13,7 +13,9 @@ library(lubridate)
 path_app <- getwd()
 path_data <- "/mnt/s3/PhenoForecast/"
 today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
-date_list<-seq(today-years(1), today+14, by=1)
+date_list<-seq(today-14, today+14, by=1) # today-years(1)
+
+beginCluster(n = 4)
 
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
 
@@ -30,7 +32,9 @@ names(evi_sta_list)<-names(leaf_sta_list)<-names(flower_sta_list)<-names(pollen_
 for (i in 1:length(genusoi_list)){
   genusoi<-genusoi_list[i]
   path_evi<-str_c(path_data,genusoi,"/evi/")
-  evi_files<-list.files(path_evi, full.names = T, pattern="\\.tif$") %>% sort()
+  evi_files<-list.files(path_evi, full.names = T, pattern="\\.tif$") %>% sort() 
+  evi_files_id <- str_detect(evi_files, str_c(date_list, collapse = "|"))
+  evi_files <- evi_files[evi_files_id]
   
   evi_sta<-terra::rast(evi_files)
   evi_sta_list[[i]]<-evi_sta
@@ -39,7 +43,9 @@ for (i in 1:length(genusoi_list)){
 for (i in 1:length(genusoi_list)){
   genusoi<-genusoi_list[i]
   path_leaf<-str_c(path_data,genusoi,"/leaf/")
-  leaf_files<-list.files(path_leaf, full.names = T, pattern="\\.tif$") %>% sort()
+  leaf_files<-list.files(leaf_files, full.names = T, pattern="\\.tif$") %>% sort() 
+  leaf_files_id <- str_detect(leaf_files, str_c(date_list, collapse = "|"))
+  leaf_files <- leaf_files[leaf_files_id]
   
   leaf_sta<-terra::rast(leaf_files)
   leaf_sta_list[[i]]<-leaf_sta
@@ -49,6 +55,8 @@ for (i in 1:length(genusoi_list)){
   genusoi<-genusoi_list[i]
   path_flower<-str_c(path_data,genusoi,"/flower/")
   flower_files<-list.files(path_flower, full.names = T, pattern="\\.tif$") %>% sort()
+  flower_files_id <- str_detect(flower_files, str_c(date_list, collapse = "|"))
+  flower_files <- flower_files[flower_files_id]
   
   flower_sta<-terra::rast(flower_files)
   flower_sta_list[[i]]<-flower_sta
@@ -58,6 +66,8 @@ for (i in 1:length(genusoi_list)){
   genusoi<-genusoi_list[i]
   path_pollen<-str_c(path_data,genusoi,"/pollen/")
   pollen_files<-list.files(path_pollen, full.names = T, pattern="\\.tif$") %>% sort()
+  pollen_files_id <- str_detect(pollen_files, str_c(date_list, collapse = "|"))
+  pollen_files <- pollen_files[pollen_files_id]
   
   pollen_sta<-terra::rast(pollen_files)
   pollen_sta_list[[i]]<-pollen_sta
