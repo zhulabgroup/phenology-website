@@ -794,12 +794,12 @@ generate_output <- function(input, window = 14, radius = 100000) {
           message_anomaly_ann <- paste0(
             "Your record suggests ",
             case_when(
-              (input$status >= his_est + 0.2) & (his_slope$estimate > 0) ~ "an earlier start",
-              (input$status <= his_est - 0.2) & (his_slope$estimate > 0) ~ "a later start",
-              (input$status > his_est - 0.2) & (input$status < his_est + 0.2) & (his_slope$estimate > 0) ~ "a similar start",
-              (input$status >= his_est + 0.2) & (his_slope$estimate < 0) ~ "a later end",
-              (input$status <= his_est - 0.2) & (his_slope$estimate < 0) ~ "an earlier end",
-              (input$status > his_est - 0.2) & (input$status < his_est + 0.2) & (his_slope$estimate < 0) ~ "a similar end"
+              ((input$status == "Yes") >= his_est + 0.2) & (his_slope$estimate > 0) ~ "an earlier start",
+              ((input$status == "Yes") <= his_est - 0.2) & (his_slope$estimate > 0) ~ "a later start",
+              ((input$status == "Yes") > his_est - 0.2) & ((input$status == "Yes") < his_est + 0.2) & (his_slope$estimate > 0) ~ "a similar start",
+              ((input$status == "Yes") >= his_est + 0.2) & (his_slope$estimate < 0) ~ "a later end",
+              ((input$status == "Yes") <= his_est - 0.2) & (his_slope$estimate < 0) ~ "an earlier end",
+              ((input$status == "Yes") > his_est - 0.2) & ((input$status == "Yes") < his_est + 0.2) & (his_slope$estimate < 0) ~ "a similar end"
             ),
             " of ",
             input$genus,
