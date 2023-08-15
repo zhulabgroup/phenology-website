@@ -10,13 +10,8 @@ RUN apt-get update \
     libproj-dev \
     libmysqlclient-dev
 
-# Prepare to mount S3 bucket
-COPY .passwd-s3fs .passwd-s3fs
-RUN apt-get install -y --no-install-recommends s3fs && \
-   mkdir -p /mnt/s3
-
 # Install R packages
-RUN R -e "install.packages(c( 'shinythemes','shinyjs', 'shinyscreenshot', 'geosphere', 'raster', 'gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','snow'), dependencies=TRUE)"
+RUN R -e "install.packages(c( 'shinythemes','shinyjs', 'shinyscreenshot', 'geosphere', 'raster', 'gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','doSNOW', 'parallel'), dependencies=TRUE)"
 
 # Copy your Shiny app directory into the image
 # COPY sample /srv/shiny-server/sample
