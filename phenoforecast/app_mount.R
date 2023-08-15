@@ -1,20 +1,21 @@
+# setwd("/srv/shiny-server/phenoforecast/")
+# setwd("phenoforecast/")
 library(leaflet)
-# library(terra)
-# library(raster)
+library(terra)
+library(raster)
+library(colorRamps)
 library(tidyverse)
-library(doSNOW)
-library(parallel)
+library(rgdal)
+library(lubridate)
+# library(aws.s3)
 
 
 path_app <- getwd()
+path_data <- "data/"
 today<-read_file(str_c(path_app,"/today.txt")) %>% as.Date()
 date_list<-seq(today-14, today+14, by=1) # today-years(1)
 
-cl <- makeCluster(16, outfile = "")
-registerDoSNOW(cl)
-bucket_name <- "phenoobservers"
-bucket_region <- "us-east-2"
-source("copyfiles.R")
+# beginCluster(n = 4)
 
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
 
@@ -25,11 +26,64 @@ genusoi_list <- c(
   "Acer"
 )
 
+evi_sta_list<-leaf_sta_list<-flower_sta_list<-pollen_sta_list<-vector(mode="list",length=length(genusoi_list))
+names(evi_sta_list)<-names(leaf_sta_list)<-names(flower_sta_list)<-names(pollen_sta_list)<-genusoi_list
+
+for (i in 1:length(genusoi_list)){
+  genusoi<-genusoi_list[i]
+  path_evi<-str_c(path_data,genusoi,"/evi/")
+  evi_files<-list.files(path_evi, full.names = T, pattern="\\.tif$") %>% sort() 
+  evi_files_id <- str_detect(evi_files, str_c(date_list, collapse = "|"))
+  evi_files <- evi_files[evi_files_id]
+  
+  evi_sta<-terra::rast(evi_files)
+  evi_sta_list[[i]]<-evi_sta
+  print(str_c("evi ", genusoi))
+}
+
+for (i in 1:length(genusoi_list)){
+  genusoi<-genusoi_list[i]
+  path_leaf<-str_c(path_data,genusoi,"/leaf/")
+  leaf_files<-list.files(path_leaf, full.names = T, pattern="\\.tif$") %>% sort() 
+  leaf_files_id <- str_detect(leaf_files, str_c(date_list, collapse = "|"))
+  leaf_files <- leaf_files[leaf_files_id]
+  
+  leaf_sta<-terra::rast(leaf_files)
+  leaf_sta_list[[i]]<-leaf_sta
+  print(str_c("leaf ", genusoi))
+}
+
+for (i in 1:length(genusoi_list)){
+  genusoi<-genusoi_list[i]
+  path_flower<-str_c(path_data,genusoi,"/flower/")
+  flower_files<-list.files(path_flower, full.names = T, pattern="\\.tif$") %>% sort()
+  flower_files_id <- str_detect(flower_files, str_c(date_list, collapse = "|"))
+  flower_files <- flower_files[flower_files_id]
+  
+  flower_sta<-terra::rast(flower_files)
+  flower_sta_list[[i]]<-flower_sta
+  print(str_c("flower ", genusoi))
+}
+
+for (i in 1:length(genusoi_list)){
+  genusoi<-genusoi_list[i]
+  path_pollen<-str_c(path_data,genusoi,"/pollen/")
+  pollen_files<-list.files(path_pollen, full.names = T, pattern="\\.tif$") %>% sort()
+  pollen_files_id <- str_detect(pollen_files, str_c(date_list, collapse = "|"))
+  pollen_files <- pollen_files[pollen_files_id]
+  
+  pollen_sta<-terra::rast(pollen_files)
+  pollen_sta_list[[i]]<-pollen_sta
+  print(str_c("pollen ", genusoi))
+}
+
+sta_list<-list(EVI=evi_sta_list,Leaf=leaf_sta_list,Flower=flower_sta_list, Pollen=pollen_sta_list)
+
 ####
-pal_evi<-leaflet::colorNumeric(palette = "Greens",  domain = c(0,1), na.color = "transparent")
-pal_leaf<-leaflet::colorNumeric(palette = "Greens",  domain = c(0,1), na.color = "transparent")
-pal_flower<-leaflet::colorNumeric(palette = "Reds",  domain = c(0,1), na.color = "transparent")
-pal_pollen<-leaflet::colorNumeric(palette = "Reds",  domain = c(0,5), na.color = "transparent")
+pal_evi<-colorNumeric(palette = "Greens",  domain = c(0,1), na.color = "transparent")
+pal_leaf<-colorNumeric(palette = "Greens",  domain = c(0,1), na.color = "transparent")
+pal_flower<-colorNumeric(palette = "Reds",  domain = c(0,1), na.color = "transparent")
+pal_pollen<-colorNumeric(palette = "Reds",  domain = c(0,5), na.color = "transparent")
 pal<-list(EVI=pal_evi, Leaf=pal_leaf, Flower=pal_flower, Pollen=pal_pollen)
 maxlist<-list(EVI=1.0, Leaf=1.0, Flower=1.0, Pollen=5.0)
 minlist<-list(EVI=0, Leaf=0, Flower=0, Pollen=0)
@@ -67,7 +121,7 @@ ui<-fillPage(
              "html, body {width:100%; height:100%;}"
   ),
   
-  leaflet::leafletOutput("raster_map", height="100%",width="100%"),
+  leafletOutput("raster_map", height="100%",width="100%"),
   
   
   absolutePanel(id = "controls",
@@ -82,7 +136,7 @@ ui<-fillPage(
                 h1(id="title","PhenoForecast"),
                 selectInput("type", "Type",
                             choices = c("EVI","Leaf", "Flower", "Pollen"),
-                            selected =  "Pollen"),
+                            selected =  "EVI"),
                 
                 selectInput("genus", "Genus",
                             choices = genusoi_list,
@@ -197,19 +251,25 @@ server<-function(input, output,session){
   mymap <- reactive({
     m<-leaflet() %>%
       addTiles()%>%
-      leaflet::setView(lng = -98, lat = 38, zoom = 4)
+      setView(lng = -98, lat = 38, zoom = 4)
     m
   })
   
-  output$raster_map = leaflet::renderLeaflet({
+  output$raster_map = renderLeaflet({
     mymap()
   })
   
   myfun <- function(raster_map) {
-    input_type <- input$type
-    date_label <- tags$div(date_list[input$day-14+length(date_list)])
+    res <- reactiveInput()
+    date_label <- res[1]
+    input_type = res[3]
+    
+    input_type <- unlist(input_type)
+    date_label <- tags$div(date_label)
     
     new_rast <-reactiveRaster()
+    new_rast <- raster::raster(new_rast)
+    
     clearImages(raster_map) %>%
       clearControls() %>%
       addRasterImage(new_rast, colors = pal[[input_type]], opacity = 0.8, layerId = "map") %>%
@@ -219,27 +279,22 @@ server<-function(input, output,session){
     
   }
   
-  reactiveRaster <- reactive({
-    ras_sta <- reactiveInput()$ras_sta
-    
-    ras_date<-ras_sta[[input$day-14+length(date_list)]]
-    ras_date_lim <- raster::raster(ras_date)
-    
-    })
+  reactiveRaster <- reactive({reactiveInput()$r_type_genusoi_date_lim})
   
   reactiveInput <- reactive({
-    path_local_data<-copyfiles(genusoi = input$genus, varoi = input$type %>% tolower(), bucket_name= bucket_name, bucket_region=bucket_region, date_list = date_list)
-    ras_sta<-terra::rast(list.files(path_local_data, full.names = T))
-
+    r_type<-sta_list[[input$type,drop=F]]
+    r_type_genusoi<-r_type[[input$genus]]
+    r_type_genusoi_date<-r_type_genusoi[[input$day-14+length(date_list)]]
     if (input$type=="Pollen") {
-      ras_sta[ras_sta<0]<-0
-      ras_sta<-ras_sta^(1/4)
+      r_type_genusoi_date[r_type_genusoi_date<0]<-0
+      r_type_genusoi_date<-r_type_genusoi_date^(1/4)
     }
-    ras_sta_lim<-ras_sta
-    ras_sta_lim[ras_sta_lim>maxlist[[input$type]]]<-maxlist[[input$type]]-1e-5
-    ras_sta_lim[ras_sta_lim<minlist[[input$type]]]<-minlist[[input$type]]+1e-5
-     out <- list(ras_sta = ras_sta_lim, path = path_local_data)
+    r_type_genusoi_date_lim<-r_type_genusoi_date
+    r_type_genusoi_date_lim[r_type_genusoi_date_lim>maxlist[[input$type]]]<-maxlist[[input$type]]-1e-5
+    r_type_genusoi_date_lim[r_type_genusoi_date_lim<minlist[[input$type]]]<-minlist[[input$type]]+1e-5
+    date_label <- date_list[input$day-14+length(date_list)]
     
+    outlist <- list(date_label = date_label, r_type_genusoi_date_lim = r_type_genusoi_date_lim, input_type = input$type)
   })
   
   observe({
@@ -253,9 +308,14 @@ server<-function(input, output,session){
   
   #######Show popup on click########
   getPop <- reactive({
-    ras_sta <- reactiveInput()$ras_sta
-    ras_date<-ras_sta[[input$day-14+length(date_list)]]
-    print(ras_date)
+    r_type<-sta_list[[input$type,drop=F]]
+    r_type_genusoi<-r_type[[input$genus]]
+    r_type_genusoi_date<-r_type_genusoi[[input$day-14+length(date_list)]]
+    if (input$type=="Pollen") {
+      r_type_genusoi_date[r_type_genusoi_date < 0]<-0
+      r_type_genusoi_date<-r_type_genusoi_date^(1/4)
+    }
+    variable<-variable_list[[input$type]]
     
     click <- input$raster_map_click
     lat<-(90+click$lat)%%180-90
@@ -263,8 +323,8 @@ server<-function(input, output,session){
     text_lat<-paste0("Latitude: ", round(lat,2))
     text_lng<-paste0("Longtitude: ", round(lng,2))
     text_date<-paste0("Date: ", date_list[[input$day-14+length(date_list)]])
-    value<-round(terra::extract(ras_date, data.frame(lng,lat)), 2)
-    text_value<-str_c(variable_list[[input$type]],": ", value[2],"")
+    value<-round(terra::extract(r_type_genusoi_date, data.frame(lng,lat)), 2)
+    text_value<-paste0(variable,": ", value[2],"")
     
     content <- paste(text_lat, text_lng, text_date, text_value, sep="<br/>")
     
@@ -292,9 +352,11 @@ server<-function(input, output,session){
   
   ########Show lineplot on click#########
   getLinePlot <- reactive({
-    ras_sta <- reactiveInput()$ras_sta
-    print(ras_sta)
     
+    r_type<-sta_list[[input$type,drop=F]]
+    r_type_genusoi<-r_type[[input$genus]]
+    # r_type_genusoi_date<-r_type_genusoi[[input$day-14+length(date_list)]]
+    variable<-variable_list[[input$type]]
     if(input$type=="EVI" || input$type=="Leaf") {
       col_line<-"dark green"
     }
@@ -306,13 +368,18 @@ server<-function(input, output,session){
     lat<-(90+click$lat)%%180-90
     lng<-(180+click$lng)%%360-180
     
-    y <- terra::vect(cbind(lng,lat), crs="+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 ")
+    y <- vect(cbind(lng,lat), crs="+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 ")
     
-    ts <- terra::extract(x = ras_sta, y = y)
+    
+    ts <- terra::extract(x = subset(r_type_genusoi, 1:length(date_list)), y = y)
     ts <- select(as.data.frame(ts), -1)
     colnames(ts) <- c(1:length(ts[1,]))
     ts <- as.data.frame(t(ts))
     
+    if (input$type=="Pollen") {
+      ts[ts<0]<-0
+      ts<-ts^(1/4)
+    }
     ts_df<-data.frame(ts, date_list)
     colnames(ts_df) <- c("value","date")
     
@@ -327,7 +394,7 @@ server<-function(input, output,session){
         theme_light()+
         ylim(minlist[[input$type]]-0.1, maxlist[[input$type]]+0.1)+
         xlab("date")+
-        ylab(variable_list[[input$type]])+
+        ylab(variable)+
         ggtitle(paste0("Longitude: ", round(lng,2), ", Latitude: ", round(lat,2))) +
         theme(plot.title = element_text(size = 10))
       
@@ -359,11 +426,10 @@ server<-function(input, output,session){
   
   # update the lineplot if the user changes the input/form data -- this uses the last point clicked on the map
   observeEvent(formData(), {
-    unlink(reactiveInput()$path, recursive = T)
-    # if (!is.null(v$point)){
-    #   leafletProxy("raster_map") %>%
-    #     createLinePlot(getLinePlot())
-    # }
+    if (!is.null(v$point)){
+      leafletProxy("raster_map") %>%
+        createLinePlot(getLinePlot())
+    }
   })
   
   ## add input panel and misc elements to mapshot
@@ -407,7 +473,7 @@ server<-function(input, output,session){
   ##########screenshoting########
   user_created_map <- reactive({
     m = mymap() %>%
-      leaflet::setView(lng = input$raster_map_center$lng, lat = input$raster_map_center$lat,
+      setView(lng = input$raster_map_center$lng, lat = input$raster_map_center$lat,
               zoom = input$raster_map_zoom) %>%
       myfun()
     
