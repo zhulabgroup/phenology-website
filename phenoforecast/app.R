@@ -109,37 +109,37 @@ ui<-fillPage(
   # ),
   
   
-  absolutePanel(id = "tweetfeed_shown",
-                class = "panel panel-default",
-                fixed = TRUE,draggable = TRUE,
-                top = "auto", left = 100, right = "auto", bottom = 10,
-                width = 300, height = 300,
-                style = "background-color: rgba(255,255,255,0);
-                border-color: rgba(255,255,255,0);
-                box-shadow: 0pt 0pt 0pt 0px",
-                
-                tags$script(src="https://apps.elfsight.com/p/platform.js",
-                            defer=NA),
-                # includeScript("https://apps.elfsight.com/p/platform.js"), # this causes the app to crash
-                tags$div(class = "elfsight-app-ab030cd9-764d-413a-9cfa-0e630029053f"),
-                actionButton("hidetweet", "Hide Twitter feed", class = "btn-primary")
-                
-  )
-  ,
-  shinyjs::hidden(
-    absolutePanel(id = "tweetfeed_hidden",
-                  class = "panel panel-default",
-                  fixed = TRUE,draggable = FALSE,
-                  top = "auto", left = 100, right = "auto", bottom = 10,
-                  width = 300, height = "auto",
-                  style = "background-color: rgba(255,255,255,0);
-                border-color: rgba(255,255,255,0);
-                box-shadow: 0pt 0pt 0pt 0px",
-                  
-                  actionButton("showtweet", "Show Twitter feed", class = "btn-primary")
-                  
-    )
-  ),
+  # absolutePanel(id = "tweetfeed_shown",
+  #               class = "panel panel-default",
+  #               fixed = TRUE,draggable = TRUE,
+  #               top = "auto", left = 100, right = "auto", bottom = 10,
+  #               width = 300, height = 300,
+  #               style = "background-color: rgba(255,255,255,0);
+  #               border-color: rgba(255,255,255,0);
+  #               box-shadow: 0pt 0pt 0pt 0px",
+  #               
+  #               tags$script(src="https://apps.elfsight.com/p/platform.js",
+  #                           defer=NA),
+  #               # includeScript("https://apps.elfsight.com/p/platform.js"), # this causes the app to crash
+  #               tags$div(class = "elfsight-app-ab030cd9-764d-413a-9cfa-0e630029053f"),
+  #               actionButton("hidetweet", "Hide Twitter feed", class = "btn-primary")
+  #               
+  # )
+  # ,
+  # shinyjs::hidden(
+  #   absolutePanel(id = "tweetfeed_hidden",
+  #                 class = "panel panel-default",
+  #                 fixed = TRUE,draggable = FALSE,
+  #                 top = "auto", left = 100, right = "auto", bottom = 10,
+  #                 width = 300, height = "auto",
+  #                 style = "background-color: rgba(255,255,255,0);
+  #               border-color: rgba(255,255,255,0);
+  #               box-shadow: 0pt 0pt 0pt 0px",
+  #                 
+  #                 actionButton("showtweet", "Show Twitter feed", class = "btn-primary")
+  #                 
+  #   )
+  # ),
   
   absolutePanel(id = "misc",
                 class = "panel panel-default",
