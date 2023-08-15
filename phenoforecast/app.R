@@ -38,17 +38,19 @@ for (i in 1:length(genusoi_list)){
   
   evi_sta<-terra::rast(evi_files)
   evi_sta_list[[i]]<-evi_sta
+  print(str_c("evi ", genusoi))
 }
 
 for (i in 1:length(genusoi_list)){
   genusoi<-genusoi_list[i]
   path_leaf<-str_c(path_data,genusoi,"/leaf/")
-  leaf_files<-list.files(leaf_files, full.names = T, pattern="\\.tif$") %>% sort() 
+  leaf_files<-list.files(path_leaf, full.names = T, pattern="\\.tif$") %>% sort() 
   leaf_files_id <- str_detect(leaf_files, str_c(date_list, collapse = "|"))
   leaf_files <- leaf_files[leaf_files_id]
   
   leaf_sta<-terra::rast(leaf_files)
   leaf_sta_list[[i]]<-leaf_sta
+  print(str_c("leaf ", genusoi))
 }
 
 for (i in 1:length(genusoi_list)){
@@ -60,6 +62,7 @@ for (i in 1:length(genusoi_list)){
   
   flower_sta<-terra::rast(flower_files)
   flower_sta_list[[i]]<-flower_sta
+  print(str_c("flower ", genusoi))
 }
 
 for (i in 1:length(genusoi_list)){
@@ -71,6 +74,7 @@ for (i in 1:length(genusoi_list)){
   
   pollen_sta<-terra::rast(pollen_files)
   pollen_sta_list[[i]]<-pollen_sta
+  print(str_c("pollen ", genusoi))
 }
 
 sta_list<-list(EVI=evi_sta_list,Leaf=leaf_sta_list,Flower=flower_sta_list, Pollen=pollen_sta_list)
