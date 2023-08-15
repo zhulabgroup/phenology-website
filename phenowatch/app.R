@@ -886,7 +886,7 @@ generate_plot <- function(plot_and_message, input) {
   message <- strwrap(message, width = 50, simplify = FALSE) # modify 30 to your needs
   message <- sapply(message, paste, collapse = "\n")
   p2 <- text_grob(message, face = "italic", color = "steelblue", size = 20) %>%
-    as_ggplot()
+    ggpubr::as_ggplot()
   
   gridExtra::grid.arrange(p1, p2,
                layout_matrix = matrix(c(rep(1, 4), 2))
