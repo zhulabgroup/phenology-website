@@ -200,7 +200,11 @@ generate_output <- function(input, window = 14, radius = 100000) {
   } else {
     npn_location <- npn_data_all
   }
-
+  
+  year_data = list()
+  past_year = as.integer(format(input$date, "%Y")) - 11
+  current_year = as.integer(format(input$date, "%Y"))-1
+  
   if (nrow(npn_location) > 0) {
     npn_location_ts <- npn_location %>%
       dplyr::select(day_of_year, phenophase_status) %>%
@@ -208,7 +212,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       summarize(intensity = mean(phenophase_status)) %>%
       ungroup() %>%
       complete(day_of_year = 1:366, fill = list(intensity = NA))
-    print(npn_location)
+    #print(npn_location)
     min_id <- min(which(!is.na(npn_location_ts$intensity)))
     max_id <- max(which(!is.na(npn_location_ts$intensity)))
     npn_location_ts$intensity[min_id:max_id] <-
@@ -216,8 +220,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
         object = npn_location_ts$intensity[min_id:max_id],
         x = min_id:max_id, maxgap = 28
       )
-
-
+    
+    
     max_id <- 0
     done <- F
     print(npn_location_ts)
@@ -234,12 +238,129 @@ generate_output <- function(input, window = 14, radius = 100000) {
         npn_location_ts$intensity[min_id:max_id] <- ptw::whit1(npn_location_ts$intensity[min_id:max_id], 10)
       }
     }
-    print(npn_location_ts)
+    
+    overall_data <- npn_location_ts
+    
+    for (i in 0:10) {
+      npn_location_ts <- filter(npn_location, year == past_year+i) %>%
+        dplyr::select(day_of_year, phenophase_status) %>%
+        group_by(day_of_year) %>%
+        summarize(intensity = mean(phenophase_status)) %>%
+        ungroup() %>%
+        complete(day_of_year = 1:366, fill = list(intensity = NA))
+      #print(npn_location)
+      min_id <- min(which(!is.na(npn_location_ts$intensity)))
+      max_id <- max(which(!is.na(npn_location_ts$intensity)))
+      npn_location_ts$intensity[min_id:max_id] <-
+        zoo::na.approx(
+          object = npn_location_ts$intensity[min_id:max_id],
+          x = min_id:max_id, maxgap = 28
+        )
+      
+      
+      max_id <- 0
+      done <- F
+      print(npn_location_ts)
+      while (!done) {
+        min_id <- min(which(!is.na(npn_location_ts$intensity[(max_id + 1):length(npn_location_ts$intensity)]))) + (max_id)
+        if (min_id == Inf) {
+          done <- T
+        } else {
+          max_id <- min(which(is.na(npn_location_ts$intensity[min_id:length(npn_location_ts$intensity)]))) - 1 + (min_id - 1)
+          if (max_id == Inf) {
+            max_id <- length(npn_location_ts$intensity)
+            done <- T
+          }
+          npn_location_ts$intensity[min_id:max_id] <- ptw::whit1(npn_location_ts$intensity[min_id:max_id], 10)
+        }
+      }
+      
+      year_data[[i+1]] <- data.frame(npn_location_ts)
+    }
+    
+    calc_range <- function(df) {
+      non_na_indices <- which(!is.na(df$intensity))
+      flag = F
+      
+      first_instance = -1
+      last_instance = -1
+      
+      for (j in 1:(length(non_na_indices) - 1)) {
+        current_index <- non_na_indices[j]
+        next_index <- non_na_indices[j + 1]
+        
+        if (df$intensity[current_index] <= 0.25 && df$intensity[next_index] >= 0.25) {
+          if (flag == F) {
+            first_instance = current_index
+            flag = T
+          }
+        }
+        if (df$intensity[current_index] >= 0.25 && df$intensity[next_index] <= 0.25) {
+          last_instance = current_index
+        }
+      }
+      print(first_instance)
+      print(last_instance)
+      return (c(first_instance, last_instance))
+    }
+    
     if (nrow(npn_location) > 100) {
+      rect_data <- data.frame(
+        xmin = numeric(),
+        xmax = numeric(),
+        ymin = numeric(),
+        ymax = numeric()
+      )
+      for (i in 0:10) {
+        values <- calc_range(year_data[[i+1]])
+        
+        first_instance <- values[1]
+        last_instance <- values[2]
+        
+        if (first_instance != -1 && last_instance != -1) {
+          rect_data <- rbind(rect_data, data.frame(
+            xmin = past_year + i - 0.3,
+            xmax = past_year + i + 0.3,
+            ymin = first_instance,
+            ymax = last_instance
+          ))
+        }
+      }
+      
+      ylim_max <- if (nrow(rect_data) > 0) max(rect_data$ymax) + 25 else 366
+      
+      rect_graph <- ggplot() +
+        geom_rect(data = rect_data, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), color = "black", fill = "white", size = 0.7) +
+        scale_x_continuous(breaks = seq(past_year, current_year), limits = c(past_year - 0.3, current_year + 0.3)) +
+        scale_y_continuous(breaks = seq(0, ylim_max, by = 20), limits = c(0, ylim_max)) +
+        labs(
+          x = "Year",
+          y = "Day of Year"
+        ) +
+        theme_classic()
+      
+      past_year <- as.factor(past_year)
+      current_year <- as.factor(current_year)
+      
+      c_line <- ggplot() +
+        # geom_jitter(data=npn_location,aes(x=day_of_year, y=phenophase_status), width=0, height=0.05, alpha=0.1)+
+        geom_bin2d(data = npn_location, aes(x = day_of_year, y = phenophase_status), bins = c(366, 20), alpha = 0.8) +
+        geom_line(data=year_data[[1]], aes_string(x="day_of_year", y="intensity", color=past_year), lwd=2, na.rm=T)  +
+        geom_line(data=year_data[[length(year_data)]], aes_string(x="day_of_year", y="intensity", color=current_year), lwd=2, na.rm=T)  +
+        #scale_color_manual(name="years", values=c(past_year = "orange", current_year = "blue")) +
+        geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes")), col = "red", cex = 5) +
+        ylim(0 - 0.1, 1 + 0.1) +
+        labs(
+          x = "day of year",
+          y = "status",
+          fill = "count"
+        ) +
+        theme_classic()
+
       p_line <- ggplot() +
         # geom_jitter(data=npn_location,aes(x=day_of_year, y=phenophase_status), width=0, height=0.05, alpha=0.1)+
         geom_bin2d(data = npn_location, aes(x = day_of_year, y = phenophase_status), bins = c(366, 20), alpha = 0.8) +
-        geom_line(data = npn_location_ts, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
+        geom_line(data = overall_data, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
         geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes")), col = "red", cex = 5) +
         ylim(0 - 0.1, 1 + 0.1) +
         # scale_color_viridis_c()+
@@ -889,7 +1010,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
   #                                      message_anomaly, message_anomaly_ann,
   #                                      message_attribute))
   plot_and_message <- list(
-    plot = list(p_line, p_map),
+    plot = list(p_line, p_map, c_line, rect_graph),
     message = list(
       message_location, message_time,
       message_anomaly, message_anomaly_ann
@@ -902,7 +1023,9 @@ generate_output <- function(input, window = 14, radius = 100000) {
 generate_plot <- function(plot_and_message, input) {
   p1 <- plot_and_message$plot[[case_when(
     input$plot == "Line" ~ 1,
-    input$plot == "Map" ~ 2 # ,
+    input$plot == "Map" ~ 2 ,
+    input$plot == "Trends Between Years" ~ 3,
+    input$plot == "Threshold Plot" ~ 4
     # input$plot=="Function"~3
   )]]
 
@@ -1017,7 +1140,7 @@ shinyApp(
             selectInput(
               "plot", "Plot",
               c(
-                "Line", "Map"
+                "Line", "Map", "Trends Between Years", "Threshold Plot"
                 # , "Function"
               )
             )
@@ -1034,19 +1157,19 @@ shinyApp(
             actionButton("go", "Take a screenshot", class = "btn-primary")
           ),
           column(
-            2,
-            tags$a(
-              href = "https://twitter.com/intent/tweet?button_hashtag=phenology&ref_src=twsrc%5Etfw",
-              class = "twitter-hashtag-button",
-              "data-size" = "large",
-              "data-show-count" = "false",
-              "Tweet #phenology"
-            ),
-            tags$script(
-              async = NA,
-              src = "https://platform.twitter.com/widgets.js",
-              charset = "utf-8"
-            )
+            2
+            # tags$a(
+            #   href = "https://twitter.com/intent/tweet?button_hashtag=phenology&ref_src=twsrc%5Etfw",
+            #   class = "twitter-hashtag-button",
+            #   "data-size" = "large",
+            #   "data-show-count" = "false",
+            #   "Tweet #phenology"
+            # ),
+            # tags$script(
+            #   async = NA,
+            #   src = "https://platform.twitter.com/widgets.js",
+            #   charset = "utf-8"
+            # )
           ),
           column(
             8,

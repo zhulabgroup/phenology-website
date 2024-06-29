@@ -201,8 +201,11 @@ generate_output <- function(input, window = 14, radius = 100000) {
     npn_location <- npn_data_all
   }
 
+  past_year = as.integer(format(input$date, "%Y")) - 10
+  current_year = as.integer(format(input$date, "%Y"))
+  
   if (nrow(npn_location) > 0) {
-    npn_location_ts <- npn_location %>%
+    npn_location_ts <- filter(npn_location, year == past_year) %>%
       dplyr::select(day_of_year, phenophase_status) %>%
       group_by(day_of_year) %>%
       summarize(intensity = mean(phenophase_status)) %>%
@@ -234,21 +237,145 @@ generate_output <- function(input, window = 14, radius = 100000) {
         npn_location_ts$intensity[min_id:max_id] <- ptw::whit1(npn_location_ts$intensity[min_id:max_id], 10)
       }
     }
-    print(npn_location_ts)
+    
+    #########
+    
+    
+    
+    ###########
+    # npn_location_ts_current <- filter(npn_location, year == current_year) %>%
+    #   dplyr::select(day_of_year, phenophase_status) %>%
+    #   group_by(day_of_year) %>%
+    #   summarize(intensity = mean(phenophase_status)) %>%
+    #   ungroup() %>%
+    #   complete(day_of_year = 1:366, fill = list(intensity = NA))
+    # print(npn_location_ts_current)
+    # min_id <- min(which(!is.na(npn_location_ts_current$intensity)))
+    # max_id <- max(which(!is.na(npn_location_ts_current$intensity)))
+    # npn_location_ts_current$intensity[min_id:max_id] <-
+    #   zoo::na.approx(
+    #     object = npn_location_ts_current$intensity[min_id:max_id],
+    #     x = min_id:max_id, maxgap = 28
+    #   )
+    # 
+    # 
+    # max_id <- 0
+    # done <- F
+    # print(npn_location_ts_current)
+    # while (!done) {
+    #   min_id <- min(which(!is.na(npn_location_ts_current$intensity[(max_id + 1):length(npn_location_ts_current$intensity)]))) + (max_id)
+    #   if (min_id == Inf) {
+    #     done <- T
+    #   } else {
+    #     max_id <- min(which(is.na(npn_location_ts_current$intensity[min_id:length(npn_location_ts_current$intensity)]))) - 1 + (min_id - 1)
+    #     if (max_id == Inf) {
+    #       max_id <- length(npn_location_ts_current$intensity)
+    #       done <- T
+    #     }
+    #     npn_location_ts_current$intensity[min_id:max_id] <- ptw::whit1(npn_location_ts_current$intensity[min_id:max_id], 10)
+    #   }
+    # }
+    # #############
+    # print(npn_location_ts)
     if (nrow(npn_location) > 100) {
+      old <- data.frame(npn_location_ts)
+      new <- data.frame(npn_location_ts_current)
+      combined_npn <- bind_cols(old, new$intensity)
+      colnames(combined_npn) <- c("day_of_year", "past_year", "current_year")
+      print(combined_npn)
+      
+      non_na_indices <- which(!is.na(combined_npn$past_year))
+      
+      # Loop through the non-NA indices to find the first where 0.25 lies between values
+      flag = F
+      for (i in 1:(length(non_na_indices) - 1)) {
+        current_index <- non_na_indices[i]
+        next_index <- non_na_indices[i + 1]
+        
+        if (combined_npn$past_year[current_index] <= 0.25 && combined_npn$past_year[next_index] >= 0.25) {
+          if (flag == F) {
+            first_instance_past_year = current_index
+            break
+          } else {
+            
+          }
+        }
+      }
+      non_na_indices = rev(non_na_indices)
+      for (i in 1:(length(non_na_indices) - 1)) {
+        current_index <- non_na_indices[i]
+        next_index <- non_na_indices[i + 1]
+        
+        if (combined_npn$past_year[current_index] <= 0.25 && combined_npn$past_year[next_index] >= 0.25) {
+          if (flag == F) {
+            last_instance_past_year = current_index
+            break
+          } else {
+            
+          }
+        }
+      }
+      
+      non_na_indices <- which(!is.na(combined_npn$current_year))
+      
+      # Loop through the non-NA indices to find the first where 0.25 lies between values
+      flag = F
+      for (i in 1:(length(non_na_indices) - 1)) {
+        current_index <- non_na_indices[i]
+        next_index <- non_na_indices[i + 1]
+        
+        if (combined_npn$current_year[current_index] <= 0.25 && combined_npn$current_year[next_index] >= 0.25) {
+          if (flag == F) {
+            first_instance_current_year = current_index
+            break
+          } else {
+            
+          }
+        }
+      }
+      non_na_indices = rev(non_na_indices)
+      for (i in 1:(length(non_na_indices) - 1)) {
+        current_index <- non_na_indices[i]
+        next_index <- non_na_indices[i + 1]
+        
+        if (combined_npn$current_year[current_index] <= 0.25 && combined_npn$current_year[next_index] >= 0.25) {
+          if (flag == F) {
+            last_instance_current_year = current_index
+            break
+          } else {
+            
+          }
+        }
+      }
+      
+      print(combined_npn)
+      rect_graph <- ggplot() +
+        geom_rect(aes(xmin = past_year-0.3, xmax = past_year+0.3, ymin = first_instance_past_year, ymax = last_instance_past_year), color="black", size=0.7) +
+        geom_rect(aes(xmin = current_year-0.3, xmax = current_year+0.3, ymin = first_instance_current_year, ymax = last_instance_current_year), color="black", size=0.7) +
+        scale_x_continuous(breaks = seq(past_year, current_year, 5), limits=c(past_year-0.3, current_year+0.3)) +
+        scale_y_continuous(breaks = seq(0, 1000, by=20), limits=c(0, max(last_instance_past_year, last_instance_current_year)+20)) +
+        labs(
+          x="year",
+          y="day of year"
+        ) + 
+        theme_classic()
+        
+      ggsave("rect_graph.png", plot=rect_graph)
       p_line <- ggplot() +
         # geom_jitter(data=npn_location,aes(x=day_of_year, y=phenophase_status), width=0, height=0.05, alpha=0.1)+
         geom_bin2d(data = npn_location, aes(x = day_of_year, y = phenophase_status), bins = c(366, 20), alpha = 0.8) +
-        geom_line(data = npn_location_ts, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
+        geom_line(data=combined_npn, aes(x=day_of_year, y=past_year, color="2016"), lwd=2, na.rm=T)  +
+        geom_line(data=combined_npn, aes(x=day_of_year, y=current_year, color="2021"), lwd=2, na.rm=T)  +
+        scale_color_manual(name="years", values=c("2016" = "orange", "2021" = "blue")) +
         geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes")), col = "red", cex = 5) +
         ylim(0 - 0.1, 1 + 0.1) +
-        # scale_color_viridis_c()+
         labs(
           x = "day of year",
           y = "status",
           fill = "count"
         ) +
         theme_classic()
+        
     } else {
       p_line <- ggplot() +
         geom_jitter(data = npn_location, aes(x = day_of_year, y = phenophase_status), width = 0, height = 0.05, alpha = 0.8) +
