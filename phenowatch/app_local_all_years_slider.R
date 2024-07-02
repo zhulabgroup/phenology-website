@@ -186,13 +186,25 @@ generate_output <- function(input, window = 14, radius = 100000) {
       year = integer(0)
     )
   }
-
-
+  
   # radius<-500000
-  if (nrow(npn_data_all) > 0) {
-    npn_location <- npn_data_all %>%
-      filter(abs(latitude- input$latitude) <=2,
-             abs(longitude- input$longitude) <=2) %>% 
+  if (nrow(npn_data_all) > 1) {
+    print(paste(input$latitude, input$longitude))
+    npn_location <- filter(npn_data_all, abs(latitude- input$latitude) <=radius/100000,
+                           abs(longitude- input$longitude) <=radius/100000)
+    print(npn_location)
+    if (nrow(npn_location) == 0) {
+      img <- jpeg::readJPEG("question.jpeg")
+      p_line <- ggplot() + background_image(img) + coord_equal()
+      plot_and_message <- list(
+        plot = list(p_line, p_line, p_line, p_line),
+        message = list("Invalid parameters! Try a different location or increase the radius.")
+      )
+      
+      return(plot_and_message)
+    }
+    
+    npn_location <- npn_location %>%
       rowwise() %>%
       mutate(distance = geosphere::distm(x = c(longitude, latitude), y = c(input$longitude, input$latitude), fun = geosphere::distGeo) %>% as.numeric()) %>%
       arrange(distance) %>%
@@ -201,6 +213,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
     npn_location <- npn_data_all
   }
   observations = nrow(npn_location)
+  print(observations)
   year_data = list()
   past_year = as.integer(format(input$date, "%Y")) - 11
   current_year = as.integer(format(input$date, "%Y"))-1
@@ -224,7 +237,6 @@ generate_output <- function(input, window = 14, radius = 100000) {
     
     max_id <- 0
     done <- F
-    print(npn_location_ts)
     while (!done) {
       min_id <- min(which(!is.na(npn_location_ts$intensity[(max_id + 1):length(npn_location_ts$intensity)]))) + (max_id)
       if (min_id == Inf) {
@@ -260,7 +272,6 @@ generate_output <- function(input, window = 14, radius = 100000) {
       
       max_id <- 0
       done <- F
-      print(npn_location_ts)
       while (!done) {
         min_id <- min(which(!is.na(npn_location_ts$intensity[(max_id + 1):length(npn_location_ts$intensity)]))) + (max_id)
         if (min_id == Inf) {
@@ -299,8 +310,6 @@ generate_output <- function(input, window = 14, radius = 100000) {
           last_instance = current_index
         }
       }
-      print(first_instance)
-      print(last_instance)
       return (c(first_instance, last_instance))
     }
     
@@ -386,6 +395,12 @@ generate_output <- function(input, window = 14, radius = 100000) {
   } else {
     img <- jpeg::readJPEG("question.jpeg")
     p_line <- ggplot() +
+      background_image(img) +
+      coord_equal()
+    c_line <- ggplot() +
+      background_image(img) +
+      coord_equal()
+    rect_graph <- ggplot() +
       background_image(img) +
       coord_equal()
   }
@@ -832,7 +847,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
 
   message_time <- paste0("You just provided the #", format(nrow(npn_time) + 1, scientific = F), " phenological record of this genus within ", format(window, scientific = F), " days.")
 
-  if (nrow(npn_location) > 0) {
+  if (nrow(npn_location) > 1) {
     his_est <- npn_location_ts %>%
       filter(day_of_year == as.integer(format(input$date, "%j"))) %>%
       dplyr::select(intensity) %>%
@@ -872,111 +887,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
         filter(term == "distance") %>%
         dplyr::select(estimate, p.value)
       npn_location_ts %>% filter(day_of_year == as.integer(format(input$date, "%j")))
-      message_anomaly <- paste0(
-        "Your record suggests a ",
-        case_when(
-          as.integer(input$status == "Yes") >= (his_est + 0.2) ~ "higher",
-          as.integer(input$status == "Yes") <= (his_est - 0.2) ~ "lower",
-          TRUE ~ "similar"
-        ),
-        " possibility of ",
-        case_when(
-          input$event == "Leafing" ~ "seeing leaves",
-          input$event == "Flowering" ~ "seeing flowers"
-        ),
-        " of ",
-        input$genus,
-        " compared to the estimate from historical record (",
-        round(his_est, 2),
-        ") in this area."
-      )
-      if (is.na(his_slope$p.value)) {
-        message_anomaly_ann <- paste0(
-          "Your record suggests that this time of the year ",
-          case_when(
-            input$status == "Yes" ~ "might",
-            input$status == "No" ~ "might not"
-          ),
-          " be in the ",
-          input$genus,
-          case_when(
-            input$event == "Leafing" ~ " leafing",
-            input$event == "Flowering" ~ " flowering"
-          ),
-          " season, ",
-          case_when(
-            input$status == "Yes" & his_est >= 0.01 ~ "consistent with",
-            input$status == "No" & his_est < 0.01 ~ "consistent with",
-            input$status == "No" & his_est >= 0.01 ~ "different from",
-            input$status == "Yes" & his_est < 0.01 ~ "different from"
-          ),
-          " the historical record in this area."
-        )
-      } else {
-        if (his_slope$p.value > 0.05) {
-          message_anomaly_ann <- paste0(
-            "Your record suggests that this time of the year ",
-            case_when(
-              input$status == "Yes" ~ "might",
-              input$status == "No" ~ "might not"
-            ),
-            " be in the ",
-            input$genus,
-            case_when(
-              input$event == "Leafing" ~ " leafing",
-              input$event == "Flowering" ~ " flowering"
-            ),
-            " season, ",
-            case_when(
-              input$status == "Yes" & his_est >= 0.01 ~ "consistent with",
-              input$status == "No" & his_est < 0.01 ~ "consistent with",
-              input$status == "No" & his_est >= 0.01 ~ "different from",
-              input$status == "Yes" & his_est < 0.01 ~ "different from"
-            ),
-            " the historical record in this area."
-          )
-        } else {
-          message_anomaly_ann <- paste0(
-            "Your record suggests ",
-            case_when(
-              (input$status >= his_est + 0.2) & (his_slope$estimate > 0) ~ "an earlier start",
-              (input$status <= his_est - 0.2) & (his_slope$estimate > 0) ~ "a later start",
-              (input$status > his_est - 0.2) & (input$status < his_est + 0.2) & (his_slope$estimate > 0) ~ "a similar start",
-              (input$status >= his_est + 0.2) & (his_slope$estimate < 0) ~ "a later end",
-              (input$status <= his_est - 0.2) & (his_slope$estimate < 0) ~ "an earlier end",
-              (input$status > his_est - 0.2) & (input$status < his_est + 0.2) & (his_slope$estimate < 0) ~ "a similar end"
-            ),
-            " of ",
-            input$genus,
-            case_when(
-              input$event == "Leafing" ~ " leafing",
-              input$event == "Flowering" ~ " flowering"
-            ),
-            " season compared to the historical record in this area."
-          )
-        }
       }
     }
-  } else {
-    message_anomaly <- paste0(
-      "There has been little data on the ",
-      input$genus,
-      case_when(
-        input$event == "Leafing" ~ " leafing",
-        input$event == "Flowering" ~ " flowering"
-      ),
-      " status for this area. Your record provides a starting point."
-    )
-    message_anomaly_ann <- paste0(
-      "There has been little data on the timing of ",
-      input$genus,
-      case_when(
-        input$event == "Leafing" ~ " leafing",
-        input$event == "Flowering" ~ " flowering"
-      ),
-      " season for this area. Your record provides a starting point."
-    )
-  }
 
   # if (input$genus %in% genusoi_list) {
   #   if (nrow(function_df)>0) {
@@ -1011,10 +923,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
   #                                      message_attribute))
   plot_and_message <- list(
     plot = list(p_line, p_map, c_line, rect_graph),
-    message = list(
-      message_location, message_time,
-      message_anomaly, message_anomaly_ann
-    )
+    message = list("")
   )
 
   return(plot_and_message)
@@ -1029,10 +938,10 @@ generate_plot <- function(plot_and_message, input) {
     # input$plot=="Function"~3
   )]]
 
-  message <- plot_and_message$message[[input$message]]
-  message <- strwrap(message, width = 50, simplify = FALSE) # modify 30 to your needs
-  message <- sapply(message, paste, collapse = "\n")
-  p2 <- text_grob(message, face = "italic", color = "steelblue", size = 20) %>%
+  # message <- plot_and_message$message[[input$message]]
+  # message <- strwrap(message, width = 50, simplify = FALSE) # modify 30 to your needs
+  # message <- sapply(message, paste, collapse = "\n")
+  p2 <- text_grob(plot_and_message$message[1], face = "italic", color = "steelblue", size = 20) %>%
     as_ggplot()
 
   grid.arrange(p1, p2,
@@ -1147,7 +1056,7 @@ shinyApp(
           ),
           column(
             6,
-            sliderInput("message", "Message", min = 1, max = 4, value = 1, ticks = T)
+            sliderInput("radius", "Selected Radius", min = 100, max = 500, value = 100, ticks = T, step=100)
           )
         ),
         plotOutput("plot", height = "550px"),
@@ -1281,7 +1190,7 @@ shinyApp(
 
     observeEvent(input$submit, {
       # observeEvent(input$card, {
-      plot_and_message <- generate_output(input)
+      plot_and_message <- generate_output(input, radius=input$radius*1000)
       # })
 
       # observeEvent(input$card, {
