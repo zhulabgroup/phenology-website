@@ -198,7 +198,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       p_line <- ggplot() + background_image(img) + coord_equal()
       plot_and_message <- list(
         plot = list(p_line, p_line, p_line, p_line),
-        message = list("Invalid parameters! Try a different location or increase the radius.")
+        message = list("There are not enough nearby observations for comparison. Choose a different location or increase the radius instead.")
       )
       
       return(plot_and_message)
