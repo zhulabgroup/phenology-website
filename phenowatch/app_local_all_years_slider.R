@@ -13,6 +13,7 @@ library(purrr)
 library(readr)
 library(tidyr)
 library(tibble)
+library(ggnewscale)
 
 # library(geosphere)
 
@@ -209,6 +210,17 @@ generate_output <- function(input, window = 14, radius = 100000) {
       mutate(distance = geosphere::distm(x = c(longitude, latitude), y = c(input$longitude, input$latitude), fun = geosphere::distGeo) %>% as.numeric()) %>%
       arrange(distance) %>%
       filter(distance <= radius)
+    
+    if (nrow(npn_location) == 0) {
+      img <- jpeg::readJPEG("question.jpeg")
+      p_line <- ggplot() + background_image(img) + coord_equal()
+      plot_and_message <- list(
+        plot = list(p_line, p_line, p_line, p_line),
+        message = list("There are not enough nearby observations for comparison. Choose a different location or increase the radius instead.")
+      )
+      
+      return(plot_and_message)
+    }
   } else {
     npn_location <- npn_data_all
   }
@@ -365,18 +377,25 @@ generate_output <- function(input, window = 14, radius = 100000) {
           fill = "count"
         ) +
         theme_classic()
-
+      print(npn_location)
+      overall_data$intensity <- overall_data$intensity * 100
       p_line <- ggplot() +
-        # geom_jitter(data=npn_location,aes(x=day_of_year, y=phenophase_status), width=0, height=0.05, alpha=0.1)+
-        geom_bin2d(data = npn_location, aes(x = day_of_year, y = phenophase_status), bins = c(366, 20), alpha = 0.8) +
+        geom_tile(data = npn_location %>% filter(phenophase_status == 1), 
+                  aes(x = day_of_year, y = phenophase_status*100, fill = ..count..), 
+                  stat = "bin2d", bins = c(366, 20), alpha = 1) +
+        scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Frequency of yes") +
+        new_scale_fill() +
+        geom_tile(data = npn_location %>% filter(phenophase_status == 0), 
+                  aes(x = day_of_year, y = phenophase_status, fill = ..count..), 
+                  stat = "bin2d", bins = c(366, 20), alpha = 1) +
+        scale_fill_gradient(low = "#FFF700", high = "#F4C430", name = "Frequency of no") +
         geom_line(data = overall_data, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
-        geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes")), col = "red", cex = 5) +
-        ylim(0 - 0.1, 1 + 0.1) +
-        # scale_color_viridis_c()+
+        geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes") * 100), col = "red", cex = 5) +
+        ylim(-10, 110) +
         labs(
-          x = "day of year",
-          y = "status",
-          fill = "count"
+          x = "Day of Year",
+          y = "% Yes Status",
+          fill = "Count"
         ) +
         theme_classic()
     } else {
