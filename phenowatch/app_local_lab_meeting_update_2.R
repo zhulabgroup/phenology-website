@@ -371,8 +371,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
         labs(
           x = "Year",
           y = "Day of Year"
-        ) + 
-        theme_minimal()
+        ) +
+        theme_classic()
       
       past_year <- as.factor(past_year)
       current_year <- as.factor(current_year)
@@ -389,8 +389,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
           x = "day of year",
           y = "status",
           fill = "count"
-        ) + 
-        theme_minimal()
+        ) +
+        theme_classic()
       print("npnlocation")
       print(npn_location)
       overall_data$intensity <- overall_data$intensity * 100
@@ -413,8 +413,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
           x = "Day of Year",
           y = "% Yes Status",
           fill = "Count"
-        ) + 
-        theme_minimal()
+        ) +
+        theme_classic()
     } else {
       p_line <- ggplot() +
         geom_jitter(data = npn_location, aes(x = day_of_year, y = phenophase_status), width = 0, height = 0.05, alpha = 0.8) +
@@ -425,8 +425,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
         labs(
           x = "day of year",
           y = "status"
-        ) + 
-        theme_minimal()
+        ) +
+        theme_classic()
     }
   } else {
     img <- jpeg::readJPEG("question.jpeg")
@@ -500,7 +500,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
           x = "longitude",
           y = "latitude",
           fill = "status"
-        ) 
+        ) +
+        theme_classic()
     } else {
       us <- map_data("state")
       p_map <- ggplot() +
@@ -517,7 +518,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
           y = "latitude",
           fill = "status"
         ) +
-        theme_minimal()
+        theme_classic()
     }
   } else {
     img <- jpeg::readJPEG("question.jpeg")
@@ -1060,7 +1061,6 @@ shinyApp(
           c("", "Yes", "No"),
           selected = "Yes"
         ),
-        sliderInput("radius", "Selected Radius", min = 100, max = 500, value = 100, ticks = T, step=100),
         fluidRow(
           column(
             3,
@@ -1091,7 +1091,8 @@ shinyApp(
             )
           ),
           column(
-            6
+            6,
+            sliderInput("radius", "Selected Radius", min = 100, max = 500, value = 100, ticks = T, step=100)
           )
         ),
         plotOutput("plot", height = "550px"),
