@@ -15,10 +15,10 @@ RUN R -e "install.packages(c( 'shinythemes','shinyjs', 'shinyscreenshot', 'geosp
 
 # Copy your Shiny app directory into the image
 # COPY sample /srv/shiny-server/sample
-COPY phenology-website/phenoinfo /srv/shiny-server/phenoinfo
+# COPY phenology-website/phenoinfo /srv/shiny-server/phenoinfo
 COPY phenology-website/phenowatch /srv/shiny-server/phenowatch
-COPY phenology-website/phenoforecast /srv/shiny-server/phenoforecast
-RUN chmod 777 /srv/shiny-server/phenoforecast
+# COPY phenology-website/phenoforecast /srv/shiny-server/phenoforecast
+# RUN chmod 777 /srv/shiny-server/phenoforecast
 
 # Expose the default Shiny Server port (optional if not changed)
 EXPOSE 3838

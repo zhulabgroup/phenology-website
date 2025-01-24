@@ -1,0 +1,54 @@
+name: Build and Deploy Shiny App to AWS
+
+on:
+  push:
+    branches:
+      - main  # or the branch you want to deploy from
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Step 1: Checkout the code from GitHub
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    # Step 2: Set up AWS CLI and Docker
+    - name: Set up AWS CLI
+      uses: aws-actions/configure-aws-credentials@v3
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+        aws-region: us-east-2
+    
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v3
+
+    # Step 3: Build Docker image
+    - name: Build Docker image
+      run: |
+        docker build -f phenology-website/Dockerfile -t phenology-website:latest .
+
+    # Step 4: Log in to AWS ECR
+    - name: Log in to Amazon ECR
+      run: |
+        aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 861486687156.dkr.ecr.us-east-2.amazonaws.com
+
+    # Step 5: Tag the Docker image
+    - name: Tag Docker image
+      run: |
+        docker tag phenology-website:latest 861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest
+
+    # Step 6: Push Docker image to AWS ECR
+    - name: Push Docker image to ECR
+      run: |
+        docker push 861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest
+
+    # Step 7: Deploy to AWS App Runner
+    - name: Deploy to App Runner
+      run: |
+        aws apprunner update-service \
+          --service-name phenology-website \
+          --source-configuration repositoryUrl=861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website,imageConfiguration.port=3838
