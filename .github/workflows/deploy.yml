@@ -20,6 +20,7 @@ jobs:
       with:
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
         aws-region: us-east-2
+        id-token: true
     
     - name: Set up Docker
       uses: docker/setup-buildx-action@v3
