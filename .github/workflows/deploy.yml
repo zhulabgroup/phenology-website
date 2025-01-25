@@ -14,7 +14,7 @@ permissions:
   contents: read    # This is required for actions/checkout
 
 jobs:
-  AssumeRoleAndCallIdentity:
+  build_and_deploy:
     runs-on: ubuntu-latest
     
     steps:
@@ -57,5 +57,5 @@ jobs:
     - name: Deploy to App Runner
       run: |
         aws apprunner update-service \
-          --service-name phenology-website \
+          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
           --source-configuration repositoryUrl=861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website,imageConfiguration.port=3838
