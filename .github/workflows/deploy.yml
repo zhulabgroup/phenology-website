@@ -58,4 +58,4 @@ jobs:
       run: |
         aws apprunner update-service \
           --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
-          --source-configuration '{"ImageRepository": {"ImageIdentifier": "861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest", "ImageConfiguration": {"Port": 3838}}}'
+          --source-configuration '{"ImageRepository": {"ImageRepositoryType": "ECR","ImageIdentifier": "861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest","ImageConfiguration": {"Port": "3838"}}}'
