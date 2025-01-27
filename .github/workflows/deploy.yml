@@ -37,7 +37,7 @@ jobs:
         RSCONNECT_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
         RSCONNECT_SECRET: ${{ secrets.SHINYAPPS_SECRET }}
 
-  appr-runner:
+  app-runner:
     runs-on: ubuntu-latest
     
     steps:
