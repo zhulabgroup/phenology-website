@@ -22,7 +22,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     
-    # Step 2: Set up AWS CLI and Docker
+    # Step 2: Deploy to shinyapps.io
+    - name: Deploy to shinyapps.io
+      run: |
+        R -e "install.packages('rsconnect', repos = 'http://cran.rstudio.com')"
+        R -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')"
+        R -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch-app', account = '${{ secrets.SHINYAPPS_USER }}', server = "shinyapps.io", upload = T, forceUpdate = T)"
+      env:
+        RSCONNECT_USER: ${{ secrets.SHINYAPPS_USER }}
+        RSCONNECT_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
+        RSCONNECT_SECRET: ${{ secrets.SHINYAPPS_SECRET }}
+        
+    # Step 3: Set up AWS CLI
     - name: Set up AWS CLI
       uses: aws-actions/configure-aws-credentials@v3
       with:
@@ -33,27 +44,27 @@ jobs:
     - name: Set up Docker
       uses: docker/setup-buildx-action@v3
 
-    # Step 3: Build Docker image
+    # Step 4: Build Docker image
     - name: Build Docker image
       run: |
         docker build -f Dockerfile -t phenology-website:latest .
 
-    # Step 4: Log in to AWS ECR
+    # Step 5: Log in to AWS ECR
     - name: Log in to Amazon ECR
       run: |
         aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 861486687156.dkr.ecr.us-east-2.amazonaws.com
 
-    # Step 5: Tag the Docker image
+    # Step 6: Tag the Docker image
     - name: Tag Docker image
       run: |
         docker tag phenology-website:latest 861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest
 
-    # Step 6: Push Docker image to AWS ECR
+    # Step 7: Push Docker image to AWS ECR
     - name: Push Docker image to ECR
       run: |
         docker push 861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest
 
-    # Step 7: Deploy to AWS App Runner
+    # Step 8: Deploy to AWS App Runner
     - name: Deploy to App Runner
       run: |
         aws apprunner update-service \
