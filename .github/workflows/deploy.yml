@@ -29,6 +29,7 @@ jobs:
     - name: Deploy to shinyapps.io
       run: |
         Rscript -e 'install.packages("rsconnect")'
+        Rscript -e 'install.packages(c("shinyjs", "shinyscreenshot", "gstat", "gridExtra", "aws.s3", "ggnewscale"))'
         Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')"
         Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)"
       env:
