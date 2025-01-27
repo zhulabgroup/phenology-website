@@ -29,7 +29,7 @@ jobs:
     - name: Deploy to shinyapps.io
       run: |
         Rscript -e 'install.packages("rsconnect")'
-        Rscript -e 'install.packages(c("shinyjs", "shinyscreenshot", "gstat", "gridExtra", "aws.s3", "ggnewscale"))'
+        Rscript -e 'install.packages(c("shinyjs", "shinyscreenshot", "gstat", "gridExtra", "aws.s3", "ggnewscale", "raster"))'
         Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')"
         Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)"
       env:
@@ -77,6 +77,12 @@ jobs:
     # Step 5: Deploy to AWS App Runner
     - name: Deploy to App Runner
       run: |
+        aws apprunner start-service \
+          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5
+
         aws apprunner update-service \
           --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
           --source-configuration '{"ImageRepository": {"ImageRepositoryType": "ECR","ImageIdentifier": "861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest","ImageConfiguration": {"Port": "3838"}}}'
+
+        aws apprunner pause-service \
+          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5
