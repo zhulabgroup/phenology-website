@@ -41,30 +41,28 @@ jobs:
         role-session-name: GitHub_to_AWS_via_FederatedOIDC
         aws-region: us-east-2
     
+    # Step 4: Build Docker image
     - name: Set up Docker
       uses: docker/setup-buildx-action@v3
 
-    # Step 4: Build Docker image
     - name: Build Docker image
       run: |
         docker build -f Dockerfile -t phenology-website:latest .
 
-    # Step 5: Log in to AWS ECR
+    # Step 5: Push Docker image to AWS ECR
     - name: Log in to Amazon ECR
       run: |
         aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 861486687156.dkr.ecr.us-east-2.amazonaws.com
 
-    # Step 6: Tag the Docker image
     - name: Tag Docker image
       run: |
         docker tag phenology-website:latest 861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest
 
-    # Step 7: Push Docker image to AWS ECR
     - name: Push Docker image to ECR
       run: |
         docker push 861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest
 
-    # Step 8: Deploy to AWS App Runner
+    # Step 6: Deploy to AWS App Runner
     - name: Deploy to App Runner
       run: |
         aws apprunner update-service \
