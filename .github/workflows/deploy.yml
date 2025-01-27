@@ -30,7 +30,7 @@ jobs:
       run: |
         Rscript -e 'install.packages("rsconnect")'
         Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')"
-        Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch-app', account = '${{ secrets.SHINYAPPS_USER }}', server = "shinyapps.io", upload = T, forceUpdate = T)"
+        Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch-app', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)"
       env:
         RSCONNECT_USER: ${{ secrets.SHINYAPPS_USER }}
         RSCONNECT_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
