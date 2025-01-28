@@ -9,13 +9,7 @@ library(ggpubr)
 library(gridExtra)
 library(maps)
 library(aws.s3)
-library(purrr)
-library(readr)
-library(tidyr)
-library(tibble)
 library(ggnewscale)
-
-# library(geosphere)
 
 path_app <- getwd()
 data_path <- str_c(path_app, "/NPN_example/")
