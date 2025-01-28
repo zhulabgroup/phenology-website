@@ -117,7 +117,7 @@ jobs:
         done
 
         retries = 0
-        while [[ $retries -lt $max_retries ]]
+        while [[ $retries -lt 10 ]]
         do
           echo "Attempt $((retries + 1)) of $max_retries"
           aws apprunner pause-service \
