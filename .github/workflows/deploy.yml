@@ -45,8 +45,22 @@ jobs:
     # Step 3: Deploy to shinyapps.io
     - name: Deploy to shinyapps.io
       run: |
-        Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')"
-        Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)"
+      
+        retries=0
+        max_retries=10
+        while [[ $retries -lt $max_retries ]]
+        do
+          echo "Attempt $((retries + 1)) of $max_retries"
+          Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')" && \
+          Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)" && {
+            echo "Deployment successful."
+            break
+          } || {
+            echo "Deployment failed, retrying in 5 minutes..."
+            sleep 300 # wait for 5 minutes before retrying
+            retries=$((retries + 1))
+          }
+        done
       env:
         RSCONNECT_USER: ${{ secrets.SHINYAPPS_USER }}
         RSCONNECT_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
@@ -101,7 +115,8 @@ jobs:
         echo "Service resumed successfully."
 
         retries=0
-        while [[ $retries -lt 10 ]]
+        max_retries=10
+        while [[ $retries -lt $max_retries ]]
         do
           echo "Attempt $((retries + 1)) of $max_retries"
           aws apprunner update-service \
@@ -116,8 +131,9 @@ jobs:
           break
         done
 
-        retries = 0
-        while [[ $retries -lt 10 ]]
+        retries=0
+        max_retries=10
+        while [[ $retries -lt $max_retries ]]
         do
           echo "Attempt $((retries + 1)) of $max_retries"
           aws apprunner pause-service \
