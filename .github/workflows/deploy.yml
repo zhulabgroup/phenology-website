@@ -61,6 +61,7 @@ jobs:
             retries=$((retries + 1))
           }
         done
+      shell: bash
       env:
         RSCONNECT_USER: ${{ secrets.SHINYAPPS_USER }}
         RSCONNECT_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
