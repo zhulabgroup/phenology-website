@@ -24,12 +24,27 @@ jobs:
     # Step 1: Checkout the code from GitHub
     - name: Checkout repository
       uses: actions/checkout@v3
-    
-    # Step 2: Deploy to shinyapps.io
-    - name: Deploy to shinyapps.io
+
+    # Step 2: Install system dependencies
+    - name: Install system dependencies
+      run: |
+        apt-get update
+        spt-get install -y --no-install-recommends \
+          libudunits2-dev \
+          libgdal-dev \
+          libgeos-dev \
+          libproj-dev \
+          libmysqlclient-dev
+
+    # Step 3: Install R packages
+    - name: Install R packages
       run: |
         Rscript -e 'install.packages("rsconnect")'
         Rscript -e 'install.packages(c('shinythemes','shinyjs', 'shinyscreenshot', 'geosphere', 'raster', 'gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','doSNOW','svglite','ggnewscale'), dependencies = TRUE)'
+            
+    # Step 3: Deploy to shinyapps.io
+    - name: Deploy to shinyapps.io
+      run: |
         Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')"
         Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)"
       env:
