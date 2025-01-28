@@ -11,7 +11,7 @@ RUN apt-get update \
     libmysqlclient-dev
 
 # Install R packages
-RUN R -e "install.packages(c( 'shinythemes','shinyjs', 'shinyscreenshot', 'geosphere', 'raster', 'gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','doSNOW','svglite','ggnewscale'), dependencies=TRUE)"
+RUN R -e "install.packages(c('shinyjs', 'shinyscreenshot', 'geosphere', 'raster', 'gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','doSNOW','svglite','ggnewscale'), dependencies=TRUE)"
 
 # Copy your Shiny app directory into the image
 # COPY phenoinfo /srv/shiny-server/phenoinfo
