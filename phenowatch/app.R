@@ -1,5 +1,4 @@
 # https://deanattali.com/2015/06/14/mimicking-google-form-shiny/
-# ln -s /home/azureuser/mycontainer/phenoforecast/submitted ./submitted
 library(shinyjs)
 library(shinyscreenshot)
 library(tidyverse)
