@@ -114,14 +114,50 @@ jobs:
           exit 0
           }
         echo "Service resumed."
-        sleep 180
 
-        aws apprunner update-service \
+        retries=0
+        max_retries=10
+        while [[ $retries -lt $max_retries ]]
+        do
+          # Check if the service is in OPERATION_IN_PROGRESS state
+          status=$(aws apprunner describe-service --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 --query 'Service.Status' --output text)
+
+          echo "Attempt $((retries + 1)) of $max_retries"
+          if [[ "$status" == "OPERATION_IN_PROGRESS" ]]; then
+            echo "Service is still in operation. Waiting for it to finish..."
+            sleep 60 # Wait for 1 minute before checking again
+            retries=$((retries + 1))
+            continue
+          fi
+        
+          # Proceed with the update if not in OPERATION_IN_PROGRESS state
+          aws apprunner update-service \
             --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
             --source-configuration '{"ImageRepository": {"ImageRepositoryType": "ECR","ImageIdentifier": "861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest","ImageConfiguration": {"Port": "3838"}}}'
-        echo "Service updated."
-        sleep 400
+          
+          echo "Service updated."
+          break
+        done
+
+        retries=0
+        max_retries=10
+        while [[ $retries -lt $max_retries ]]
+        do
+          # Check if the service is in OPERATION_IN_PROGRESS state
+          status=$(aws apprunner describe-service --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 --query 'Service.Status' --output text)
+
+          echo "Attempt $((retries + 1)) of $max_retries"
+          if [[ "$status" == "OPERATION_IN_PROGRESS" ]]; then
+            echo "Service is still in operation. Waiting for it to finish..."
+            sleep 60 # Wait for 1 minute before checking again
+            retries=$((retries + 1))
+            continue
+          fi
         
-        aws apprunner pause-service \
+          # Proceed with pausing if not in OPERATION_IN_PROGRESS state
+          aws apprunner pause-service \
           --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 
-        echo "Service paused."
+        
+          echo "Service paused."
+          break
+        done
