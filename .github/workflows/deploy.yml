@@ -108,12 +108,23 @@ jobs:
     - name: Deploy to App Runner
       run: |
       
-        aws apprunner resume-service \
-          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 || {
-          echo "Service resume failed, skipping this step."
-          exit 0
+        # Get the current status of the service
+        status=$(aws apprunner describe-service \
+          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
+          --query 'Service.Status' --output text)
+        
+        # Only resume if the service is PAUSED
+        if [[ "$status" == "PAUSED" ]]; then
+          echo "Service is paused. Resuming now..."
+          aws apprunner resume-service \
+            --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 || {
+            echo "Service resume failed, skipping this step."
+            exit 0
           }
-        echo "Service resumed."
+          echo "Service resumed."
+        else
+          echo "Service is already running. No need to resume."
+        fi
 
         retries=0
         max_retries=10
@@ -138,6 +149,8 @@ jobs:
           echo "Service updated."
           break
         done
+
+        sleep 60
 
         retries=0
         max_retries=10
