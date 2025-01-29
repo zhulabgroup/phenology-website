@@ -113,70 +113,15 @@ jobs:
           echo "Service resume failed, skipping this step."
           exit 0
           }
-        echo "Service resumed successfully."
-        
-        echo "Fetching last deployment timestamp..."
-        previous_deployment=$(aws apprunner describe-service \
-          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
-          --query 'Service.UpdatedAt' --output text)
-        
-        # Update service loop
-        retries=0
-        max_retries=10
-        while [[ $retries -lt $max_retries ]]
-        do
-          echo "Attempt $((retries + 1)) of $max_retries to update the service..."
-          
-          # Start the update process
-          update_response=$(aws apprunner update-service \
+        echo "Service resumed."
+        sleep 180
+
+        aws apprunner update-service \
             --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
-            --source-configuration '{"ImageRepository": {"ImageRepositoryType": "ECR","ImageIdentifier": "861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest","ImageConfiguration": {"Port": "3838"}}}' \
-            --output json) && {
-              echo "Update command accepted. Checking for deployment..."
-              break
-          }
+            --source-configuration '{"ImageRepository": {"ImageRepositoryType": "ECR","ImageIdentifier": "861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest","ImageConfiguration": {"Port": "3838"}}}'
+        echo "Service updated."
+        sleep 400
         
-          echo "Update service failed, retrying in 3 minutes..."
-          sleep 180
-          retries=$((retries + 1))
-        done
-        
-        if [[ $retries -ge $max_retries ]]; then
-          echo "Failed to update the service after $max_retries attempts. Exiting."
-          exit 1
-        fi
-        
-        # Extract the OperationId from the response
-        operation_id=$(echo $update_response | jq -r '.OperationId')
-        echo "Deployment started. Monitoring operation with ID: $operation_id"
-        
-        # Wait and track the status of the deployment
-        deployment_status="IN_PROGRESS"
-        while [[ "$deployment_status" == "IN_PROGRESS" ]]; do
-          echo "Checking status of deployment with OperationId: $operation_id..."
-          
-          # Get the operation status using the operation ID
-          operation_status=$(aws apprunner describe-operation \
-            --operation-id $operation_id \
-            --output json)
-        
-          # Extract the deployment status
-          deployment_status=$(echo $operation_status | jq -r '.Operation.Status')
-        
-          if [[ "$deployment_status" == "COMPLETED" ]]; then
-            echo "Deployment completed successfully."
-          elif [[ "$deployment_status" == "FAILED" ]]; then
-            echo "Deployment failed. Exiting."
-            exit 1
-          else
-            echo "Deployment still in progress. Waiting..."
-            sleep 30  # Wait before checking again
-          fi
-        done
-        
-        # Pause the service
-        echo "Pausing the service..."
         aws apprunner pause-service \
           --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 
-        
-        echo "Service paused successfully."
+        echo "Service paused."
