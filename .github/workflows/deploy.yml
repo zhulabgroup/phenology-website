@@ -115,35 +115,66 @@ jobs:
           }
         echo "Service resumed successfully."
         
+        echo "Fetching last deployment timestamp..."
+        previous_deployment=$(aws apprunner describe-service \
+          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
+          --query 'Service.UpdatedAt' --output text)
+        
+        # Update service loop
         retries=0
         max_retries=10
         while [[ $retries -lt $max_retries ]]
         do
-          echo "Attempt $((retries + 1)) of $max_retries"
+          echo "Attempt $((retries + 1)) of $max_retries to update the service..."
+          
           aws apprunner update-service \
-          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
-          --source-configuration '{"ImageRepository": {"ImageRepositoryType": "ECR","ImageIdentifier": "861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest","ImageConfiguration": {"Port": "3838"}}}' || {
-            echo "Update service failed, retrying in 3 minutes..."
-            sleep 180 # wait for 3 minutes before retrying
-            retries=$((retries + 1))
-            continue
+            --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
+            --source-configuration '{"ImageRepository": {"ImageRepositoryType": "ECR","ImageIdentifier": "861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest","ImageConfiguration": {"Port": "3838"}}}' && {
+            echo "Update command accepted. Checking for deployment..."
+            break
           }
-          echo "Service updated successfully."
-          break
+        
+          echo "Update service failed, retrying in 3 minutes..."
+          sleep 180
+          retries=$((retries + 1))
         done
         
+        if [[ $retries -ge $max_retries ]]; then
+          echo "Failed to update the service after $max_retries attempts. Exiting."
+          exit 1
+        fi
+        
+        # Wait for new deployment loop
         retries=0
         max_retries=10
+        deployment_verified=false
         while [[ $retries -lt $max_retries ]]
         do
-          echo "Attempt $((retries + 1)) of $max_retries"
-          aws apprunner pause-service \
-          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 || {
-            echo "Pause service failed, retrying in 5 minutes..."
-            sleep 300 # wait for 5 minutes before retrying
+          echo "Attempt $((retries + 1)) of $max_retries to verify deployment..."
+        
+          new_deployment=$(aws apprunner describe-service \
+            --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 \
+            --query 'Service.UpdatedAt' --output text)
+        
+          if [[ "$new_deployment" != "$previous_deployment" ]]; then
+            echo "New deployment detected at $new_deployment. Proceeding to pause the service."
+            deployment_verified=true
+            break
+          else
+            echo "No new deployment yet. Waiting 2 minutes before checking again..."
+            sleep 120
             retries=$((retries + 1))
-            continue
-          }
-          echo "Service paused successfully."
-          break
+          fi
         done
+        
+        if [[ "$deployment_verified" == false ]]; then
+          echo "No new deployment detected after $max_retries retries. Exiting."
+          exit 1
+        fi
+        
+        # Pause the service
+        echo "Pausing the service..."
+        aws apprunner pause-service \
+          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/a4fe8389d6a744ada162975c0e3157b5 
+        
+        echo "Service paused successfully."
