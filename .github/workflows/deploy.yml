@@ -105,15 +105,13 @@ jobs:
         docker push 861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest
 
     # Step 5: Deploy to AWS App Runner
-    - name: Deploy to App Runner
+    - name: Resume service if needed
       run: |
-      
-        # Get the current status of the service
+        
         status=$(aws apprunner describe-service \
           --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website/8a059fee0fc44553b77a63951983363e \
           --query 'Service.Status' --output text)
         
-        # Only resume if the service is PAUSED
         if [[ "$status" == "PAUSED" ]]; then
           echo "Service is paused. Resuming now..."
           aws apprunner resume-service \
@@ -126,6 +124,9 @@ jobs:
           echo "Service is already running. No need to resume."
         fi
 
+    - name: Update and deploy service
+      run: |
+      
         retries=0
         max_retries=10
         while [[ $retries -lt $max_retries ]]
@@ -152,9 +153,13 @@ jobs:
           echo "Service deployed."
           break
         done
+    
+    - name: Pause service
+      run: |
 
         retries=0
         max_retries=10
+        
         while [[ $retries -lt $max_retries ]]
         do
           # Check if the service is in OPERATION_IN_PROGRESS state
