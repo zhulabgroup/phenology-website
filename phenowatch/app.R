@@ -9,6 +9,7 @@ library(gridExtra)
 library(maps)
 library(aws.s3)
 library(ggnewscale)
+library(mapproj)
 
 path_app <- getwd()
 data_path <- str_c(path_app, "/NPN_example/")
@@ -286,12 +287,17 @@ generate_output <- function(input, window = 14, radius = 100000) {
       rect_graph <- ggplot() +
         geom_rect(data = rect_data, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), color = "black", fill = "white", size = 0.7) +
         scale_x_continuous(breaks = seq(past_year, current_year), limits = c(past_year - 0.3, current_year + 0.3)) +
-        scale_y_continuous(breaks = seq(0, ylim_max, by = 20), limits = c(0, ylim_max)) +
+        scale_y_continuous(
+          breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+          labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"),
+          limits = c(0, 366)
+        ) +
         labs(
           x = "Year",
           y = "Day of Year"
         ) +
-        theme_minimal()
+        theme_minimal() + 
+        theme(panel.grid.minor.y = element_blank())
 
       past_year <- as.factor(past_year)
       current_year <- as.factor(current_year)
@@ -308,32 +314,47 @@ generate_output <- function(input, window = 14, radius = 100000) {
           fill = "count"
         ) +
         theme_minimal()
+
       overall_data$intensity <- overall_data$intensity * 100
-      overall_data$date <- as.Date(overall_data$day_of_year, origin = "2023-12-31")
+      overall_data$date <- as.Date(overall_data$day_of_year - 1, origin = paste0(format(input$date, "%Y"), "-01-01"))
       p_line <- ggplot() +
         geom_tile(
           data = npn_location %>% filter(phenophase_status == 1),
           aes(x = day_of_year, y = phenophase_status * 100, fill = ..count..),
           stat = "bin2d", bins = c(366, 20), alpha = 1
         ) +
-        scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Frequency of yes") +
+        scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Number of yes") +
         new_scale_fill() +
         geom_tile(
           data = npn_location %>% filter(phenophase_status == 0),
           aes(x = day_of_year, y = phenophase_status, fill = ..count..),
           stat = "bin2d", bins = c(366, 20), alpha = 1
         ) +
-        scale_fill_gradient(low = "#FFF700", high = "#F4C430", name = "Frequency of no") +
+        scale_fill_gradient(low = "#FFF700", high = "#F4C430", name = "Number of no") +
         geom_line(data = overall_data, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
         geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes") * 100), col = "#ff0000", cex = 5) +
-        geom_vline(xintercept = as.integer(format(input$date, "%j")), col = "#ff0000", lwd = 1.5, linetype = "dashed") +
+        geom_vline(xintercept = as.integer(format(input$date, "%j")), col = "#ff0000", alpha = .25, lwd = 1.5, linetype = "dashed") +
         ylim(-10, 110) +
+        scale_x_continuous(
+          breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+          labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+        ) +
+        scale_y_continuous(
+          breaks = c(0, 25, 50, 75, 100)
+        ) + 
         labs(
           x = "Day of Year",
           y = "% Yes Status",
           fill = "Count"
         ) +
-        theme_minimal()
+        theme_minimal() + 
+        theme(
+          panel.grid.major.x = element_blank(),
+          panel.grid.minor.x = element_blank(),
+          panel.grid.minor.y = element_blank()
+        )+
+        geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336), 
+                   color = "gray", linetype = "dashed", size = 0.5, alpha = .25)
     } else {
       p_line <- ggplot() +
         geom_jitter(data = npn_location, aes(x = day_of_year, y = phenophase_status), width = 0, height = 0.05, alpha = 0.8) +
@@ -399,6 +420,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
 
       us <- map_data("state")
       p_map <- ggplot() +
+        coord_map("albers", lat0 = 39, lat1 = 45) +
         # geom_jitter(data=npn_time_surface, aes(x=longitude, y=latitude, col=intensity),width=0.05, height=0.05, alpha=0.5)+
         # geom_tile(data=kriged_res, aes(x=x, y=y, fill=var1.pred))+
         geom_polygon(data = us, aes(x = long, y = lat, group = group), color = "black", fill = NA) +
@@ -416,6 +438,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
     } else {
       us <- map_data("state")
       p_map <- ggplot() +
+        coord_map("albers", lat0 = 39, lat1 = 45) +
         # geom_jitter(data=npn_time_surface, aes(x=longitude, y=latitude, col=intensity),width=0.05, height=0.05, alpha=0.5)+
         geom_polygon(data = us, aes(x = long, y = lat, group = group), color = "black", fill = NA) +
         geom_jitter(data = npn_time, aes(x = longitude, y = latitude, fill = phenophase_status), pch = 21, width = 0.05, height = 0.05, alpha = 0.5, cex = 2) +
@@ -526,10 +549,10 @@ generate_output <- function(input, window = 14, radius = 100000) {
 
 generate_plot <- function(plot_and_message, input) {
   p1 <- plot_and_message$plot[[case_when(
-    input$plot == "Line" ~ 1,
-    input$plot == "Map" ~ 2,
+    input$plot == "Intra-annual Variation" ~ 1,
+    input$plot == "Spatial Variation" ~ 2,
     input$plot == "Trends Between Years" ~ 3,
-    input$plot == "Boxplot" ~ 4
+    input$plot == "Inter-annual Variation" ~ 4
     # input$plot=="Function"~3
   )]]
 
@@ -645,7 +668,7 @@ shinyApp(
             selectInput(
               "plot", "Plot",
               c(
-                "Line", "Map", "Boxplot"
+                "Intra-annual Variation", "Spatial Variation", "Inter-annual Variation"
                 # , "Function"
               )
             )
