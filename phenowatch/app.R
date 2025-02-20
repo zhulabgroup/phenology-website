@@ -11,7 +11,7 @@ library(aws.s3)
 library(ggnewscale)
 library(mapproj)
 
-##### Helper Functions -------------------------------------------------
+# Helper Functions -------------------------------------------------
 path_app <- getwd()
 data_path <- str_c(path_app, "/NPN_example/")
 today <- read_file(str_c(path_app, "/today.txt")) %>% as.Date()
@@ -191,7 +191,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
     null_rect_graph)
   #### Done generating null plots
   
-# Data prep -------------------------
+  # Data prep -------------------------
   
   if (length(npn_files) > 0) {
     npn_data_all <- vector(mode = "list")
@@ -427,18 +427,17 @@ generate_output <- function(input, window = 14, radius = 100000) {
         geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
                    color = "gray", linetype = "dashed", size = 0.5, alpha = .25)
     } else {
-      ###### p_line (inactive)  ----------------
-      p_line <- ggplot() +
-        geom_jitter(data = npn_location, aes(x = day_of_year, y = phenophase_status), width = 0, height = 0.05, alpha = 0.8) +
-        geom_line(data = npn_location_ts, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
-        geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes")), col = "red", cex = 5) +
-        ylim(0 - 0.1, 1 + 0.1) +
-        # scale_color_viridis_c()+
-        labs(
-          x = "day of year",
-          y = "status"
-        ) +
-        theme_minimal()
+      # p_line <- ggplot() +
+      #   geom_jitter(data = npn_location, aes(x = day_of_year, y = phenophase_status), width = 0, height = 0.05, alpha = 0.8) +
+      #   geom_line(data = npn_location_ts, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
+      #   geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes")), col = "red", cex = 5) +
+      #   ylim(0 - 0.1, 1 + 0.1) +
+      #   # scale_color_viridis_c()+
+      #   labs(
+      #     x = "day of year",
+      #     y = "status"
+      #   ) +
+      #   theme_minimal()
     }
   } else {
     p_line <- null_p_line
@@ -608,6 +607,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
   return(list(p_line, p_map, ggplot(), rect_graph))
 }
 
+# generate_plot  ------------
 generate_plot <- function(plot, input) {
   p1 <- plot[[case_when(
     input$plot == "Intra-annual Variation" ~ 1,
@@ -620,217 +620,348 @@ generate_plot <- function(plot, input) {
   return(p1)
 }
 
-##### shinyApp -------------------------------------------------------------
+# shinyApp -------------------------------------------------------------
 
-shinyApp(
-  ui = fluidPage(
-    shinyjs::useShinyjs(),
-    shinyjs::inlineCSS(appCSS),
-    titlePanel("PhenoWatch"),
-    # titlePanel(read.table("./submitted/test.txt")[1,1]),
+MANDATORY_FIELDS <- c("observer", "genus", "date", "latitude", "longitude", "event", "status")
+ALL_FIELDS <- c(MANDATORY_FIELDS, "email", "species")
 
-    sidebarLayout(
-      sidebarPanel(
-        fluidRow(
-          column(
-            6,
-            textInput("observer", labelMandatory("Observer"))
-          ),
-          column(
-            6,
-            textInput("email", "Email")
-          )
+labelMandatory <- function(label) {
+  tagList(
+    label,
+    span("*", class = "mandatory-star", 
+         style = "color: red; font-size: 16px; margin-left: 3px;")
+  )
+}
+
+validationCSS <- "
+.help-block {
+  color: #dc3545;
+  margin-top: 5px;
+  font-size: 0.9em;
+  display: none;
+}
+.validation-error {
+  border-color: #dc3545 !important;
+}
+"
+
+
+## UI Components --------------------------------------------------
+ui <- fluidPage(
+  shinyjs::useShinyjs(),
+  shinyjs::inlineCSS(paste0(appCSS, validationCSS)),
+  
+  titlePanel("PhenoWatch"),
+  # titlePanel(read.table("./submitted/test.txt")[1,1]),
+  
+  sidebarLayout(
+    sidebarPanel(
+      # User Info Section
+      fluidRow(
+        column(
+          6,
+          textInput("observer", labelMandatory("Observer")),
+          tags$div(id = "observer-error", class = "help-block",
+                   "Observer name is required")
         ),
-        # textInput("genus", labelMandatory("Genus")),
-        selectInput(
-          "genus", labelMandatory("Genus"),
-          c("", genusoi_list),
-          selected = "Acer"
-        ),
-        textInput("species", "Species"),
-        # textInput("date", labelMandatory("Date")),
-        dateInput(
-          "date",
-          labelMandatory("Date"),
-          value = "2021-04-11",
-          min = "1900-01-01",
-          max = Sys.Date(),
-          format = "yyyy-mm-dd",
-          startview = "month",
-          weekstart = 0,
-          language = "en",
-          width = NULL,
-          autoclose = TRUE,
-          datesdisabled = NULL,
-          daysofweekdisabled = NULL
-        ),
-        numericInput(
-          "latitude",
-          labelMandatory("Latitude"),
-          value = 42,
-          min = 25,
-          max = 53,
-          step = NA,
-          width = NULL
-        ),
-        numericInput(
-          "longitude",
-          labelMandatory("Longitude"),
-          value = -83,
-          min = -125,
-          max = -67,
-          step = NA,
-          width = NULL
-        ),
-        selectInput(
-          "event", labelMandatory("Phenological event"),
-          c(
-            "",
-            "Leafing",
-            "Flowering"
-          ),
-          selected = "Flowering"
-        ),
-        selectInput(
-          "status", labelMandatory("Phenological status"),
-          c("", "Yes", "No"),
-          selected = "Yes"
-        ),
-        sliderInput("radius", "Selected Radius", min = 100, max = 500, value = 100, ticks = T, step = 100),
-        fluidRow(
-          column(
-            3,
-            actionButton("submit", "Submit", class = "btn-primary")
-          ),
-          column(
-            9,
-            shinyjs::hidden(
-              tags$div(
-                id = "thankyou_msg",
-                "Thanks, your response was submitted successfully!\n
-                            Wait a minute for some customized plots."
-              )
+        column(
+          6,
+          textInput("email", "Email")
+        )
+      ),
+      
+      # Genus Selection
+      # textInput("genus", labelMandatory("Genus")),
+      selectInput(
+        "genus", labelMandatory("Genus"),
+        c("", genusoi_list),
+        selected = "Acer"
+      ),
+      tags$div(id = "genus-error", class = "help-block",
+               "Please select a genus"),
+      
+      # Species (Optional)
+      textInput("species", "Species"),
+      
+      # Date Selection
+      # textInput("date", labelMandatory("Date")),
+      dateInput(
+        "date",
+        labelMandatory("Date"),
+        value = "2021-04-11",
+        min = "1900-01-01",
+        max = Sys.Date(),
+        format = "yyyy-mm-dd",
+        startview = "month",
+        weekstart = 0,
+        language = "en",
+        autoclose = TRUE
+      ),
+      tags$div(id = "date-error", class = "help-block",
+               "Please select a valid date"),
+      
+      # Location Inputs
+      numericInput(
+        "latitude",
+        labelMandatory("Latitude"),
+        value = 42,
+        min = 25,
+        max = 53
+      ),
+      tags$div(id = "latitude-error", class = "help-block",
+               "Latitude must be between 25° and 53°"),
+      
+      numericInput(
+        "longitude",
+        labelMandatory("Longitude"),
+        value = -83,
+        min = -125,
+        max = -67
+      ),
+      tags$div(id = "longitude-error", class = "help-block",
+               "Longitude must be between -125° and -67°"),
+      
+      # Phenology Section
+      selectInput(
+        "event", labelMandatory("Phenological event"),
+        c("", "Leafing", "Flowering"),
+        selected = "Flowering"
+      ),
+      tags$div(id = "event-error", class = "help-block",
+               "Please select an event type"),
+      
+      selectInput(
+        "status", labelMandatory("Phenological status"),
+        c("", "Yes", "No"),
+        selected = "Yes"
+      ),
+      tags$div(id = "status-error", class = "help-block",
+               "Please select a status"),
+      
+      # Radius Selection
+      sliderInput("radius", "Selected Radius", 
+                  min = 100, max = 500, 
+                  value = 100, step = 100, 
+                  ticks = TRUE),
+      
+      # Submit Section
+      fluidRow(
+        column(3, actionButton("submit", "Submit", class = "btn-primary")),
+        column(
+          9,
+          shinyjs::hidden(
+            tags$div(
+              id = "thankyou_msg",
+              "Thanks, your response was submitted successfully!
+               Wait a minute for some customized plots."
             )
           )
         )
-      ),
-      mainPanel(
-        fluidRow(
-          column(
-            6,
-            selectInput(
-              "plot", "Plot",
-              c(
-                "Intra-annual Variation", "Spatial Variation", "Inter-annual Variation"
-                # , "Function"
-              )
+      )
+    ),
+    
+    mainPanel(
+      fluidRow(
+        column(
+          6,
+          selectInput(
+            "plot", "Plot",
+            c(
+              "Intra-annual Variation", 
+              "Spatial Variation", 
+              "Inter-annual Variation"
+              # , "Function"
             )
-          ),
-          column(
-            6
           )
         ),
-        plotOutput("plot", height = "550px"),
-        fluidRow(
-          column(
-            2,
-            actionButton("go", "Take a screenshot", class = "btn-primary")
+        column(6)
+      ),
+      plotOutput("plot", height = "550px"),
+      fluidRow(
+        column(2, actionButton("go", "Take a screenshot", class = "btn-primary")),
+        column(
+          2
+          # tags$a(
+          #   href = "https://twitter.com/intent/tweet?button_hashtag=phenology&ref_src=twsrc%5Etfw",
+          #   class = "twitter-hashtag-button",
+          #   "data-size" = "large",
+          #   "data-show-count" = "false",
+          #   "Tweet #phenology"
+          # ),
+          # tags$script(
+          #   async = NA,
+          #   src = "https://platform.twitter.com/widgets.js",
+          #   charset = "utf-8"
+          # )
+        ),
+        column(
+          8,
+          tags$div(
+            id = "cite", align = "right",
+            "", tags$em('"PhenoWatch"'), "by Yiluan Song"
           ),
-          column(
-            2
-            # tags$a(
-            #   href = "https://twitter.com/intent/tweet?button_hashtag=phenology&ref_src=twsrc%5Etfw",
-            #   class = "twitter-hashtag-button",
-            #   "data-size" = "large",
-            #   "data-show-count" = "false",
-            #   "Tweet #phenology"
-            # ),
-            # tags$script(
-            #   async = NA,
-            #   src = "https://platform.twitter.com/widgets.js",
-            #   charset = "utf-8"
-            # )
-          ),
-          column(
-            8,
+          tags$a(
+            id = "link", target = "_blank",
+            # href = "https://sites.google.com/umich.edu/phenoinfo/",
             tags$div(
-              id = "cite", align = "right",
-              "", tags$em('"PhenoWatch"'), "by Yiluan Song"
-            ),
-            tags$a(
-              id = "link", target = "_blank",
-              # href = "https://sites.google.com/umich.edu/phenoinfo/",
-              tags$div(
-                id = "linktext", align = "right",
-                "Visit ", tags$em('"PhenoInfo"'), ""
-              )
+              id = "linktext", align = "right",
+              "Visit ", tags$em('"PhenoInfo"'), ""
             )
           )
         )
       )
     )
-  ),
-  server = function(input, output, session) {
-    observe({
-      mandatoryFilled <-
-        vapply(
-          fieldsMandatory,
-          function(x) {
-            !is.null(input[[x]]) && as.character(input[[x]]) != ""
-          },
-          logical(1)
-        )
-      mandatoryFilled <- all(mandatoryFilled)
-
-      shinyjs::toggleState(id = "submit", condition = mandatoryFilled)
-      shinyjs::toggleState(id = "go", condition = mandatoryFilled)
-      # shinyjs::toggleState(id = "card", condition = mandatoryFilled)
-    })
-
-    formData <- reactive({
-      data <- sapply(fieldsAll, function(x) as.character(input[[x]]))
-      data <- c(data, timestamp = as.character(Sys.time()))
-      data <- t(data)
-      data
-    })
-
-    # action to take when submit button is pressed
-    observeEvent(input$submit, {
-      output$plot <- renderPlot({ NULL })
-      
-      fileName <- sprintf(
-        "%s_%s.csv",
-        humanTime(),
-        digest::digest(formData())
-      )
-      write.csv(
-        x = formData(), file = file.path(tempdir(), fileName),
-        row.names = FALSE, quote = TRUE
-      )
-      upload_to_s3(file.path(tempdir(), fileName))
-      shinyjs::reset("form")
-      shinyjs::hide("form")
-      shinyjs::show("thankyou_msg")
-      
-      plot <- generate_output(input, radius = input$radius * 1000)
-
-      output$plot <- renderPlot({
-        generate_plot(plot, input)
-      })
-    })
-
-    observeEvent(input$go, {
-      fileName <- sprintf(
-        "%s_%s",
-        humanTime(),
-        digest::digest(formData())
-      )
-      shinyscreenshot::screenshot(filename = fileName)
-    })
-
-    observeEvent(input$submit_another, {
-      shinyjs::show("form")
-      shinyjs::hide("thankyou_msg")
-    })
-  }
+  )
 )
+
+## Server Logic -------------------------------------------------
+server <- function(input, output, session) {
+  # Validation rules for each field
+  validationRules <- list(
+    observer = function(value) {
+      if (is.null(value) || is.na(value) || value == "") {
+        return(list(valid = FALSE, message = "Observer name is required"))
+      }
+      return(list(valid = TRUE))
+    },
+    
+    genus = function(value) {
+      if (is.null(value) || is.na(value) || value == "") {
+        return(list(valid = FALSE, message = "Please select a genus"))
+      }
+      return(list(valid = TRUE))
+    },
+    
+    date = function(value) {
+      if (is.null(value) || is.na(value)) {
+        return(list(valid = FALSE, message = "Please select a valid date"))
+      }
+      return(list(valid = TRUE))
+    },
+    
+    latitude = function(value) {
+      if (is.null(value) || is.na(value)) {
+        return(list(valid = FALSE, message = "Latitude is required"))
+      }
+      value <- as.numeric(value)
+      if (is.na(value) || value < 25 || value > 53) {
+        return(list(valid = FALSE, message = "Latitude must be between 25° and 53°"))
+      }
+      return(list(valid = TRUE))
+    },
+    
+    longitude = function(value) {
+      if (is.null(value) || is.na(value)) {
+        return(list(valid = FALSE, message = "Longitude is required"))
+      }
+      value <- as.numeric(value)
+      if (is.na(value) || value < -125 || value > -67) {
+        return(list(valid = FALSE, message = "Longitude must be between -125° and -67°"))
+      }
+      return(list(valid = TRUE))
+    },
+    
+    event = function(value) {
+      if (is.null(value) || is.na(value) || value == "") {
+        return(list(valid = FALSE, message = "Please select an event type"))
+      }
+      return(list(valid = TRUE))
+    },
+    
+    status = function(value) {
+      if (is.null(value) || is.na(value) || value == "") {
+        return(list(valid = FALSE, message = "Please select a status"))
+      }
+      return(list(valid = TRUE))
+    }
+  )
+  
+  # Validate fields and update UI -----------
+  observe({
+    validation_results <- list()
+    
+    # Validate each mandatory field
+    for (field in MANDATORY_FIELDS) {
+      # Get the validation rule for this field
+      rule <- validationRules[[field]]
+      if (!is.null(rule)) {
+        # Get the current value and validate it
+        result <- rule(input[[field]])
+        validation_results[[field]] <- result
+        
+        # Update UI based on validation result
+        if (!result$valid) {
+          shinyjs::addCssClass(field, "validation-error")
+          # Update error message text and show it
+          shinyjs::html(paste0(field, "-error"), result$message)
+          shinyjs::show(paste0(field, "-error"))
+        } else {
+          shinyjs::removeCssClass(field, "validation-error")
+          shinyjs::hide(paste0(field, "-error"))
+        }
+      }
+    }
+    
+    # Enable submit and screenshot buttons if all validations pass
+    all_valid <- all(sapply(validation_results, function(x) x$valid))
+    shinyjs::toggleState(id = "submit", condition = all_valid)
+    shinyjs::toggleState(id = "go", condition = all_valid)
+    # shinyjs::toggleState(id = "card", condition = mandatoryFilled)
+  })
+  
+  # Collect form data -----------------
+  formData <- reactive({
+    data <- sapply(ALL_FIELDS, function(x) as.character(input[[x]]))
+    data <- c(data, timestamp = as.character(Sys.time()))
+    t(data)
+  })
+  
+  # Handle form submission ---------------
+  observeEvent(input$submit, {
+    # Clear plot and show processing message
+    output$plot <- renderPlot(NULL)
+    shinyjs::show("thankyou_msg")
+    
+    # Save form data
+    fileName <- sprintf(
+      "%s_%s.csv",
+      humanTime(),
+      digest::digest(formData())
+    )
+    write.csv(
+      x = formData(),
+      file = file.path(tempdir(), fileName),
+      row.names = FALSE,
+      quote = TRUE
+    )
+    upload_to_s3(file.path(tempdir(), fileName))
+    
+    # Generate new plot
+    plot <- generate_output(input, radius = input$radius * 1000)
+    
+    # Update UI
+    shinyjs::hide("thankyou_msg")
+    output$plot <- renderPlot({
+      generate_plot(plot, input)
+    })
+  })
+  
+  # Handle screenshot ----------------
+  observeEvent(input$go, {
+    fileName <- sprintf(
+      "%s_%s",
+      humanTime(),
+      digest::digest(formData())
+    )
+    shinyscreenshot::screenshot(filename = fileName)
+  })
+  
+  # This event handler was in original code but never reachable
+  # observeEvent(input$submit_another, {
+  #   shinyjs::show("form")
+  #   shinyjs::hide("thankyou_msg")
+  # })
+}
+
+## Create and Run Application -----------------------------------
+shinyApp(ui = ui, server = server)
