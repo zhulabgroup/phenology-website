@@ -426,7 +426,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
           x = "longitude",
           y = "latitude",
           fill = "status"
-        )
+        ) +
+        theme_void()
     } else {
       us <- map_data("state")
       p_map <- ggplot() +
