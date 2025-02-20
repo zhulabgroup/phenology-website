@@ -11,6 +11,7 @@ library(aws.s3)
 library(ggnewscale)
 library(mapproj)
 
+##### Helper Functions -------------------------------------------------
 path_app <- getwd()
 data_path <- str_c(path_app, "/NPN_example/")
 today <- read_file(str_c(path_app, "/today.txt")) %>% as.Date()
@@ -89,15 +90,15 @@ fieldsAll <- c(
   "event", "status", "email"
 )
 
-
 epochTime <- function() {
   as.integer(Sys.time())
 }
 
-humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
+humanTime <- function() {
+  format(Sys.time(), "%Y%m%d-%H%M%OS")
+}
 
-
-
+# Plot Generation -----------------------------------------------
 
 generate_output <- function(input, window = 14, radius = 100000) {
   data_path_subset <- paste0(
@@ -108,23 +109,20 @@ generate_output <- function(input, window = 14, radius = 100000) {
   )
   npn_files <- aws.s3::get_bucket(bucket = bucket_name, prefix = data_path_subset)
   
-  #### Generate null plots for not enough data
-  img <- jpeg::readJPEG("question.jpeg")
-  p_line <- ggplot() +
-    background_image(img) +
-    coord_equal()
+  # Generate null plots ----------------------------------
   
   null_p_line <- ggplot(mapping = aes(x = as.integer(format(input$date, "%j")), 
                                       y = as.integer(input$status == "Yes") * 100)) +
     geom_point(col = "#ff0000", cex = 5) +
-    geom_vline(xintercept = as.integer(format(input$date, "%j")), col = "#ff0000", 
+    geom_vline(xintercept = as.integer(format(input$date, "%j")),
+               col = "#ff0000", 
                alpha = .25, lwd = 1.5, linetype = "dashed") +
     scale_x_continuous(
       breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-      labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+      labels = month.abb
     ) +
     scale_y_continuous(
-      limits = c(-10, 110),  # Ensures the full range is always present
+      limits = c(-10, 110), 
       breaks = c(0, 25, 50, 75, 100)
     ) +
     labs(
@@ -137,7 +135,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
       panel.grid.minor.x = element_blank(),
       panel.grid.minor.y = element_blank()
     ) +
-    geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+    geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 
+                              214, 245, 275, 306, 336),
                color = "gray", linetype = "dashed", size = 0.5, alpha = .25)
   
   null_p_map <- ggplot() +
@@ -147,7 +146,24 @@ generate_output <- function(input, window = 14, radius = 100000) {
                  color = "black", fill = NA) +
     theme_void()
   
-  # null_c_line <- 
+  null_c_line <- ggplot() +
+    scale_x_continuous(
+      limits = c(1, 366),
+      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+      labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+    ) +
+    scale_y_continuous(
+      limits = c(-0.1, 1.1),
+      breaks = c(0, 0.25, 0.5, 0.75, 1),
+      labels = c("0", "25%", "50%", "75%", "100%")
+    ) +
+    labs(
+      x = "Day of Year",
+      y = "Status",
+      fill = "Count"
+    ) +
+    theme_minimal()
+  
   
   past_year <- as.integer(format(input$date, "%Y")) - 11
   current_year <- as.integer(format(input$date, "%Y")) - 1
@@ -158,7 +174,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
     ) +
     scale_y_continuous(
       breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-      labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"),
+      labels = month.abb,
       limits = c(0, 366)
     ) +
     labs(
@@ -171,9 +187,11 @@ generate_output <- function(input, window = 14, radius = 100000) {
   null_plots <- list(
     null_p_line,
     null_p_map,
-    p_line,
+    null_c_line,
     null_rect_graph)
   #### Done generating null plots
+  
+# Data prep -------------------------
   
   if (length(npn_files) > 0) {
     npn_data_all <- vector(mode = "list")
@@ -332,12 +350,14 @@ generate_output <- function(input, window = 14, radius = 100000) {
         }
       }
       ylim_max <- if (nrow(rect_data) > 0) max(rect_data$ymax) + 25 else 366
+      
+      # rect_graph ---------------------------
       rect_graph <- ggplot() +
         geom_rect(data = rect_data, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), color = "black", fill = "white", size = 0.7) +
         scale_x_continuous(breaks = seq(past_year, current_year), limits = c(past_year - 0.3, current_year + 0.3)) +
         scale_y_continuous(
           breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-          labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"),
+          labels = month.abb,
           limits = c(0, 366)
         ) +
         labs(
@@ -346,10 +366,11 @@ generate_output <- function(input, window = 14, radius = 100000) {
         ) +
         theme_minimal() +
         theme(panel.grid.minor.y = element_blank())
-
+      
       past_year <- as.factor(past_year)
       current_year <- as.factor(current_year)
-
+      
+      # c_line ----------------
       c_line <- ggplot() +
         geom_bin2d(data = npn_location, aes(x = day_of_year, y = phenophase_status), bins = c(366, 20), alpha = 0.8) +
         geom_line(data = year_data[[1]], aes_string(x = "day_of_year", y = "intensity", color = past_year), lwd = 2, na.rm = T) +
@@ -362,9 +383,11 @@ generate_output <- function(input, window = 14, radius = 100000) {
           fill = "count"
         ) +
         theme_minimal()
-
+      
       overall_data$intensity <- overall_data$intensity * 100
       overall_data$date <- as.Date(overall_data$day_of_year - 1, origin = paste0(format(input$date, "%Y"), "-01-01"))
+      
+      # p_line (Active) ---------------------------
       p_line <- ggplot() +
         geom_tile(
           data = npn_location %>% filter(phenophase_status == 1),
@@ -385,7 +408,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
         ylim(-10, 110) +
         scale_x_continuous(
           breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-          labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+          labels = month.abb,
         ) +
         scale_y_continuous(
           breaks = c(0, 25, 50, 75, 100)
@@ -400,10 +423,11 @@ generate_output <- function(input, window = 14, radius = 100000) {
           panel.grid.major.x = element_blank(),
           panel.grid.minor.x = element_blank(),
           panel.grid.minor.y = element_blank()
-        )+
+        ) +
         geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
                    color = "gray", linetype = "dashed", size = 0.5, alpha = .25)
     } else {
+      ###### p_line (inactive)  ----------------
       p_line <- ggplot() +
         geom_jitter(data = npn_location, aes(x = day_of_year, y = phenophase_status), width = 0, height = 0.05, alpha = 0.8) +
         geom_line(data = npn_location_ts, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
@@ -417,20 +441,13 @@ generate_output <- function(input, window = 14, radius = 100000) {
         theme_minimal()
     }
   } else {
-    img <- jpeg::readJPEG("question.jpeg")
-    p_line <- ggplot() +
-      background_image(img) +
-      coord_equal()
-    c_line <- ggplot() +
-      background_image(img) +
-      coord_equal()
-    rect_graph <- ggplot() +
-      background_image(img) +
-      coord_equal()
+    p_line <- null_p_line
+    c_line <- null_c_line
+    rect_graph <- null_rect_graph
   }
+  
 
-
-  #####
+  ###### Map data prep -----------------------
   # window<-14
   npn_time <- npn_data_all %>%
     filter(abs(observation_date - input$date) <= window) %>%
@@ -467,6 +484,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
     #     as.data.frame()
 
       us <- map_data("state")
+      ###### p_map -------------------------------------
       p_map <- ggplot() +
         coord_map("albers", lat0 = 39, lat1 = 45) +
         # geom_jitter(data=npn_time_surface, aes(x=longitude, y=latitude, col=intensity),width=0.05, height=0.05, alpha=0.5)+
@@ -586,6 +604,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
   #                                      message_anomaly, message_anomaly_ann,
   #                                      message_attribute))
 
+  ###### generate_output return -----------------
   return(list(p_line, p_map, ggplot(), rect_graph))
 }
 
@@ -601,7 +620,7 @@ generate_plot <- function(plot, input) {
   return(p1)
 }
 
-#####
+##### shinyApp -------------------------------------------------------------
 
 shinyApp(
   ui = fluidPage(
@@ -792,9 +811,7 @@ shinyApp(
       shinyjs::reset("form")
       shinyjs::hide("form")
       shinyjs::show("thankyou_msg")
-    })
-
-    observeEvent(input$submit, {
+      
       plot <- generate_output(input, radius = input$radius * 1000)
 
       output$plot <- renderPlot({
