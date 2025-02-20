@@ -777,6 +777,8 @@ shinyApp(
 
     # action to take when submit button is pressed
     observeEvent(input$submit, {
+      output$plot <- renderPlot({ NULL })
+      
       fileName <- sprintf(
         "%s_%s.csv",
         humanTime(),
