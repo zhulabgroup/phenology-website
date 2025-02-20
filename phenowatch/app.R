@@ -155,12 +155,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
       p_line <- ggplot() +
         background_image(img) +
         coord_equal()
-      plot_and_message <- list(
-        plot = list(p_line, p_line, p_line, p_line),
-        message = list("There are not enough nearby observations for comparison. Choose a different location or increase the radius instead.")
-      )
 
-      return(plot_and_message)
+      return(list(p_line, p_line, p_line, p_line))
     }
 
     npn_location <- npn_location %>%
@@ -174,12 +170,8 @@ generate_output <- function(input, window = 14, radius = 100000) {
       p_line <- ggplot() +
         background_image(img) +
         coord_equal()
-      plot_and_message <- list(
-        plot = list(p_line, p_line, p_line, p_line),
-        message = list("There are not enough nearby observations for comparison. Choose a different location or increase the radius instead.")
-      )
 
-      return(plot_and_message)
+      return(list(p_line, p_line, p_line, p_line))
     }
   } else {
     npn_location <- npn_data_all
@@ -284,6 +276,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
         }
       }
       ylim_max <- if (nrow(rect_data) > 0) max(rect_data$ymax) + 25 else 366
+      browser()
       rect_graph <- ggplot() +
         geom_rect(data = rect_data, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), color = "black", fill = "white", size = 0.7) +
         scale_x_continuous(breaks = seq(past_year, current_year), limits = c(past_year - 0.3, current_year + 0.3)) +
@@ -296,7 +289,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
           x = "Year",
           y = "Day of Year"
         ) +
-        theme_minimal() + 
+        theme_minimal() +
         theme(panel.grid.minor.y = element_blank())
 
       past_year <- as.factor(past_year)
@@ -341,19 +334,19 @@ generate_output <- function(input, window = 14, radius = 100000) {
         ) +
         scale_y_continuous(
           breaks = c(0, 25, 50, 75, 100)
-        ) + 
+        ) +
         labs(
           x = "Day of Year",
           y = "% Yes Status",
           fill = "Count"
         ) +
-        theme_minimal() + 
+        theme_minimal() +
         theme(
           panel.grid.major.x = element_blank(),
           panel.grid.minor.x = element_blank(),
           panel.grid.minor.y = element_blank()
         )+
-        geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336), 
+        geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
                    color = "gray", linetype = "dashed", size = 0.5, alpha = .25)
     } else {
       p_line <- ggplot() +
@@ -400,23 +393,23 @@ generate_output <- function(input, window = 14, radius = 100000) {
       proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
     )
 
-    if (input$genus %in% genusoi_list) {
-      # vgm_df<-read_csv(paste0(path_fore,"/variogram parameters.csv"))
-      # fit_npn<-vgm(psill=vgm_df[2,2] %>% unlist(),
-      #              model=vgm_df[2,1]%>% unlist(),
-      #              range=vgm_df[2,3]%>% unlist(),
-      #              nugget=vgm_df[1,2]%>% unlist(),
-      #              kappa=vgm_df[2,4]%>% unlist())
-      #
-      # r_0.5deg<-raster(res=0.5, xmn=-125,xmx=-67,ymn=25,ymx=53)
-      # coord_new<-coordinates(r_0.5deg)
-      # coord_new_sp<-SpatialPoints(coords=coord_new[,c("x", "y")],
-      #                             proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
-      # kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp, model=fit_npn
-      #                     # ,maxdist=500
-      #                     , na.action=na.omit
-      # ) %>%
-      #   as.data.frame()
+     if (input$genus %in% genusoi_list) {
+    #   vgm_df<-read_csv(paste0(,"/variogram parameters.csv"))
+    #   fit_npn<-vgm(psill=vgm_df[2,2] %>% unlist(),
+    #                model=vgm_df[2,1]%>% unlist(),
+    #                range=vgm_df[2,3]%>% unlist(),
+    #                nugget=vgm_df[1,2]%>% unlist(),
+    #                kappa=vgm_df[2,4]%>% unlist())
+    #
+    #   r_0.5deg<-raster(res=0.5, xmn=-125,xmx=-67,ymn=25,ymx=53)
+    #   coord_new<-coordinates(r_0.5deg)
+    #   coord_new_sp<-SpatialPoints(coords=coord_new[,c("x", "y")],
+    #                               proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+    #   kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp, model=fit_npn
+    #                       # ,maxdist=500
+    #                       , na.action=na.omit
+    #   ) %>%
+    #     as.data.frame()
 
       us <- map_data("state")
       p_map <- ggplot() +
@@ -539,16 +532,12 @@ generate_output <- function(input, window = 14, radius = 100000) {
   #                         message=list(message_location, message_time,
   #                                      message_anomaly, message_anomaly_ann,
   #                                      message_attribute))
-  plot_and_message <- list(
-    plot = list(p_line, p_map, c_line, rect_graph),
-    message = "Years not represented on the figure have insufficient data"
-  )
 
-  return(plot_and_message)
+  return(list(p_line, p_map, ggplot(), rect_graph))
 }
 
-generate_plot <- function(plot_and_message, input) {
-  p1 <- plot_and_message$plot[[case_when(
+generate_plot <- function(plot, input) {
+  p1 <- plot[[case_when(
     input$plot == "Intra-annual Variation" ~ 1,
     input$plot == "Spatial Variation" ~ 2,
     input$plot == "Trends Between Years" ~ 3,
@@ -556,15 +545,7 @@ generate_plot <- function(plot_and_message, input) {
     # input$plot=="Function"~3
   )]]
 
-  # message <- plot_and_message$message[[input$message]]
-  # message <- strwrap(message, width = 50, simplify = FALSE) # modify 30 to your needs
-  # message <- sapply(message, paste, collapse = "\n")
-  p2 <- text_grob(plot_and_message$message[1], face = "italic", color = "steelblue", size = 20) %>%
-    as_ggplot()
-
-  grid.arrange(p1, p2,
-    layout_matrix = matrix(c(rep(1, 4), 2))
-  )
+  return(p1)
 }
 
 #####
@@ -759,10 +740,10 @@ shinyApp(
     })
 
     observeEvent(input$submit, {
-      plot_and_message <- generate_output(input, radius = input$radius * 1000)
+      plot <- generate_output(input, radius = input$radius * 1000)
 
       output$plot <- renderPlot({
-        generate_plot(plot_and_message, input)
+        generate_plot(plot, input)
       })
     })
 
