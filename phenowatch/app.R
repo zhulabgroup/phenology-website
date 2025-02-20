@@ -276,7 +276,6 @@ generate_output <- function(input, window = 14, radius = 100000) {
         }
       }
       ylim_max <- if (nrow(rect_data) > 0) max(rect_data$ymax) + 25 else 366
-      browser()
       rect_graph <- ggplot() +
         geom_rect(data = rect_data, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), color = "black", fill = "white", size = 0.7) +
         scale_x_continuous(breaks = seq(past_year, current_year), limits = c(past_year - 0.3, current_year + 0.3)) +
