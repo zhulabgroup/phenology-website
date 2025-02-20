@@ -10,6 +10,7 @@ library(maps)
 library(aws.s3)
 library(ggnewscale)
 library(mapproj)
+library(ggridges)
 
 # Helper Functions -------------------------------------------------
 path_app <- getwd()
@@ -168,21 +169,19 @@ generate_output <- function(input, window = 14, radius = 100000) {
   past_year <- as.integer(format(input$date, "%Y")) - 11
   current_year <- as.integer(format(input$date, "%Y")) - 1
   null_rect_graph <- ggplot() +
+    theme_minimal() +
+    labs(x = "Days of Year", y = "Year") +
     scale_x_continuous(
+      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+      labels = month.abb,
+      limits = c(1, 336),
+      expand = c(0, 0)
+    ) +
+    scale_y_continuous(
       breaks = seq(past_year, current_year),
       limits = c(past_year - 0.3, current_year + 0.3)
     ) +
-    scale_y_continuous(
-      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-      labels = month.abb,
-      limits = c(0, 366)
-    ) +
-    labs(
-      x = "Year",
-      y = "Day of Year"
-    ) +
-    theme_minimal() +
-    theme(panel.grid.minor.y = element_blank())
+    coord_flip()
   
   null_plots <- list(
     null_p_line,
@@ -351,21 +350,31 @@ generate_output <- function(input, window = 14, radius = 100000) {
       }
       ylim_max <- if (nrow(rect_data) > 0) max(rect_data$ymax) + 25 else 366
       
+      names(year_data) <- 2010:2020
+      year_data_df <- do.call(rbind, Map(function(df, year) {
+        df$year_fac <- factor(year)
+        df$year <- as.numeric(year)
+        df
+      }, year_data, names(year_data)))
+      
+      year_data_df$intensity_nonzero <- year_data_df$intensity
+      year_data_df$intensity_nonzero[year_data_df$intensity_nonzero < 1e-5] <- NA
+      year_data_df$intensity_year <- with(year_data_df, year + intensity)
+      year_data_df$intensity_nonzero_year <- with(year_data_df, year + intensity_nonzero)
+      
       # rect_graph ---------------------------
-      rect_graph <- ggplot() +
-        geom_rect(data = rect_data, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), color = "black", fill = "white", size = 0.7) +
-        scale_x_continuous(breaks = seq(past_year, current_year), limits = c(past_year - 0.3, current_year + 0.3)) +
-        scale_y_continuous(
+      rect_graph <- ggplot(year_data_df, aes(x = day_of_year, y = factor(year), height = intensity_nonzero, fill = intensity_nonzero)) +
+        geom_ridgeline_gradient(scale = 1) +
+        scale_fill_viridis_c(name = "Intensity") +
+        theme_minimal() +
+        labs(x = "Days of Year", y = "Year") +
+        scale_x_continuous(
           breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
           labels = month.abb,
-          limits = c(0, 366)
+          limits = c(1, 336),
+          expand = c(0, 0)
         ) +
-        labs(
-          x = "Year",
-          y = "Day of Year"
-        ) +
-        theme_minimal() +
-        theme(panel.grid.minor.y = element_blank())
+        coord_flip()
       
       past_year <- as.factor(past_year)
       current_year <- as.factor(current_year)
