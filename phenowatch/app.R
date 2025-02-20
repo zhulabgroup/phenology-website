@@ -98,7 +98,6 @@ humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
 
 
 
-#####
 
 generate_output <- function(input, window = 14, radius = 100000) {
   data_path_subset <- paste0(
@@ -108,7 +107,74 @@ generate_output <- function(input, window = 14, radius = 100000) {
     input$genus
   )
   npn_files <- aws.s3::get_bucket(bucket = bucket_name, prefix = data_path_subset)
-
+  
+  #### Generate null plots for not enough data
+  img <- jpeg::readJPEG("question.jpeg")
+  p_line <- ggplot() +
+    background_image(img) +
+    coord_equal()
+  
+  null_p_line <- ggplot(mapping = aes(x = as.integer(format(input$date, "%j")), 
+                                      y = as.integer(input$status == "Yes") * 100)) +
+    geom_point(col = "#ff0000", cex = 5) +
+    geom_vline(xintercept = as.integer(format(input$date, "%j")), col = "#ff0000", 
+               alpha = .25, lwd = 1.5, linetype = "dashed") +
+    scale_x_continuous(
+      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+      labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+    ) +
+    scale_y_continuous(
+      limits = c(-10, 110),  # Ensures the full range is always present
+      breaks = c(0, 25, 50, 75, 100)
+    ) +
+    labs(
+      x = "Day of Year",
+      y = "% Yes Status",
+    ) +
+    theme_minimal() +
+    theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor.x = element_blank(),
+      panel.grid.minor.y = element_blank()
+    ) +
+    geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+               color = "gray", linetype = "dashed", size = 0.5, alpha = .25)
+  
+  null_p_map <- ggplot() +
+    coord_map("albers", lat0 = 39, lat1 = 45) +
+    geom_polygon(data = map_data("state"),
+                 aes(x = long, y = lat, group = group), 
+                 color = "black", fill = NA) +
+    theme_void()
+  
+  # null_c_line <- 
+  
+  past_year <- as.integer(format(input$date, "%Y")) - 11
+  current_year <- as.integer(format(input$date, "%Y")) - 1
+  null_rect_graph <- ggplot() +
+    scale_x_continuous(
+      breaks = seq(past_year, current_year),
+      limits = c(past_year - 0.3, current_year + 0.3)
+    ) +
+    scale_y_continuous(
+      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+      labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"),
+      limits = c(0, 366)
+    ) +
+    labs(
+      x = "Year",
+      y = "Day of Year"
+    ) +
+    theme_minimal() +
+    theme(panel.grid.minor.y = element_blank())
+  
+  null_plots <- list(
+    null_p_line,
+    null_p_map,
+    p_line,
+    null_rect_graph)
+  #### Done generating null plots
+  
   if (length(npn_files) > 0) {
     npn_data_all <- vector(mode = "list")
 
@@ -151,12 +217,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       abs(longitude - input$longitude) <= radius / 100000
     )
     if (nrow(npn_location) == 0) {
-      img <- jpeg::readJPEG("question.jpeg")
-      p_line <- ggplot() +
-        background_image(img) +
-        coord_equal()
-
-      return(list(p_line, p_line, p_line, p_line))
+      return(null_plots)
     }
 
     npn_location <- npn_location %>%
@@ -166,12 +227,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
       filter(distance <= radius)
 
     if (nrow(npn_location) == 0) {
-      img <- jpeg::readJPEG("question.jpeg")
-      p_line <- ggplot() +
-        background_image(img) +
-        coord_equal()
-
-      return(list(p_line, p_line, p_line, p_line))
+      return(null_plots)
     }
   } else {
     npn_location <- npn_data_all
@@ -448,10 +504,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
         theme_minimal()
     }
   } else {
-    img <- jpeg::readJPEG("question.jpeg")
-    p_map <- ggplot() +
-      background_image(img) +
-      coord_equal()
+    p_map <- null_p_map
   }
 
   message_location <- paste0("You just provided the #", format(nrow(npn_location) + 1, scientific = F), " phenological record of this genus within ", format(radius / 1000, scientific = F), " km distance.")
