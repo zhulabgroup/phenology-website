@@ -400,14 +400,14 @@ generate_output <- function(input, window = 14, radius = 100000) {
       p_line <- ggplot() +
         geom_tile(
           data = npn_location %>% filter(phenophase_status == 1),
-          aes(x = day_of_year, y = phenophase_status * 100, fill = ..count..),
+          aes(x = day_of_year, y = phenophase_status * 100, fill = after_stat(count)),
           stat = "bin2d", bins = c(366, 20), alpha = 1
         ) +
         scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Number of yes") +
         new_scale_fill() +
         geom_tile(
           data = npn_location %>% filter(phenophase_status == 0),
-          aes(x = day_of_year, y = phenophase_status, fill = ..count..),
+          aes(x = day_of_year, y = phenophase_status, fill = after_stat(count)),
           stat = "bin2d", bins = c(366, 20), alpha = 1
         ) +
         scale_fill_gradient(low = "#FFF700", high = "#F4C430", name = "Number of no") +
