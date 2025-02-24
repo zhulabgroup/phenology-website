@@ -351,23 +351,37 @@ generate_output <- function(input, window = 14, radius = 100000) {
       ylim_max <- if (nrow(rect_data) > 0) max(rect_data$ymax) + 25 else 366
       
       names(year_data) <- 2010:2020
-      year_data_df <- do.call(rbind, Map(function(df, year) {
-        df$year_fac <- factor(year)
-        df$year <- as.numeric(year)
-        df
-      }, year_data, names(year_data)))
-      
+       year_data_df <- do.call(rbind, Map(function(df, year) {
+        # Check if the dataframe has the expected dimensions
+        if (nrow(df) != 366 || ncol(df) != 2) {
+          # Create a default dataframe with NAs for intensity
+          df <- data.frame(
+            day_of_year = 1:366,
+            intensity = rep(NA, 366)
+          )
+        }
+
+        # Add year information
+         df$year_fac <- factor(year)
+         df$year <- as.numeric(year)
+
+        return(df)
+       }, year_data, names(year_data)))
+
       year_data_df$intensity_nonzero <- year_data_df$intensity
       year_data_df$intensity_nonzero[year_data_df$intensity_nonzero < 1e-5] <- NA
       year_data_df$intensity_year <- with(year_data_df, year + intensity)
       year_data_df$intensity_nonzero_year <- with(year_data_df, year + intensity_nonzero)
+
+      filtered_data <- year_data_df[!is.na(year_data_df$intensity_nonzero), ]
       
       # rect_graph ---------------------------
-      rect_graph <- ggplot(year_data_df, aes(x = day_of_year, y = factor(year), height = intensity_nonzero, fill = intensity_nonzero)) +
+      rect_graph <- ggplot(filtered_data, aes(x = day_of_year, y = factor(year), height = intensity_nonzero, fill = intensity_nonzero)) +
         geom_ridgeline_gradient(scale = 1) +
         scale_fill_viridis_c(name = "Intensity") +
         theme_minimal() +
         labs(x = "Days of Year", y = "Year") +
+        scale_y_discrete(limits = factor(2010:2020)) +
         scale_x_continuous(
           breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
           labels = month.abb,
