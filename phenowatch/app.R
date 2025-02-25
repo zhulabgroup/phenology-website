@@ -368,7 +368,7 @@ generate_output <- function(input) {
     geom_tile(data = kriged_res_df, aes(x = lon, y = lat, fill = var1.pred * 100)) +
     geom_polygon(data = map_data("state"), aes(x = long, y = lat, group = group), color = "grey", fill = NA) +
     geom_jitter(data = npn_time, aes(x = longitude, y = latitude, fill = phenophase_status * 100), pch = 21, width = 0.05, height = 0.05, cex = 2) +
-    geom_point(aes(x = input$longitude, y = input$latitude, fill = as.integer(input$status == "Yes")), pch = 21, col = "red", cex = 5, stroke = 3) +
+    geom_point(aes(x = input$longitude, y = input$latitude, fill = as.integer(input$status == "Yes") * 100), pch = 21, col = "red", cex = 5, stroke = 3) +
     scale_color_viridis_c(limits = c(0, 100)) +
     scale_fill_viridis_c(limits = c(0, 100)) +
     labs(
