@@ -2,7 +2,7 @@
 library(shinyjs)
 library(shinyscreenshot)
 library(tidyverse)
-library(raster)
+library(imputeTS)
 library(gstat)
 library(ggpubr)
 library(gridExtra)
@@ -35,32 +35,64 @@ upload_to_s3 <- function(file_path) {
   )
 }
 
-# # test
-# upload_to_s3("today.txt")
+util_fill_whit <- function(x, maxgap = Inf, lambda, minseg = 2) {
+  x_fill <- imputeTS::na_replace(x, fill = -9999, maxgap = maxgap) # fill short gaps with -9999 placeholder
+  w <- (x_fill != -9999) # weight = 0 at long gaps, weight = 1 at short gaps
+  x_sm <- util_whit(x = x_fill, lambda = lambda, w = w, minseg = minseg)
 
-calc_range <- function(df) {
-  non_na_indices <- which(!is.na(df$intensity))
-  flag <- F
+  return(x_sm)
+}
 
-  first_instance <- -1
-  last_instance <- -1
-
-  for (j in 1:(length(non_na_indices) - 1)) {
-    current_index <- non_na_indices[j]
-    next_index <- non_na_indices[j + 1]
-
-    if (df$intensity[current_index] <= 0.25 && df$intensity[next_index] >= 0.25) {
-      if (flag == F) {
-        first_instance <- current_index
-        flag <- T
+util_whit <- function(x, lambda, w, minseg = 2) {
+  max_id <- 0
+  done <- F
+  while (!done) {
+    v_non_na <- which(!is.na(x[(max_id + 1):length(x)])) # non-NA segment
+    if (length(v_non_na) == 0) { # all numbers are NA
+      done <- T # consider this ts done
+    } else {
+      min_id <- min(v_non_na) + (max_id) # first number that is not NA
+      v_na <- which(is.na(x[min_id:length(x)])) # NA segment
+      if (length(v_na) == 0) { # no more NA
+        max_id <- length(x) # last non-NA segment is at the end of the whole ts
+        done <- T # consider this ts done
+      } else {
+        max_id <- min(v_na) - 1 + (min_id - 1) # index of last number in this NA segment
+      }
+      if (max_id - min_id + 1 < minseg) { # this non-NA segment is too short
+        x[min_id:max_id] <- -9999
+      } else {
+        x[min_id:max_id] <- ptw::whit1(x[min_id:max_id], lambda, w[min_id:max_id]) # whittaker smoothing for this non-NA segment
       }
     }
-    if (df$intensity[current_index] >= 0.25 && df$intensity[next_index] <= 0.25) {
-      last_instance <- current_index
-    }
   }
-  return(c(first_instance, last_instance))
+  x[x == -9999] <- NA
+  return(x)
 }
+
+# calc_range <- function(df) {
+#   non_na_indices <- which(!is.na(df$intensity))
+#   flag <- F
+#
+#   first_instance <- -1
+#   last_instance <- -1
+#
+#   for (j in 1:(length(non_na_indices) - 1)) {
+#     current_index <- non_na_indices[j]
+#     next_index <- non_na_indices[j + 1]
+#
+#     if (df$intensity[current_index] <= 0.25 && df$intensity[next_index] >= 0.25) {
+#       if (flag == F) {
+#         first_instance <- current_index
+#         flag <- T
+#       }
+#     }
+#     if (df$intensity[current_index] >= 0.25 && df$intensity[next_index] <= 0.25) {
+#       last_instance <- current_index
+#     }
+#   }
+#   return(c(first_instance, last_instance))
+# }
 
 genusoi_list <- c(
   "Acer",
@@ -101,100 +133,19 @@ humanTime <- function() {
 
 # Plot Generation -----------------------------------------------
 
-generate_output <- function(input, window = 14, radius = 100000) {
+generate_output <- function(input) {
   data_path_subset <- paste0(
     download_folder_path,
-    ifelse(input$event == "Leafing", "leaf", "flower"),
+    ifelse(input$event == "Leaf", "leaf", "flower"),
     "/",
     input$genus
   )
   npn_files <- aws.s3::get_bucket(bucket = bucket_name, prefix = data_path_subset)
-  
-  # Generate null plots ----------------------------------
-  
-  null_p_line <- ggplot(mapping = aes(x = as.integer(format(input$date, "%j")), 
-                                      y = as.integer(input$status == "Yes") * 100)) +
-    geom_point(col = "#ff0000", cex = 5) +
-    geom_vline(xintercept = as.integer(format(input$date, "%j")),
-               col = "#ff0000", 
-               alpha = .25, lwd = 1.5, linetype = "dashed") +
-    scale_x_continuous(
-      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-      labels = month.abb
-    ) +
-    scale_y_continuous(
-      limits = c(-10, 110), 
-      breaks = c(0, 25, 50, 75, 100)
-    ) +
-    labs(
-      x = "Day of Year",
-      y = "% Yes Status",
-    ) +
-    theme_minimal() +
-    theme(
-      panel.grid.major.x = element_blank(),
-      panel.grid.minor.x = element_blank(),
-      panel.grid.minor.y = element_blank()
-    ) +
-    geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 
-                              214, 245, 275, 306, 336),
-               color = "gray", linetype = "dashed", size = 0.5, alpha = .25)
-  
-  null_p_map <- ggplot() +
-    coord_map("albers", lat0 = 39, lat1 = 45) +
-    geom_polygon(data = map_data("state"),
-                 aes(x = long, y = lat, group = group), 
-                 color = "black", fill = NA) +
-    theme_void()
-  
-  null_c_line <- ggplot() +
-    scale_x_continuous(
-      limits = c(1, 366),
-      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-      labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
-    ) +
-    scale_y_continuous(
-      limits = c(-0.1, 1.1),
-      breaks = c(0, 0.25, 0.5, 0.75, 1),
-      labels = c("0", "25%", "50%", "75%", "100%")
-    ) +
-    labs(
-      x = "Day of Year",
-      y = "Status",
-      fill = "Count"
-    ) +
-    theme_minimal()
-  
-  
-  past_year <- as.integer(format(input$date, "%Y")) - 11
-  current_year <- as.integer(format(input$date, "%Y")) - 1
-  null_rect_graph <- ggplot() +
-    theme_minimal() +
-    labs(x = "Days of Year", y = "Year") +
-    scale_x_continuous(
-      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-      labels = month.abb,
-      limits = c(1, 336),
-      expand = c(0, 0)
-    ) +
-    scale_y_continuous(
-      breaks = seq(past_year, current_year),
-      limits = c(past_year - 0.3, current_year + 0.3)
-    ) +
-    coord_flip()
-  
-  null_plots <- list(
-    null_p_line,
-    null_p_map,
-    null_c_line,
-    null_rect_graph)
-  #### Done generating null plots
-  
+
   # Data prep -------------------------
-  
+
   if (length(npn_files) > 0) {
     npn_data_all <- vector(mode = "list")
-
     for (i in seq_along(npn_files)) {
       file_key <- npn_files[[i]]$Key
       csv_data <- aws.s3::s3read_using(readr::read_csv, object = file_key, bucket = bucket_name)
@@ -206,7 +157,7 @@ generate_output <- function(input, window = 14, radius = 100000) {
     }
 
     npn_data_all <- bind_rows(npn_data_all) %>%
-      dplyr::select(site_id, latitude, longitude, observation_date, day_of_year, phenophase_status) %>%
+      select(site_id, latitude, longitude, observation_date, day_of_year, phenophase_status) %>%
       filter(phenophase_status != -1) %>%
       mutate(year = as.integer(format(observation_date, "%Y"))) %>%
       filter(
@@ -227,420 +178,216 @@ generate_output <- function(input, window = 14, radius = 100000) {
     )
   }
 
-  # radius<-500000
-  if (nrow(npn_data_all) > 1) {
-    npn_location <- filter(
-      npn_data_all, abs(latitude - input$latitude) <= radius / 100000,
-      abs(longitude - input$longitude) <= radius / 100000
+  # prep for p_line and p_line_year
+  npn_location <- npn_data_all %>%
+    filter(
+      abs(latitude - input$latitude) <= input$radius * 1000 / 100000,
+      abs(longitude - input$longitude) <= input$radius * 1000 / 100000
     )
-    if (nrow(npn_location) == 0) {
-      return(null_plots)
-    }
 
+  if (nrow(npn_location) > 0) {
     npn_location <- npn_location %>%
       rowwise() %>%
       mutate(distance = geosphere::distm(x = c(longitude, latitude), y = c(input$longitude, input$latitude), fun = geosphere::distGeo) %>% as.numeric()) %>%
       arrange(distance) %>%
-      filter(distance <= radius)
-
-    if (nrow(npn_location) == 0) {
-      return(null_plots)
-    }
+      filter(distance <= input$radius * 1000)
   } else {
-    npn_location <- npn_data_all
+    npn_location <- data.frame(
+      site_id = double(0),
+      latitude = double(0),
+      longitude = double(0),
+      observation_date = as.Date(character(0)),
+      day_of_year = double(0),
+      phenophase_status = double(0),
+      year = integer(0)
+    )
   }
-  year_data <- list()
-  past_year <- as.integer(format(input$date, "%Y")) - 11
-  current_year <- as.integer(format(input$date, "%Y")) - 1
+
+  npn_location_ts <- npn_location %>%
+    select(day_of_year, phenophase_status) %>%
+    group_by(day_of_year) %>%
+    summarize(intensity = mean(phenophase_status)) %>%
+    ungroup() %>%
+    filter(day_of_year != 366) %>%
+    complete(day_of_year = 1:365, fill = list(intensity = NA)) %>%
+    mutate(intensity = util_fill_whit(x = intensity, maxgap = 28, lambda = 10, minseg = 2)) %>% # weighted whittaker smoothing allowing gaps
+    ungroup()
+
+  # p_line
+  npn_counts <- npn_location %>%
+    filter(phenophase_status %in% c(0, 1)) %>%
+    count(day_of_year, phenophase_status)
+
+  p_line <- ggplot() +
+    geom_tile(
+      data = npn_counts %>% filter(phenophase_status == 1),
+      aes(x = day_of_year, y = 100, fill = n),
+      alpha = 1, width = 1, height = 8
+    ) +
+    scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Number of Yes") +
+    new_scale_fill() +
+    geom_tile(
+      data = npn_counts %>% filter(phenophase_status == 0),
+      aes(x = day_of_year, y = 0, fill = n),
+      alpha = 1, width = 1, height = 8
+    ) +
+    scale_fill_gradient(low = "#FFF700", high = "#F4C430", name = "Number of No") +
+    geom_line(data = npn_location_ts, aes(x = day_of_year, y = intensity * 100), col = "blue", lwd = 2) +
+    geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes") * 100), col = "#ff0000", cex = 5) +
+    geom_vline(xintercept = as.integer(format(input$date, "%j")), col = "#ff0000", alpha = .25, lwd = 1.5, linetype = "dashed") +
+    scale_x_continuous(
+      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+      labels = month.abb,
+      limits = c(1, 365)
+    ) +
+    scale_y_continuous(
+      breaks = c(0, 25, 50, 75, 100),
+      limits = c(-10, 110)
+    ) +
+    labs(
+      x = "Day of year",
+      y = "% Yes status",
+      fill = "Count"
+    ) +
+    theme_minimal() +
+    theme(
+      panel.grid.minor.x = element_blank(),
+      panel.grid.minor.y = element_blank()
+    )
+
+  # rect graph
 
   if (nrow(npn_location) > 0) {
-    npn_location_ts <- npn_location %>%
-      dplyr::select(day_of_year, phenophase_status) %>%
-      group_by(day_of_year) %>%
+    npn_location_ts_by_year <- npn_location %>%
+      select(year, day_of_year, phenophase_status) %>%
+      group_by(year, day_of_year) %>%
       summarize(intensity = mean(phenophase_status)) %>%
       ungroup() %>%
-      complete(day_of_year = 1:366, fill = list(intensity = NA))
-    min_id <- min(which(!is.na(npn_location_ts$intensity)))
-    max_id <- max(which(!is.na(npn_location_ts$intensity)))
-    npn_location_ts$intensity[min_id:max_id] <-
-      zoo::na.approx(
-        object = npn_location_ts$intensity[min_id:max_id],
-        x = min_id:max_id, maxgap = 28
-      )
-
-
-    max_id <- 0
-    done <- F
-    while (!done) {
-      min_id <- min(which(!is.na(npn_location_ts$intensity[(max_id + 1):length(npn_location_ts$intensity)]))) + (max_id)
-      if (min_id == Inf) {
-        done <- T
-      } else {
-        max_id <- min(which(is.na(npn_location_ts$intensity[min_id:length(npn_location_ts$intensity)]))) - 1 + (min_id - 1)
-        if (max_id == Inf) {
-          max_id <- length(npn_location_ts$intensity)
-          done <- T
-        }
-        npn_location_ts$intensity[min_id:max_id] <- ptw::whit1(npn_location_ts$intensity[min_id:max_id], 10)
-      }
-    }
-
-    overall_data <- npn_location_ts
-
-    for (i in 0:10) {
-      npn_location_ts <- filter(npn_location, year == past_year + i) %>%
-        dplyr::select(day_of_year, phenophase_status) %>%
-        group_by(day_of_year) %>%
-        summarize(intensity = mean(phenophase_status)) %>%
-        ungroup() %>%
-        complete(day_of_year = 1:366, fill = list(intensity = NA))
-
-      min_id <- min(which(!is.na(npn_location_ts$intensity)))
-      max_id <- max(which(!is.na(npn_location_ts$intensity)))
-      if (length(unique(npn_location_ts$intensity)) == 1) {
-        year_data[[i + 1]] <- data.frame(thing = c("this"))
-      } else {
-        npn_location_ts$intensity[min_id:max_id] <-
-          zoo::na.approx(
-            object = npn_location_ts$intensity[min_id:max_id],
-            x = min_id:max_id, maxgap = 28
-          )
-        max_id <- 0
-        done <- F
-        while (!done) {
-          min_id <- min(which(!is.na(npn_location_ts$intensity[(max_id + 1):length(npn_location_ts$intensity)]))) + (max_id)
-          if (min_id == Inf) {
-            done <- T
-          } else {
-            max_id <- min(which(is.na(npn_location_ts$intensity[min_id:length(npn_location_ts$intensity)]))) - 1 + (min_id - 1)
-            if (max_id == Inf) {
-              max_id <- length(npn_location_ts$intensity)
-              done <- T
-            }
-            npn_location_ts$intensity[min_id:max_id] <- ptw::whit1(npn_location_ts$intensity[min_id:max_id], 10)
-          }
-        }
-
-        year_data[[i + 1]] <- data.frame(npn_location_ts)
-      }
-    }
-    if (TRUE) {
-      rect_data <- data.frame(
-        xmin = numeric(),
-        xmax = numeric(),
-        ymin = numeric(),
-        ymax = numeric()
-      )
-      for (i in 0:10) {
-        if (length(which(!is.na(year_data[[i + 1]]$intensity))) > 4) {
-          values <- calc_range(year_data[[i + 1]])
-          first_instance <- values[1]
-          last_instance <- values[2]
-          if (first_instance != -1 && last_instance != -1) {
-            rect_data <- rbind(rect_data, data.frame(
-              xmin = past_year + i - 0.3,
-              xmax = past_year + i + 0.3,
-              ymin = first_instance,
-              ymax = last_instance
-            ))
-          }
-        } else {
-          message <- "Years not represented on the figure have insufficient data"
-        }
-      }
-      ylim_max <- if (nrow(rect_data) > 0) max(rect_data$ymax) + 25 else 366
-      
-      names(year_data) <- 2010:2020
-       year_data_df <- do.call(rbind, Map(function(df, year) {
-        # Check if the dataframe has the expected dimensions
-        if (nrow(df) != 366 || ncol(df) != 2) {
-          # Create a default dataframe with NAs for intensity
-          df <- data.frame(
-            day_of_year = 1:366,
-            intensity = rep(NA, 366)
-          )
-        }
-
-        # Add year information
-         df$year_fac <- factor(year)
-         df$year <- as.numeric(year)
-
-        return(df)
-       }, year_data, names(year_data)))
-
-      year_data_df$intensity_nonzero <- year_data_df$intensity
-      year_data_df$intensity_nonzero[year_data_df$intensity_nonzero < 1e-5] <- NA
-      year_data_df$intensity_year <- with(year_data_df, year + intensity)
-      year_data_df$intensity_nonzero_year <- with(year_data_df, year + intensity_nonzero)
-
-      filtered_data <- year_data_df[!is.na(year_data_df$intensity_nonzero), ]
-      
-      # rect_graph ---------------------------
-      rect_graph <- ggplot(filtered_data, aes(x = day_of_year, y = factor(year), height = intensity_nonzero, fill = intensity_nonzero)) +
-        geom_ridgeline_gradient(scale = 1) +
-        scale_fill_viridis_c(name = "Intensity") +
-        theme_minimal() +
-        labs(x = "Days of Year", y = "Year") +
-        scale_y_discrete(limits = factor(2010:2020)) +
-        scale_x_continuous(
-          breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-          labels = month.abb,
-          limits = c(1, 336),
-          expand = c(0, 0)
-        ) +
-        coord_flip()
-      
-      past_year <- as.factor(past_year)
-      current_year <- as.factor(current_year)
-      
-      # c_line ----------------
-      c_line <- ggplot() +
-        geom_bin2d(data = npn_location, aes(x = day_of_year, y = phenophase_status), bins = c(366, 20), alpha = 0.8) +
-        geom_line(data = year_data[[1]], aes_string(x = "day_of_year", y = "intensity", color = past_year), lwd = 2, na.rm = T) +
-        geom_line(data = year_data[[length(year_data)]], aes_string(x = "day_of_year", y = "intensity", color = current_year), lwd = 2, na.rm = T) +
-        geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes")), col = "red", cex = 5) +
-        ylim(0 - 0.1, 1 + 0.1) +
-        labs(
-          x = "day of year",
-          y = "status",
-          fill = "count"
-        ) +
-        theme_minimal()
-      
-      overall_data$intensity <- overall_data$intensity * 100
-      overall_data$date <- as.Date(overall_data$day_of_year - 1, origin = paste0(format(input$date, "%Y"), "-01-01"))
-      
-      # p_line (Active) ---------------------------
-      p_line <- ggplot() +
-        geom_tile(
-          data = npn_location %>% filter(phenophase_status == 1),
-          aes(x = day_of_year, y = phenophase_status * 100, fill = after_stat(count)),
-          stat = "bin2d", bins = c(366, 20), alpha = 1
-        ) +
-        scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Number of yes") +
-        new_scale_fill() +
-        geom_tile(
-          data = npn_location %>% filter(phenophase_status == 0),
-          aes(x = day_of_year, y = phenophase_status, fill = after_stat(count)),
-          stat = "bin2d", bins = c(366, 20), alpha = 1
-        ) +
-        scale_fill_gradient(low = "#FFF700", high = "#F4C430", name = "Number of no") +
-        geom_line(data = overall_data, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
-        geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes") * 100), col = "#ff0000", cex = 5) +
-        geom_vline(xintercept = as.integer(format(input$date, "%j")), col = "#ff0000", alpha = .25, lwd = 1.5, linetype = "dashed") +
-        ylim(-10, 110) +
-        scale_x_continuous(
-          breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-          labels = month.abb,
-        ) +
-        scale_y_continuous(
-          breaks = c(0, 25, 50, 75, 100)
-        ) +
-        labs(
-          x = "Day of Year",
-          y = "% Yes Status",
-          fill = "Count"
-        ) +
-        theme_minimal() +
-        theme(
-          panel.grid.major.x = element_blank(),
-          panel.grid.minor.x = element_blank(),
-          panel.grid.minor.y = element_blank()
-        ) +
-        geom_vline(xintercept = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-                   color = "gray", linetype = "dashed", size = 0.5, alpha = .25)
-    } else {
-      # p_line <- ggplot() +
-      #   geom_jitter(data = npn_location, aes(x = day_of_year, y = phenophase_status), width = 0, height = 0.05, alpha = 0.8) +
-      #   geom_line(data = npn_location_ts, aes(x = day_of_year, y = intensity), col = "blue", lwd = 2) +
-      #   geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes")), col = "red", cex = 5) +
-      #   ylim(0 - 0.1, 1 + 0.1) +
-      #   # scale_color_viridis_c()+
-      #   labs(
-      #     x = "day of year",
-      #     y = "status"
-      #   ) +
-      #   theme_minimal()
-    }
+      group_by(year) %>%
+      complete(day_of_year = 1:365, fill = list(intensity = NA)) %>%
+      mutate(intensity = util_fill_whit(x = intensity, maxgap = 28, lambda = 10, minseg = 2)) %>% # weighted whittaker smoothing allowing gaps
+      ungroup() %>%
+      mutate(intensity = ifelse(intensity < 1e-5, NA, intensity)) %>%
+      group_by(year) %>%
+      filter(!all(is.na(intensity))) %>%
+      ungroup()
   } else {
-    p_line <- null_p_line
-    c_line <- null_c_line
-    rect_graph <- null_rect_graph
+    npn_location_ts_by_year <- data.frame(
+      year = integer(0),
+      day_of_year = double(0),
+      intensity = double(0)
+    )
   }
-  
+
+  p_line_year <- npn_location_ts_by_year %>%
+    mutate(year = factor(year, levels = rev(unique(year)))) %>%
+    ggplot(aes(x = day_of_year, y = factor(year), height = intensity, fill = intensity * 100)) +
+    geom_ridgeline_gradient(scale = 1) +
+    scale_fill_viridis_c(name = "% Yes", limits = c(0, 100)) +
+    theme_minimal() +
+    labs(x = "Day of year", y = "Year") +
+    scale_x_continuous(
+      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+      labels = month.abb,
+      limits = c(1, 365),
+      expand = c(0, 0)
+    ) +
+    scale_y_discrete(limits = seq(min(npn_location_ts_by_year$year), max(npn_location_ts_by_year$year), by = 1) %>% as.character() %>% rev() %>% factor()) +
+    theme(
+      panel.grid.minor.x = element_blank(),
+      panel.grid.minor.y = element_blank()
+    )
 
   ###### Map data prep -----------------------
-  # window<-14
   npn_time <- npn_data_all %>%
-    filter(abs(observation_date - input$date) <= window) %>%
+    filter(abs(observation_date - input$date) <= input$window) %>%
     arrange(day_of_year)
 
-  if (nrow(npn_time) > 0) {
-    npn_time_surface <- npn_time %>%
-      group_by(longitude, latitude) %>%
-      summarize(intensity = mean(phenophase_status)) %>%
-      ungroup()
+  npn_time_surface <- npn_time %>%
+    group_by(longitude, latitude) %>%
+    summarize(intensity = mean(phenophase_status)) %>%
+    ungroup()
 
+  if (nrow(npn_time_surface) > 0) {
     npn_time_sp <- SpatialPointsDataFrame(
       coords = npn_time_surface[, c("longitude", "latitude")],
       data = npn_time_surface[, c("intensity"), drop = F],
       proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
     )
 
-     if (input$genus %in% genusoi_list) {
-    #   vgm_df<-read_csv(paste0(,"/variogram parameters.csv"))
-    #   fit_npn<-vgm(psill=vgm_df[2,2] %>% unlist(),
-    #                model=vgm_df[2,1]%>% unlist(),
-    #                range=vgm_df[2,3]%>% unlist(),
-    #                nugget=vgm_df[1,2]%>% unlist(),
-    #                kappa=vgm_df[2,4]%>% unlist())
-    #
-    #   r_0.5deg<-raster(res=0.5, xmn=-125,xmx=-67,ymn=25,ymx=53)
-    #   coord_new<-coordinates(r_0.5deg)
-    #   coord_new_sp<-SpatialPoints(coords=coord_new[,c("x", "y")],
-    #                               proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
-    #   kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp, model=fit_npn
-    #                       # ,maxdist=500
-    #                       , na.action=na.omit
-    #   ) %>%
-    #     as.data.frame()
+    # Step 1: Compute Empirical Variogram
+    empirical_variogram <- variogram(intensity ~ 1, npn_time_sp)
 
-      us <- map_data("state")
-      ###### p_map -------------------------------------
-      p_map <- ggplot() +
-        coord_map("albers", lat0 = 39, lat1 = 45) +
-        # geom_jitter(data=npn_time_surface, aes(x=longitude, y=latitude, col=intensity),width=0.05, height=0.05, alpha=0.5)+
-        # geom_tile(data=kriged_res, aes(x=x, y=y, fill=var1.pred))+
-        geom_polygon(data = us, aes(x = long, y = lat, group = group), color = "black", fill = NA) +
-        geom_jitter(data = npn_time, aes(x = longitude, y = latitude, fill = phenophase_status), pch = 21, width = 0.05, height = 0.05, alpha = 0.5, cex = 2) +
-        geom_point(aes(x = input$longitude, y = input$latitude, fill = as.integer(input$status == "Yes")), pch = 21, col = "red", cex = 5, alpha = 0.5) +
-        scale_color_viridis_c(limits = c(0, 1)) +
-        scale_fill_viridis_c(limits = c(0, 1)) +
-        # scale_color_gradient(limits=c(0,1)) +
-        # scale_fill_gradient(limits=c(0,1)) +
-        labs(
-          x = "longitude",
-          y = "latitude",
-          fill = "status"
-        ) +
-        theme_void()
-    } else {
-      us <- map_data("state")
-      p_map <- ggplot() +
-        coord_map("albers", lat0 = 39, lat1 = 45) +
-        # geom_jitter(data=npn_time_surface, aes(x=longitude, y=latitude, col=intensity),width=0.05, height=0.05, alpha=0.5)+
-        geom_polygon(data = us, aes(x = long, y = lat, group = group), color = "black", fill = NA) +
-        geom_jitter(data = npn_time, aes(x = longitude, y = latitude, fill = phenophase_status), pch = 21, width = 0.05, height = 0.05, alpha = 0.5, cex = 2) +
-        geom_point(aes(x = input$longitude, y = input$latitude, fill = as.integer(input$status == "Yes")), pch = 21, col = "red", cex = 5, alpha = 0.5) +
-        scale_color_viridis_c(limits = c(0, 1)) +
-        scale_fill_viridis_c(limits = c(0, 1)) +
-        # scale_color_gradient(limits=c(0,1)) +
-        # scale_fill_gradient(limits=c(0,1)) +
-        labs(
-          x = "longitude",
-          y = "latitude",
-          fill = "status"
-        ) +
-        theme_minimal()
-    }
+    # Step 2: Fit a Variogram Model
+    fit_npn <- fit.variogram(empirical_variogram, model = vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01))
+    # print(fit_npn)  # Check fitted parameters
+
+    # Step 3: Define Raster Grid for Interpolation
+
+    # Define the extent (bounding box)
+    xmin <- -125
+    xmax <- -67
+    ymin <- 25
+    ymax <- 53
+
+    # Define resolution (grid spacing)
+    resolution <- 0.5
+
+    # Create a grid using expand.grid() and then convert to sf object
+    grid_points <- expand.grid(
+      lon = seq(xmin, xmax, by = resolution),
+      lat = seq(ymin, ymax, by = resolution)
+    )
+
+    # Convert to SpatialPoints (for use with kriging or other spatial methods)
+    coord_new_sp <- SpatialPoints(
+      coords = grid_points,
+      proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
+    )
+
+    # Step 4: Perform Kriging Interpolation
+    kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp,
+      model = fit_npn,
+      na.action = na.omit
+    )
+
+    # Convert to DataFrame for further analysis or visualization
+    kriged_res_df <- as.data.frame(kriged_res)
   } else {
-    p_map <- null_p_map
+    kriged_res_df <- data.frame(
+      lon = double(0),
+      lat = double(0),
+      var1.pred = double(0),
+      var1.var = double(0)
+    )
   }
-
-  message_location <- paste0("You just provided the #", format(nrow(npn_location) + 1, scientific = F), " phenological record of this genus within ", format(radius / 1000, scientific = F), " km distance.")
-
-  message_time <- paste0("You just provided the #", format(nrow(npn_time) + 1, scientific = F), " phenological record of this genus within ", format(window, scientific = F), " days.")
-
-  if (nrow(npn_location) > 1) {
-    his_est <- npn_location_ts %>%
-      filter(day_of_year == as.integer(format(input$date, "%j"))) %>%
-      dplyr::select(intensity) %>%
-      unlist()
-
-    if (is.na(his_est)) {
-      message_anomaly <- paste0(
-        "There is no sufficient data to estimate the ",
-        input$genus,
-        case_when(
-          input$event == "Leafing" ~ " leafing",
-          input$event == "Flowering" ~ " flowering"
-        ),
-        " status for this area and time of year. Your record provides a starting point."
-      )
-      message_anomaly_ann <- paste0(
-        "There is no sufficient data to estimate the timing of ",
-        input$genus,
-        case_when(
-          input$event == "Leafing" ~ " leafing",
-          input$event == "Flowering" ~ " flowering"
-        ),
-        " season for this area. Your record provides a starting point."
-      )
-    } else {
-      his_slope <- npn_location_ts %>%
-        filter(min(abs(day_of_year - as.integer(format(input$date, "%j"))), 365.25 - abs(day_of_year - as.integer(format(input$date, "%j")))) <= 15) %>%
-        mutate(
-          left = day_of_year - as.integer(format(input$date, "%j")),
-          right = day_of_year - as.integer(format(input$date, "%j")) - 365.25
-        ) %>%
-        mutate(distance = case_when(
-          abs(left) <= abs(right) ~ left,
-          abs(left) > abs(right) ~ right
-        )) %>%
-        do(broom::tidy(lm(intensity ~ distance, .))) %>%
-        filter(term == "distance") %>%
-        dplyr::select(estimate, p.value)
-      npn_location_ts %>% filter(day_of_year == as.integer(format(input$date, "%j")))
-    }
-  }
-
-  # if (input$genus %in% genusoi_list) {
-  #   if (nrow(function_df)>0) {
-  #     message_attribute<-paste0("Your record will help understand the relationship between ",
-  #                               case_when(input$event=="Leafing"~"leafing",
-  #                                         input$event=="Flowering"~"flowering"),
-  #                               " and ",
-  #                               case_when(param_vis$var=="evi"~"leafing",
-  #                                         param_vis$var=="tmean"~"temperature",
-  #                                         param_vis$var=="prcp"~"precipitation"),
-  #                               " in the specified area and time of the year.")
-  #   } else {
-  #     message_attribute<-paste0("There has been insufficient data on the mechanisms of ",
-  #                               input$genus,
-  #                               case_when(input$event=="Leafing"~" leafing",
-  #                                         input$event=="Flowering"~" flowering"),
-  #                               " for this area and time of year. Your record will be a great contribution.")
-  #
-  #   }
-  # } else {
-  #   message_attribute<-paste0("There has been insufficient data on the mechanisms of ",
-  #                             input$genus,
-  #                             case_when(input$event=="Leafing"~" leafing",
-  #                                       input$event=="Flowering"~" flowering"),
-  #                             " for this area and time of year. Your record will be a great contribution.")
-  #
-  # }
-
-  # plot_and_message<-list(plot=list(p_line, p_map, p_function),
-  #                         message=list(message_location, message_time,
-  #                                      message_anomaly, message_anomaly_ann,
-  #                                      message_attribute))
+  ###### p_map -------------------------------------
+  p_map <- ggplot() +
+    coord_map("albers", lat0 = 39, lat1 = 45) +
+    geom_tile(data = kriged_res_df, aes(x = lon, y = lat, fill = var1.pred * 100)) +
+    geom_polygon(data = map_data("state"), aes(x = long, y = lat, group = group), color = "grey", fill = NA) +
+    geom_jitter(data = npn_time, aes(x = longitude, y = latitude, fill = phenophase_status * 100), pch = 21, width = 0.05, height = 0.05, cex = 2) +
+    geom_point(aes(x = input$longitude, y = input$latitude, fill = as.integer(input$status == "Yes")), pch = 21, col = "red", cex = 5, stroke = 3) +
+    scale_color_viridis_c(limits = c(0, 100)) +
+    scale_fill_viridis_c(limits = c(0, 100)) +
+    labs(
+      fill = "% Yes"
+    ) +
+    theme_void()
 
   ###### generate_output return -----------------
-  return(list(p_line, p_map, ggplot(), rect_graph))
+  return(list(p_line, p_line_year, p_map))
 }
 
 # generate_plot  ------------
 generate_plot <- function(plot, input) {
-  p1 <- plot[[case_when(
-    input$plot == "Intra-annual Variation" ~ 1,
-    input$plot == "Spatial Variation" ~ 2,
-    input$plot == "Trends Between Years" ~ 3,
-    input$plot == "Inter-annual Variation" ~ 4
-    # input$plot=="Function"~3
+  p <- plot[[case_when(
+    input$plot == "Intra-annual variations" ~ 1,
+    input$plot == "Inter-annual variations" ~ 2,
+    input$plot == "Spatial variations" ~ 3
   )]]
 
-  return(p1)
+  return(p)
 }
 
 # shinyApp -------------------------------------------------------------
@@ -651,8 +398,10 @@ ALL_FIELDS <- c(MANDATORY_FIELDS, "email", "species")
 labelMandatory <- function(label) {
   tagList(
     label,
-    span("*", class = "mandatory-star", 
-         style = "color: red; font-size: 16px; margin-left: 3px;")
+    span("*",
+      class = "mandatory-star",
+      style = "color: red; font-size: 16px; margin-left: 3px;"
+    )
   )
 }
 
@@ -673,10 +422,7 @@ validationCSS <- "
 ui <- fluidPage(
   shinyjs::useShinyjs(),
   shinyjs::inlineCSS(paste0(appCSS, validationCSS)),
-  
   titlePanel("PhenoWatch"),
-  # titlePanel(read.table("./submitted/test.txt")[1,1]),
-  
   sidebarLayout(
     sidebarPanel(
       # User Info Section
@@ -684,30 +430,39 @@ ui <- fluidPage(
         column(
           6,
           textInput("observer", labelMandatory("Observer")),
-          tags$div(id = "observer-error", class = "help-block",
-                   "Observer name is required")
+          tags$div(
+            id = "observer-error", class = "help-block",
+            "Observer name is required"
+          )
         ),
         column(
           6,
           textInput("email", "Email")
         )
       ),
-      
-      # Genus Selection
-      # textInput("genus", labelMandatory("Genus")),
-      selectInput(
-        "genus", labelMandatory("Genus"),
-        c("", genusoi_list),
-        selected = "Acer"
+
+      # Taxa Selection
+
+      fluidRow(
+        column(
+          6,
+          selectInput(
+            "genus", labelMandatory("Genus"),
+            c("", genusoi_list),
+            selected = "Acer"
+          ),
+          tags$div(
+            id = "genus-error", class = "help-block",
+            "Please select a genus"
+          ),
+        ),
+        column(
+          6,
+          textInput("species", "Species"),
+        )
       ),
-      tags$div(id = "genus-error", class = "help-block",
-               "Please select a genus"),
-      
-      # Species (Optional)
-      textInput("species", "Species"),
-      
+
       # Date Selection
-      # textInput("date", labelMandatory("Date")),
       dateInput(
         "date",
         labelMandatory("Date"),
@@ -720,53 +475,86 @@ ui <- fluidPage(
         language = "en",
         autoclose = TRUE
       ),
-      tags$div(id = "date-error", class = "help-block",
-               "Please select a valid date"),
-      
+      tags$div(
+        id = "date-error", class = "help-block",
+        "Please select a valid date"
+      ),
+
       # Location Inputs
-      numericInput(
-        "latitude",
-        labelMandatory("Latitude"),
-        value = 42,
-        min = 25,
-        max = 53
+      fluidRow(
+        column(
+          6,
+          numericInput(
+            "latitude",
+            labelMandatory("Latitude"),
+            value = 42,
+            min = 25,
+            max = 53
+          ),
+          tags$div(
+            id = "latitude-error", class = "help-block",
+            "Latitude must be between 25° and 53°"
+          ),
+        ),
+        column(
+          6,
+          numericInput(
+            "longitude",
+            labelMandatory("Longitude"),
+            value = -83,
+            min = -125,
+            max = -67
+          ),
+          tags$div(
+            id = "longitude-error", class = "help-block",
+            "Longitude must be between -125° and -67°"
+          ),
+        )
       ),
-      tags$div(id = "latitude-error", class = "help-block",
-               "Latitude must be between 25° and 53°"),
-      
-      numericInput(
-        "longitude",
-        labelMandatory("Longitude"),
-        value = -83,
-        min = -125,
-        max = -67
+
+      # Phenology Selection
+
+      fluidRow(
+        column(
+          6,
+          selectInput(
+            "event", labelMandatory("Phenological event"),
+            c("", "Leaf", "Flower"),
+            selected = "Leaf"
+          ),
+          tags$div(
+            id = "event-error", class = "help-block",
+            "Please select an event type"
+          ),
+        ),
+        column(
+          6,
+          selectInput(
+            "status", labelMandatory("Phenological status"),
+            c("", "Yes", "No"),
+            selected = "Yes"
+          ),
+          tags$div(
+            id = "status-error", class = "help-block",
+            "Please select a status"
+          ),
+        )
       ),
-      tags$div(id = "longitude-error", class = "help-block",
-               "Longitude must be between -125° and -67°"),
-      
-      # Phenology Section
-      selectInput(
-        "event", labelMandatory("Phenological event"),
-        c("", "Leafing", "Flowering"),
-        selected = "Flowering"
-      ),
-      tags$div(id = "event-error", class = "help-block",
-               "Please select an event type"),
-      
-      selectInput(
-        "status", labelMandatory("Phenological status"),
-        c("", "Yes", "No"),
-        selected = "Yes"
-      ),
-      tags$div(id = "status-error", class = "help-block",
-               "Please select a status"),
-      
+
       # Radius Selection
-      sliderInput("radius", "Selected Radius", 
-                  min = 100, max = 500, 
-                  value = 100, step = 100, 
-                  ticks = TRUE),
-      
+      sliderInput("radius", "Search radius",
+        min = 100, max = 500,
+        value = 100, step = 100,
+        ticks = TRUE
+      ),
+
+      # Window Selection
+      sliderInput("window", "Search window",
+        min = 7, max = 21,
+        value = 14, step = 7,
+        ticks = TRUE
+      ),
+
       # Submit Section
       fluidRow(
         column(3, actionButton("submit", "Submit", class = "btn-primary")),
@@ -782,7 +570,6 @@ ui <- fluidPage(
         )
       )
     ),
-    
     mainPanel(
       fluidRow(
         column(
@@ -790,10 +577,9 @@ ui <- fluidPage(
           selectInput(
             "plot", "Plot",
             c(
-              "Intra-annual Variation", 
-              "Spatial Variation", 
-              "Inter-annual Variation"
-              # , "Function"
+              "Intra-annual variations",
+              "Inter-annual variations",
+              "Spatial variations"
             )
           )
         ),
@@ -804,32 +590,12 @@ ui <- fluidPage(
         column(2, actionButton("go", "Take a screenshot", class = "btn-primary")),
         column(
           2
-          # tags$a(
-          #   href = "https://twitter.com/intent/tweet?button_hashtag=phenology&ref_src=twsrc%5Etfw",
-          #   class = "twitter-hashtag-button",
-          #   "data-size" = "large",
-          #   "data-show-count" = "false",
-          #   "Tweet #phenology"
-          # ),
-          # tags$script(
-          #   async = NA,
-          #   src = "https://platform.twitter.com/widgets.js",
-          #   charset = "utf-8"
-          # )
         ),
         column(
           8,
           tags$div(
             id = "cite", align = "right",
             "", tags$em('"PhenoWatch"'), "by Yiluan Song"
-          ),
-          tags$a(
-            id = "link", target = "_blank",
-            # href = "https://sites.google.com/umich.edu/phenoinfo/",
-            tags$div(
-              id = "linktext", align = "right",
-              "Visit ", tags$em('"PhenoInfo"'), ""
-            )
           )
         )
       )
@@ -847,21 +613,18 @@ server <- function(input, output, session) {
       }
       return(list(valid = TRUE))
     },
-    
     genus = function(value) {
       if (is.null(value) || is.na(value) || value == "") {
         return(list(valid = FALSE, message = "Please select a genus"))
       }
       return(list(valid = TRUE))
     },
-    
     date = function(value) {
       if (is.null(value) || is.na(value)) {
         return(list(valid = FALSE, message = "Please select a valid date"))
       }
       return(list(valid = TRUE))
     },
-    
     latitude = function(value) {
       if (is.null(value) || is.na(value)) {
         return(list(valid = FALSE, message = "Latitude is required"))
@@ -872,7 +635,6 @@ server <- function(input, output, session) {
       }
       return(list(valid = TRUE))
     },
-    
     longitude = function(value) {
       if (is.null(value) || is.na(value)) {
         return(list(valid = FALSE, message = "Longitude is required"))
@@ -883,14 +645,12 @@ server <- function(input, output, session) {
       }
       return(list(valid = TRUE))
     },
-    
     event = function(value) {
       if (is.null(value) || is.na(value) || value == "") {
         return(list(valid = FALSE, message = "Please select an event type"))
       }
       return(list(valid = TRUE))
     },
-    
     status = function(value) {
       if (is.null(value) || is.na(value) || value == "") {
         return(list(valid = FALSE, message = "Please select a status"))
@@ -898,11 +658,11 @@ server <- function(input, output, session) {
       return(list(valid = TRUE))
     }
   )
-  
+
   # Validate fields and update UI -----------
   observe({
     validation_results <- list()
-    
+
     # Validate each mandatory field
     for (field in MANDATORY_FIELDS) {
       # Get the validation rule for this field
@@ -911,7 +671,7 @@ server <- function(input, output, session) {
         # Get the current value and validate it
         result <- rule(input[[field]])
         validation_results[[field]] <- result
-        
+
         # Update UI based on validation result
         if (!result$valid) {
           shinyjs::addCssClass(field, "validation-error")
@@ -924,27 +684,27 @@ server <- function(input, output, session) {
         }
       }
     }
-    
+
     # Enable submit and screenshot buttons if all validations pass
     all_valid <- all(sapply(validation_results, function(x) x$valid))
     shinyjs::toggleState(id = "submit", condition = all_valid)
     shinyjs::toggleState(id = "go", condition = all_valid)
     # shinyjs::toggleState(id = "card", condition = mandatoryFilled)
   })
-  
+
   # Collect form data -----------------
   formData <- reactive({
     data <- sapply(ALL_FIELDS, function(x) as.character(input[[x]]))
     data <- c(data, timestamp = as.character(Sys.time()))
     t(data)
   })
-  
+
   # Handle form submission ---------------
   observeEvent(input$submit, {
     # Clear plot and show processing message
     output$plot <- renderPlot(NULL)
     shinyjs::show("thankyou_msg")
-    
+
     # Save form data
     fileName <- sprintf(
       "%s_%s.csv",
@@ -958,17 +718,17 @@ server <- function(input, output, session) {
       quote = TRUE
     )
     upload_to_s3(file.path(tempdir(), fileName))
-    
+
     # Generate new plot
-    plot <- generate_output(input, radius = input$radius * 1000)
-    
+    plot <- generate_output(input)
+
     # Update UI
     shinyjs::hide("thankyou_msg")
     output$plot <- renderPlot({
       generate_plot(plot, input)
     })
   })
-  
+
   # Handle screenshot ----------------
   observeEvent(input$go, {
     fileName <- sprintf(
@@ -978,12 +738,6 @@ server <- function(input, output, session) {
     )
     shinyscreenshot::screenshot(filename = fileName)
   })
-  
-  # This event handler was in original code but never reachable
-  # observeEvent(input$submit_another, {
-  #   shinyjs::show("form")
-  #   shinyjs::hide("thankyou_msg")
-  # })
 }
 
 ## Create and Run Application -----------------------------------
