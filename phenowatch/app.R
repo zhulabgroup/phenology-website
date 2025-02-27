@@ -214,7 +214,7 @@ generate_output <- function(input) {
     mutate(intensity = util_fill_whit(x = intensity, maxgap = 28, lambda = 10, minseg = 2)) %>% # weighted whittaker smoothing allowing gaps
     ungroup()
 
-  # p_line
+  # p_line -------------------
   npn_counts <- npn_location %>%
     filter(phenophase_status %in% c(0, 1)) %>%
     count(day_of_year, phenophase_status)
@@ -256,7 +256,7 @@ generate_output <- function(input) {
       panel.grid.minor.y = element_blank()
     )
 
-  # rect graph
+  # rect graph -------------
 
   if (nrow(npn_location) > 0) {
     npn_location_ts_by_year <- npn_location %>%
@@ -279,16 +279,18 @@ generate_output <- function(input) {
       intensity = double(0)
     )
   }
+  
+  npn_location_ts_by_year$day_of_year_rev <- 366 - npn_location_ts_by_year$day_of_year
 
   p_line_year <- npn_location_ts_by_year %>%
     mutate(year = factor(year, levels = rev(unique(year)))) %>%
-    ggplot(aes(x = day_of_year, y = factor(year), height = intensity, fill = intensity * 100)) +
+    ggplot(aes(x = day_of_year_rev, y = factor(year), height = intensity, fill = intensity * 100)) +
     geom_ridgeline_gradient(scale = 1) +
     scale_fill_viridis_c(name = "% Yes", limits = c(0, 100)) +
     theme_minimal() +
     labs(x = "Day of year", y = "Year") +
     scale_x_continuous(
-      breaks = c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+      breaks = c(336, 306, 275, 245, 214, 183, 153, 122, 92, 61, 32, 1),
       labels = month.abb,
       limits = c(1, 365),
       expand = c(0, 0)
@@ -297,7 +299,7 @@ generate_output <- function(input) {
     theme(
       panel.grid.minor.x = element_blank(),
       panel.grid.minor.y = element_blank()
-    )
+    ) + coord_flip()
 
   ###### Map data prep -----------------------
   npn_time <- npn_data_all %>%
