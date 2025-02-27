@@ -303,57 +303,87 @@ generate_output <- function(input) {
   npn_time <- npn_data_all %>%
     filter(abs(observation_date - input$date) <= input$window) %>%
     arrange(day_of_year)
-
   npn_time_surface <- npn_time %>%
     group_by(longitude, latitude) %>%
     summarize(intensity = mean(phenophase_status)) %>%
     ungroup()
-
   if (nrow(npn_time_surface) > 0) {
     npn_time_sp <- SpatialPointsDataFrame(
       coords = npn_time_surface[, c("longitude", "latitude")],
       data = npn_time_surface[, c("intensity"), drop = F],
       proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
     )
-
     # Step 1: Compute Empirical Variogram
     empirical_variogram <- variogram(intensity ~ 1, npn_time_sp)
-
     # Step 2: Fit a Variogram Model
     fit_npn <- fit.variogram(empirical_variogram, model = vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01))
-    # print(fit_npn)  # Check fitted parameters
-
+    
     # Step 3: Define Raster Grid for Interpolation
-
     # Define the extent (bounding box)
     xmin <- -125
     xmax <- -67
     ymin <- 25
     ymax <- 53
-
     # Define resolution (grid spacing)
     resolution <- 0.5
-
-    # Create a grid using expand.grid() and then convert to sf object
+    
+    # Create a grid using expand.grid() for all of continental US
     grid_points <- expand.grid(
       lon = seq(xmin, xmax, by = resolution),
       lat = seq(ymin, ymax, by = resolution)
     )
-
-    # Convert to SpatialPoints (for use with kriging or other spatial methods)
+    
+    # Convert to SpatialPoints
     coord_new_sp <- SpatialPoints(
       coords = grid_points,
       proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
     )
-
-    # Step 4: Perform Kriging Interpolation
+    
+    # Step 4: Perform Kriging Interpolation on the full grid
     kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp,
-      model = fit_npn,
-      na.action = na.omit
+                        model = fit_npn,
+                        na.action = na.omit
     )
-
-    # Convert to DataFrame for further analysis or visualization
+    
+    # Convert to DataFrame
     kriged_res_df <- as.data.frame(kriged_res)
+    names(kriged_res_df)[1:2] <- c("lon", "lat")
+    
+    # Get all US states data
+    all_states <- map_data("state")
+    
+    # Filter kriged_res_df to only include points on land
+    # We'll use point.in.polygon from the sp package
+    # but we need to do it state by state to handle complex boundaries
+    
+    # Initialize a vector to track points on land
+    on_land <- rep(FALSE, nrow(kriged_res_df))
+    
+    # Check each state
+    for (i in unique(all_states$region)) {
+      # Get the state outline
+      state_outline <- all_states[all_states$region == i, ]
+      
+      # For each state group (some states have multiple polygons)
+      for (g in unique(state_outline$group)) {
+        poly <- state_outline[state_outline$group == g, ]
+        
+        # Use point.in.polygon to check which points are in this polygon
+        inside <- sp::point.in.polygon(
+          kriged_res_df$lon, 
+          kriged_res_df$lat, 
+          poly$long, 
+          poly$lat
+        ) > 0
+        
+        # Update the on_land vector
+        on_land <- on_land | inside
+      }
+    }
+    
+    # Keep only points on land
+    kriged_res_df <- kriged_res_df[on_land, ]
+    
   } else {
     kriged_res_df <- data.frame(
       lon = double(0),
@@ -362,6 +392,7 @@ generate_output <- function(input) {
       var1.var = double(0)
     )
   }
+  
   ###### p_map -------------------------------------
   p_map <- ggplot() +
     coord_map("albers", lat0 = 39, lat1 = 45) +
@@ -375,7 +406,6 @@ generate_output <- function(input) {
       fill = "% Yes"
     ) +
     theme_void()
-
   ###### generate_output return -----------------
   return(list(p_line, p_line_year, p_map))
 }
