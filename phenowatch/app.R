@@ -16,7 +16,6 @@ library(ggridges)
 # Helper Functions -------------------------------------------------
 path_app <- getwd()
 data_path <- str_c(path_app, "/NPN_example/")
-today <- read_file(str_c(path_app, "/today.txt")) %>% as.Date()
 
 Sys.setenv(
   "AWS_DEFAULT_REGION" = "us-east-2",
@@ -256,7 +255,7 @@ generate_output <- function(input) {
       panel.grid.minor.y = element_blank()
     )
 
-  # rect graph -------------
+  # p_line_year -------------
 
   if (nrow(npn_location) > 0) {
     npn_location_ts_by_year <- npn_location %>%
@@ -279,27 +278,27 @@ generate_output <- function(input) {
       intensity = double(0)
     )
   }
-  
-  npn_location_ts_by_year$day_of_year_rev <- 366 - npn_location_ts_by_year$day_of_year
 
   p_line_year <- npn_location_ts_by_year %>%
-    mutate(year = factor(year, levels = rev(unique(year)))) %>%
-    ggplot(aes(x = day_of_year_rev, y = factor(year), height = intensity, fill = intensity * 100)) +
+    mutate(day_of_year = 366 - day_of_year) %>%
+    mutate(year = factor(year, levels = unique(year))) %>%
+    ggplot(aes(x = day_of_year, y = factor(year), height = intensity, fill = intensity * 100)) +
     geom_ridgeline_gradient(scale = 1) +
     scale_fill_viridis_c(name = "% Yes", limits = c(0, 100)) +
     theme_minimal() +
     labs(x = "Day of year", y = "Year") +
     scale_x_continuous(
-      breaks = c(336, 306, 275, 245, 214, 183, 153, 122, 92, 61, 32, 1),
+      breaks = 366 - c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
       labels = month.abb,
       limits = c(1, 365),
       expand = c(0, 0)
     ) +
-    scale_y_discrete(limits = seq(min(npn_location_ts_by_year$year), max(npn_location_ts_by_year$year), by = 1) %>% as.character() %>% rev() %>% factor()) +
+    scale_y_discrete(limits = seq(min(npn_location_ts_by_year$year), max(npn_location_ts_by_year$year), by = 1) %>% as.character() %>% factor()) +
     theme(
       panel.grid.minor.x = element_blank(),
       panel.grid.minor.y = element_blank()
-    ) + coord_flip()
+    ) +
+    coord_flip()
 
   ###### Map data prep -----------------------
   npn_time <- npn_data_all %>%
@@ -319,7 +318,7 @@ generate_output <- function(input) {
     empirical_variogram <- variogram(intensity ~ 1, npn_time_sp)
     # Step 2: Fit a Variogram Model
     fit_npn <- fit.variogram(empirical_variogram, model = vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01))
-    
+
     # Step 3: Define Raster Grid for Interpolation
     # Define the extent (bounding box)
     xmin <- -125
@@ -328,64 +327,63 @@ generate_output <- function(input) {
     ymax <- 53
     # Define resolution (grid spacing)
     resolution <- 0.5
-    
+
     # Create a grid using expand.grid() for all of continental US
     grid_points <- expand.grid(
       lon = seq(xmin, xmax, by = resolution),
       lat = seq(ymin, ymax, by = resolution)
     )
-    
+
     # Convert to SpatialPoints
     coord_new_sp <- SpatialPoints(
       coords = grid_points,
       proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
     )
-    
+
     # Step 4: Perform Kriging Interpolation on the full grid
     kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp,
-                        model = fit_npn,
-                        na.action = na.omit
+      model = fit_npn,
+      na.action = na.omit
     )
-    
+
     # Convert to DataFrame
     kriged_res_df <- as.data.frame(kriged_res)
     names(kriged_res_df)[1:2] <- c("lon", "lat")
-    
+
     # Get all US states data
     all_states <- map_data("state")
-    
+
     # Filter kriged_res_df to only include points on land
     # We'll use point.in.polygon from the sp package
     # but we need to do it state by state to handle complex boundaries
-    
+
     # Initialize a vector to track points on land
     on_land <- rep(FALSE, nrow(kriged_res_df))
-    
+
     # Check each state
     for (i in unique(all_states$region)) {
       # Get the state outline
       state_outline <- all_states[all_states$region == i, ]
-      
+
       # For each state group (some states have multiple polygons)
       for (g in unique(state_outline$group)) {
         poly <- state_outline[state_outline$group == g, ]
-        
+
         # Use point.in.polygon to check which points are in this polygon
         inside <- sp::point.in.polygon(
-          kriged_res_df$lon, 
-          kriged_res_df$lat, 
-          poly$long, 
+          kriged_res_df$lon,
+          kriged_res_df$lat,
+          poly$long,
           poly$lat
         ) > 0
-        
+
         # Update the on_land vector
         on_land <- on_land | inside
       }
     }
-    
+
     # Keep only points on land
     kriged_res_df <- kriged_res_df[on_land, ]
-    
   } else {
     kriged_res_df <- data.frame(
       lon = double(0),
@@ -394,7 +392,7 @@ generate_output <- function(input) {
       var1.var = double(0)
     )
   }
-  
+
   ###### p_map -------------------------------------
   p_map <- ggplot() +
     coord_map("albers", lat0 = 39, lat1 = 45) +
