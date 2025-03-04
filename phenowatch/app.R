@@ -651,7 +651,8 @@ server <- function(input, output, session) {
       return(list(valid = TRUE))
     },
     date = function(value) {
-      if (is.null(value) || is.na(value)) {
+
+      if (is.null(value) || is.na(value) || length(value) == 0) {
         return(list(valid = FALSE, message = "Please select a valid date"))
       }
       return(list(valid = TRUE))
