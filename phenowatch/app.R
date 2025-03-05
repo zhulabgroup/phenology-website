@@ -571,14 +571,14 @@ ui <- fluidPage(
       ),
 
       # Radius Selection
-      sliderInput("radius", "Search radius",
+      sliderInput("radius", "Search radius (km)",
         min = 100, max = 500,
         value = 100, step = 100,
         ticks = TRUE
       ),
 
       # Window Selection
-      sliderInput("window", "Search window",
+      sliderInput("window", "Search window (days)",
         min = 7, max = 21,
         value = 14, step = 7,
         ticks = TRUE
