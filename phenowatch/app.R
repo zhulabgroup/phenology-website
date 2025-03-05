@@ -506,7 +506,7 @@ ui <- fluidPage(
       dateInput(
         "date",
         labelMandatory("Date"),
-        value = "2021-04-11",
+        value = Sys.Date(),
         min = "1900-01-01",
         max = Sys.Date(),
         format = "yyyy-mm-dd",
