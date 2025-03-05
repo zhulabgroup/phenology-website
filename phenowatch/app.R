@@ -70,30 +70,6 @@ util_whit <- function(x, lambda, w, minseg = 2) {
   return(x)
 }
 
-# calc_range <- function(df) {
-#   non_na_indices <- which(!is.na(df$intensity))
-#   flag <- F
-#
-#   first_instance <- -1
-#   last_instance <- -1
-#
-#   for (j in 1:(length(non_na_indices) - 1)) {
-#     current_index <- non_na_indices[j]
-#     next_index <- non_na_indices[j + 1]
-#
-#     if (df$intensity[current_index] <= 0.25 && df$intensity[next_index] >= 0.25) {
-#       if (flag == F) {
-#         first_instance <- current_index
-#         flag <- T
-#       }
-#     }
-#     if (df$intensity[current_index] >= 0.25 && df$intensity[next_index] <= 0.25) {
-#       last_instance <- current_index
-#     }
-#   }
-#   return(c(first_instance, last_instance))
-# }
-
 genusoi_list <- c(
   "Acer",
   "Quercus",
@@ -280,6 +256,11 @@ generate_output <- function(input) {
   }
 
   p_line_year <- npn_location_ts_by_year %>%
+    mutate(intensity = case_when(
+      intensity > 1 ~ 1,
+      intensity < 0 ~ 0,
+      TRUE ~ intensity
+    )) %>%
     mutate(day_of_year = 366 - day_of_year) %>%
     mutate(year = factor(year, levels = unique(year))) %>%
     ggplot(aes(x = day_of_year, y = factor(year), height = intensity, fill = intensity * 100)) +
@@ -326,7 +307,7 @@ generate_output <- function(input) {
       )
     } else {
       fit_npn <- fit.variogram(empirical_variogram, model = vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01))
-  
+
       # Step 3: Define Raster Grid for Interpolation
       # Define the extent (bounding box)
       xmin <- -125
@@ -335,48 +316,48 @@ generate_output <- function(input) {
       ymax <- 53
       # Define resolution (grid spacing)
       resolution <- 0.5
-  
+
       # Create a grid using expand.grid() for all of continental US
       grid_points <- expand.grid(
         lon = seq(xmin, xmax, by = resolution),
         lat = seq(ymin, ymax, by = resolution)
       )
-  
+
       # Convert to SpatialPoints
       coord_new_sp <- SpatialPoints(
         coords = grid_points,
         proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
       )
-  
+
       # Step 4: Perform Kriging Interpolation on the full grid
       kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp,
         model = fit_npn,
         na.action = na.omit
       )
-  
+
       # Convert to DataFrame
       kriged_res_df <- as.data.frame(kriged_res)
       names(kriged_res_df)[1:2] <- c("lon", "lat")
-  
+
       # Get all US states data
       all_states <- map_data("state")
-  
+
       # Filter kriged_res_df to only include points on land
       # We'll use point.in.polygon from the sp package
       # but we need to do it state by state to handle complex boundaries
-  
+
       # Initialize a vector to track points on land
       on_land <- rep(FALSE, nrow(kriged_res_df))
-  
+
       # Check each state
       for (i in unique(all_states$region)) {
         # Get the state outline
         state_outline <- all_states[all_states$region == i, ]
-  
+
         # For each state group (some states have multiple polygons)
         for (g in unique(state_outline$group)) {
           poly <- state_outline[state_outline$group == g, ]
-  
+
           # Use point.in.polygon to check which points are in this polygon
           inside <- sp::point.in.polygon(
             kriged_res_df$lon,
@@ -384,12 +365,12 @@ generate_output <- function(input) {
             poly$long,
             poly$lat
           ) > 0
-  
+
           # Update the on_land vector
           on_land <- on_land | inside
         }
       }
-  
+
       # Keep only points on land
       kriged_res_df <- kriged_res_df[on_land, ]
     }
@@ -405,7 +386,15 @@ generate_output <- function(input) {
   ###### p_map -------------------------------------
   p_map <- ggplot() +
     coord_map("albers", lat0 = 39, lat1 = 45) +
-    geom_tile(data = kriged_res_df, aes(x = lon, y = lat, fill = var1.pred * 100)) +
+    geom_tile(
+      data = kriged_res_df %>%
+        mutate(pred = case_when(
+          var1.pred > 1 ~ 1,
+          var1.pred < 0 ~ 0,
+          TRUE ~ var1.pred
+        )),
+      aes(x = lon, y = lat, fill = pred * 100)
+    ) +
     geom_polygon(data = map_data("state"), aes(x = long, y = lat, group = group), color = "grey", fill = NA) +
     geom_jitter(data = npn_time, aes(x = longitude, y = latitude, fill = phenophase_status * 100), pch = 21, width = 0.05, height = 0.05, cex = 2) +
     geom_point(aes(x = input$longitude, y = input$latitude, fill = as.integer(input$status == "Yes") * 100), pch = 21, col = "red", cex = 5, stroke = 3) +
@@ -660,7 +649,6 @@ server <- function(input, output, session) {
       return(list(valid = TRUE))
     },
     date = function(value) {
-
       if (is.null(value) || is.na(value) || length(value) == 0) {
         return(list(valid = FALSE, message = "Please select a valid date"))
       }
