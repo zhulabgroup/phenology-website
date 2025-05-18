@@ -14,53 +14,7 @@ permissions:
   contents: read    # This is required for actions/checkout
 
 jobs:
-  # shinyapps-io:
-  #   runs-on: ubuntu-latest
-  # 
-  #   container:
-  #     image: rocker/geospatial:4.4.0
-  #   
-  #   steps:
-  #   # Step 1: Checkout the code from GitHub
-  #   - name: Checkout repository
-  #     uses: actions/checkout@v3
-  # 
-  #   # Step 2: Install system dependencies
-  #   - name: Install system dependencies
-  #     run: |
-  #       apt-get update
-  # 
-  #   # Step 3: Install R packages
-  #   - name: Install R packages
-  #     run: |
-  #       Rscript -e "install.packages('rsconnect')"
-  #       Rscript -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest'), dependencies = TRUE)"
-  #           
-  #   # Step 3: Deploy to shinyapps.io
-  #   - name: Deploy to shinyapps.io
-  #     run: |
-  #     
-  #       retries=0
-  #       max_retries=10
-  #       while [[ $retries -lt $max_retries ]]
-  #       do
-  #         echo "Attempt $((retries + 1)) of $max_retries"
-  #         Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')" && \
-  #         Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)" && {
-  #           echo "Deployment successful."
-  #           break
-  #         } || {
-  #           echo "Deployment failed, retrying in 5 minutes..."
-  #           sleep 300 # wait for 5 minutes before retrying
-  #           retries=$((retries + 1))
-  #         }
-  #       done
-  #     shell: bash
-  #     env:
-  #       RSCONNECT_USER: ${{ secrets.SHINYAPPS_USER }}
-  #       RSCONNECT_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
-  #       RSCONNECT_SECRET: ${{ secrets.SHINYAPPS_SECRET }}
-
+  
   app-runner:
     runs-on: ubuntu-latest
     
@@ -98,25 +52,25 @@ jobs:
       run: |
         docker push 861486687156.dkr.ecr.us-east-2.amazonaws.com/phenology-website:latest
 
-    # # Step 5: Deploy to AWS App Runner
-    # - name: Resume service if needed
-    #   run: |
-    #     
-    #     status=$(aws apprunner describe-service \
-    #       --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website-large/2a9d108f65f949c39b51a4191790b269 \
-    #       --query 'Service.Status' --output text)
-    #     
-    #     if [[ "$status" == "PAUSED" ]]; then
-    #       echo "Service is paused. Resuming now..."
-    #       aws apprunner resume-service \
-    #         --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website-large/2a9d108f65f949c39b51a4191790b269 || {
-    #         echo "Service resume failed, skipping this step."
-    #         exit 0
-    #       }
-    #       echo "Service resumed."
-    #     else
-    #       echo "Service is already running. No need to resume."
-    #     fi
+    # Step 5: Deploy to AWS App Runner
+    - name: Resume service if needed
+      run: |
+        
+        status=$(aws apprunner describe-service \
+          --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website-large/2a9d108f65f949c39b51a4191790b269 \
+          --query 'Service.Status' --output text)
+        
+        if [[ "$status" == "PAUSED" ]]; then
+          echo "Service is paused. Resuming now..."
+          aws apprunner resume-service \
+            --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website-large/2a9d108f65f949c39b51a4191790b269 || {
+            echo "Service resume failed, skipping this step."
+            exit 0
+          }
+          echo "Service resumed."
+        else
+          echo "Service is already running. No need to resume."
+        fi
 
     - name: Update and deploy service
       run: |
@@ -146,31 +100,4 @@ jobs:
             --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website-large/2a9d108f65f949c39b51a4191790b269
           echo "Service deployed."
           break
-        done
-    
-    # - name: Pause service
-    #   run: |
-    # 
-    #     retries=0
-    #     max_retries=10
-    #     
-    #     while [[ $retries -lt $max_retries ]]
-    #     do
-    #       # Check if the service is in OPERATION_IN_PROGRESS state
-    #       status=$(aws apprunner describe-service --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website-large/2a9d108f65f949c39b51a4191790b269 --query 'Service.Status' --output text)
-    # 
-    #       echo "Attempt $((retries + 1)) of $max_retries"
-    #       if [[ "$status" == "OPERATION_IN_PROGRESS" ]]; then
-    #         echo "Service is still in operation. Waiting for it to finish..."
-    #         sleep 60 # Wait for 1 minute before checking again
-    #         retries=$((retries + 1))
-    #         continue
-    #       fi
-    #     
-    #       # Proceed with pausing if not in OPERATION_IN_PROGRESS state
-    #       aws apprunner pause-service \
-    #       --service-arn arn:aws:apprunner:us-east-2:861486687156:service/phenology-website-large/2a9d108f65f949c39b51a4191790b269 
-    #     
-    #       echo "Service paused."
-    #       break
         done
