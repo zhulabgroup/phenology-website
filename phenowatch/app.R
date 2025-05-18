@@ -335,7 +335,7 @@ generate_output <- function(input) {
       names(kriged_res_df)[1:2] <- c("lon", "lat")
 
       # Get all US states data
-      all_states <- map_data("state")
+      all_states <- fortify(maps::map("state", plot = FALSE, fill = TRUE))
 
       # Filter kriged_res_df to only include points on land
       # We'll use point.in.polygon from the sp package
