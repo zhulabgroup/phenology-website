@@ -1,7 +1,5 @@
 library(tidyverse)
 library(mapproj)
-library(sp)
-library(gstat)
 
 # Helper Functions -------------------------------------------------
 path_app <- getwd()
@@ -717,7 +715,6 @@ server <- function(input, output, session) {
     all_valid <- all(sapply(validation_results, function(x) x$valid))
     shinyjs::toggleState(id = "submit", condition = all_valid)
     shinyjs::toggleState(id = "go", condition = all_valid)
-    # shinyjs::toggleState(id = "card", condition = mandatoryFilled)
   })
 
   # Collect form data -----------------
@@ -767,3 +764,7 @@ server <- function(input, output, session) {
     shinyscreenshot::screenshot(filename = fileName)
   })
 }
+
+## Create and Run Application -----------------------------------
+shinyApp(ui = ui, server = server,
+         options = list(host = '0.0.0.0', port = 3838))
