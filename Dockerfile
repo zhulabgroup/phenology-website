@@ -10,9 +10,6 @@ RUN R -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geo
 # Create the directory for Shiny apps
 RUN mkdir -p /srv/shiny-server/
 
-# Set permissions so shiny user can access it
-RUN chown -R shiny:shiny /srv/shiny-server/
-
 # Copy your Shiny app directory into the image
 COPY app.R /srv/shiny-server/app.R
 # COPY phenoinfo /srv/shiny-server/phenoinfo
