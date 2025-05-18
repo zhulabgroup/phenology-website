@@ -9,8 +9,7 @@ RUN R -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geo
 
 # Create app directory and set correct permissions
 RUN mkdir -p /srv/shiny-server
-COPY app.R /srv/shiny-server/app.R
-COPY phenowatch /srv/shiny-server/phenowatch
+COPY phenowatch/app.R /srv/shiny-server/app.R
 
 # Set permissions for Shiny to read and execute everything
 RUN chmod -R 755 /srv/shiny-server
