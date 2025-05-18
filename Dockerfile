@@ -1,17 +1,17 @@
 # Use a base image with R and Shiny Server pre-installed
-FROM rocker/shiny-verse:latest
+FROM rocker/geospatial:4.4.0
 
 # Install system libraries for geospatial analysis
-RUN apt-get update \
-  && apt-get install -y --no-install-recommends \
-    libudunits2-dev \
-    libgdal-dev \
-    libgeos-dev \
-    libproj-dev \
-    libmysqlclient-dev
+RUN apt-get update
 
 # Install R packages
-RUN R -e "install.packages(c('shinyjs', 'shinyscreenshot', 'geosphere', 'imputeTS','sf','sp','gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','doSNOW','svglite','ggnewscale','ggridges'), dependencies=TRUE)"
+RUN R -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges',  'shinyjs', 'shinyscreenshot', 'digest'), dependencies=TRUE)"
+
+# Create the directory for Shiny apps
+RUN mkdir -p /srv/shiny-server/
+
+# Set permissions so shiny user can access it
+RUN chown -R shiny:shiny /srv/shiny-server/
 
 # Copy your Shiny app directory into the image
 COPY app.R /srv/shiny-server/app.R

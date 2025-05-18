@@ -29,14 +29,12 @@ jobs:
     - name: Install system dependencies
       run: |
         apt-get update
-        apt-get install -y --no-install-recommends \
-          libmysqlclient-dev
 
     # Step 3: Install R packages
     - name: Install R packages
       run: |
         Rscript -e "install.packages('rsconnect')"
-        Rscript -e "install.packages(c('tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges',  'shinyjs', 'shinyscreenshot', 'digest'), dependencies = TRUE)"
+        Rscript -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges',  'shinyjs', 'shinyscreenshot', 'digest'), dependencies = TRUE)"
             
     # Step 3: Deploy to shinyapps.io
     - name: Deploy to shinyapps.io
