@@ -14,4 +14,4 @@ WORKDIR /phenowatch
 EXPOSE 3838
 
 # Copy the Shiny app files into the image
-CMD ["R", "app.R"]
+CMD ["Rscript", "app.R"]
