@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: rocker/shiny-verse:4.4.3
+      image: rocker/shiny-verse:4.2.2
     
     steps:
     # Step 1: Checkout the code from GitHub
@@ -28,8 +28,9 @@ jobs:
     # Step 2: Install system dependencies
     - name: Install system dependencies
       run: |
-        apt-get update \
+        apt-get update
         apt-get install -y --no-install-recommends \
+          libudunits2-dev \
           libgdal-dev \
           libgeos-dev \
           libproj-dev

@@ -1,9 +1,10 @@
 # Use a base image with R and Shiny Server pre-installed
-FROM rocker/shiny-verse:4.4.3
+FROM rocker/shiny-verse:4.2.2
 
 # Install system libraries for geospatial analysis
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
+    libudunits2-dev \
     libgdal-dev \
     libgeos-dev \
     libproj-dev
