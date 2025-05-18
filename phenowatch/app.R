@@ -285,7 +285,6 @@ generate_output <- function(input) {
     group_by(longitude, latitude) %>%
     summarize(intensity = mean(phenophase_status)) %>%
     ungroup()
-  message(nrow(npn_time_surface))
   if (nrow(npn_time_surface) > 0) {
     npn_time_sp <- sp::SpatialPointsDataFrame(
       coords = npn_time_surface[, c("longitude", "latitude")],
@@ -766,5 +765,10 @@ server <- function(input, output, session) {
 }
 
 ## Create and Run Application -----------------------------------
-shinyApp(ui = ui, server = server,
-         options = list(host = '0.0.0.0', port = 3838))
+shinyApp(
+  ui = ui, server = server,
+  options = list(
+    host = "0.0.0.0",
+    port = as.numeric(Sys.getenv("PORT", unset = 3838))
+  )
+)
