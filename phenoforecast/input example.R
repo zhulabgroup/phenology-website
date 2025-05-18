@@ -1,5 +1,5 @@
-input <- list (
-  type= "Pollen",
+input <- list(
+  type = "Pollen",
   genus = "Acer",
   day = 0
 )

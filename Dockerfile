@@ -5,7 +5,7 @@ FROM rocker/geospatial:4.4.0
 RUN apt-get update
 
 # Install R packages
-RUN R -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges',  'shinyjs', 'shinyscreenshot', 'digest'), dependencies=TRUE)"
+RUN R -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps', 'shinyjs', 'shinyscreenshot', 'digest'), dependencies=TRUE)"
 
 # Create the directory for Shiny apps
 RUN mkdir -p /srv/shiny-server/

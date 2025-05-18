@@ -261,13 +261,15 @@ generate_output <- function(input) {
       limits = c(1, 365),
       expand = c(0, 0)
     ) +
-    {if(nrow(npn_location_ts_by_year) > 0) 
-    scale_y_discrete(limits = seq(min(npn_location_ts_by_year$year), max(npn_location_ts_by_year$year), by = 1) %>%
-                       as.character() %>% 
-                       factor())
-      else 
+    {
+      if (nrow(npn_location_ts_by_year) > 0) {
+        scale_y_discrete(limits = seq(min(npn_location_ts_by_year$year), max(npn_location_ts_by_year$year), by = 1) %>%
+          as.character() %>%
+          factor())
+      } else {
         scale_y_discrete(limits = as.character(2010:2025))
-    } + 
+      }
+    } +
     theme(
       panel.grid.minor.x = element_blank(),
       panel.grid.minor.y = element_blank()
