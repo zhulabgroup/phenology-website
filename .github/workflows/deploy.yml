@@ -14,52 +14,52 @@ permissions:
   contents: read    # This is required for actions/checkout
 
 jobs:
-  shinyapps-io:
-    runs-on: ubuntu-latest
-
-    container:
-      image: rocker/geospatial:4.4.0
-    
-    steps:
-    # Step 1: Checkout the code from GitHub
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    # Step 2: Install system dependencies
-    - name: Install system dependencies
-      run: |
-        apt-get update
-
-    # Step 3: Install R packages
-    - name: Install R packages
-      run: |
-        Rscript -e "install.packages('rsconnect')"
-        Rscript -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest'), dependencies = TRUE)"
-            
-    # Step 3: Deploy to shinyapps.io
-    - name: Deploy to shinyapps.io
-      run: |
-      
-        retries=0
-        max_retries=10
-        while [[ $retries -lt $max_retries ]]
-        do
-          echo "Attempt $((retries + 1)) of $max_retries"
-          Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')" && \
-          Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)" && {
-            echo "Deployment successful."
-            break
-          } || {
-            echo "Deployment failed, retrying in 5 minutes..."
-            sleep 300 # wait for 5 minutes before retrying
-            retries=$((retries + 1))
-          }
-        done
-      shell: bash
-      env:
-        RSCONNECT_USER: ${{ secrets.SHINYAPPS_USER }}
-        RSCONNECT_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
-        RSCONNECT_SECRET: ${{ secrets.SHINYAPPS_SECRET }}
+  # shinyapps-io:
+  #   runs-on: ubuntu-latest
+  # 
+  #   container:
+  #     image: rocker/geospatial:4.4.0
+  #   
+  #   steps:
+  #   # Step 1: Checkout the code from GitHub
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v3
+  # 
+  #   # Step 2: Install system dependencies
+  #   - name: Install system dependencies
+  #     run: |
+  #       apt-get update
+  # 
+  #   # Step 3: Install R packages
+  #   - name: Install R packages
+  #     run: |
+  #       Rscript -e "install.packages('rsconnect')"
+  #       Rscript -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest'), dependencies = TRUE)"
+  #           
+  #   # Step 3: Deploy to shinyapps.io
+  #   - name: Deploy to shinyapps.io
+  #     run: |
+  #     
+  #       retries=0
+  #       max_retries=10
+  #       while [[ $retries -lt $max_retries ]]
+  #       do
+  #         echo "Attempt $((retries + 1)) of $max_retries"
+  #         Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')" && \
+  #         Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)" && {
+  #           echo "Deployment successful."
+  #           break
+  #         } || {
+  #           echo "Deployment failed, retrying in 5 minutes..."
+  #           sleep 300 # wait for 5 minutes before retrying
+  #           retries=$((retries + 1))
+  #         }
+  #       done
+  #     shell: bash
+  #     env:
+  #       RSCONNECT_USER: ${{ secrets.SHINYAPPS_USER }}
+  #       RSCONNECT_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
+  #       RSCONNECT_SECRET: ${{ secrets.SHINYAPPS_SECRET }}
 
   app-runner:
     runs-on: ubuntu-latest
