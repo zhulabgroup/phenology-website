@@ -14,4 +14,4 @@ WORKDIR /phenowatch
 EXPOSE 3838
 
 # Copy the Shiny app files into the image
-CMD ["R", "-e", "shiny::runApp('.', host='0.0.0.0', port=3838)"]
+CMD ["R", "-e", "shiny::runApp('.', host='0.0.0.0', port=as.numeric(Sys.getenv('PORT')))"]

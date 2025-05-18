@@ -767,7 +767,3 @@ server <- function(input, output, session) {
     shinyscreenshot::screenshot(filename = fileName)
   })
 }
-
-## Create and Run Application -----------------------------------
-shinyApp(ui = ui, server = server,
-         options = list(host = '0.0.0.0', port = 3838))
