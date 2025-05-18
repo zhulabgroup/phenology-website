@@ -1,5 +1,7 @@
 library(tidyverse)
 library(mapproj)
+library(sp)
+library(gstat)
 
 # Helper Functions -------------------------------------------------
 path_app <- getwd()
@@ -279,20 +281,24 @@ generate_output <- function(input) {
 
   ###### Map data prep -----------------------
   npn_time <- npn_data_all %>%
-    filter(abs(observation_date - input$date) <= input$window) %>%
+    filter(abs(day_of_year - (input$date) %>% as.Date() %>% lubridate::yday()) <= input$window) %>%
     arrange(day_of_year)
   npn_time_surface <- npn_time %>%
     group_by(longitude, latitude) %>%
     summarize(intensity = mean(phenophase_status)) %>%
     ungroup()
+  message("here3")
+  message(nrow(npn_time_surface))
   if (nrow(npn_time_surface) > 0) {
     npn_time_sp <- sp::SpatialPointsDataFrame(
       coords = npn_time_surface[, c("longitude", "latitude")],
       data = npn_time_surface[, c("intensity"), drop = F],
       proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
     )
+    message("here1")
     # Step 1: Compute Empirical Variogram
     empirical_variogram <- gstat::variogram(intensity ~ 1, npn_time_sp)
+    message("here2")
     # Step 2: Fit a Variogram Model
     if (is.null(empirical_variogram)) {
       kriged_res_df <- data.frame(
@@ -303,6 +309,7 @@ generate_output <- function(input) {
       )
     } else {
       fit_npn <- gstat::fit.variogram(empirical_variogram, model = gstat::vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01))
+      message(("here4"))
 
       # Step 3: Define Raster Grid for Interpolation
       # Define the extent (bounding box)
