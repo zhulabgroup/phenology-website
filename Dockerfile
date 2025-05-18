@@ -9,3 +9,6 @@ RUN R -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geo
 
 # Expose the default Shiny Server port (optional if not changed)
 EXPOSE 3838
+
+# Copy the Shiny app files into the image
+CMD ["R", "-e", "shiny::runApp('.', host='0.0.0.0', port=3838)"]
