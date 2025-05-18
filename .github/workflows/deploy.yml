@@ -46,7 +46,7 @@ jobs:
         do
           echo "Attempt $((retries + 1)) of $max_retries"
           Rscript -e "rsconnect::setAccountInfo(name='${{ secrets.SHINYAPPS_USER }}', token='${{ secrets.SHINYAPPS_TOKEN }}', secret='${{ secrets.SHINYAPPS_SECRET }}')" && \
-          Rscript -e "rsconnect::deployApp(appDir = './phenowatch', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)" && {
+          Rscript -e "rsconnect::deployApp(appDir = '.', appName = 'phenowatch', account = '${{ secrets.SHINYAPPS_USER }}', server = 'shinyapps.io', upload = T, forceUpdate = T)" && {
             echo "Deployment successful."
             break
           } || {
