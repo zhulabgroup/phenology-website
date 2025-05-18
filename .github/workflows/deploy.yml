@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: rocker/geospatial:4.4.0
+      image: rocker/shiny-verse:4.4.3
     
     steps:
     # Step 1: Checkout the code from GitHub
@@ -28,13 +28,17 @@ jobs:
     # Step 2: Install system dependencies
     - name: Install system dependencies
       run: |
-        apt-get update
+        apt-get update \
+        apt-get install -y --no-install-recommends \
+          libgdal-dev \
+          libgeos-dev \
+          libproj-dev
 
     # Step 3: Install R packages
     - name: Install R packages
       run: |
         Rscript -e "install.packages('rsconnect')"
-        Rscript -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest'), dependencies = TRUE)"
+        Rscript -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest', 'sp', 'gstat'), dependencies = TRUE)"
             
     # Step 3: Deploy to shinyapps.io
     - name: Deploy to shinyapps.io
