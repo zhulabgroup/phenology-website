@@ -1,17 +1,4 @@
-# https://deanattali.com/2015/06/14/mimicking-google-form-shiny/
-library(shinyjs)
-library(shinyscreenshot)
 library(tidyverse)
-library(imputeTS)
-library(sp)
-library(gstat)
-library(ggpubr)
-library(gridExtra)
-library(maps)
-library(aws.s3)
-library(ggnewscale)
-library(mapproj)
-library(ggridges)
 
 # Helper Functions -------------------------------------------------
 path_app <- getwd()
@@ -29,7 +16,7 @@ submit_folder_path <- "PhenoWatch/submitted/"
 upload_to_s3 <- function(file_path) {
   filename <- basename(file_path)
   s3_key <- paste0(submit_folder_path, filename)
-  put_object(
+  aws.s3::put_object(
     file = file_path, bucket = bucket_name, object = s3_key,
     headers = list(`x-amz-acl` = "bucket-owner-full-control")
   )
@@ -201,7 +188,7 @@ generate_output <- function(input) {
       alpha = 1, width = 1, height = 8
     ) +
     scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Number of Yes") +
-    new_scale_fill() +
+    ggnewscale::new_scale_fill() +
     geom_tile(
       data = npn_counts %>% filter(phenophase_status == 0),
       aes(x = day_of_year, y = 0, fill = n),
@@ -264,7 +251,7 @@ generate_output <- function(input) {
     mutate(day_of_year = 366 - day_of_year) %>%
     mutate(year = factor(year, levels = unique(year))) %>%
     ggplot(aes(x = day_of_year, y = factor(year), height = intensity, fill = intensity * 100)) +
-    geom_ridgeline_gradient(scale = 1) +
+    ggridges::geom_ridgeline_gradient(scale = 1) +
     scale_fill_viridis_c(name = "% Yes", limits = c(0, 100)) +
     theme_minimal() +
     labs(x = "Day of year", y = "Year") +
@@ -296,13 +283,13 @@ generate_output <- function(input) {
     summarize(intensity = mean(phenophase_status)) %>%
     ungroup()
   if (nrow(npn_time_surface) > 0) {
-    npn_time_sp <- SpatialPointsDataFrame(
+    npn_time_sp <- sp::SpatialPointsDataFrame(
       coords = npn_time_surface[, c("longitude", "latitude")],
       data = npn_time_surface[, c("intensity"), drop = F],
-      proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
+      proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
     )
     # Step 1: Compute Empirical Variogram
-    empirical_variogram <- variogram(intensity ~ 1, npn_time_sp)
+    empirical_variogram <- gstat::variogram(intensity ~ 1, npn_time_sp)
     # Step 2: Fit a Variogram Model
     if (is.null(empirical_variogram)) {
       kriged_res_df <- data.frame(
@@ -312,7 +299,7 @@ generate_output <- function(input) {
         var1.var = double(0)
       )
     } else {
-      fit_npn <- fit.variogram(empirical_variogram, model = vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01))
+      fit_npn <- gstat::fit.variogram(empirical_variogram, model = gstat::vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01))
 
       # Step 3: Define Raster Grid for Interpolation
       # Define the extent (bounding box)
@@ -330,13 +317,13 @@ generate_output <- function(input) {
       )
 
       # Convert to SpatialPoints
-      coord_new_sp <- SpatialPoints(
+      coord_new_sp <- sp::SpatialPoints(
         coords = grid_points,
-        proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
+        proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
       )
 
       # Step 4: Perform Kriging Interpolation on the full grid
-      kriged_res <- krige(intensity ~ 1, npn_time_sp, coord_new_sp,
+      kriged_res <- gstat::krige(intensity ~ 1, npn_time_sp, coord_new_sp,
         model = fit_npn,
         na.action = na.omit
       )
