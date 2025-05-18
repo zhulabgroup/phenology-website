@@ -12,7 +12,6 @@ RUN apt-get update \
 RUN R -e "install.packages(c('aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest', 'sp', 'gstat'), dependencies=TRUE)"
 
 # Copy your Shiny app directory into the image
-# COPY app.R /srv/shiny-server/app.R
 COPY phenowatch /srv/shiny-server/phenowatch
 
 # Expose the default Shiny Server port (optional if not changed)
