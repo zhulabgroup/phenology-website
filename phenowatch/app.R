@@ -1,4 +1,5 @@
 library(tidyverse)
+library(mapproj)
 
 # Helper Functions -------------------------------------------------
 path_app <- getwd()

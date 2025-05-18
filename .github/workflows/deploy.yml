@@ -34,7 +34,7 @@ jobs:
     - name: Install R packages
       run: |
         Rscript -e "install.packages('rsconnect')"
-        Rscript -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps', 'shinyjs', 'shinyscreenshot', 'digest'), dependencies = TRUE)"
+        Rscript -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest'), dependencies = TRUE)"
             
     # Step 3: Deploy to shinyapps.io
     - name: Deploy to shinyapps.io
