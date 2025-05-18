@@ -16,6 +16,7 @@ RUN R -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geo
 COPY app.R /srv/shiny-server/app.R
 # COPY phenoinfo /srv/shiny-server/phenoinfo
 COPY phenowatch /srv/shiny-server/phenowatch
+RUN chmod -R 755 /srv/shiny-server/phenowatch
 # COPY phenoforecast /srv/shiny-server/phenoforecast
 # RUN chmod 777 /srv/shiny-server/phenoforecast
 
