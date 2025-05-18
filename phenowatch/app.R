@@ -768,9 +768,5 @@ server <- function(input, output, session) {
 
 ## Create and Run Application -----------------------------------
 shinyApp(
-  ui = ui, server = server,
-  options = list(
-    host = "0.0.0.0",
-    port = as.numeric(Sys.getenv("PORT", unset = 3838))
-  )
+  ui = ui, server = server
 )
