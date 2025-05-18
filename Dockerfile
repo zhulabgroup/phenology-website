@@ -1,24 +1,17 @@
 # Use a base image with R and Shiny Server pre-installed
-FROM rocker/shiny-verse:4.2.2
+FROM rocker/geospatial:4.4.0
 
 # Install system libraries for geospatial analysis
-RUN apt-get update \
-  && apt-get install -y --no-install-recommends \
-    libudunits2-dev \
-    libgdal-dev \
-    libgeos-dev \
-    libproj-dev
+RUN apt-get update
 
 # Install R packages
-RUN R -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest', 'sp', 'gstat'), dependencies=TRUE)"
+RUN R -e "install.packages(c('shiny','tidyverse','aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest'), dependencies=TRUE)"
 
 # Copy your Shiny app directory into the image
-COPY app.R /srv/shiny-server/app.R
-# COPY phenoinfo /srv/shiny-server/phenoinfo
-COPY phenowatch /srv/shiny-server/phenowatch
-RUN chmod -R 755 /srv/shiny-server/phenowatch
-# COPY phenoforecast /srv/shiny-server/phenoforecast
-# RUN chmod 777 /srv/shiny-server/phenoforecast
+COPY app.R app.R
 
 # Expose the default Shiny Server port (optional if not changed)
 EXPOSE 3838
+
+# Run the Shiny app
+CMD ["Rscript", "app.R"]
