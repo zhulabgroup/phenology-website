@@ -14,6 +14,7 @@ RUN apt-get update \
 RUN R -e "install.packages(c('shinyjs', 'shinyscreenshot', 'geosphere', 'imputeTS','sp','gstat', 'ggpubr', 'gridExtra', 'maps', 'rnpn','leaflet', 'terra','colorRamps', 'lubridate','digest','aws.s3','ptw','doSNOW','svglite','ggnewscale','ggridges'), dependencies=TRUE)"
 
 # Copy your Shiny app directory into the image
+COPY app.R /srv/shiny-server/app.R
 # COPY phenoinfo /srv/shiny-server/phenoinfo
 COPY phenowatch /srv/shiny-server/phenowatch
 # COPY phenoforecast /srv/shiny-server/phenoforecast
