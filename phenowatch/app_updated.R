@@ -603,9 +603,20 @@ ui <- fluidPage(
         )
       ),
       
-      # Phenology Selection
-      
       fluidRow(
+        column(
+          6,
+          selectInput(
+            "event", labelMandatory("Phenological Event"),
+            c("", "Leaf", "Flower"),
+            selected = "Leaf"
+          ),
+          tags$div(
+            id = "event-error", class = "help-block",
+            "Please select an event type"
+          )
+        ),
+        
         column(
           6,
           selectInput(
@@ -619,6 +630,7 @@ ui <- fluidPage(
           ),
         )
       ),
+      
       
       # Radius Selection
       sliderInput("radius", "Search radius (km) for temporal variations",
@@ -665,10 +677,13 @@ ui <- fluidPage(
         column(
           6,
           div(
-            style = "margin-top: 25px;",
-            h5("Phenological Event"),
-            checkboxInput("leaf_select", "Leaf", TRUE),
-            checkboxInput("flower_select", "Flower", FALSE)
+            style = "margin-top: -5px;",
+            h5("Phenological Event", style = "font-weight: bold; margin-bottom: 5px;"),
+            div(
+              style = "display: flex; flex-direction: column; gap: 0px; margin-top: -5px;",
+              div(style = "margin-bottom: -10px;", checkboxInput("leaf_select", "Leaf", TRUE)),
+              div(style = "margin-bottom: -10px;", checkboxInput("flower_select", "Flower", FALSE))
+            )
           )
         )
       ),
@@ -744,6 +759,7 @@ server <- function(input, output, session) {
       }
       return(list(valid = TRUE))
     }
+
   )
   
   # Validate fields and update UI -----------
