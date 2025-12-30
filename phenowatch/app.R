@@ -703,7 +703,7 @@ ui <- fluidPage(
           8,
           tags$div(
             id = "cite", align = "right",
-            "", tags$em('"PhenoWatch"'), "by Yiluan Song"
+            "", tags$em('"PhenoWatch"'), "by Yiluan Song, Tanay Panja, Tim Muhich"
           )
         )
       )
