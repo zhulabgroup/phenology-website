@@ -4,9 +4,6 @@ library(tidyverse)
 library(mapproj)
 
 # Helper Functions -------------------------------------------------
-path_app <- getwd()
-data_path <- str_c(path_app, "/NPN_example/")
-
 Sys.setenv(
   "AWS_DEFAULT_REGION" = "us-east-2",
   "AWS_S3_ENDPOINT" = "s3.amazonaws.com"
