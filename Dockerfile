@@ -14,5 +14,5 @@ RUN R -e "install.packages(c('aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale
 # Copy your Shiny app directory into the image
 COPY phenowatch /srv/shiny-server/phenowatch
 
-# Expose the default Shiny Server port (optional if not changed)
-EXPOSE 3838
+# Start the app directly so Hugging Face serves it at the root URL
+CMD ["R", "-e", "shiny::runApp('/srv/shiny-server/phenowatch', host='0.0.0.0', port=3838)"]
