@@ -11,8 +11,12 @@ RUN apt-get update \
 # Install R packages
 RUN R -e "install.packages(c('aws.s3', 'imputeTS','ptw','geosphere', 'ggnewscale','ggridges', 'maps','mapproj', 'shinyjs', 'shinyscreenshot', 'digest', 'sp', 'gstat'), dependencies=TRUE)"
 
+# Copy Shiny Server configuration with worker process settings
+COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
+
 # Copy your Shiny app directory into the image
 COPY phenowatch /srv/shiny-server/phenowatch
 
-# Start the app directly so Hugging Face serves it at the root URL
-CMD ["R", "-e", "shiny::runApp('/srv/shiny-server/phenowatch', host='0.0.0.0', port=3838)"]
+# Default CMD from rocker/shiny-verse starts Shiny Server
+# This will use the configuration from shiny-server.conf which specifies 4 worker processes
+# Shiny Server listens on 0.0.0.0:3838 by default
