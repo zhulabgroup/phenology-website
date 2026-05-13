@@ -193,6 +193,7 @@ jobs:
         mkdir -p hf-space/phenowatch
         cp README.md hf-space/README.md
         cp Dockerfile hf-space/Dockerfile
+        cp shiny-server.conf hf-space/shiny-server.conf
         cp phenowatch/app.R hf-space/phenowatch/app.R
 
     - name: Push snapshot to Hugging Face Spaces
@@ -205,6 +206,6 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git remote add hf https://user:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE_REPO}
-        git add README.md Dockerfile phenowatch/app.R
+        git add README.md Dockerfile shiny-server.conf phenowatch/app.R
         git commit -m "Deploy snapshot from GitHub Actions"
         git push --force hf HEAD:main

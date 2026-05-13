@@ -26,7 +26,7 @@ util_fill_whit <- function(x, maxgap = Inf, lambda, minseg = 2) {
   x_fill <- imputeTS::na_replace(x, fill = -9999, maxgap = maxgap) # fill short gaps with -9999 placeholder
   w <- (x_fill != -9999) # weight = 0 at long gaps, weight = 1 at short gaps
   x_sm <- util_whit(x = x_fill, lambda = lambda, w = w, minseg = minseg)
-  
+
   return(x_sm)
 }
 
@@ -96,6 +96,19 @@ humanTime <- function() {
 
 # Plot Generation -----------------------------------------------
 
+npn_csv_cols <- readr::cols(
+  observation_id = readr::col_double(),
+  site_id = readr::col_double(),
+  latitude = readr::col_double(),
+  longitude = readr::col_double(),
+  observation_date = readr::col_date(),
+  day_of_year = readr::col_double(),
+  phenophase_status = readr::col_double(),
+  intensity_value = readr::col_character(),
+  update_datetime = readr::col_character(),
+  .default = readr::col_skip()
+)
+
 generate_output_for_type <- function(input, phenotype) {
   data_path_subset <- paste0(
     download_folder_path,
@@ -104,21 +117,46 @@ generate_output_for_type <- function(input, phenotype) {
     input$genus
   )
   npn_files <- aws.s3::get_bucket(bucket = bucket_name, prefix = data_path_subset)
-  
+
   # Data prep -------------------------
-  
+
   if (length(npn_files) > 0) {
     npn_data_all <- vector(mode = "list")
     for (i in seq_along(npn_files)) {
       file_key <- npn_files[[i]]$Key
-      csv_data <- aws.s3::s3read_using(readr::read_csv, object = file_key, bucket = bucket_name)
+      message("Reading NPN file: ", file_key)
+      csv_data <- suppressWarnings(aws.s3::s3read_using(
+        readr::read_csv,
+        object = file_key,
+        bucket = bucket_name,
+        col_select = c(
+          observation_id,
+          site_id,
+          latitude,
+          longitude,
+          observation_date,
+          day_of_year,
+          phenophase_status,
+          intensity_value,
+          update_datetime
+        ),
+        col_types = npn_csv_cols,
+        show_col_types = FALSE,
+        progress = FALSE
+      ))
+      csv_problems <- readr::problems(csv_data)
+      if (nrow(csv_problems) > 0) {
+        message("Finished reading NPN file: ", basename(file_key), " | rows: ", nrow(csv_data), " | parse issues: ", nrow(csv_problems))
+      } else {
+        message("Finished reading NPN file: ", basename(file_key), " | rows: ", nrow(csv_data))
+      }
       npn_data_all[[i]] <- csv_data %>%
         mutate(
           `intensity_value` = as.character(`intensity_value`),
           update_datetime = as.character(update_datetime)
         )
     }
-    
+
     npn_data_all <- bind_rows(npn_data_all) %>%
       select(site_id, latitude, longitude, observation_date, day_of_year, phenophase_status) %>%
       filter(phenophase_status != -1) %>%
@@ -140,14 +178,14 @@ generate_output_for_type <- function(input, phenotype) {
       year = integer(0)
     )
   }
-  
+
   # prep for p_line and p_line_year
   npn_location <- npn_data_all %>%
     filter(
       abs(latitude - input$latitude) <= input$radius * 1000 / 100000,
       abs(longitude - input$longitude) <= input$radius * 1000 / 100000
     )
-  
+
   if (nrow(npn_location) > 0) {
     npn_location <- npn_location %>%
       rowwise() %>%
@@ -165,22 +203,20 @@ generate_output_for_type <- function(input, phenotype) {
       year = integer(0)
     )
   }
-  
+
   npn_location_ts <- npn_location %>%
     select(day_of_year, phenophase_status) %>%
     group_by(day_of_year) %>%
-    summarize(intensity = mean(phenophase_status)) %>%
-    ungroup() %>%
+    summarize(intensity = mean(phenophase_status), .groups = "drop") %>%
     filter(day_of_year != 366) %>%
     complete(day_of_year = 1:365, fill = list(intensity = NA)) %>%
-    mutate(intensity = util_fill_whit(x = intensity, maxgap = 28, lambda = 10, minseg = 2)) %>% # weighted whittaker smoothing allowing gaps
-    ungroup()
-  
+    mutate(intensity = util_fill_whit(x = intensity, maxgap = 28, lambda = 10, minseg = 2)) # weighted whittaker smoothing allowing gaps
+
   # p_line -------------------
   npn_counts <- npn_location %>%
     filter(phenophase_status %in% c(0, 1)) %>%
     count(day_of_year, phenophase_status)
-  
+
   p_line <- ggplot() +
     geom_tile(
       data = npn_counts %>% filter(phenophase_status == 1),
@@ -219,19 +255,17 @@ generate_output_for_type <- function(input, phenotype) {
       panel.grid.minor.y = element_blank(),
       plot.title = element_text(size = 18, hjust = 0.5, face = "bold")
     )
-  
+
   # p_line_year -------------
-  
+
   if (nrow(npn_location) > 0) {
     npn_location_ts_by_year <- npn_location %>%
       select(year, day_of_year, phenophase_status) %>%
       group_by(year, day_of_year) %>%
-      summarize(intensity = mean(phenophase_status)) %>%
-      ungroup() %>%
+      summarize(intensity = mean(phenophase_status), .groups = "drop") %>%
       group_by(year) %>%
       complete(day_of_year = 1:365, fill = list(intensity = NA)) %>%
       mutate(intensity = util_fill_whit(x = intensity, maxgap = 28, lambda = 10, minseg = 2)) %>% # weighted whittaker smoothing allowing gaps
-      ungroup() %>%
       mutate(intensity = ifelse(intensity < 1e-5, NA, intensity)) %>%
       group_by(year) %>%
       filter(!all(is.na(intensity))) %>%
@@ -243,7 +277,7 @@ generate_output_for_type <- function(input, phenotype) {
       intensity = double(0)
     )
   }
-  
+
   p_line_year <- npn_location_ts_by_year %>%
     mutate(intensity = case_when(
       intensity > 1 ~ 1,
@@ -266,8 +300,8 @@ generate_output_for_type <- function(input, phenotype) {
     {
       if (nrow(npn_location_ts_by_year) > 0) {
         scale_y_discrete(limits = seq(min(npn_location_ts_by_year$year), max(npn_location_ts_by_year$year), by = 1) %>%
-                           as.character() %>%
-                           factor())
+          as.character() %>%
+          factor())
       } else {
         scale_y_discrete(limits = as.character(2010:2025))
       }
@@ -278,15 +312,14 @@ generate_output_for_type <- function(input, phenotype) {
       plot.title = element_text(size = 18, hjust = 0.5, face = "bold")
     ) +
     coord_flip()
-  
+
   ###### Map data prep -----------------------
   npn_time <- npn_data_all %>%
     filter(abs(day_of_year - (input$date) %>% as.Date() %>% lubridate::yday()) <= input$window) %>%
     arrange(day_of_year)
   npn_time_surface <- npn_time %>%
     group_by(longitude, latitude) %>%
-    summarize(intensity = mean(phenophase_status)) %>%
-    ungroup()
+    summarize(intensity = mean(phenophase_status), .groups = "drop")
   if (nrow(npn_time_surface) > 0) {
     npn_time_sp <- sp::SpatialPointsDataFrame(
       coords = npn_time_surface[, c("longitude", "latitude")],
@@ -304,8 +337,8 @@ generate_output_for_type <- function(input, phenotype) {
         var1.var = double(0)
       )
     } else {
-      fit_npn <- gstat::fit.variogram(empirical_variogram, model = gstat::vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01))
-      
+      fit_npn <- suppressWarnings(gstat::fit.variogram(empirical_variogram, model = gstat::vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01)))
+
       # Step 3: Define Raster Grid for Interpolation
       # Define the extent (bounding box)
       xmin <- -125
@@ -316,48 +349,54 @@ generate_output_for_type <- function(input, phenotype) {
       # Coarser resolution reduces CPU and memory during kriging.
       # Increased from 0.5 -> 1.0 to improve concurrency and lower CPU.
       resolution <- 1.0
-      
+
       # Create a grid using expand.grid() for all of continental US
       grid_points <- expand.grid(
         lon = seq(xmin, xmax, by = resolution),
         lat = seq(ymin, ymax, by = resolution)
       )
-      
+
       # Convert to SpatialPoints
       coord_new_sp <- sp::SpatialPoints(
         coords = grid_points,
         proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
       )
-      
+
       # Step 4: Perform Kriging Interpolation on the full grid
-      kriged_res <- gstat::krige(intensity ~ 1, npn_time_sp, coord_new_sp,
-                                 model = fit_npn,
-                                 na.action = na.omit
+      message("Running ordinary kriging on ", nrow(grid_points), " grid cells")
+      kriged_res <- suppressMessages(
+        gstat::krige(
+          intensity ~ 1,
+          npn_time_sp,
+          coord_new_sp,
+          model = fit_npn,
+          na.action = na.omit
+        )
       )
-      
+
       # Convert to DataFrame
       kriged_res_df <- as.data.frame(kriged_res)
       names(kriged_res_df)[1:2] <- c("lon", "lat")
-      
+
       # Get all US states data
       all_states <- fortify(maps::map("state", plot = FALSE, fill = TRUE))
-      
+
       # Filter kriged_res_df to only include points on land
       # We'll use point.in.polygon from the sp package
       # but we need to do it state by state to handle complex boundaries
-      
+
       # Initialize a vector to track points on land
       on_land <- rep(FALSE, nrow(kriged_res_df))
-      
+
       # Check each state
       for (i in unique(all_states$region)) {
         # Get the state outline
         state_outline <- all_states[all_states$region == i, ]
-        
+
         # For each state group (some states have multiple polygons)
         for (g in unique(state_outline$group)) {
           poly <- state_outline[state_outline$group == g, ]
-          
+
           # Use point.in.polygon to check which points are in this polygon
           inside <- sp::point.in.polygon(
             kriged_res_df$lon,
@@ -365,12 +404,12 @@ generate_output_for_type <- function(input, phenotype) {
             poly$long,
             poly$lat
           ) > 0
-          
+
           # Update the on_land vector
           on_land <- on_land | inside
         }
       }
-      
+
       # Keep only points on land
       kriged_res_df <- kriged_res_df[on_land, ]
     }
@@ -382,7 +421,7 @@ generate_output_for_type <- function(input, phenotype) {
       var1.var = double(0)
     )
   }
-  
+
   ###### p_map -------------------------------------
   p_map <- ggplot() +
     coord_map("albers", lat0 = 39, lat1 = 45) +
@@ -392,8 +431,10 @@ generate_output_for_type <- function(input, phenotype) {
           var1.pred > 1 ~ 1,
           var1.pred < 0 ~ 0,
           TRUE ~ var1.pred
-        )),
-      aes(x = lon, y = lat, fill = pred * 100)
+        )) %>%
+        filter(!is.na(lon), !is.na(lat), !is.na(pred)),
+      aes(x = lon, y = lat, fill = pred * 100),
+      na.rm = TRUE
     ) +
     geom_polygon(data = map_data("state"), aes(x = long, y = lat, group = group), color = "grey", fill = NA) +
     geom_jitter(data = npn_time, aes(x = longitude, y = latitude, fill = phenophase_status * 100), pch = 21, width = 0.05, height = 0.05, cex = 2) +
@@ -416,7 +457,7 @@ generate_output_for_type <- function(input, phenotype) {
 generate_output <- function(input) {
   leaf_plots <- generate_output_for_type(input, "leaf")
   flower_plots <- generate_output_for_type(input, "flower")
-  
+
   return(list(
     leaf = leaf_plots,
     flower = flower_plots
@@ -430,21 +471,21 @@ generate_plot <- function(plots, input) {
     input$plot == "Inter-annual variations" ~ 2,
     input$plot == "Spatial variations" ~ 3
   )
-  
+
   # Determine which plots to show based on checkboxes
   show_leaf <- input$leaf_select
   show_flower <- input$flower_select
-  
+
   # If neither is selected, show leaf by default
   if (!show_leaf && !show_flower) {
     show_leaf <- TRUE
   }
-  
+
   if (show_leaf && show_flower) {
     # Show both plots stacked vertically
     leaf_plot <- plots$leaf[[plot_type_index]]
     flower_plot <- plots$flower[[plot_type_index]]
-    
+
     # Use gridExtra to arrange plots vertically
     return(gridExtra::grid.arrange(leaf_plot, flower_plot, ncol = 1))
   } else if (show_leaf) {
@@ -465,8 +506,8 @@ labelMandatory <- function(label) {
   tagList(
     label,
     span("*",
-         class = "mandatory-star",
-         style = "color: red; font-size: 16px; margin-left: 3px;"
+      class = "mandatory-star",
+      style = "color: red; font-size: 16px; margin-left: 3px;"
     )
   )
 }
@@ -530,9 +571,9 @@ ui <- fluidPage(
           textInput("email", "Email")
         )
       ),
-      
+
       # Taxa Selection
-      
+
       fluidRow(
         column(
           6,
@@ -551,7 +592,7 @@ ui <- fluidPage(
           textInput("species", "Species"),
         )
       ),
-      
+
       # Date Selection
       dateInput(
         "date",
@@ -569,7 +610,7 @@ ui <- fluidPage(
         id = "date-error", class = "help-block",
         "Please select a valid date"
       ),
-      
+
       # Location Inputs
       fluidRow(
         column(
@@ -601,7 +642,6 @@ ui <- fluidPage(
           ),
         )
       ),
-      
       fluidRow(
         column(
           6,
@@ -615,7 +655,6 @@ ui <- fluidPage(
             "Please select an event type"
           )
         ),
-        
         column(
           6,
           selectInput(
@@ -629,22 +668,22 @@ ui <- fluidPage(
           ),
         )
       ),
-      
-      
+
+
       # Radius Selection
       sliderInput("radius", "Search radius (km) for temporal variations",
-                  min = 100, max = 500,
-                  value = 100, step = 100,
-                  ticks = TRUE
+        min = 100, max = 500,
+        value = 100, step = 100,
+        ticks = TRUE
       ),
-      
+
       # Window Selection
       sliderInput("window", "Time range (± days) for spatial variations",
-                  min = 7, max = 21,
-                  value = 14, step = 7,
-                  ticks = TRUE
+        min = 7, max = 21,
+        value = 14, step = 7,
+        ticks = TRUE
       ),
-      
+
       # Submit Section
       fluidRow(
         column(3, actionButton("submit", "Submit", class = "btn-primary")),
@@ -689,8 +728,10 @@ ui <- fluidPage(
       div(
         id = "loading-gif",
         class = "loading-gif",
-        img(src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif", 
-            alt = "Loading...")
+        img(
+          src = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif",
+          alt = "Loading..."
+        )
       ),
       plotOutput("plot", height = "800px"),
       fluidRow(
@@ -758,13 +799,12 @@ server <- function(input, output, session) {
       }
       return(list(valid = TRUE))
     }
-
   )
-  
+
   # Validate fields and update UI -----------
   observe({
     validation_results <- list()
-    
+
     # Validate each mandatory field
     for (field in MANDATORY_FIELDS) {
       # Get the validation rule for this field
@@ -773,7 +813,7 @@ server <- function(input, output, session) {
         # Get the current value and validate it
         result <- rule(input[[field]])
         validation_results[[field]] <- result
-        
+
         # Update UI based on validation result
         if (!result$valid) {
           shinyjs::addCssClass(field, "validation-error")
@@ -786,30 +826,30 @@ server <- function(input, output, session) {
         }
       }
     }
-    
+
     # Enable submit and screenshot buttons if all validations pass
     all_valid <- all(sapply(validation_results, function(x) x$valid))
     shinyjs::toggleState(id = "submit", condition = all_valid)
     shinyjs::toggleState(id = "go", condition = all_valid)
   })
-  
+
   # Collect form data -----------------
   formData <- reactive({
     data <- sapply(ALL_FIELDS, function(x) as.character(input[[x]]))
     data <- c(data, timestamp = as.character(Sys.time()))
     t(data)
   })
-  
+
   # Store generated plots
   plots_data <- reactiveVal(NULL)
-  
+
   # Handle form submission ---------------
   observeEvent(input$submit, {
     # Clear plot and show processing message
     shinyjs::show("loading-gif")
     output$plot <- renderPlot(NULL)
     shinyjs::show("thankyou_msg")
-    
+
     # Save form data
     fileName <- sprintf(
       "%s_%s.csv",
@@ -823,22 +863,22 @@ server <- function(input, output, session) {
       quote = TRUE
     )
     upload_to_s3(file.path(tempdir(), fileName))
-    
+
     # Generate both leaf and flower plots
     plots <- generate_output(input)
     plots_data(plots)
-    
+
     shinyjs::hide("loading-gif")
-    
+
     # Update UI
     shinyjs::hide("thankyou_msg")
-    
+
     # Render initial plot
     output$plot <- renderPlot({
       generate_plot(plots, input)
     })
   })
-  
+
   # Update plot when checkboxes change
   observeEvent(c(input$leaf_select, input$flower_select, input$plot), {
     if (!is.null(plots_data())) {
@@ -847,23 +887,23 @@ server <- function(input, output, session) {
       })
     }
   })
-  
+
   # Handle screenshot button
   observeEvent(input$go, {
     if (!is.null(plots_data())) {
       # Generate the current plot
       current_plot <- generate_plot(plots_data(), input)
-      
+
       # Save as PNG with timestamp
       filename <- paste0("phenowatch_plot_", format(Sys.time(), "%Y%m%d_%H%M%S"), ".png")
       filepath <- file.path(tempdir(), filename)
-      
+
       # Save plot
       ggsave(filepath, current_plot, width = 12, height = 8, dpi = 300)
-      
+
       # Upload to S3
       upload_to_s3(filepath)
-      
+
       # Show confirmation message
       showNotification("Screenshot saved and uploaded!", type = "message", duration = 3)
     }

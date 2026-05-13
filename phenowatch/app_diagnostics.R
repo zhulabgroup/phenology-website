@@ -63,35 +63,73 @@ appCSS <- ".mandatory_star { color: red; }"
 MANDATORY_FIELDS <- c("observer", "genus", "date", "latitude", "longitude", "event", "status")
 ALL_FIELDS <- c(MANDATORY_FIELDS, "email", "species")
 
+npn_csv_cols <- readr::cols(
+  observation_id = readr::col_double(),
+  site_id = readr::col_double(),
+  latitude = readr::col_double(),
+  longitude = readr::col_double(),
+  observation_date = readr::col_date(),
+  day_of_year = readr::col_double(),
+  phenophase_status = readr::col_double(),
+  intensity_value = readr::col_character(),
+  update_datetime = readr::col_character(),
+  .default = readr::col_skip()
+)
+
 # Plot Generation with DIAGNOSTICS -----------------------------------------------
 
 generate_output_for_type <- function(input, phenotype) {
   timing_log <- list()
-  
+
   timing_log$start <- paste("========== START", phenotype, "==========")
-  
+
   data_path_subset <- paste0(download_folder_path, phenotype, "/", input$genus)
-  
+
   # TIMING: S3 bucket listing
   t <- system.time({
     npn_files <- aws.s3::get_bucket(bucket = bucket_name, prefix = data_path_subset)
   })
   timing_log$s3_bucket <- paste("S3 get_bucket():", round(t["elapsed"], 3), "sec")
-  
+
   if (length(npn_files) > 0) {
     # TIMING: CSV loading from S3
     t <- system.time({
       npn_data_all <- vector(mode = "list")
       for (i in seq_along(npn_files)) {
         file_key <- npn_files[[i]]$Key
-        csv_data <- aws.s3::s3read_using(readr::read_csv, object = file_key, bucket = bucket_name)
+        message("Reading NPN file: ", file_key)
+        csv_data <- suppressWarnings(aws.s3::s3read_using(
+          readr::read_csv,
+          object = file_key,
+          bucket = bucket_name,
+          col_select = c(
+            observation_id,
+            site_id,
+            latitude,
+            longitude,
+            observation_date,
+            day_of_year,
+            phenophase_status,
+            intensity_value,
+            update_datetime
+          ),
+          col_types = npn_csv_cols,
+          show_col_types = FALSE,
+          progress = FALSE
+        ))
+        csv_problems <- readr::problems(csv_data)
+        if (nrow(csv_problems) > 0) {
+          message("Finished reading NPN file: ", basename(file_key), " | rows: ", nrow(csv_data), " | parse issues: ", nrow(csv_problems))
+        } else {
+          message("Finished reading NPN file: ", basename(file_key), " | rows: ", nrow(csv_data))
+        }
         npn_data_all[[i]] <- csv_data %>%
           mutate(
             `intensity_value` = as.character(`intensity_value`),
             update_datetime = as.character(update_datetime)
           )
       }
-      
+
       npn_data_all <- bind_rows(npn_data_all) %>%
         select(site_id, latitude, longitude, observation_date, day_of_year, phenophase_status) %>%
         filter(phenophase_status != -1) %>%
@@ -100,18 +138,22 @@ generate_output_for_type <- function(input, phenotype) {
     })
     timing_log$csv_load <- paste("CSV loading & filtering:", round(t["elapsed"], 3), "sec,", nrow(npn_data_all), "rows")
   } else {
-    npn_data_all <- data.frame(site_id = double(0), latitude = double(0), longitude = double(0),
-                                observation_date = as.Date(character(0)), day_of_year = double(0),
-                                phenophase_status = double(0), year = integer(0))
+    npn_data_all <- data.frame(
+      site_id = double(0), latitude = double(0), longitude = double(0),
+      observation_date = as.Date(character(0)), day_of_year = double(0),
+      phenophase_status = double(0), year = integer(0)
+    )
     timing_log$csv_load <- "CSV loading: no files found"
   }
-  
+
   # TIMING: Location filtering
   t <- system.time({
     npn_location <- npn_data_all %>%
-      filter(abs(latitude - input$latitude) <= input$radius * 1000 / 100000,
-             abs(longitude - input$longitude) <= input$radius * 1000 / 100000)
-    
+      filter(
+        abs(latitude - input$latitude) <= input$radius * 1000 / 100000,
+        abs(longitude - input$longitude) <= input$radius * 1000 / 100000
+      )
+
     if (nrow(npn_location) > 0) {
       npn_location <- npn_location %>%
         rowwise() %>%
@@ -121,34 +163,36 @@ generate_output_for_type <- function(input, phenotype) {
     }
   })
   timing_log$location_filter <- paste("Location filtering:", round(t["elapsed"], 3), "sec,", nrow(npn_location), "rows in radius")
-  
+
   # TIMING: Whittaker smoothing
   t <- system.time({
     npn_location_ts <- npn_location %>%
       select(day_of_year, phenophase_status) %>%
       group_by(day_of_year) %>%
-      summarize(intensity = mean(phenophase_status)) %>%
-      ungroup() %>%
+      summarize(intensity = mean(phenophase_status), .groups = "drop") %>%
       filter(day_of_year != 366) %>%
       complete(day_of_year = 1:365, fill = list(intensity = NA)) %>%
-      mutate(intensity = util_fill_whit(x = intensity, maxgap = 28, lambda = 10, minseg = 2)) %>%
-      ungroup()
+      mutate(intensity = util_fill_whit(x = intensity, maxgap = 28, lambda = 10, minseg = 2))
   })
   timing_log$whittaker <- paste("Whittaker smoothing (temporal):", round(t["elapsed"], 3), "sec")
-  
+
   # TIMING: p_line plot
   t <- system.time({
     npn_counts <- npn_location %>%
       filter(phenophase_status %in% c(0, 1)) %>%
       count(day_of_year, phenophase_status)
-    
+
     p_line <- ggplot() +
-      geom_tile(data = npn_counts %>% filter(phenophase_status == 1),
-                aes(x = day_of_year, y = 100, fill = n), alpha = 1, width = 1, height = 8) +
+      geom_tile(
+        data = npn_counts %>% filter(phenophase_status == 1),
+        aes(x = day_of_year, y = 100, fill = n), alpha = 1, width = 1, height = 8
+      ) +
       scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Number of Yes") +
       ggnewscale::new_scale_fill() +
-      geom_tile(data = npn_counts %>% filter(phenophase_status == 0),
-                aes(x = day_of_year, y = 0, fill = n), alpha = 1, width = 1, height = 8) +
+      geom_tile(
+        data = npn_counts %>% filter(phenophase_status == 0),
+        aes(x = day_of_year, y = 0, fill = n), alpha = 1, width = 1, height = 8
+      ) +
       scale_fill_gradient(low = "#FFF700", high = "#F4C430", name = "Number of No") +
       geom_line(data = npn_location_ts, aes(x = day_of_year, y = intensity * 100), col = "blue", lwd = 2) +
       geom_point(aes(x = as.integer(format(input$date, "%j")), y = as.integer(input$status == "Yes") * 100), col = "#ff0000", cex = 5) +
@@ -157,23 +201,23 @@ generate_output_for_type <- function(input, phenotype) {
       scale_y_continuous(breaks = c(0, 25, 50, 75, 100), limits = c(-10, 110)) +
       labs(x = "Day of year", y = "% Yes status", fill = "Count", title = paste(str_to_title(phenotype), "Phenology")) +
       theme_minimal() +
-      theme(panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank(),
-            plot.title = element_text(size = 18, hjust = 0.5, face = "bold"))
+      theme(
+        panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank(),
+        plot.title = element_text(size = 18, hjust = 0.5, face = "bold")
+      )
   })
   timing_log$p_line <- paste("p_line plot:", round(t["elapsed"], 3), "sec")
-  
+
   # TIMING: p_line_year plot
   t <- system.time({
     if (nrow(npn_location) > 0) {
       npn_location_ts_by_year <- npn_location %>%
         select(year, day_of_year, phenophase_status) %>%
         group_by(year, day_of_year) %>%
-        summarize(intensity = mean(phenophase_status)) %>%
-        ungroup() %>%
+        summarize(intensity = mean(phenophase_status), .groups = "drop") %>%
         group_by(year) %>%
         complete(day_of_year = 1:365, fill = list(intensity = NA)) %>%
         mutate(intensity = util_fill_whit(x = intensity, maxgap = 28, lambda = 10, minseg = 2)) %>%
-        ungroup() %>%
         mutate(intensity = ifelse(intensity < 1e-5, NA, intensity)) %>%
         group_by(year) %>%
         filter(!all(is.na(intensity))) %>%
@@ -181,7 +225,7 @@ generate_output_for_type <- function(input, phenotype) {
     } else {
       npn_location_ts_by_year <- data.frame(year = integer(0), day_of_year = double(0), intensity = double(0))
     }
-    
+
     p_line_year <- npn_location_ts_by_year %>%
       mutate(intensity = case_when(intensity > 1 ~ 1, intensity < 0 ~ 0, TRUE ~ intensity)) %>%
       mutate(day_of_year = 366 - day_of_year) %>%
@@ -191,35 +235,40 @@ generate_output_for_type <- function(input, phenotype) {
       scale_fill_viridis_c(name = "% Yes", limits = c(0, 100)) +
       theme_minimal() +
       labs(x = "Day of year", y = "Year", title = paste(str_to_title(phenotype), "Phenology")) +
-      scale_x_continuous(breaks = 366 - c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
-                         labels = month.abb, limits = c(1, 365), expand = c(0, 0)) +
+      scale_x_continuous(
+        breaks = 366 - c(1, 32, 61, 92, 122, 153, 183, 214, 245, 275, 306, 336),
+        labels = month.abb, limits = c(1, 365), expand = c(0, 0)
+      ) +
       {
         if (nrow(npn_location_ts_by_year) > 0) {
           scale_y_discrete(limits = seq(min(npn_location_ts_by_year$year), max(npn_location_ts_by_year$year), by = 1) %>%
-                             as.character() %>% factor())
+            as.character() %>% factor())
         } else {
           scale_y_discrete(limits = as.character(2010:2025))
         }
       } +
-      theme(panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank(),
-            plot.title = element_text(size = 18, hjust = 0.5, face = "bold")) +
+      theme(
+        panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank(),
+        plot.title = element_text(size = 18, hjust = 0.5, face = "bold")
+      ) +
       coord_flip()
   })
   timing_log$p_line_year <- paste("p_line_year plot:", round(t["elapsed"], 3), "sec")
-  
+
   # TIMING: Kriging section
   t_kriging_total <- system.time({
     npn_time <- npn_data_all %>%
       filter(abs(day_of_year - (input$date) %>% as.Date() %>% lubridate::yday()) <= input$window) %>%
       arrange(day_of_year)
-    
+
     timing_log$kriging_prep <- paste("  Kriging prep: window filter =", nrow(npn_time), "rows")
-    
-    npn_time_surface <- npn_time %>% group_by(longitude, latitude) %>%
-      summarize(intensity = mean(phenophase_status)) %>% ungroup()
-    
+
+    npn_time_surface <- npn_time %>%
+      group_by(longitude, latitude) %>%
+      summarize(intensity = mean(phenophase_status), .groups = "drop")
+
     timing_log$kriging_agg <- paste("  Kriging aggregation: surface points =", nrow(npn_time_surface))
-    
+
     if (nrow(npn_time_surface) > 0) {
       t_spdf <- system.time({
         npn_time_sp <- sp::SpatialPointsDataFrame(
@@ -229,42 +278,49 @@ generate_output_for_type <- function(input, phenotype) {
         )
       })
       timing_log$kriging_spdf <- paste("  SPDF creation:", round(t_spdf["elapsed"], 3), "sec")
-      
+
       t_variogram <- system.time({
         empirical_variogram <- gstat::variogram(intensity ~ 1, npn_time_sp)
       })
       timing_log$kriging_variogram <- paste("  Empirical variogram:", round(t_variogram["elapsed"], 3), "sec")
-      
+
       if (is.null(empirical_variogram)) {
         kriged_res_df <- data.frame(lon = double(0), lat = double(0), var1.pred = double(0), var1.var = double(0))
         timing_log$kriging_skip <- "  Kriging skipped (null variogram)"
       } else {
         t_fit_vgm <- system.time({
-          fit_npn <- gstat::fit.variogram(empirical_variogram, model = gstat::vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01))
+          fit_npn <- suppressWarnings(gstat::fit.variogram(empirical_variogram, model = gstat::vgm("Mat", nugget = 0.05, range = 1000, kappa = 0.01)))
         })
         timing_log$kriging_fit <- paste("  Fit variogram:", round(t_fit_vgm["elapsed"], 3), "sec")
-        
-        xmin <- -125; xmax <- -67; ymin <- 25; ymax <- 53; resolution <- 1.0
-        
+
+        xmin <- -125
+        xmax <- -67
+        ymin <- 25
+        ymax <- 53
+        resolution <- 1.0
+
         t_grid <- system.time({
           grid_points <- expand.grid(lon = seq(xmin, xmax, by = resolution), lat = seq(ymin, ymax, by = resolution))
-          coord_new_sp <- sp::SpatialPoints(coords = grid_points,
-                                            proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+          coord_new_sp <- sp::SpatialPoints(
+            coords = grid_points,
+            proj4string = sp::CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
+          )
         })
         timing_log$kriging_grid <- paste("  Grid creation: points =", nrow(grid_points), ", time =", round(t_grid["elapsed"], 3), "sec")
-        
+
         t_krige <- system.time({
-          kriged_res <- gstat::krige(intensity ~ 1, npn_time_sp, coord_new_sp, model = fit_npn, na.action = na.omit)
+          message("Running ordinary kriging on ", nrow(grid_points), " grid cells")
+          kriged_res <- suppressMessages(gstat::krige(intensity ~ 1, npn_time_sp, coord_new_sp, model = fit_npn, na.action = na.omit))
         })
         timing_log$kriging_krige <- paste("  Krige interpolation:", round(t_krige["elapsed"], 3), "sec")
-        
+
         t_pip <- system.time({
           kriged_res_df <- as.data.frame(kriged_res)
           names(kriged_res_df)[1:2] <- c("lon", "lat")
-          
+
           all_states <- fortify(maps::map("state", plot = FALSE, fill = TRUE))
           on_land <- rep(FALSE, nrow(kriged_res_df))
-          
+
           for (i in unique(all_states$region)) {
             state_outline <- all_states[all_states$region == i, ]
             for (g in unique(state_outline$group)) {
@@ -283,13 +339,18 @@ generate_output_for_type <- function(input, phenotype) {
     }
   })
   timing_log$kriging_total <- paste("Total kriging section:", round(t_kriging_total["elapsed"], 3), "sec")
-  
+
   # TIMING: p_map plot
   t <- system.time({
     p_map <- ggplot() +
       coord_map("albers", lat0 = 39, lat1 = 45) +
-      geom_tile(data = kriged_res_df %>% mutate(pred = case_when(var1.pred > 1 ~ 1, var1.pred < 0 ~ 0, TRUE ~ var1.pred)),
-                aes(x = lon, y = lat, fill = pred * 100)) +
+      geom_tile(
+        data = kriged_res_df %>%
+          mutate(pred = case_when(var1.pred > 1 ~ 1, var1.pred < 0 ~ 0, TRUE ~ var1.pred)) %>%
+          filter(!is.na(lon), !is.na(lat), !is.na(pred)),
+        aes(x = lon, y = lat, fill = pred * 100),
+        na.rm = TRUE
+      ) +
       geom_polygon(data = map_data("state"), aes(x = long, y = lat, group = group), color = "grey", fill = NA) +
       geom_jitter(data = npn_time, aes(x = longitude, y = latitude, fill = phenophase_status * 100), pch = 21, width = 0.05, height = 0.05, cex = 2) +
       geom_point(aes(x = input$longitude, y = input$latitude, fill = as.integer(input$status == "Yes") * 100), pch = 21, col = "red", cex = 5, stroke = 3) +
@@ -300,9 +361,9 @@ generate_output_for_type <- function(input, phenotype) {
       theme(plot.title = element_text(size = 18, hjust = 0.5, face = "bold"))
   })
   timing_log$p_map <- paste("p_map plot:", round(t["elapsed"], 3), "sec")
-  
+
   timing_log$end <- paste("========== END", phenotype, "==========\n")
-  
+
   return(list(plots = list(p_line, p_line_year, p_map), timing = timing_log))
 }
 
@@ -311,14 +372,14 @@ generate_output <- function(input) {
     leaf_result <- generate_output_for_type(input, "leaf")
     flower_result <- generate_output_for_type(input, "flower")
   })
-  
+
   combined_timing <- c(
     "+++++++++ START TOTAL +++++++++",
     leaf_result$timing,
     flower_result$timing,
     paste("+++++++++ END TOTAL |", round(t_total["elapsed"], 3), "sec +++++++++")
   )
-  
+
   return(list(
     leaf = leaf_result$plots,
     flower = flower_result$plots,
@@ -332,14 +393,14 @@ generate_plot <- function(plots, input) {
     input$plot == "Inter-annual variations" ~ 2,
     input$plot == "Spatial variations" ~ 3
   )
-  
+
   show_leaf <- input$leaf_select
   show_flower <- input$flower_select
-  
+
   if (!show_leaf && !show_flower) {
     show_leaf <- TRUE
   }
-  
+
   if (show_leaf && show_flower) {
     leaf_plot <- plots$leaf[[plot_type_index]]
     flower_plot <- plots$flower[[plot_type_index]]
@@ -393,22 +454,22 @@ ui <- fluidPage(
 ## Server Logic -------------------------------------------------
 server <- function(input, output, session) {
   plots_data <- reactiveVal(NULL)
-  
+
   observeEvent(input$submit, {
     withProgress(message = "Generating plots...", value = 0, {
       plots <- generate_output(input)
       plots_data(plots)
-      
+
       output$diagnostics <- renderText({
         paste(plots$timing, collapse = "\n")
       })
-      
+
       output$plot <- renderPlot({
         generate_plot(list(leaf = plots$leaf, flower = plots$flower), input)
       })
     })
   })
-  
+
   observeEvent(c(input$leaf_select, input$flower_select, input$plot), {
     if (!is.null(plots_data())) {
       output$plot <- renderPlot({
