@@ -313,7 +313,9 @@ generate_output_for_type <- function(input, phenotype) {
       ymin <- 25
       ymax <- 53
       # Define resolution (grid spacing)
-      resolution <- 0.5
+      # Coarser resolution reduces CPU and memory during kriging.
+      # Increased from 0.5 -> 1.0 to improve concurrency and lower CPU.
+      resolution <- 1.0
       
       # Create a grid using expand.grid() for all of continental US
       grid_points <- expand.grid(
