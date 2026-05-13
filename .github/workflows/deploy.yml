@@ -187,12 +187,24 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Push to Hugging Face Spaces
+    - name: Prepare Hugging Face snapshot
+      run: |
+        rm -rf hf-space
+        mkdir -p hf-space/phenowatch
+        cp README.md hf-space/README.md
+        cp Dockerfile hf-space/Dockerfile
+        cp phenowatch/app.R hf-space/phenowatch/app.R
+
+    - name: Push snapshot to Hugging Face Spaces
       env:
         HF_TOKEN: ${{ secrets.HF_TOKEN }}
         HF_SPACE_REPO: ${{ secrets.HF_SPACE_REPO }}
       run: |
+        cd hf-space
+        git init
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git remote add hf https://user:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE_REPO}
+        git add README.md Dockerfile phenowatch/app.R
+        git commit -m "Deploy snapshot from GitHub Actions"
         git push --force hf HEAD:main
